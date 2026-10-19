@@ -1,10 +1,97 @@
 {
- "files": [],
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "d71f73d4221e5527f34b649ad701fc1e85a5c932",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 05:20:57 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "66aa82ea447cd1cfd4d957b95920467e271b3c63",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 05:20:57 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "401be54a406375f928b8622aa375d380052e8ce1",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 05:20:57 GMT"
+  },
+  {
+   "name": "ksdma_favicon.png",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2018/10/favicon.png",
+   "sha1": "b4b10b8d72c1719629d6892fe7761a840332927f",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Sat, 21 Sep 2024 16:02:14 GMT"
+  },
+  {
+   "name": "ksdma_DM-Directory-2025_23.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2025/06/DM-Directory-2025_23.pdf",
+   "sha1": "8c8030112366d117df50f4f5df721b1fbed1e2fd",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 23 Jun 2025 06:35:10 GMT"
+  },
+  {
+   "name": "ksdma_Emergency-Response-Vehicle-details-25-05-2025_ERV_Website.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2025/06/Emergency-Response-Vehicle-details-25-05-2025_ERV_Website.pdf",
+   "sha1": "0f38329fdbe884e5263dcb9cb636e701d635d856",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Sat, 21 Jun 2025 08:28:30 GMT"
+  },
+  {
+   "name": "ksdma_TALUK-DIRECTORY.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2025/06/TALUK-DIRECTORY.pdf",
+   "sha1": "1264da48f0ae40de0ceef867c2ea0cb3c4e82912",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Sat, 21 Jun 2025 08:42:48 GMT"
+  },
+  {
+   "name": "ksdma_24-Hr-Rainfall-map-3.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/24-Hr-Rainfall-map-3.jpeg",
+   "sha1": "0648dd753cbd8640040f8f1eca6a8e8208f7af2d",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Sun, 18 Oct 2026 07:13:56 GMT"
+  },
+  {
+   "name": "ksdma_Actual-Vs-Prediction-15.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/Actual-Vs-Prediction-15.pdf",
+   "sha1": "89e7e6ae9b57f5a253a09c377a5738f02b6eb297",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 06:35:32 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-ENG-3.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-ENG-3.jpeg",
+   "sha1": "1a9ca9ba4d281ff6e0520ce2458c1fd8782f0771",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 08:53:49 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-MAL-3.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-MAL-3.jpeg",
+   "sha1": "6e9d4fd0c0fe93b68b815369790c403b1f2f67c4",
+   "saved_at": "2026-10-19T20:28+05:30",
+   "last_modified": "Mon, 19 Oct 2026 08:53:50 GMT"
+  }
+ ],
  "checks": {
-  "imd_station_daily.pdf": "error: SSLError",
-  "imd_rainfall_map.jpg": "error: SSLError",
-  "imd_season.pdf": "error: SSLError",
-  "ksdma_page": "0 files linked",
-  "imd_aws_portal": 200
+  "imd_station_daily.pdf": 200,
+  "imd_rainfall_map.jpg": 200,
+  "imd_season.pdf": 200,
+  "ksdma_page": "8 files linked",
+  "imd_aws_portal": 200,
+  "ksdma_page_http": 200,
+  "ksdma_favicon.png": 200,
+  "ksdma_DM-Directory-2025_23.pdf": 200,
+  "ksdma_Emergency-Response-Vehicle-details-25-05-2025_ERV_Website.pdf": 200,
+  "ksdma_TALUK-DIRECTORY.pdf": 200,
+  "ksdma_24-Hr-Rainfall-map-3.jpeg": 200,
+  "ksdma_Actual-Vs-Prediction-15.pdf": 200,
+  "ksdma_RF-TB-ENG-3.jpeg": 200,
+  "ksdma_RF-TB-MAL-3.jpeg": 200
  }
 }
