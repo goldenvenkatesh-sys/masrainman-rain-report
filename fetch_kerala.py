@@ -102,7 +102,8 @@ def main():
         if not links:  # keep the page so we can see what the site sent
             with open(os.path.join(day_dir, "ksdma_page.html"), "w", encoding="utf-8") as f:
                 f.write(resp.text)
-        links = [l for l in links if "logo" not in l.lower() and not re.search(r"-\d+x\d+\.", l)]
+        links = [l for l in links if re.search(r"rain|rf-|actual|predict", os.path.basename(l), re.I)
+                 and not re.search(r"-\d+x\d+\.", l)]
         for l in links:
             save("ksdma_" + os.path.basename(unquote(l)), l)
         manifest["checks"]["ksdma_page"] = f"{len(links)} files linked"

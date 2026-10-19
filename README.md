@@ -40,3 +40,21 @@ or run inside WSL (Ubuntu), where it works out of the box.
 - `SCALE_DAILY`, `SCALE_ACCUM`: colour classes and labels
 - `IDW_RADIUS_KM`, `IDW_POWER`: map interpolation
 - `W, H, FPS`: video size and speed
+
+## Kerala (English + Malayalam)
+
+Source: IMD Thiruvananthapuram's daily station rainfall PDF (about 85 rain gauges plus the AWS/ARG stations
+that recorded rain). KSDMA's daily PDF has the same gauges, so IMD's file is used.
+
+- `fetch_kerala.py` saves the day's IMD and KSDMA files into `data/kerala/raw/<date>/` (they are overwritten
+  daily on the websites, so this builds the history). The *Kerala rainfall archive* workflow runs it 3 times a day.
+- `kerala_data.py` reads the PDFs into `data/kerala/daily/<date>.json`.
+- Station positions are in `data/kerala_stations.csv`. Rows marked "approximate" were placed by hand; correct
+  them if you know better. New stations without a position are listed in `data/kerala/unmapped_stations.txt`.
+
+```
+python rain_report.py daily --region kl            # English and Malayalam videos
+python rain_report.py accum --region kl --lang ml  # Malayalam only
+```
+
+On GitHub: *TN rainfall report* runs Kerala automatically at 12:15 IST; for a manual run choose region `kl` or `both`.

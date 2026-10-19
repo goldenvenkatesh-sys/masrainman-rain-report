@@ -1,11 +1,16 @@
 """
-MasRainman · Tamil Nadu rainfall report (animated)
+MasRainman · animated rainfall report for Tamil Nadu (TN-SMART) and Kerala (IMD Thiruvananthapuram)
 
 Two modes
   daily : one rain-day (24 h ending 08:30 IST). Map colours build up from zero.
   accum : total from a start date to the run day. Map fills day by day.
 
+Regions / languages
+  --region tn  (default)  Tamil Nadu, Tamil
+  --region kl             Kerala, English and Malayalam (one video each); --lang en or --lang ml for one
+
 Examples
+  python rain_report.py daily --region kl
   python rain_report.py daily                         # latest complete day
   python rain_report.py daily --date 2026-10-18
   python rain_report.py accum --start 2026-10-01      # Oct 1 to today
@@ -29,7 +34,9 @@ from shapely.geometry import shape, Point
 from shapely.ops import unary_union
 
 import tnsmart_fetch as tf
-from tn_names import MONTHS_TA, canon, ta, date_ta, time_ta
+import tn_names
+import kerala_data
+from lang import LANGS, date_str
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIR = os.path.join(HERE, "fonts")
@@ -37,7 +44,6 @@ OUT_DIR = os.path.join(HERE, "out")
 
 # ----------------------------------------------------------------- settings
 BRAND = "MasRainman"
-BRAND_LINE = "தயாரிப்பு: MasRainman"
 SITE = "masrainman.blogspot.com"
 FPS = 30
 W, H = 1080, 1620                     # 2:3 portrait, good for Facebook / WhatsApp
@@ -45,10 +51,36 @@ IDW_POWER = 2
 IDW_RADIUS_KM = 44
 IDW_K = 12
 
+REGIONS = {
+    "tn": {"name": "Tamil Nadu", "geo": "tn_districts.geojson", "canon": tn_names.canon, "langs": ["ta"],
+           "radius": 44, "source": "TN-SMART (TNSDMA)", "pill": {"ta": "முழு தமிழ்நாடு"},
+           "load": lambda a, b: tf.load_days(a, b)},
+    "kl": {"name": "Kerala", "geo": "kl_districts.geojson", "canon": lambda d: kerala_data.district(d) or d,
+           "langs": ["en", "ml"], "radius": 50, "source": "IMD Thiruvananthapuram",
+           "pill": {"en": "All Kerala", "ml": "കേരളം മുഴുവൻ"},
+           "load": lambda a, b: kerala_data.load_days(a, b)},
+}
+REGION = REGIONS["tn"]
+L = LANGS["ta"]
+
+
+def set_lang(code):
+    global L
+    L = LANGS[code]
+    _font_cache.clear()
+
+
+def dname(d):
+    return L["district"](d)
+
+
+def dstr(d):
+    return date_str(L, d)
+
 # colour classes ---------------------------------------------------------
 # (lower bound inclusive, label, colour)
 SCALE_ACCUM = [
-    (0.0, "0 மி.மீ.", "#e4e7ee"),
+    (0.0, "ZERO", "#e4e7ee"),
     (0.1, "0.1 – 25", "#86efac"),
     (25.1, "25.1 – 50", "#22c55e"),
     (50.1, "50.1 – 100", "#facc15"),
@@ -59,7 +91,7 @@ SCALE_ACCUM = [
     (400.1, "> 400", "#581c87"),
 ]
 SCALE_DAILY = [  # IMD 24-hour categories
-    (0.0, "0 மி.மீ.", "#e4e7ee"),
+    (0.0, "ZERO", "#e4e7ee"),
     (0.1, "0.1 – 2.4", "#bbf7d0"),
     (2.5, "2.5 – 15.5", "#4ade80"),
     (15.6, "15.6 – 64.4", "#facc15"),
@@ -88,14 +120,26 @@ def hex2rgb(h):
 _font_cache = {}
 
 
+_WGHT = {"Regular": 400, "SemiBold": 600, "Bold": 700, "ExtraBold": 800}
+
+
 def font(size, weight="Regular"):
     key = (size, weight)
     if key not in _font_cache:
-        path = os.path.join(FONT_DIR, f"MuktaMalar-{weight}.ttf")
+        if L["font"] == "mukta":
+            path = os.path.join(FONT_DIR, f"MuktaMalar-{weight}.ttf")
+        else:
+            path = os.path.join(FONT_DIR, "BalooChettan2.ttf")
         try:
-            _font_cache[key] = ImageFont.truetype(path, size, layout_engine=ImageFont.Layout.RAQM)
-        except Exception:  # Pillow without libraqm: Tamil vowel signs may misplace
-            _font_cache[key] = ImageFont.truetype(path, size)
+            f = ImageFont.truetype(path, size, layout_engine=ImageFont.Layout.RAQM)
+        except Exception:  # Pillow without libraqm: Indic vowel signs may misplace
+            f = ImageFont.truetype(path, size)
+        if L["font"] != "mukta":
+            try:
+                f.set_variation_by_axes([_WGHT.get(weight, 400)])
+            except Exception:
+                pass
+        _font_cache[key] = f
     return _font_cache[key]
 
 
@@ -150,12 +194,13 @@ def ease_out(t):
 
 # ----------------------------------------------------------------- geography
 class Geo:
-    def __init__(self):
-        with open(os.path.join(HERE, "data", "tn_districts.geojson"), encoding="utf-8") as f:
+    def __init__(self, region):
+        self.canon = region["canon"]
+        with open(os.path.join(HERE, "data", region["geo"]), encoding="utf-8") as f:
             gj = json.load(f)
         self.districts = {}
         for ft in gj["features"]:
-            name = canon(ft["properties"]["district"])
+            name = self.canon(ft["properties"]["district"])
             g = shape(ft["geometry"])
             self.districts[name] = self.districts[name].union(g) if name in self.districts else g
         self.state = unary_union(list(self.districts.values()))
@@ -214,31 +259,37 @@ class Period:
     """Station values for the report period, as a (days x stations) matrix."""
 
     def __init__(self, days_dict, geo):
+        canon = geo.canon
         dates = sorted(days_dict)
         idx, meta = {}, []
+
+        def kf(s):
+            r3 = lambda x: None if x is None else round(x, 3)
+            return (canon(s["district"]), s["station"], r3(s["lat"]), r3(s["lon"]), s.get("type"))
         for d in dates:
             for s in days_dict[d]:
-                key = (canon(s["district"]), s["station"], round(s["lat"], 3), round(s["lon"], 3))
+                key = kf(s)
                 if key not in idx:
                     idx[key] = len(meta)
                     meta.append({"district": key[0], "station": s["station"], "lat": s["lat"], "lon": s["lon"]})
         V = np.full((len(dates), len(meta)), np.nan)
         for i, d in enumerate(dates):
             for s in days_dict[d]:
-                key = (canon(s["district"]), s["station"], round(s["lat"], 3), round(s["lon"], 3))
+                key = kf(s)
                 if s["rain"] is not None:
                     V[i, idx[key]] = s["rain"]
         keep = ~np.all(np.isnan(V), axis=0)          # stations that reported at least once
         self.dates = dates
         self.meta = [m for m, k in zip(meta, keep) if k]
         self.V = V[:, keep]
-        self.lat = np.array([m["lat"] for m in self.meta])
-        self.lon = np.array([m["lon"] for m in self.meta])
+        self.lat = np.array([np.nan if m["lat"] is None else m["lat"] for m in self.meta], float)
+        self.lon = np.array([np.nan if m["lon"] is None else m["lon"] for m in self.meta], float)
+        self.has_xy = ~np.isnan(self.lat)
         self.dist = np.array([m["district"] for m in self.meta])
         self.names = [m["station"] for m in self.meta]
         # fix district names that are not in the boundary file by point-in-polygon
         for i, dn in enumerate(self.dist):
-            if dn not in geo.districts:
+            if dn not in geo.districts and self.has_xy[i]:
                 p = Point(self.lon[i], self.lat[i])
                 for k, g in geo.districts.items():
                     if g.contains(p):
@@ -264,6 +315,8 @@ class Field:
         inside = np.asarray(self.mask) > 0
         self.inside = inside
         pts = geo.km(glon[inside], glat[inside])
+        self.sel = np.where(~np.isnan(lat))[0]           # stations that have coordinates
+        lon, lat = lon[self.sel], lat[self.sel]
         tree = cKDTree(geo.km(lon, lat))
         k = min(IDW_K, len(lon))
         d, ix = tree.query(pts, k=k)
@@ -271,14 +324,14 @@ class Field:
             d, ix = d[:, None], ix[:, None]
         d = np.maximum(d, 0.5)
         wgt = 1.0 / d ** IDW_POWER
-        far = d > IDW_RADIUS_KM
+        far = d > REGION["radius"]
         far[:, 0] = False                              # always keep the nearest station
         wgt[far] = 0
         self.ix = ix
         self.wgt = wgt / wgt.sum(axis=1, keepdims=True)
 
     def values(self, v):
-        return (self.wgt * v[self.ix]).sum(axis=1)
+        return (self.wgt * v[self.sel][self.ix]).sum(axis=1)
 
     def image(self, v, scale):
         bounds = np.array([b for b, _, _ in scale])
@@ -311,6 +364,7 @@ class Report:
 
     def __init__(self, mode, period, geo, title_dates, sub, scale, card3, headline_thresholds):
         self.mode, self.P, self.geo = mode, period, geo
+        self.lang_code = [k for k, v in LANGS.items() if v is L][0]
         self.scale = scale
         self.sub = sub
         self.title_dates = title_dates
@@ -341,8 +395,8 @@ class Report:
         im.paste(wm, (0, 0), wm)
         d = ImageDraw.Draw(im, "RGBA")
 
-        d.text((48, 26), "மழைப்பொழிவு அறிக்கை", font=font(56, "ExtraBold"), fill=TEXT)
-        pill = "முழு தமிழ்நாடு"
+        d.text((48, 26), L["title"], font=font(56, "ExtraBold"), fill=TEXT)
+        pill = REGION["pill"].get(self.lang_code, REGION["name"])
         pf = font(22, "SemiBold")
         pw = tw(d, pill, pf) + 40
         rrect(d, (W - 48 - pw, 44, W - 48, 90), 23, fill=(25, 38, 62), outline=(45, 70, 110))
@@ -351,27 +405,27 @@ class Report:
         # panels
         mx0, my0, mx1, my1 = self.MAP_BOX
         rrect(d, self.MAP_BOX, 16, fill=PANEL, outline=PANEL_EDGE)
-        d.text((mx0 + 18, my1 - 36), "IDW மேற்பரப்பு (இடைக்கணிப்பு)", font=font(17), fill=MUTED)
+        d.text((mx0 + 18, my1 - 36), L["map_note"], font=font(17), fill=MUTED)
         ix0, ix1 = self.INSET_X
         for i in range(3):
             y0 = my0 + i * 230
             rrect(d, (ix0, y0, ix1, y0 + 214), 16, fill=PANEL, outline=PANEL_EDGE)
         rrect(d, (48, 1084, 528, 1404), 16, fill=PANEL, outline=PANEL_EDGE)
         rrect(d, (544, 1084, 1032, 1404), 16, fill=PANEL, outline=PANEL_EDGE)
-        d.text((68, 1098), "முதல் 5 நிலையங்கள் (மி.மீ.)", font=font(20, "SemiBold"), fill=MUTED)
-        d.text((564, 1098), "முதல் 5 மாவட்டங்கள் · சராசரி மழை (மி.மீ.)", font=font(20, "SemiBold"), fill=MUTED)
+        d.text((68, 1098), L["top_st"], font=font(20, "SemiBold"), fill=MUTED)
+        d.text((564, 1098), L["top_di"], font=font(20, "SemiBold"), fill=MUTED)
         rrect(d, (48, 1420, 1032, 1532), 16, fill=PANEL, outline=PANEL_EDGE)
-        d.text((68, 1430), "மழை அளவு வகைகள் · ஒவ்வொரு வகையிலும் நிலையங்கள்", font=font(19, "SemiBold"), fill=MUTED)
+        d.text((68, 1430), L["legend"], font=font(19, "SemiBold"), fill=MUTED)
 
         # footer
         d.line((48, 1548, 1032, 1548), fill=PANEL_EDGE, width=1)
         f17 = font(17)
-        d.text((48, 1556), f"ஆதாரம்: TN-SMART (TNSDMA) · IDW p={IDW_POWER}, ஆரம் ≈ {IDW_RADIUS_KM} கி.மீ.",
+        d.text((48, 1556), L["source"].format(src=REGION["source"], p=IDW_POWER, r=REGION["radius"]),
                font=f17, fill=MUTED)
         c = self.created
-        made = f"உருவாக்கம்: {c.day} {MONTHS_TA[c.month - 1]} {c.year}, {time_ta(c)}"
+        made = L["made"].format(d=c.day, m=L["months"][c.month - 1], y=c.year, t=L["time"](c))
         text_right(d, (1032, 1556), made, f17, MUTED)
-        d.text((48, 1580), BRAND_LINE, font=font(22, "Bold"), fill=ACCENT_SOFT)
+        d.text((48, 1580), L["brand"], font=font(22, "Bold"), fill=ACCENT_SOFT)
         text_right(d, (1032, 1583), SITE, font(18), MUTED)
         return im
 
@@ -418,10 +472,9 @@ class Report:
             for thr in self.thr_list:
                 n = int(np.sum(vv > thr))
                 if n:
-                    return (f"{n} நிலையங்களில் {thr:g} மி.மீ.க்கு மேல் மழை பதிவு; மாவட்டங்களில் "
-                            f"{ta(dn)} {fmt(avg)} மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.")
-            return f"மாவட்டங்களில் {ta(dn)} {fmt(avg)} மி.மீ. நிலையச் சராசரியுடன் முதலிடம்."
-        return "மாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை."
+                    return L["head_one" if n == 1 else "head_full"].format(n=n, thr=f"{thr:g}", dist=dname(dn), avg=fmt(avg))
+            return L["head_dist"].format(dist=dname(dn), avg=fmt(avg))
+        return L["head_none"]
 
     # ---- inset ---------------------------------------------------------
     def inset(self, dn, box):
@@ -452,6 +505,8 @@ class Report:
         vv = st["vv"]
         best = idx[np.argmax(vv[idx])] if len(idx) else None
         for i in sorted(idx, key=lambda i: vv[i]):
+            if not P.has_xy[i]:
+                continue
             x, y = pr(P.lon[i], P.lat[i])
             r = 7 * ss
             c = hex2rgb(self.scale[classify(vv[i], self.scale)][2])
@@ -459,7 +514,7 @@ class Report:
                        width=ss)
         lay = lay.resize((vw, vh), Image.LANCZOS)
         im.paste(lay, (vx0, vy0), lay)
-        if best is not None and vv[best] > 0:
+        if best is not None and vv[best] > 0 and P.has_xy[best]:
             x, y = pr(P.lon[best], P.lat[best])
             x, y = x + vx0, y + vy0
             d.ellipse((x - 13, y - 13, x + 13, y + 13), outline=(255, 255, 255), width=3)
@@ -474,15 +529,15 @@ class Report:
         rx = cx0 + 16
         d.ellipse((rx, cy0 + 16, rx + 28, cy0 + 44), fill=(150, 90, 220) if rank == 1 else (220, 70, 70))
         d.text((rx + 9, cy0 + 16), str(rank), font=font(18, "Bold"), fill=(255, 255, 255))
-        d.text((rx + 40, cy0 + 9), ellipsize(d, ta(dn), font(26, "Bold"), cx1 - rx - 56), font=font(26, "Bold"),
+        d.text((rx + 40, cy0 + 9), ellipsize(d, dname(dn), font(26, "Bold"), cx1 - rx - 56), font=font(26, "Bold"),
                fill=TEXT)
         tx = cx0 + 240
-        d.text((tx, cy0 + 56), "சராசரி மழை", font=font(16), fill=MUTED)
+        d.text((tx, cy0 + 56), L["ins_avg"], font=font(16), fill=MUTED)
         d.text((tx, cy0 + 70), f"{fmt(avg)}", font=font(38, "ExtraBold"), fill=TEXT)
-        d.text((tx + tw(d, fmt(avg), font(38, "ExtraBold")) + 6, cy0 + 90), "மி.மீ.", font=font(16), fill=MUTED)
-        d.text((tx, cy0 + 122), "அதிகபட்ச நிலையம்", font=font(16), fill=MUTED)
+        d.text((tx + tw(d, fmt(avg), font(38, "ExtraBold")) + 6, cy0 + 90), L["mm"], font=font(16), fill=MUTED)
+        d.text((tx, cy0 + 122), L["ins_max"], font=font(16), fill=MUTED)
         if best is not None:
-            d.text((tx, cy0 + 136), f"{fmt(vv[best])} மி.மீ.", font=font(24, "Bold"), fill=TEXT)
+            d.text((tx, cy0 + 136), f"{fmt(vv[best])} {L['mm']}", font=font(24, "Bold"), fill=TEXT)
             d.text((tx, cy0 + 168), ellipsize(d, P.names[best], font(15), cx1 - tx - 14), font=font(15), fill=MUTED)
 
     # ---- full frame ------------------------------------------------------
@@ -505,11 +560,11 @@ class Report:
         cw = (W - 96 - 3 * 14) / 4
         best_i = st["top_s"][0] if st["top_s"] else None
         cards = [
-            ("தரவு அளித்த நிலையங்கள்", f"{st['n_rep']}", f"{st['n_dist']} மாவட்டங்கள்"),
-            ("மழை பெய்த நிலையங்கள்", f"{st['n_rain']}", self.card2_sub(st, v)),
-            (self.card3[1], f"{st['n_thr']}", self.card3[2]),
-            ("அதிகபட்ச நிலையம்",
-             f"{fmt(st['vv'][best_i])} மி.மீ." if best_i is not None else "—",
+            (L["c_rep"], f"{st['n_rep']}", L["c_rep_sub"].format(n=st['n_dist'])),
+            (L["c_rain"], f"{st['n_rain']}", self.card2_sub(st, v)),
+            (L[self.card3[1]], f"{st['n_thr']}", L[self.card3[2]]),
+            (L["c_max"],
+             f"{fmt(st['vv'][best_i])} {L['mm']}" if best_i is not None else "—",
              self.P.names[best_i] if best_i is not None else ""),
         ]
         for i, (lab, val, sub) in enumerate(cards):
@@ -541,6 +596,8 @@ class Report:
         if reveal_markers > 0:
             a = int(255 * ease(reveal_markers))
             for rank, i in enumerate(fs["top_s"][:5], 1):
+                if not self.P.has_xy[i]:
+                    continue
                 x, y = self.proj(self.P.lon[i], self.P.lat[i])
                 r = 12 * (0.6 + 0.4 * ease_out(reveal_markers))
                 d.ellipse((x - r, y - r, x + r, y + r), fill=(110, 60, 180, a), outline=(255, 255, 255, a), width=2)
@@ -559,7 +616,7 @@ class Report:
             d.ellipse((68, y + 2, 100, y + 34), fill=(110, 60, 180) if r < 2 else (150, 80, 210))
             d.text((79 if r < 9 else 74, y + 3), str(r + 1), font=font(19, "Bold"), fill=(255, 255, 255))
             d.text((114, y - 4), ellipsize(d, self.P.names[i], font(23, "Bold"), 290), font=font(23, "Bold"), fill=TEXT)
-            d.text((114, y + 24), ta(self.P.dist[i]), font=font(15), fill=MUTED)
+            d.text((114, y + 24), dname(self.P.dist[i]), font=font(15), fill=MUTED)
             text_right(d, (508, y - 2), fmt(st["vv"][i]), font(30, "Bold"), TEXT)
 
         # top 5 districts bars
@@ -567,7 +624,7 @@ class Report:
         mx = max([a for _, a in top] + [1e-6])
         for r, (dn, avg) in enumerate(top):
             y = 1140 + r * 52
-            d.text((564, y - 6), ta(dn), font=font(23, "Bold"), fill=TEXT)
+            d.text((564, y - 6), dname(dn), font=font(23, "Bold"), fill=TEXT)
             text_right(d, (1012, y - 4), fmt(avg), font(24, "Bold"), TEXT)
             rrect(d, (564, y + 30, 1012, 37 + y), 4, fill=TRACK)
             col = hex2rgb(self.scale[classify(avg, self.scale)][2])
@@ -582,23 +639,24 @@ class Report:
             lx = 68 + col_ * cwid
             ly = 1464 + row * 32
             rrect(d, (lx, ly + 4, lx + 22, ly + 26), 4, fill=hex2rgb(c))
+            lab = L["zero"] if lab == "ZERO" else lab
             d.text((lx + 30, ly), f"{lab} ({st['counts'][i]})", font=font(18), fill=TEXT)
         if n % per_row:
             row, col_ = divmod(n, per_row)
-            d.text((68 + col_ * cwid, 1464 + row * 32), "அனைத்தும் மி.மீ.", font=font(17), fill=MUTED)
+            d.text((68 + col_ * cwid, 1464 + row * 32), L["legend_mm"], font=font(17), fill=MUTED)
         return im, st
 
     def caption(self, st, sub):
-        lines = ["🌧 மழைப்பொழிவு அறிக்கை", sub, "", self.headline(st), "", "முதல் 5 நிலையங்கள்:"]
+        lines = [L["cap_title"], sub, "", self.headline(st), "", L["cap_top"]]
         for r, i in enumerate(st["top_s"][:5], 1):
-            lines.append(f"{r}. {self.P.names[i]} ({ta(self.P.dist[i])}) – {fmt(st['vv'][i])} மி.மீ.")
-        lines += ["", "ஆதாரம்: TN-SMART", f"#{BRAND} · {SITE}"]
+            lines.append(f"{r}. {self.P.names[i]} ({dname(self.P.dist[i])}) – {fmt(st['vv'][i])} {L['mm']}")
+        lines += ["", L["cap_src"].format(src=REGION["source"]), f"#{BRAND} · {SITE}"]
         return "\n".join(lines)
 
     def card2_sub(self, st, v):
         if self.mode == "daily":
-            return f"மாநில சராசரி {fmt(st['state_avg'])} மி.மீ."
-        return getattr(self, "_rainy_sub", "")
+            return L["c_rain_daily"].format(x=fmt(st['state_avg']))
+        return L["c_rain_accum"].format(x=f"{getattr(self, '_rainy_days', 0):.1f}")
 
 
 # ----------------------------------------------------------------- video
@@ -632,23 +690,20 @@ class Writer:
 
 
 # ----------------------------------------------------------------- modes
-def run_daily(day, geo, out_base):
-    print(f"Downloading rain-day {day} …")
-    days = tf.load_days(day, day)
-    if day not in days:
-        raise SystemExit(f"No TN-SMART data for {day}")
-    P = Period(days, geo)
+def load(start, end):
+    days = REGION["load"](start, end)
+    return {d: v for d, v in days.items() if any(s["rain"] is not None for s in v)}
+
+
+def render_daily(day, P, geo, out_base):
     v_final = np.nan_to_num(P.V[0])
     reported = ~np.isnan(P.V[0])
-    prev = day - timedelta(days=1)
-    sub = f"24 மணி நேர மழை · {date_ta(prev)} காலை 8:30 முதல் {date_ta(day)} காலை 8:30 வரை"
-    R = Report("daily", P, geo, None, sub, SCALE_DAILY,
-               (64.5, "≥ 64.5 மி.மீ. நிலையங்கள்", "கனமழை அளவு"),
+    sub = L["daily_sub"].format(d0=dstr(day - timedelta(days=1)), d1=dstr(day))
+    R = Report("daily", P, geo, None, sub, SCALE_DAILY, (64.5, "c_thr_daily", "c_thr_daily_sub"),
                [200, 100, 64.5, 50, 20, 10])
     fin_st = R.stats(v_final, reported)
     wr = Writer(out_base + ".mp4")
     intro, grow, markers, hold = int(0.5 * FPS), int(4.5 * FPS), int(0.8 * FPS), int(3.0 * FPS)
-    print("Rendering frames …")
     for i in range(intro + grow):
         t = ease(max(0, i - intro) / grow)
         im, _ = R.frame(v_final * t, reported, sub, final_stats=fin_st)
@@ -660,90 +715,108 @@ def run_daily(day, geo, out_base):
     return wr, im, R.caption(fin_st, sub)
 
 
-def run_accum(start, end, geo, out_base, live=False):
-    last = end + timedelta(days=1) if live else end
-    print(f"Downloading rain-days {start} … {last}")
-    days = tf.load_days(start, last)
-    if not days:
-        raise SystemExit("No TN-SMART data in that range")
-    P = Period(days, geo)
+def render_accum(P, geo, out_base, live_note=""):
     nd = len(P.dates)
     reported = np.ones(len(P.meta), bool)
-    span = f"{date_ta(P.dates[0])} முதல் {date_ta(P.dates[-1])} வரை"
-    live_note = " (இன்றைய மழை இதுவரை உட்பட)" if live and P.dates[-1] > end else ""
 
     def sub_for(k):
-        return f"பல நாள் மொத்த மழை · {date_ta(P.dates[0])} முதல் {date_ta(P.dates[k])} வரை ({k + 1} நாட்கள்){live_note}"
+        return L["accum_sub"].format(d0=dstr(P.dates[0]), d1=dstr(P.dates[k]), n=k + 1) + live_note
 
-    R = Report("accum", P, geo, None, sub_for(nd - 1), SCALE_ACCUM,
-               (100, "≥ 100 மி.மீ. பெற்ற நிலையங்கள்", "மொத்த மழை அளவு"),
+    R = Report("accum", P, geo, None, sub_for(nd - 1), SCALE_ACCUM, (100, "c_thr_accum", "c_thr_accum_sub"),
                [500, 400, 300, 200, 150, 100, 50])
     fin_v = P.cum[-1]
     fin_st = R.stats(fin_v, reported)
     wr = Writer(out_base + ".mp4")
     per_day = int(max(4, min(15, round(12 * FPS / nd))))
-    print(f"Rendering {nd} days × {per_day} frames …")
     prev = np.zeros(len(P.meta))
     im = None
     for k in range(nd):
         cur = P.cum[k]
-        R._rainy_sub = f"சராசரி {np.mean(P.rainy_days[k]):.1f} மழை நாட்கள்"
+        R._rainy_days = float(np.mean(P.rainy_days[k]))
         for j in range(per_day):
             t = ease((j + 1) / per_day)
             v = prev + (cur - prev) * t
-            im, _ = R.frame(v, reported, sub_for(k), badge=date_ta(P.dates[k]),
-                            progress=(k + t) / nd, final_stats=fin_st)
+            im, _ = R.frame(v, reported, sub_for(k), badge=dstr(P.dates[k]), progress=(k + t) / nd,
+                            final_stats=fin_st)
             wr.add(im)
         prev = cur
     markers = int(0.8 * FPS)
     for i in range(markers):
-        im, _ = R.frame(fin_v, reported, sub_for(nd - 1), badge=date_ta(P.dates[-1]), progress=1.0,
+        im, _ = R.frame(fin_v, reported, sub_for(nd - 1), badge=dstr(P.dates[-1]), progress=1.0,
                         reveal_markers=(i + 1) / markers, final_stats=fin_st)
         wr.add(im)
     wr.add(im, int(3.0 * FPS))
     return wr, im, R.caption(fin_st, sub_for(nd - 1))
 
 
+def finish(wr, last, cap, base, gif=True, gif_width=720):
+    wr.close()
+    last.save(base + ".png", optimize=True)
+    with open(base + ".txt", "w", encoding="utf-8") as f:
+        f.write(cap)
+    print(f"  video : {base}.mp4  ({wr.n / FPS:.1f} s)")
+    if gif:
+        wr.gif(base + ".gif", width=gif_width)
+        print(f"  gif   : {base}.gif  ({os.path.getsize(base + '.gif') / 1e6:.1f} MB)")
+
+
 def main():
-    ap = argparse.ArgumentParser(description="MasRainman animated Tamil Nadu rainfall report")
+    global REGION
+    ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
     ap.add_argument("mode", choices=["daily", "accum"])
-    ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest complete")
+    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala")
+    ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
+    ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
     ap.add_argument("--start", help="accum: first rain-day, e.g. 2026-10-01 (default Oct 1 of this year)")
-    ap.add_argument("--end", help="accum: last rain-day (default: latest complete day)")
-    ap.add_argument("--live", action="store_true", help="accum: also add today's running (partial) day")
+    ap.add_argument("--end", help="accum: last rain-day (default: latest)")
+    ap.add_argument("--live", action="store_true", help="accum, Tamil Nadu: also add today's running day")
     ap.add_argument("--no-gif", action="store_true")
     ap.add_argument("--gif-width", type=int, default=720)
     a = ap.parse_args()
 
     from PIL import features
     if not features.check("raqm"):
-        print("WARNING: Pillow has no libraqm here, so Tamil letters may render wrongly. "
+        print("WARNING: Pillow has no libraqm here, so Tamil/Malayalam letters may render wrongly. "
               "Run on GitHub Actions/Linux, or see README.")
+    REGION = REGIONS[a.region]
+    langs = [a.lang] if a.lang else REGION["langs"]
     today = tf.today_ist()
     latest = today if tf.rain_day_is_complete(today) else today - timedelta(days=1)
-    geo = Geo()
+    geo = Geo(REGION)
     os.makedirs(OUT_DIR, exist_ok=True)
+    tag = "" if a.region == "tn" else f"{a.region}_"
 
     if a.mode == "daily":
         day = date.fromisoformat(a.date) if a.date else latest
-        base = os.path.join(OUT_DIR, f"rain_daily_{day.isoformat()}")
-        wr, last, cap = run_daily(day, geo, base)
+        print(f"{REGION['name']}: rain-day {day}")
+        days = load(day, day)
+        if not days and not a.date and a.region == "kl":       # IMD file not out yet: use previous day
+            day -= timedelta(days=1)
+            days = load(day, day)
+        if day not in days:
+            raise SystemExit(f"No {REGION['source']} data for {day}")
+        P = Period(days, geo)
+        for lc in langs:
+            set_lang(lc)
+            base = os.path.join(OUT_DIR, f"rain_{tag}daily_{day.isoformat()}" + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
+            print(f"Rendering ({lc}) …")
+            finish(*render_daily(day, P, geo, base), base, not a.no_gif, a.gif_width)
     else:
         start = date.fromisoformat(a.start) if a.start else date(today.year, 10, 1)
         end = date.fromisoformat(a.end) if a.end else latest
-        base = os.path.join(OUT_DIR, f"rain_accum_{start.isoformat()}_to_{end.isoformat()}")
-        wr, last, cap = run_accum(start, end, geo, base, live=a.live)
-
-    wr.close()
-    last.save(base + ".png", optimize=True)
-    with open(base + ".txt", "w", encoding="utf-8") as f:
-        f.write(cap)
-
-    print(f"  video : {base}.mp4  ({wr.n / FPS:.1f} s)")
-    print(f"  image : {base}.png")
-    if not a.no_gif:
-        wr.gif(base + ".gif", width=a.gif_width)
-        print(f"  gif   : {base}.gif  ({os.path.getsize(base + '.gif') / 1e6:.1f} MB)")
+        last = end + timedelta(days=1) if (a.live and a.region == "tn") else end
+        print(f"{REGION['name']}: rain-days {start} … {last}")
+        days = load(start, last)
+        if not days:
+            raise SystemExit(f"No {REGION['source']} data in that range")
+        P = Period(days, geo)
+        for lc in langs:
+            set_lang(lc)
+            note = L["live_note"] if last > end and P.dates[-1] > end else ""
+            base = os.path.join(OUT_DIR, f"rain_{tag}accum_{P.dates[0].isoformat()}_to_{P.dates[-1].isoformat()}"
+                                + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
+            print(f"Rendering {len(P.dates)} days ({lc}) …")
+            finish(*render_accum(P, geo, base, note), base, not a.no_gif, a.gif_width)
 
 
 if __name__ == "__main__":

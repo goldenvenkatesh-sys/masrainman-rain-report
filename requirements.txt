@@ -4,3 +4,4 @@ shapely>=2.0
 pillow>=10.0
 requests
 imageio-ffmpeg
+pdfplumber
