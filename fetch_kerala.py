@@ -26,7 +26,14 @@ AWS_TEST = "http://aws.imd.gov.in:8091/state/KERALA"
 
 
 def get(url, timeout=60):
-    return requests.get(url, headers=UA, timeout=timeout)
+    """IMD's server sends an incomplete certificate chain, which Python rejects even though
+    browsers accept it. For these public files only, retry without the check."""
+    try:
+        return requests.get(url, headers=UA, timeout=timeout)
+    except requests.exceptions.SSLError:
+        import urllib3
+        urllib3.disable_warnings()
+        return requests.get(url, headers=UA, timeout=timeout, verify=False)
 
 
 def sha(b):
@@ -86,9 +93,15 @@ def main():
 
     print("KSDMA")
     try:
-        page = get(KSDMA_PAGE).text
-        links = sorted(set(re.findall(r'https?://sdma\.kerala\.gov\.in/wp-content/uploads/[^"\'\s>]+\.(?:pdf|jpe?g|png)',
-                                      page, flags=re.I)))
+        resp = get(KSDMA_PAGE)
+        page = resp.text.replace("\\/", "/")
+        manifest["checks"]["ksdma_page_http"] = resp.status_code
+        found = re.findall(r'(?:https?://sdma\.kerala\.gov\.in)?/wp-content/uploads/[^"\'\s>?]+\.(?:pdf|jpe?g|png)',
+                           page, flags=re.I)
+        links = sorted(set(urljoin(KSDMA_PAGE, l) for l in found))
+        if not links:  # keep the page so we can see what the site sent
+            with open(os.path.join(day_dir, "ksdma_page.html"), "w", encoding="utf-8") as f:
+                f.write(resp.text)
         links = [l for l in links if "logo" not in l.lower() and not re.search(r"-\d+x\d+\.", l)]
         for l in links:
             save("ksdma_" + os.path.basename(unquote(l)), l)
