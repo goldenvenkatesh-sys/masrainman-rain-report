@@ -1,0 +1,10 @@
+{
+ "files": [],
+ "checks": {
+  "imd_station_daily.pdf": "error: SSLError",
+  "imd_rainfall_map.jpg": "error: SSLError",
+  "imd_season.pdf": "error: SSLError",
+  "ksdma_page": "0 files linked",
+  "imd_aws_portal": 200
+ }
+}
