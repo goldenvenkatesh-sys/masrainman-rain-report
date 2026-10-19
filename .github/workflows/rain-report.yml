@@ -1,0 +1,73 @@
+name: TN rainfall report
+
+on:
+  schedule:
+    - cron: "15 4 * * *"        # every day 09:45 IST
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "daily, accum, or both"
+        default: "both"
+      date:
+        description: "daily: rain-day YYYY-MM-DD (blank = latest)"
+        default: ""
+      start:
+        description: "accum: start YYYY-MM-DD (blank = Oct 1)"
+        default: ""
+      end:
+        description: "accum: end YYYY-MM-DD (blank = latest)"
+        default: ""
+      send:
+        description: "send to Telegram (yes/no)"
+        default: "yes"
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          pip install -r requirements.txt
+
+      - name: Cache downloaded TN-SMART days
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: tnsmart-${{ github.run_id }}
+          restore-keys: tnsmart-
+
+      - name: Make reports
+        env:
+          MODE: ${{ github.event.inputs.mode || 'both' }}
+          DAY: ${{ github.event.inputs.date }}
+          START: ${{ github.event.inputs.start }}
+          END: ${{ github.event.inputs.end }}
+        run: |
+          if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
+            python rain_report.py daily ${DAY:+--date $DAY}
+          fi
+          if [ "$MODE" = "accum" ] || [ "$MODE" = "both" ]; then
+            python rain_report.py accum ${START:+--start $START} ${END:+--end $END}
+          fi
+
+      - name: Send to Telegram
+        if: ${{ github.event.inputs.send != 'no' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS }}
+        run: python send_telegram.py out/*.mp4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rain-report
+          path: out/
+          retention-days: 14
