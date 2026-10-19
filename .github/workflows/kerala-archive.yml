@@ -1,0 +1,30 @@
+name: Kerala rainfall archive
+
+on:
+  schedule:
+    - cron: "15 5 * * *"     # 10:45 IST
+    - cron: "15 8 * * *"     # 13:45 IST
+    - cron: "15 12 * * *"    # 17:45 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python fetch_kerala.py
+      - name: Save to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add data/kerala
+          git diff --cached --quiet || git commit -m "Kerala rainfall files $(TZ=Asia/Kolkata date +'%Y-%m-%d %H:%M')"
+          git push
