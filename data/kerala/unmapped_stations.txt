@@ -1,0 +1,2 @@
+# stations with no coordinates yet: add them to data/kerala_stations.csv
+
