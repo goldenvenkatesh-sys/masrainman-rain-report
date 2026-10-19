@@ -2,9 +2,13 @@ name: TN rainfall report
 
 on:
   schedule:
-    - cron: "15 4 * * *"        # every day 09:45 IST
+    - cron: "15 4 * * *"        # 09:45 IST  Tamil Nadu (TN-SMART)
+    - cron: "45 6 * * *"        # 12:15 IST  Kerala (IMD file comes out ~11 am)
   workflow_dispatch:
     inputs:
+      region:
+        description: "tn, kl, or both"
+        default: "tn"
       mode:
         description: "daily, accum, or both"
         default: "both"
@@ -21,10 +25,13 @@ on:
         description: "send to Telegram (yes/no)"
         default: "yes"
 
+permissions:
+  contents: write
+
 jobs:
   report:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
@@ -45,19 +52,43 @@ jobs:
           key: tnsmart-${{ github.run_id }}
           restore-keys: tnsmart-
 
+      - name: Pick region
+        id: pick
+        run: |
+          R="${{ github.event.inputs.region }}"
+          if [ -z "$R" ]; then
+            if [ "${{ github.event.schedule }}" = "45 6 * * *" ]; then R=kl; else R=tn; fi
+          fi
+          echo "region=$R" >> "$GITHUB_OUTPUT"
+
+      - name: Update Kerala files (IMD)
+        if: steps.pick.outputs.region != 'tn'
+        run: |
+          python fetch_kerala.py
+          python kerala_data.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add data/kerala
+          git diff --cached --quiet || git commit -m "Kerala rainfall files $(TZ=Asia/Kolkata date +'%Y-%m-%d %H:%M')"
+          git pull --rebase -q && git push || echo "push skipped"
+
       - name: Make reports
         env:
+          REGION: ${{ steps.pick.outputs.region }}
           MODE: ${{ github.event.inputs.mode || 'both' }}
           DAY: ${{ github.event.inputs.date }}
           START: ${{ github.event.inputs.start }}
           END: ${{ github.event.inputs.end }}
         run: |
-          if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
-            python rain_report.py daily ${DAY:+--date $DAY}
-          fi
-          if [ "$MODE" = "accum" ] || [ "$MODE" = "both" ]; then
-            python rain_report.py accum ${START:+--start $START} ${END:+--end $END}
-          fi
+          for R in tn kl; do
+            if [ "$REGION" != "$R" ] && [ "$REGION" != "both" ]; then continue; fi
+            if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
+              python rain_report.py daily --region $R ${DAY:+--date $DAY}
+            fi
+            if [ "$MODE" = "accum" ] || [ "$MODE" = "both" ]; then
+              python rain_report.py accum --region $R ${START:+--start $START} ${END:+--end $END}
+            fi
+          done
 
       - name: Send to Telegram
         if: ${{ github.event.inputs.send != 'no' }}
