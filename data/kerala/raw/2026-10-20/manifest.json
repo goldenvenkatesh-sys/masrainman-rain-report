@@ -1,0 +1,65 @@
+{
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "d4a99e41954d3df4e472fd881fc844076a1680b7",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 04:54:08 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "25806fc179df422a4d055c5202b4bd230b8c0b62",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 05:32:28 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "d48ac010bf8bb770ead328794883259339f696bb",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 05:50:50 GMT"
+  },
+  {
+   "name": "ksdma_24-RF-4.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/24-RF-4.jpeg",
+   "sha1": "9cf10c2d12e82a1dc8c6186ac80121a88a4bd1e5",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 08:51:22 GMT"
+  },
+  {
+   "name": "ksdma_ACTUL-VS-PREDICTION-7.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/ACTUL-VS-PREDICTION-7.pdf",
+   "sha1": "c6e9528be474767e3d6b39c9b409ab4c01f32525",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 07:08:44 GMT"
+  },
+  {
+   "name": "ksdma_RF-ENG-12.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-ENG-12.jpeg",
+   "sha1": "642298586e8a8f4521745505c27121c598f76dc8",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 08:51:14 GMT"
+  },
+  {
+   "name": "ksdma_RF-MAL-12.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-MAL-12.jpeg",
+   "sha1": "7a0c8110dd3b96de0c923e5046590a67be9e07d7",
+   "saved_at": "2026-10-20T15:35+05:30",
+   "last_modified": "Tue, 20 Oct 2026 08:51:16 GMT"
+  }
+ ],
+ "checks": {
+  "imd_station_daily.pdf": 200,
+  "imd_rainfall_map.jpg": 200,
+  "imd_season.pdf": 200,
+  "ksdma_page_http": 200,
+  "ksdma_24-RF-4.jpeg": 200,
+  "ksdma_ACTUL-VS-PREDICTION-7.pdf": 200,
+  "ksdma_RF-ENG-12.jpeg": 200,
+  "ksdma_RF-MAL-12.jpeg": 200,
+  "ksdma_page": "4 files linked",
+  "imd_aws_portal": 200
+ }
+}

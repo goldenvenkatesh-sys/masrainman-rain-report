@@ -1,2 +1,38 @@
 # stations with no coordinates yet: add them to data/kerala_stations.csv
-
+aws,Alappuzha,Karumadi
+aws,Alappuzha,Nooranad
+aws,Alappuzha,Thycattussery
+aws,Ernakulam,Choondi
+aws,Ernakulam,Kalamassery
+aws,Ernakulam,Odakkali
+aws,Ernakulam,Palluruthy
+aws,Idukki,Anayirankal Dam
+aws,Idukki,KVK Idukki Santhanpara
+aws,Idukki,Kundala Dam
+aws,Idukki,Meencut
+aws,Idukki,Sengulam Dam
+aws,Kasaragod,Erikkulam
+aws,Kasaragod,Padannakkad
+aws,Kasaragod,RARS Pilicode
+aws,Kollam,Chavara
+aws,Kollam,Karuvelil Tkmit
+aws,Kollam,Parippally
+aws,Kottayam,RARS Kumarakom
+aws,Kottayam,Vadavathoor
+aws,Kottayam,Vaikkom
+aws,Palakkad,Ottapalam
+aws,Palakkad,Pothundy Dam
+aws,Pathanamthitta,KVK Pathanamthitta Thadiyoor
+aws,Pathanamthitta,Kunnamthanam
+aws,Pathanamthitta,Ranni Chethackal
+aws,Pathanamthitta,Thiruvalla Kallunkal
+aws,Pathanamthitta,Ulanadu
+aws,Thiruvananthapuram,Peppara
+aws,Thiruvananthapuram,Pirappancode
+aws,Thiruvananthapuram,Ponmudi
+aws,Thiruvananthapuram,Thattathumala
+aws,Thrissur,Athirappilly
+aws,Thrissur,Peechi
+aws,Wayanad,Kalpeta
+aws,Wayanad,Karapuzha
+aws,Wayanad,RARS Ambalavayal
