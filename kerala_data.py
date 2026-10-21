@@ -175,6 +175,7 @@ def load_extra(d):
                 if re.search(r"_IMD$", name):          # IMD's own stations, already in IMD's file
                     continue
                 name = re.sub(r"_?Kerala SW$", "", name).strip()
+                name = re.sub(r"\((.*?)\)", r" \1 ", name)   # keep the place in brackets: Chittoor(Attappadi)
             st = nice(name, "rg")
             if kind == "dam":
                 st = st.replace("Kuttiyadi", "Kuttiady") + " Dam"

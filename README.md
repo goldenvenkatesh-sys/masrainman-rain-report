@@ -57,9 +57,9 @@ the same gauges as IMD's, and its 24-hour map is published only as a picture, so
   A day still needs IMD's PDF to get a report; the extra gauges are added to it, and a WRIS gauge with the same
   name as an IMD one is left out.
 - Station positions are in `data/kerala_stations.csv` (types `rg`, `aws`, `sw` for Water Resources Dept, `dam`).
-  WRIS's own map server was down when this was added; once it answers, `data/kerala/wris_stations.json` is saved
-  and used for the Water Resources gauges. Until then they appear in the rankings but not on the map, unless you add
-  them to the CSV. Rows marked "approximate" (including the dams) were placed by hand; correct them if you
+  Water Resources gauge positions (type `sw`) come from the National Water Data Portal's Kerala SW station list
+  (`data/kerala/kerala_sw_stations_nwdp.csv`), checked to fall inside the right district; about 120 gauges that
+  actually report are placed. If WRIS's own map server comes back, `data/kerala/wris_stations.json` is saved too. Rows marked "approximate" (including the dams) were placed by hand; correct them if you
   know better. New stations without a position are listed in `data/kerala/unmapped_stations.txt`.
 
 ```
