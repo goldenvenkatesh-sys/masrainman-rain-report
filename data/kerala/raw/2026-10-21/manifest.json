@@ -48,6 +48,13 @@
    "sha1": "7c83266e621f6da272ec9745e4301c459e82ba79",
    "saved_at": "2026-10-21T15:39+05:30",
    "last_modified": "Wed, 21 Oct 2026 07:50:53 GMT"
+  },
+  {
+   "name": "ksdma_24-h-RF-2.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/24-h-RF-2.jpeg",
+   "sha1": "139043cddf36c1539700ae1c9f0d084b0146442b",
+   "saved_at": "2026-10-21T17:56+05:30",
+   "last_modified": "Wed, 21 Oct 2026 11:54:27 GMT"
   }
  ],
  "checks": {
@@ -61,6 +68,7 @@
   "imd_aws_portal": 200,
   "ksdma_Actual-Vs-Prediction-16.pdf": 200,
   "ksdma_RF-Eng-13.jpeg": 200,
-  "ksdma_RF-Mal-13.jpeg": 200
+  "ksdma_RF-Mal-13.jpeg": 200,
+  "ksdma_24-h-RF-2.jpeg": 200
  }
 }
