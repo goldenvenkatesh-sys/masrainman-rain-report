@@ -26,6 +26,7 @@ jobs:
           python-version: "3.12"
       - run: pip install requests pdfplumber
       - run: python fetch_kerala.py
+      - run: python kerala_extra.py
       - run: python kerala_data.py
       - name: Save to repo
         run: bash save_kerala.sh

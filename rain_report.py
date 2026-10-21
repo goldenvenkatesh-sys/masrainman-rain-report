@@ -56,7 +56,7 @@ REGIONS = {
            "radius": 44, "source": "TN-SMART (TNSDMA)", "pill": {"ta": "முழு தமிழ்நாடு"},
            "load": lambda a, b: tf.load_days(a, b)},
     "kl": {"name": "Kerala", "geo": "kl_districts.geojson", "canon": lambda d: kerala_data.district(d) or d,
-           "langs": ["en", "ml"], "radius": 50, "source": "IMD Thiruvananthapuram",
+           "langs": ["en", "ml"], "radius": 50, "source": "IMD Thiruvananthapuram, Kerala WRD, KSEB",
            "pill": {"en": "All Kerala", "ml": "കേരളം മുഴുവൻ"},
            "load": lambda a, b: kerala_data.load_days(a, b)},
 }

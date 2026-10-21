@@ -21,7 +21,7 @@ for try in 1 2 3 4; do
   git rebase --abort 2>/dev/null || true
   git fetch -q origin "${GITHUB_REF_NAME:-main}"
   git reset -q --hard "origin/${GITHUB_REF_NAME:-main}"
-  python fetch_kerala.py && python kerala_data.py
+  python fetch_kerala.py; python kerala_extra.py; python kerala_data.py
   sleep $((try * 10))
 done
 echo "Could not save Kerala files after 4 tries; they will be saved by the next run."

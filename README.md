@@ -43,14 +43,24 @@ or run inside WSL (Ubuntu), where it works out of the box.
 
 ## Kerala (English + Malayalam)
 
-Source: IMD Thiruvananthapuram's daily station rainfall PDF (about 85 rain gauges plus the AWS/ARG stations
-that recorded rain). KSDMA's daily PDF has the same gauges, so IMD's file is used.
+Sources: IMD Thiruvananthapuram's daily station rainfall PDF (about 85 rain gauges plus the AWS/ARG stations
+that recorded rain), plus Kerala Water Resources Department gauges and KSEB dams (below). KSDMA's daily PDF has
+the same gauges as IMD's, and its 24-hour map is published only as a picture, so neither is used for numbers.
 
 - `fetch_kerala.py` saves the day's IMD and KSDMA files into `data/kerala/raw/<date>/` (they are overwritten
   daily on the websites, so this builds the history). The *Kerala rainfall archive* workflow runs it 3 times a day.
 - `kerala_data.py` reads the PDFs into `data/kerala/daily/<date>.json`.
-- Station positions are in `data/kerala_stations.csv`. Rows marked "approximate" were placed by hand; correct
-  them if you know better. New stations without a position are listed in `data/kerala/unmapped_stations.txt`.
+- `kerala_extra.py` adds more rain gauges on top of IMD's:
+  - **Water Resources Department** (about 360 manual gauges) from Kerala WRIS (`wris.kerala.gov.in`). Their
+    readings are typed in over the next few days, so each run re-reads the last 12 days into `data/kerala/wris/`.
+  - **KSEB dams** (18 reservoirs) from the daily post on `dams.kseb.in`, into `data/kerala/kseb/`.
+  A day still needs IMD's PDF to get a report; the extra gauges are added to it, and a WRIS gauge with the same
+  name as an IMD one is left out.
+- Station positions are in `data/kerala_stations.csv` (types `rg`, `aws`, `sw` for Water Resources Dept, `dam`).
+  WRIS's own map server was down when this was added; once it answers, `data/kerala/wris_stations.json` is saved
+  and used for the Water Resources gauges. Until then they appear in the rankings but not on the map, unless you add
+  them to the CSV. Rows marked "approximate" (including the dams) were placed by hand; correct them if you
+  know better. New stations without a position are listed in `data/kerala/unmapped_stations.txt`.
 
 ```
 python rain_report.py daily --region kl            # English and Malayalam videos

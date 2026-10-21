@@ -70,6 +70,7 @@ jobs:
         if: steps.pick.outputs.region != 'tn'
         run: |
           python fetch_kerala.py
+          python kerala_extra.py
           python kerala_data.py
           bash save_kerala.sh
 

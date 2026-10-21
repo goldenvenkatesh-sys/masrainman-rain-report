@@ -1,11 +1,15 @@
 """
-Kerala station rainfall from IMD Thiruvananthapuram's daily "Rainfall statement" PDF.
+Kerala station rainfall from IMD Thiruvananthapuram's daily "Rainfall statement" PDF,
+plus the extra gauges saved by kerala_extra.py (Water Resources Dept via Kerala WRIS, KSEB dams).
 
   page 1 : IMD rain gauges, two district/station/rainfall column groups
   page 2 : AWS/ARG stations (district, station, rainfall); IMD lists only stations with rain
 
 The PDF dated D covers the 24 hours ending 08:30 IST on D.
 Station coordinates come from data/kerala_stations.csv (IMD network list + a few approximate ones).
+Station types: rg / aws (IMD), sw (Water Resources Dept, WRIS), dam (KSEB dams).
+IMD stays the backbone: a day gets a daily file only when IMD's PDF for it is archived; the extra
+gauges for that day are added on top, and a WRIS station with the same name as an IMD one is dropped.
 
   python kerala_data.py            # parse every archived PDF into data/kerala/daily/YYYY-MM-DD.json
 """
@@ -21,6 +25,7 @@ RAW = os.path.join(HERE, "data", "kerala", "raw")
 DAILY = os.path.join(HERE, "data", "kerala", "daily")
 STATIONS_CSV = os.path.join(HERE, "data", "kerala_stations.csv")
 UNMAPPED = os.path.join(HERE, "data", "kerala", "unmapped_stations.txt")
+EXTRA = {"sw": os.path.join(HERE, "data", "kerala", "wris"), "dam": os.path.join(HERE, "data", "kerala", "kseb")}
 
 DISTRICTS = ["Thiruvananthapuram", "Kollam", "Pathanamthitta", "Alappuzha", "Kottayam", "Idukki", "Ernakulam",
              "Thrissur", "Palakkad", "Malappuram", "Kozhikode", "Wayanad", "Kannur", "Kasaragod"]
@@ -67,7 +72,7 @@ def nice(name, kind="rg"):
     else:
         s = re.sub(r"\s*\(", " (", s)
     s = re.sub(r"\s+", " ", s).strip()
-    if s.isupper():
+    if s.isupper() or s.islower():
         s = s.title().replace("Kgov", "KGOV").replace("Kvk", "KVK").replace("Afmu", "AFMU").replace("Rars", "RARS")
     return s
 
@@ -126,14 +131,67 @@ def parse_pdf(path):
 
 
 def attach_coords(recs, coords, unmapped):
+    by_key = {}
+    for (t, k), v in coords.items():
+        by_key.setdefault(k, []).append(v)
     for r in recs:
-        hit = coords.get((r["type"], r["key"])) or coords.get(("aws" if r["type"] == "rg" else "rg", r["key"]))
+        pos = r.pop("pos", None)
+        hit = coords.get((r["type"], r["key"])) or ((pos[0], pos[1], r["district"]) if pos else None)
+        if not hit and r["type"] in ("rg", "aws"):
+            hit = coords.get(("aws" if r["type"] == "rg" else "rg", r["key"]))
+        if not hit and r["type"] == "sw":            # same place name as a listed gauge in that district
+            hit = next((v for v in by_key.get(r["key"], []) if v[2] == r["district"]), None)
         if hit:
             r["lat"], r["lon"] = hit[0], hit[1]
         else:
             r["lat"] = r["lon"] = None
             unmapped.add(f'{r["type"]},{r["district"]},{r["station"]}')
     return recs
+
+
+def _wris_positions():
+    p = os.path.join(HERE, "data", "kerala", "wris_stations.json")
+    if os.path.exists(p):
+        with open(p, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+WRIS_POS = _wris_positions()
+
+
+def load_extra(d):
+    """Extra gauges for rain-day d: [{type, district, station, key, rain}]."""
+    out = []
+    for kind, folder in EXTRA.items():
+        p = os.path.join(folder, f"{d.isoformat()}.json")
+        if not os.path.exists(p):
+            continue
+        with open(p, encoding="utf-8") as f:
+            js = json.load(f)
+        for r in js["stations"]:
+            name = r["station"]
+            if kind == "sw":
+                if re.search(r"_IMD$", name):          # IMD's own stations, already in IMD's file
+                    continue
+                name = re.sub(r"_?Kerala SW$", "", name).strip()
+            st = nice(name, "rg")
+            if kind == "dam":
+                st = st.replace("Kuttiyadi", "Kuttiady") + " Dam"
+            rec = {"type": kind, "district": district(r.get("district") or "") or r.get("district"),
+                   "station": st, "key": skey(name), "rain": r["rain"]}
+            p_ = WRIS_POS.get(r.get("uuid")) or WRIS_POS.get(r["station"]) if kind == "sw" else None
+            if p_:
+                rec["pos"] = p_
+            out.append(rec)
+    return out
+
+
+def merge_extra(recs, extra):
+    """Add the extra gauges, skipping WRIS stations that IMD already reports under the same name."""
+    have = {(r["district"], r["key"]) for r in recs}
+    added = [e for e in extra if not (e["type"] == "sw" and (e["district"], e["key"]) in have)]
+    return recs + added
 
 
 def update_daily(verbose=True):
@@ -150,13 +208,14 @@ def update_daily(verbose=True):
             continue
         best[d] = (pdf, recs)               # later files (sorted by folder/name) replace earlier
     for d, (pdf, recs) in sorted(best.items()):
+        recs = merge_extra(recs, load_extra(d))
         attach_coords(recs, coords, unmapped)
         with open(os.path.join(DAILY, f"{d.isoformat()}.json"), "w", encoding="utf-8") as f:
             json.dump({"date": d.isoformat(), "source": os.path.relpath(pdf, HERE), "stations": recs},
                       f, ensure_ascii=False, indent=0)
         if verbose:
-            rep = sum(1 for r in recs if r["rain"] is not None)
-            print(f"  {d}: {len(recs)} stations, {rep} with values")
+            n = {t: sum(1 for r in recs if r["type"] == t and r["rain"] is not None) for t in ("rg", "aws", "sw", "dam")}
+            print(f"  {d}: IMD {n['rg'] + n['aws']}, Water Resources Dept {n['sw']}, KSEB dams {n['dam']}")
     with open(UNMAPPED, "w", encoding="utf-8") as f:
         f.write("# stations with no coordinates yet: add them to data/kerala_stations.csv\n")
         f.write("\n".join(sorted(unmapped)) + "\n")
