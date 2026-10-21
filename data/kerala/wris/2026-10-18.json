@@ -1,0 +1,133 @@
+{
+"date": "2026-10-18",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-21T13:11+0530",
+"stations": [
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Kottiyoor",
+"uuid": "140a7d12-e361-4da8-9091-74efd38584c2",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Nedumpoil",
+"uuid": "c2b64113-f171-41ac-a25f-77a86d76a2d6",
+"district": "Kannur",
+"rain": 16.4
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Maloor",
+"uuid": "21a2953f-4e29-4199-8643-ec88a1d3a89d",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Kannavam",
+"uuid": "3ae109f5-ce16-471d-9860-55b423ca0445",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 4.4
+},
+{
+"station": "Palappuzha",
+"uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 2.6
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Vanimel",
+"uuid": "1e67352a-5687-4327-813b-cc313f98bbe8",
+"district": "Kozhikode",
+"rain": 0.0
+},
+{
+"station": "Pazhassi",
+"uuid": "ad97f04d-13db-4d6b-aa12-f016aff8884c",
+"district": "Kannur",
+"rain": 1.0
+},
+{
+"station": "FCS Mangattuparamba",
+"uuid": "dc469b45-cfcb-4b5e-99a4-c4597db5c0ed",
+"district": "Kannur",
+"rain": 3.6
+},
+{
+"station": "Thillenkeri",
+"uuid": "2e439884-bef8-4247-aa19-50d8f25dfb99",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Payyavoor",
+"uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Cheruvanchery",
+"uuid": "a77beecc-8641-434c-9575-ed6cd9f30580",
+"district": "Kannur",
+"rain": 0.0
+}
+]
+}

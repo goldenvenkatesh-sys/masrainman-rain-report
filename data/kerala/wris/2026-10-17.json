@@ -1,0 +1,169 @@
+{
+"date": "2026-10-17",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-21T13:11+0530",
+"stations": [
+{
+"station": "Piravom",
+"uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Keerampara",
+"uuid": "efec9ceb-ccfb-4420-adec-bcee35bfa775",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 23.4
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 29.2
+},
+{
+"station": "Kottiyoor",
+"uuid": "140a7d12-e361-4da8-9091-74efd38584c2",
+"district": "Kannur",
+"rain": 8.2
+},
+{
+"station": "Nedumpoil",
+"uuid": "c2b64113-f171-41ac-a25f-77a86d76a2d6",
+"district": "Kannur",
+"rain": 13.0
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 27.0
+},
+{
+"station": "Maloor",
+"uuid": "21a2953f-4e29-4199-8643-ec88a1d3a89d",
+"district": "Kannur",
+"rain": 15.2
+},
+{
+"station": "Kannavam",
+"uuid": "3ae109f5-ce16-471d-9860-55b423ca0445",
+"district": "Kannur",
+"rain": 12.4
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 0.6
+},
+{
+"station": "Palappuzha",
+"uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
+"district": "Kannur",
+"rain": 18.4
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 21.6
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 45.4
+},
+{
+"station": "Painavu",
+"uuid": "592d9655-4170-477d-81c3-debd437adad8",
+"district": "Idukki",
+"rain": 3.8
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 2.2
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 18.0
+},
+{
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 24.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
+"rain": 20.6
+},
+{
+"station": "Vanimel",
+"uuid": "1e67352a-5687-4327-813b-cc313f98bbe8",
+"district": "Kozhikode",
+"rain": 29.0
+},
+{
+"station": "Vannapuram",
+"uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
+"district": "Idukki",
+"rain": 13.6
+},
+{
+"station": "Pazhassi",
+"uuid": "ad97f04d-13db-4d6b-aa12-f016aff8884c",
+"district": "Kannur",
+"rain": 31.4
+},
+{
+"station": "FCS Mangattuparamba",
+"uuid": "dc469b45-cfcb-4b5e-99a4-c4597db5c0ed",
+"district": "Kannur",
+"rain": 98.2
+},
+{
+"station": "Thillenkeri",
+"uuid": "2e439884-bef8-4247-aa19-50d8f25dfb99",
+"district": "Kannur",
+"rain": 13.4
+},
+{
+"station": "Marayoor",
+"uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
+"district": "Idukki",
+"rain": 0.3
+},
+{
+"station": "Payyavoor",
+"uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
+"district": "Kannur",
+"rain": 23.0
+},
+{
+"station": "Cheruvanchery",
+"uuid": "a77beecc-8641-434c-9575-ed6cd9f30580",
+"district": "Kannur",
+"rain": 14.0
+},
+{
+"station": "Kulamavu",
+"uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
+"district": "Idukki",
+"rain": 14.4
+}
+]
+}
