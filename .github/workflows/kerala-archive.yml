@@ -10,6 +10,11 @@ on:
 permissions:
   contents: write
 
+# Kerala archive and the rainfall report both save data/kerala: run them one at a time.
+concurrency:
+  group: kerala-files
+  cancel-in-progress: false
+
 jobs:
   archive:
     runs-on: ubuntu-latest
@@ -23,9 +28,4 @@ jobs:
       - run: python fetch_kerala.py
       - run: python kerala_data.py
       - name: Save to repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
-          git add data/kerala
-          git diff --cached --quiet || git commit -m "Kerala rainfall files $(TZ=Asia/Kolkata date +'%Y-%m-%d %H:%M')"
-          git pull --rebase -q && git push
+        run: bash save_kerala.sh
