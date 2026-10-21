@@ -17,10 +17,21 @@ import requests
 token = os.environ.get("TELEGRAM_BOT_TOKEN")
 chats = [c.strip() for c in os.environ.get("TELEGRAM_CHAT_ID", "").split(",") if c.strip()]
 if not token or not chats:
-    print("Telegram not configured (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID missing); skipping.")
-    sys.exit(0)
+    print("Telegram not configured: secret TELEGRAM_BOT_TOKEN is "
+          + ("set" if token else "MISSING") + ", secret RAIN_REPORT_CHAT_IDS is "
+          + (f"set ({len(chats)} chat ids)" if chats else "MISSING") + ".")
+    sys.exit(1)
+if not sys.argv[1:] or not any(os.path.exists(a) for a in sys.argv[1:]):
+    print("No report video was made, so nothing to send.")
+    sys.exit(1)
 
 api = f"https://api.telegram.org/bot{token}"
+me = requests.get(f"{api}/getMe", timeout=30).json()
+if not me.get("ok"):
+    print("Bot token rejected by Telegram:", me.get("description"))
+    sys.exit(1)
+print("Bot:", "@" + me["result"]["username"])
+failed = 0
 for mp4 in sys.argv[1:]:
     base = mp4[:-4]
     cap = ""
@@ -35,3 +46,7 @@ for mp4 in sys.argv[1:]:
                               files={"video": (os.path.basename(mp4), v, "video/mp4")}, timeout=180)
         ok = r.ok and r.json().get("ok")
         print(f"{os.path.basename(mp4)} -> {chat}: {'sent' if ok else 'FAILED ' + r.text[:200]}")
+        failed += 0 if ok else 1
+if failed:
+    print(f"{failed} send(s) failed.")
+    sys.exit(1)
