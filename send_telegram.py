@@ -18,7 +18,7 @@ token = os.environ.get("TELEGRAM_BOT_TOKEN")
 chats = [c.strip() for c in os.environ.get("TELEGRAM_CHAT_ID", "").split(",") if c.strip()]
 if not token or not chats:
     print("Telegram not configured: secret TELEGRAM_BOT_TOKEN is "
-          + ("set" if token else "MISSING") + ", secret RAIN_REPORT_CHAT_IDS is "
+          + ("set" if token else "MISSING") + ", secret TELEGRAM_CHAT_ID is "
           + (f"set ({len(chats)} chat ids)" if chats else "MISSING") + ".")
     sys.exit(1)
 if not sys.argv[1:] or not any(os.path.exists(a) for a in sys.argv[1:]):

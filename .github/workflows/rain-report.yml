@@ -95,7 +95,7 @@ jobs:
         if: ${{ github.event.inputs.send != 'no' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS }}
+          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
         run: python send_telegram.py out/*.mp4
 
       - uses: actions/upload-artifact@v4
