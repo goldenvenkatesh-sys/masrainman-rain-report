@@ -1,0 +1,49 @@
+{
+"date": "2026-10-21",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-21T15:39+0530",
+"stations": [
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 0.6
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
+"rain": 1.2
+}
+]
+}
