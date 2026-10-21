@@ -20,6 +20,13 @@
    "sha1": "b1d1868bb3df3309fcb65fbc4b85044cd8ac63a3",
    "saved_at": "2026-10-21T11:11+05:30",
    "last_modified": "Wed, 21 Oct 2026 05:39:34 GMT"
+  },
+  {
+   "name": "imd_rainfall_map_1154.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "fe3e94f14bbdf473686a9550868b8cf99722ff0d",
+   "saved_at": "2026-10-21T11:54+05:30",
+   "last_modified": "Wed, 21 Oct 2026 05:43:42 GMT"
   }
  ],
  "checks": {
