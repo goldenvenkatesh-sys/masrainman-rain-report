@@ -11,6 +11,7 @@ aws,Idukki,KVK Idukki Santhanpara
 aws,Idukki,Kundala Dam
 aws,Idukki,Meencut
 aws,Idukki,Sengulam Dam
+aws,Kannur,Cheruvanchery
 aws,Kasaragod,Erikkulam
 aws,Kasaragod,Padannakkad
 aws,Kasaragod,RARS Pilicode
@@ -20,6 +21,7 @@ aws,Kollam,Parippally
 aws,Kottayam,RARS Kumarakom
 aws,Kottayam,Vadavathoor
 aws,Kottayam,Vaikkom
+aws,Palakkad,Mangalam Dam
 aws,Palakkad,Ottapalam
 aws,Palakkad,Pothundy Dam
 aws,Pathanamthitta,KVK Pathanamthitta Thadiyoor
@@ -32,6 +34,7 @@ aws,Thiruvananthapuram,Pirappancode
 aws,Thiruvananthapuram,Ponmudi
 aws,Thiruvananthapuram,Thattathumala
 aws,Thrissur,Athirappilly
+aws,Thrissur,Lower Sholayar
 aws,Thrissur,Peechi
 aws,Wayanad,Kalpeta
 aws,Wayanad,Karapuzha
