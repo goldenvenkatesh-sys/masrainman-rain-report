@@ -51,7 +51,7 @@
   }
  ],
  "checks": {
-  "imd_station_daily.pdf": 200,
+  "imd_station_daily.pdf": "error: ConnectTimeout",
   "imd_rainfall_map.jpg": 200,
   "imd_season.pdf": 200,
   "ksdma_page_http": 200,
