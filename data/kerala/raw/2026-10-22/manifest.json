@@ -1,0 +1,65 @@
+{
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "10d019e7b3865a8151523e036262d28db0914e31",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 05:25:34 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "a86f78415b2324ca1a641d0f732870aead1af06b",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 05:25:34 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "520779f734a624336400770aa92e1310e793c016",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 05:25:34 GMT"
+  },
+  {
+   "name": "ksdma_24-hrs-rf-2.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/24-hrs-rf-2.jpeg",
+   "sha1": "33a9b9fab460c36a598f965ed5c5e297ee5c8fb9",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 09:39:49 GMT"
+  },
+  {
+   "name": "ksdma_Actual-Vs-Prediction-17.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/Actual-Vs-Prediction-17.pdf",
+   "sha1": "5e9aa3eeec36802c8dece9b3b9fb0d47caaf038d",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 06:49:22 GMT"
+  },
+  {
+   "name": "ksdma_RF-ENG-14.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-ENG-14.jpeg",
+   "sha1": "134e043bc66997336c4cb851abb6e50e31b689a2",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 09:37:02 GMT"
+  },
+  {
+   "name": "ksdma_RF-MAL-TAB.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-MAL-TAB.jpeg",
+   "sha1": "401653177e46c54ae563a71a2ddca3fc7f53433c",
+   "saved_at": "2026-10-22T15:41+05:30",
+   "last_modified": "Thu, 22 Oct 2026 09:38:47 GMT"
+  }
+ ],
+ "checks": {
+  "imd_station_daily.pdf": 200,
+  "imd_rainfall_map.jpg": 200,
+  "imd_season.pdf": 200,
+  "ksdma_page_http": 200,
+  "ksdma_24-hrs-rf-2.jpeg": 200,
+  "ksdma_Actual-Vs-Prediction-17.pdf": 200,
+  "ksdma_RF-ENG-14.jpeg": 200,
+  "ksdma_RF-MAL-TAB.jpeg": 200,
+  "ksdma_page": "4 files linked",
+  "imd_aws_portal": 200
+ }
+}

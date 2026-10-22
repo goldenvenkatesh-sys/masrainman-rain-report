@@ -1102,6 +1102,24 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Ollukara",
+"key": "OLLUKARA",
+"rain": 0.0,
+"lat": 10.5333,
+"lon": 76.2667
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Meenkara",
+"key": "MEENKARA",
+"rain": 0.0,
+"lat": 10.62,
+"lon": 76.8
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Manjeswaram",
 "key": "MANJESWARAM",
@@ -1111,12 +1129,174 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Triprayar",
+"key": "TRIPRAYAR",
+"rain": 0.0,
+"lat": 10.4011,
+"lon": 76.1192
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Nilackal",
+"key": "NILACKAL",
+"rain": 0.0,
+"lat": 9.3897,
+"lon": 77.0108
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Chittadi",
+"key": "CHITTADI",
+"rain": 0.0,
+"lat": 10.5814,
+"lon": 76.5197
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Thumburmuzhy",
+"key": "THUMBURMUZHY",
+"rain": 1.6,
+"lat": 10.3,
+"lon": 76.43
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Ottapalam",
+"key": "OTTAPALAM",
+"rain": 0.0,
+"lat": 10.7717,
+"lon": 76.38
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pudur",
+"key": "PUDUR",
+"rain": 1.6,
+"lat": 11.1583,
+"lon": 76.6417
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Kanjirapuzha",
+"key": "KANJIRAPUZHA",
+"rain": 24.8,
+"lat": 10.9814,
+"lon": 76.4339
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Chittoor Bharathapuzha",
+"key": "CHITTOOR BHARATHAPUZHA",
+"rain": 3.1,
+"lat": 10.7,
+"lon": 76.74
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Mathilakam",
+"key": "MATHILAKAM",
+"rain": 2.8,
+"lat": 10.2953,
+"lon": 76.1675
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Vettilappara",
+"key": "VETTILAPPARA",
+"rain": 0.4,
+"lat": 10.2906,
+"lon": 76.5092
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Perumthenaruvi",
+"key": "PERUMTHENARUVI",
+"rain": 0.0,
+"lat": 9.4114,
+"lon": 76.8744
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pokkunni",
+"key": "POKKUNNI",
+"rain": 0.0,
+"lat": 10.5667,
+"lon": 76.7
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Malampuzha",
+"key": "MALAMPUZHA",
+"rain": 34.4,
+"lat": 10.8339,
+"lon": 76.6831
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Chulliar Dam",
+"key": "CHULLIAR DAM",
+"rain": 0.0,
+"lat": 10.6,
+"lon": 76.76
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Kalliyot",
 "key": "KALLIYOT",
 "rain": 3.4,
 "lat": 12.4144,
 "lon": 75.1483
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Mangalam Dam",
+"key": "MANGALAM DAM",
+"rain": 0.0,
+"lat": 10.5292,
+"lon": 76.5331
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Peechi",
+"key": "PEECHI",
+"rain": 0.0,
+"lat": 10.525,
+"lon": 76.3664
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pothundy Dam",
+"key": "POTHUNDY DAM",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.6306
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Moolathara",
+"key": "MOOLATHARA",
+"rain": 1.0,
+"lat": 10.5583,
+"lon": 76.6528
 },
 {
 "type": "sw",
@@ -1153,6 +1333,132 @@
 "rain": 16.2,
 "lat": 12.5575,
 "lon": 75.2
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Mupli",
+"key": "MUPLI",
+"rain": 0.0,
+"lat": 10.4167,
+"lon": 76.3961
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Vaniampara",
+"key": "VANIAMPARA",
+"rain": 0.0,
+"lat": 10.5722,
+"lon": 76.425
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Moozhiyar",
+"key": "MOOZHIYAR",
+"rain": 11.2,
+"lat": 9.3106,
+"lon": 77.0708
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Chimmony",
+"key": "CHIMMONY",
+"rain": 0.0,
+"lat": 10.4408,
+"lon": 76.45
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Thunakadavu",
+"key": "THUNAKADAVU",
+"rain": 23.0,
+"lat": 10.4356,
+"lon": 76.7811
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Panachery",
+"key": "PANACHERY",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.3
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Amalanagar",
+"key": "AMALANAGAR",
+"rain": 0.0,
+"lat": 10.5664,
+"lon": 76.1664
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Varandarapilly",
+"key": "VARANDARAPILLY",
+"rain": 0.0,
+"lat": 10.4228,
+"lon": 76.3414
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Pudukkad",
+"key": "PUDUKKAD",
+"rain": 0.0,
+"lat": 10.4375,
+"lon": 76.3803
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Walayar Dam",
+"key": "WALAYAR DAM",
+"rain": 30.0,
+"lat": 10.84,
+"lon": 76.84
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Karikkadavu",
+"key": "KARIKKADAVU",
+"rain": 2.8,
+"lat": 10.3711,
+"lon": 76.4464
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Koduvayur",
+"key": "KODUVAYUR",
+"rain": 0.0,
+"lat": 10.7056,
+"lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Vadasserikkara",
+"key": "VADASSERIKKARA",
+"rain": 0.0,
+"lat": 9.3333,
+"lon": 76.8308
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Enamakkal",
+"key": "ENAMAKKAL",
+"rain": 0.0,
+"lat": 10.5083,
+"lon": 76.1083
 }
 ]
 }

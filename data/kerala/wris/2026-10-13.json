@@ -1,7 +1,7 @@
 {
 "date": "2026-10-13",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-21T13:11+0530",
+"fetched": "2026-10-22T15:42+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -349,6 +349,12 @@
 "station": "Vannapuram",
 "uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Mupli",
+"uuid": "002b6e93-374e-4b74-8246-326cf2685531",
+"district": "Thrissur",
 "rain": 0.0
 },
 {

@@ -11,6 +11,7 @@ aws,Idukki,KVK Idukki Santhanpara
 aws,Idukki,Kundala Dam
 aws,Idukki,Meencut
 aws,Idukki,Sengulam Dam
+aws,Idukki,Vellathooval
 aws,Kannur,Cheruvanchery
 aws,Kasaragod,Erikkulam
 aws,Kasaragod,Padannakkad
