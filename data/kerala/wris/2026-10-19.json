@@ -1,8 +1,20 @@
 {
 "date": "2026-10-19",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-22T15:42+0530",
+"fetched": "2026-10-22T17:57+0530",
 "stations": [
+{
+"station": "Piravom",
+"uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Keerampara",
+"uuid": "efec9ceb-ccfb-4420-adec-bcee35bfa775",
+"district": "Ernakulam",
+"rain": 0.2
+},
 {
 "station": "Vidyanagar",
 "uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
@@ -148,6 +160,12 @@
 "rain": 3.4
 },
 {
+"station": "Painavu",
+"uuid": "592d9655-4170-477d-81c3-debd437adad8",
+"district": "Idukki",
+"rain": 7.0
+},
+{
 "station": "Mangalam Dam",
 "uuid": "52b09196-9537-42ab-be32-bbc49dd928e4",
 "district": "Palakkad",
@@ -202,6 +220,12 @@
 "rain": 16.2
 },
 {
+"station": "Vannapuram",
+"uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
+"district": "Idukki",
+"rain": 4.3
+},
+{
 "station": "Mupli",
 "uuid": "002b6e93-374e-4b74-8246-326cf2685531",
 "district": "Thrissur",
@@ -238,10 +262,22 @@
 "rain": 0.0
 },
 {
+"station": "Marayoor",
+"uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
+"district": "Idukki",
+"rain": 0.0
+},
+{
 "station": "Amalanagar",
 "uuid": "56d634b1-dc03-4b08-9e40-4f41eedfed8d",
 "district": "Thrissur",
 "rain": 0.0
+},
+{
+"station": "Kulamavu",
+"uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
+"district": "Idukki",
+"rain": 4.1
 },
 {
 "station": "Varandarapilly",

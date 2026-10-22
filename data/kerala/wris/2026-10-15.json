@@ -1,7 +1,7 @@
 {
 "date": "2026-10-15",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-22T15:42+0530",
+"fetched": "2026-10-22T17:57+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -104,6 +104,12 @@
 "uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
 "district": "Palakkad",
 "rain": 3.4
+},
+{
+"station": "Aryanad",
+"uuid": "25f7ba39-811d-4811-9261-b9c781a8b244",
+"district": "Thiruvananthapuram",
+"rain": 0.0
 },
 {
 "station": "Thumburmuzhy",

@@ -1372,6 +1372,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Keerampara",
+"key": "KEERAMPARA",
+"rain": 5.8,
+"lat": 10.11,
+"lon": 76.68
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Vidyanagar",
 "key": "VIDYANAGAR",
@@ -1534,6 +1543,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Painavu",
+"key": "PAINAVU",
+"rain": 0.0,
+"lat": 9.85,
+"lon": 76.95
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Peechi",
 "key": "PEECHI",
@@ -1585,6 +1603,15 @@
 "rain": 1.2,
 "lat": 12.5575,
 "lon": 75.2
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Vannapuram",
+"key": "VANNAPURAM",
+"rain": 38.8,
+"lat": 9.97,
+"lon": 76.83
 },
 {
 "type": "sw",
@@ -1642,12 +1669,30 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Marayoor",
+"key": "MARAYOOR",
+"rain": 0.0,
+"lat": 10.3433,
+"lon": 77.1844
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Amalanagar",
 "key": "AMALANAGAR",
 "rain": 0.0,
 "lat": 10.5664,
 "lon": 76.1664
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kulamavu",
+"key": "KULAMAVU",
+"rain": 15.6,
+"lat": 9.7831,
+"lon": 76.8792
 },
 {
 "type": "sw",
