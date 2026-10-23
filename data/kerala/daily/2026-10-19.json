@@ -1165,6 +1165,15 @@
 },
 {
 "type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Aryanad",
+"key": "ARYANAD",
+"rain": 0.4,
+"lat": 8.5856,
+"lon": 77.0889
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Thumburmuzhy",
 "key": "THUMBURMUZHY",
@@ -1207,6 +1216,15 @@
 "rain": 3.1,
 "lat": 10.7,
 "lon": 76.74
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Neyyar Dam",
+"key": "NEYYAR DAM",
+"rain": 3.8,
+"lat": 8.5208,
+"lon": 77.1575
 },
 {
 "type": "sw",
@@ -1315,6 +1333,15 @@
 "rain": 1.0,
 "lat": 10.5583,
 "lon": 76.6528
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Ponmudi",
+"key": "PONMUDI",
+"rain": 4.2,
+"lat": 8.7003,
+"lon": 77.1694
 },
 {
 "type": "sw",
@@ -1432,6 +1459,15 @@
 "rain": 0.0,
 "lat": 10.5664,
 "lon": 76.1664
+},
+{
+"type": "sw",
+"district": "Kollam",
+"station": "Kulathupuzha",
+"key": "KULATHUPUZHA",
+"rain": 0.0,
+"lat": 8.9061,
+"lon": 77.0539
 },
 {
 "type": "sw",

@@ -13,6 +13,7 @@ aws,Idukki,Meencut
 aws,Idukki,Sengulam Dam
 aws,Idukki,Vellathooval
 aws,Kannur,Cheruvanchery
+aws,Kannur,Pinarayi
 aws,Kasaragod,Erikkulam
 aws,Kasaragod,Padannakkad
 aws,Kasaragod,RARS Pilicode

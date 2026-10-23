@@ -1,7 +1,7 @@
 {
 "date": "2026-10-18",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-22T17:57+0530",
+"fetched": "2026-10-23T12:38+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -94,6 +94,12 @@
 "rain": 0.0
 },
 {
+"station": "Aryanad",
+"uuid": "25f7ba39-811d-4811-9261-b9c781a8b244",
+"district": "Thiruvananthapuram",
+"rain": 2.8
+},
+{
 "station": "Thumburmuzhy",
 "uuid": "1822a970-9bc6-4229-9575-c516fdbf6eae",
 "district": "Thrissur",
@@ -134,6 +140,18 @@
 "uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
 "district": "Ernakulam",
 "rain": 4.4
+},
+{
+"station": "Nedumangad",
+"uuid": "debd8571-c002-435d-b06c-dba6ae25d3d4",
+"district": "Thiruvananthapuram",
+"rain": 4.4
+},
+{
+"station": "Neyyar Dam",
+"uuid": "550f5d9d-d382-4090-ad2e-6f884b908587",
+"district": "Thiruvananthapuram",
+"rain": 2.6
 },
 {
 "station": "Mathilakam",
@@ -218,6 +236,12 @@
 "uuid": "d9b8c2c9-f868-4e74-85b8-34fcbe478e32",
 "district": "Palakkad",
 "rain": 0.2
+},
+{
+"station": "Ponmudi",
+"uuid": "e845a001-4443-4d82-9267-b5672bdb0403",
+"district": "Thiruvananthapuram",
+"rain": 8.4
 },
 {
 "station": "Bhoothathankettu",
@@ -332,6 +356,12 @@
 "uuid": "56d634b1-dc03-4b08-9e40-4f41eedfed8d",
 "district": "Thrissur",
 "rain": 6.1
+},
+{
+"station": "Kulathupuzha",
+"uuid": "a3fce24b-592b-4491-a6ed-aa6d1dba0046",
+"district": "Kollam",
+"rain": 2.0
 },
 {
 "station": "Cheruvanchery",
