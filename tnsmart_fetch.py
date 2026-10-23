@@ -105,6 +105,71 @@ def station_totals(records):
     return out
 
 
+LIVE_DIR = os.path.join(RAW_DIR, "live")
+
+
+def running_day(now=None) -> date:
+    """The rain-day (24 h ending 08:30 on that date) that is still filling up at `now`.
+    A check that starts late, before 09:30, still counts towards the day that just ended."""
+    now = now or datetime.now(IST)
+    t = now.hour * 60 + now.minute
+    return now.date() + timedelta(days=1) if t >= 9 * 60 + 30 else now.date()
+
+
+def live_totals(d: date, verbose=True):
+    """Rain since 08:30 IST for the running rain-day d, added up over every check.
+
+    TN-SMART's running file holds each station's total so far. Each check takes the fresh file and
+    keeps, station by station, the larger of the saved total and the new one: rain a station
+    reported at an earlier check is never lost if a later file drops it or shows the station as
+    blank, and stations that start reporting later in the day are added when they appear.
+    The saved totals are in data/raw/live/<d>.json.
+    Returns (station list, changed) where changed is False when no station has new rain or
+    newly reported since the last check."""
+    os.makedirs(LIVE_DIR, exist_ok=True)
+    path = os.path.join(LIVE_DIR, f"{d.isoformat()}.json")
+    saved = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            for s in json.load(f)["stations"]:
+                saved[(s["district"], s["station"], round(s["lat"], 3), round(s["lon"], 3))] = s
+
+    try:
+        fresh = station_totals(download_day(d, force=not OFFLINE))
+    except FileNotFoundError:
+        fresh = []
+    changed, added, rose = not saved, 0, 0
+    for s in fresh:
+        key = (s["district"], s["station"], round(s["lat"], 3), round(s["lon"], 3))
+        old = saved.get(key)
+        if old is None or old["rain"] is None:
+            if s["rain"] is not None:
+                added += 1
+                changed = True
+            if old is None or s["rain"] is not None:
+                saved[key] = s
+        elif s["rain"] is not None and s["rain"] > old["rain"]:
+            rose += 1
+            changed = True
+            saved[key] = dict(old, rain=s["rain"])
+
+    stations = list(saved.values())
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"rain_day": d.isoformat(), "checked": datetime.now(IST).isoformat(timespec="minutes"),
+                   "stations": stations}, f, ensure_ascii=False)
+    # drop saved totals older than a week
+    for name in os.listdir(LIVE_DIR):
+        try:
+            if date.fromisoformat(name[:10]) < d - timedelta(days=7):
+                os.remove(os.path.join(LIVE_DIR, name))
+        except ValueError:
+            pass
+    if verbose:
+        rep = sum(1 for s in stations if s["rain"] is not None)
+        print(f"  {d} (running)  {rep} stations so far; {added} started reporting, {rose} had more rain")
+    return stations, changed
+
+
 def load_days(start: date, end: date, verbose=True):
     """Download every rain-day from start to end (inclusive). Returns {date: [station dicts]}."""
     days = {}

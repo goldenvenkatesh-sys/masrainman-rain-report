@@ -1,0 +1,63 @@
+name: TN rainfall so far (every 2 hours)
+
+# Tamil Nadu only. Every 2 hours from 10:45 am to 6:45 am IST, take TN-SMART's running file,
+# add any new rain to the station totals saved by earlier runs, and post the picture
+# "rain since 08:30 so far". The full 24 hours (08:30 to 08:30) is the 09:45 TN rainfall report.
+on:
+  schedule:
+    # minute 15 UTC = :45 IST, so the :30 hourly values are uploaded first
+    - cron: "15 5,7,9,11,13,15,17,19,21,23,1 * * *"
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "send to Telegram (yes/no)"
+        default: "yes"
+      always:
+        description: "make the picture even if nothing changed (yes/no)"
+        default: "no"
+
+concurrency:
+  group: tn-live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          pip install -r requirements.txt
+
+      # holds data/raw/live/<day>.json, the station totals added up so far
+      - name: Restore running totals
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: tnlive-${{ github.run_id }}
+          restore-keys: tnlive-
+
+      - name: Make picture
+        run: python rain_report.py live ${{ github.event.inputs.always == 'yes' && '--always' || '' }}
+
+      - name: Send to Telegram
+        if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
+        run: python send_telegram.py out/*.mp4
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        with:
+          name: rain-live
+          path: out/
+          retention-days: 7
