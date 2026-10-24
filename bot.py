@@ -1,40 +1,27 @@
 import os
-import logging
+import asyncio
+from telegram import Bot
 from dotenv import load_dotenv
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 
-# 1. Load hidden environment variables from the .env file
+# Load environment variables (works locally with .env, and on GitHub via secrets)
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
+# If you have a specific chat or channel ID stored in secrets:
+CHAT_ID = os.getenv("RAIN_REPORT_CHAT_IDS") 
 
-if not TOKEN:
-    raise ValueError("TELEGRAM_TOKEN not found in environment variables. Check your .env file!")
-
-# 2. Set up logging to track what your bot is doing
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
-)
-logger = logging.getLogger(__name__)
-
-# 3. Define a simple command handler for /start
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_name = update.effective_user.first_name
-    await update.message.reply_text(f"Hello {user_name}! Your new secure bot is up and running smoothly.")
-
-# 4. Main function to initialize and run the bot
-def main():
-    # Build the application using your secure token and explicit timezone
-    application = ApplicationBuilder().token(TOKEN).build()
+async def send_weather_update():
+    bot = Bot(token=TOKEN)
     
-    # Register command handlers
-    start_handler = CommandHandler('start', start)
-    application.add_handler(start_handler)
+    # Put your weather message text here
+    message = "🌧️ **MasRainman Automated Weather Update**: Routine 2-hour check complete. Conditions normal."
+    
+    # Send the message to your channel/chat
+    await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode="Markdown")
+    print("Weather update sent successfully!")
 
-    logger.info("Starting bot polling...")
-    # Start the bot
-    application.run_polling()
+def main():
+    # Run the async function once and exit cleanly
+    asyncio.run(send_weather_update())
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
