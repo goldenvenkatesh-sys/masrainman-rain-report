@@ -1525,6 +1525,15 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 50.0,
+"lat": 9.3794,
+"lon": 76.3567
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Mathilakam",
 "key": "MATHILAKAM",
@@ -1597,12 +1606,48 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Ambittanpotty",
+"key": "AMBITTANPOTTY",
+"rain": 24.0,
+"lat": 11.4197,
+"lon": 76.2411
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Nilambur Manavedan HS",
+"key": "NILAMBUR MANAVEDAN HS",
+"rain": 23.8,
+"lat": 11.2853,
+"lon": 76.2317
+},
+{
+"type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 117.0,
+"lat": 9.2386,
+"lon": 76.5889
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Moolathara",
 "key": "MOOLATHARA",
 "rain": 5.0,
 "lat": 10.5583,
 "lon": 76.6528
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 68.2,
+"lat": 10.1592,
+"lon": 76.6164
 },
 {
 "type": "sw",
@@ -1621,6 +1666,15 @@
 "rain": 0.0,
 "lat": 12.7236,
 "lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Parappanangadi",
+"key": "PARAPPANANGADI",
+"rain": 5.8,
+"lat": 11.1086,
+"lon": 75.8156
 },
 {
 "type": "sw",
@@ -1756,6 +1810,33 @@
 "rain": 1.0,
 "lat": 10.7056,
 "lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Pandikkad",
+"key": "PANDIKKAD",
+"rain": 11.2,
+"lat": 11.1075,
+"lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Edakkara",
+"key": "EDAKKARA",
+"rain": 0.0,
+"lat": 11.3856,
+"lon": 76.315
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "FCS Malappuram",
+"key": "FCS MALAPPURAM",
+"rain": 3.2,
+"lat": 11.0408,
+"lon": 76.0781
 },
 {
 "type": "sw",

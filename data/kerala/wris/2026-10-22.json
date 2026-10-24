@@ -1,7 +1,7 @@
 {
 "date": "2026-10-22",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-23T12:38+0530",
+"fetched": "2026-10-24T13:05+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -112,6 +112,12 @@
 "rain": 1.2
 },
 {
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 83.4
+},
+{
 "station": "Nedumangad",
 "uuid": "debd8571-c002-435d-b06c-dba6ae25d3d4",
 "district": "Thiruvananthapuram",
@@ -122,6 +128,12 @@
 "uuid": "550f5d9d-d382-4090-ad2e-6f884b908587",
 "district": "Thiruvananthapuram",
 "rain": 51.8
+},
+{
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 50.0
 },
 {
 "station": "Mathilakam",
@@ -136,6 +148,12 @@
 "rain": 10.2
 },
 {
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 2.0
+},
+{
 "station": "Perumthenaruvi",
 "uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
 "district": "Pathanamthitta",
@@ -146,6 +164,12 @@
 "uuid": "92fe39fa-0d86-4799-8535-c6380fbbcf9b",
 "district": "Palakkad",
 "rain": 2.2
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 74.4
 },
 {
 "station": "Malampuzha",
@@ -184,10 +208,28 @@
 "rain": 1.2
 },
 {
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 24.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 23.8
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
 "rain": 4.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
+"rain": 117.0
 },
 {
 "station": "Moolathara",
@@ -200,6 +242,12 @@
 "uuid": "e845a001-4443-4d82-9267-b5672bdb0403",
 "district": "Thiruvananthapuram",
 "rain": 48.4
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 68.2
 },
 {
 "station": "Madhur",
@@ -218,6 +266,12 @@
 "uuid": "e317c825-eada-492d-a839-d23ea7149cd8",
 "district": "Palakkad",
 "rain": 26.0
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 5.8
 },
 {
 "station": "Padiyathadukka",
@@ -316,10 +370,28 @@
 "rain": 1.0
 },
 {
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 11.2
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
 "station": "Vynthala",
 "uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
 "district": "Thrissur",
 "rain": 21.2
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 3.2
 },
 {
 "station": "Vadasserikkara",

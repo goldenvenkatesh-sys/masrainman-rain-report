@@ -1,7 +1,7 @@
 {
 "date": "2026-10-23",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-24T11:55+0530",
+"fetched": "2026-10-24T13:05+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -40,16 +40,64 @@
 "rain": 10.0
 },
 {
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 39.0
+},
+{
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 1.8
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 29.4
+},
+{
 "station": "Perumthenaruvi",
 "uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
 "district": "Pathanamthitta",
 "rain": 0.0
 },
 {
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 22.0
+},
+{
 "station": "Kalliyot",
 "uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
 "district": "Kasaragod",
 "rain": 30.6
+},
+{
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 96.8
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 21.8
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
+"rain": 0.0
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 76.8
 },
 {
 "station": "Madhur",
@@ -64,10 +112,34 @@
 "rain": 3.5
 },
 {
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 36.4
+},
+{
 "station": "Padiyathadukka",
 "uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
 "district": "Kasaragod",
 "rain": 4.2
+},
+{
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 51.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 19.8
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 22.0
 },
 {
 "station": "Vadasserikkara",

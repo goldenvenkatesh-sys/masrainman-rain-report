@@ -1,7 +1,7 @@
 {
 "date": "2026-10-17",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-23T12:38+0530",
+"fetched": "2026-10-24T13:05+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -154,6 +154,12 @@
 "rain": 1.2
 },
 {
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 3.6
+},
+{
 "station": "Mathilakam",
 "uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
 "district": "Thrissur",
@@ -170,6 +176,12 @@
 "uuid": "d4467488-e65e-4dc7-b54d-284adcb2f77f",
 "district": "Thrissur",
 "rain": 2.0
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 1.6
 },
 {
 "station": "Perumthenaruvi",
@@ -226,9 +238,27 @@
 "rain": 0.0
 },
 {
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 55.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 37.8
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
@@ -266,6 +296,12 @@
 "uuid": "e317c825-eada-492d-a839-d23ea7149cd8",
 "district": "Palakkad",
 "rain": 0.0
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 2.2
 },
 {
 "station": "Padiyathadukka",
@@ -412,10 +448,28 @@
 "rain": 1.0
 },
 {
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 3.4
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 23.4
+},
+{
 "station": "Vynthala",
 "uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
 "district": "Thrissur",
 "rain": 2.8
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 5.2
 },
 {
 "station": "Vadasserikkara",

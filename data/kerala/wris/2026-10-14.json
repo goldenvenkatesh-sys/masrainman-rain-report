@@ -1,7 +1,7 @@
 {
 "date": "2026-10-14",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-23T12:38+0530",
+"fetched": "2026-10-24T13:05+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -172,6 +172,12 @@
 "rain": 0.0
 },
 {
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 0.0
+},
+{
 "station": "Mathilakam",
 "uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
 "district": "Thrissur",
@@ -277,6 +283,12 @@
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
