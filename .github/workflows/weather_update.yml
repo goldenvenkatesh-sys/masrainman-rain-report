@@ -2,8 +2,8 @@ name: Automated Weather Report & Telegram Update
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Runs every 3 hours automatically
-  workflow_dispatch:        # Allows you to trigger it manually from GitHub anytime
+    - cron: '0 */2 * * *'  # Runs every 2 hours automatically
+  workflow_dispatch:        # Allows you to trigger it manually anytime
 
 jobs:
   run-bot:
@@ -24,5 +24,6 @@ jobs:
       - name: Run Weather Script
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          RAIN_REPORT_CHAT_IDS: ${{ secrets.RAIN_REPORT_CHAT_IDS }}
         run: |
           python bot.py
