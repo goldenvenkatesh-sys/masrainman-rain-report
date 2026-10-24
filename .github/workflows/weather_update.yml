@@ -1,8 +1,8 @@
 name: Automated Weather Report & Telegram Update
 
 on:
-  schedule:
-    - cron: '0 */2 * * *'  # Runs every 2 hours automatically
+  # No schedule: the same fixed text every 2 hours looks like spam to Telegram
+  # users and can get the bot restricted. The real 2-hourly TN report is tn-live.yml.
   workflow_dispatch:        # Allows you to trigger it manually anytime
 
 jobs:
