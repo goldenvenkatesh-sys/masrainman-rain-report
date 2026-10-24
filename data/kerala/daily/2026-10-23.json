@@ -1444,6 +1444,24 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Nilackal",
+"key": "NILACKAL",
+"rain": 10.0,
+"lat": 9.3897,
+"lon": 77.0108
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Perumthenaruvi",
+"key": "PERUMTHENARUVI",
+"rain": 0.0,
+"lat": 9.4114,
+"lon": 76.8744
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Kalliyot",
 "key": "KALLIYOT",
@@ -1477,6 +1495,15 @@
 "rain": 4.2,
 "lat": 12.5575,
 "lon": 75.2
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Vadasserikkara",
+"key": "VADASSERIKKARA",
+"rain": 0.0,
+"lat": 9.3333,
+"lon": 76.8308
 }
 ]
 }

@@ -12,6 +12,7 @@ aws,Idukki,Kundala Dam
 aws,Idukki,Meencut
 aws,Idukki,Sengulam Dam
 aws,Idukki,Vellathooval
+aws,Kannur,Aralam
 aws,Kannur,Cheruvanchery
 aws,Kannur,Pinarayi
 aws,Kasaragod,Erikkulam

@@ -1,7 +1,7 @@
 {
 "date": "2026-10-23",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-23T15:34+0530",
+"fetched": "2026-10-24T11:55+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -16,10 +16,34 @@
 "rain": 1.6
 },
 {
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 1.8
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
 "station": "Manjeswaram",
 "uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
 "district": "Kasaragod",
 "rain": 5.2
+},
+{
+"station": "Nilackal",
+"uuid": "f3c75d8f-fddb-4e05-95da-f20b60c92a91",
+"district": "Pathanamthitta",
+"rain": 10.0
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
+"rain": 0.0
 },
 {
 "station": "Kalliyot",
@@ -44,6 +68,12 @@
 "uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
 "district": "Kasaragod",
 "rain": 4.2
+},
+{
+"station": "Vadasserikkara",
+"uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
+"district": "Pathanamthitta",
+"rain": 0.0
 }
 ]
 }

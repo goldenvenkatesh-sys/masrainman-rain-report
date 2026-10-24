@@ -1,0 +1,79 @@
+{
+"date": "2026-10-24",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-24T11:55+0530",
+"stations": [
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 19.6
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 31.4
+},
+{
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 1.4
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
+"rain": 5.2
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 27.4
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
+"rain": 2.4
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 60.0
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 12.6
+},
+{
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 32.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
+"rain": 19.8
+},
+{
+"station": "Moozhiyar",
+"uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
+"district": "Pathanamthitta",
+"rain": 2.8
+},
+{
+"station": "Vadasserikkara",
+"uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
+"district": "Pathanamthitta",
+"rain": 1.4
+}
+]
+}
