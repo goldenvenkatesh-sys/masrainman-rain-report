@@ -1,0 +1,14 @@
+name: Probe KSNDMC (one-off)
+on:
+  push:
+    branches: [claude/project-thread-wlvkyj]
+    paths: [tools/probe_ksndmc.sh, .github/workflows/probe-ksndmc.yml]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash tools/probe_ksndmc.sh
+      - uses: actions/upload-artifact@v4
+        with: {name: probe, path: probe/, retention-days: 3}
