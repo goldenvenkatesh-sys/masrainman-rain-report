@@ -51,7 +51,7 @@ jobs:
       - name: Send to Telegram
         if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
         run: python send_telegram.py out/*.mp4
 
