@@ -1,0 +1,29 @@
+name: Automated Weather Report & Telegram Update
+
+on:
+  # No schedule: the same fixed text every 2 hours looks like spam to Telegram
+  # users and can get the bot restricted. The real 2-hourly TN report is tn-live.yml.
+  workflow_dispatch:        # Allows you to trigger it manually anytime
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests python-telegram-bot pytz python-dotenv
+
+      - name: Run Weather Script
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          RAIN_REPORT_CHAT_IDS: ${{ secrets.RAIN_REPORT_CHAT_IDS }}
+        run: |
+          python bot.py

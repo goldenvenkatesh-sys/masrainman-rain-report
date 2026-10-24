@@ -1,0 +1,463 @@
+{
+"date": "2026-10-24",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-24T17:10+0530",
+"stations": [
+{
+"station": "Piravom",
+"uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
+"district": "Ernakulam",
+"rain": 11.0
+},
+{
+"station": "Keerampara",
+"uuid": "efec9ceb-ccfb-4420-adec-bcee35bfa775",
+"district": "Ernakulam",
+"rain": 14.6
+},
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 19.6
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 31.4
+},
+{
+"station": "Kozha",
+"uuid": "a28651a6-77d8-4615-9ef5-7376406ac8d8",
+"district": "Kottayam",
+"rain": 14.2
+},
+{
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 1.4
+},
+{
+"station": "meenkara",
+"uuid": "4237777a-25c0-4468-a601-dfadd077fd78",
+"district": "Palakkad",
+"rain": 8.0
+},
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
+"rain": 1.3
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
+"rain": 5.2
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 27.4
+},
+{
+"station": "Chittadi",
+"uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
+"district": "Palakkad",
+"rain": 70.8
+},
+{
+"station": "Thumburmuzhy",
+"uuid": "1822a970-9bc6-4229-9575-c516fdbf6eae",
+"district": "Thrissur",
+"rain": 13.6
+},
+{
+"station": "Ottapalam",
+"uuid": "12e20631-688f-46d0-abbc-d77e9f837be4",
+"district": "Palakkad",
+"rain": 16.2
+},
+{
+"station": "Pudur",
+"uuid": "5a96ea27-bb4b-4f05-a344-195d59bffb8f",
+"district": "Palakkad",
+"rain": 49.8
+},
+{
+"station": "Kanjirapuzha",
+"uuid": "cdbea4a6-64d0-4f99-afbc-5a5a5a194104",
+"district": "Palakkad",
+"rain": 156.2
+},
+{
+"station": "Chittoor(Bharathapuzha)",
+"uuid": "4bb55912-dc96-42f0-bc96-1cc4f8f13e32",
+"district": "Palakkad",
+"rain": 52.2
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 6.6
+},
+{
+"station": "Kaithapram",
+"uuid": "6b2110e6-2a22-4f63-8d55-68c75767d27a",
+"district": "Kannur",
+"rain": 10.6
+},
+{
+"station": "Alakkode",
+"uuid": "e4a9f142-3bbc-4ed5-b105-48851ba0cc50",
+"district": "Kannur",
+"rain": 19.4
+},
+{
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 2.0
+},
+{
+"station": "Mathilakam",
+"uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
+"district": "Thrissur",
+"rain": 9.2
+},
+{
+"station": "Vettilappara",
+"uuid": "d4467488-e65e-4dc7-b54d-284adcb2f77f",
+"district": "Thrissur",
+"rain": 30.0
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 12.6
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 6.6
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 2.4
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
+"rain": 2.4
+},
+{
+"station": "Pokkunni",
+"uuid": "92fe39fa-0d86-4799-8535-c6380fbbcf9b",
+"district": "Palakkad",
+"rain": 30.2
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 22.4
+},
+{
+"station": "Malampuzha",
+"uuid": "f2d21ac4-958d-4d3b-8bfe-dfa15d69eedd",
+"district": "Palakkad",
+"rain": 17.6
+},
+{
+"station": "Chulliar Dam",
+"uuid": "bb1793ef-f171-4760-85e3-9e597615551d",
+"district": "Palakkad",
+"rain": 14.0
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 60.0
+},
+{
+"station": "Painavu",
+"uuid": "592d9655-4170-477d-81c3-debd437adad8",
+"district": "Idukki",
+"rain": 7.2
+},
+{
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Mangalam Dam",
+"uuid": "52b09196-9537-42ab-be32-bbc49dd928e4",
+"district": "Palakkad",
+"rain": 117.0
+},
+{
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 50.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 84.4
+},
+{
+"station": "Kottayam",
+"uuid": "fd7fad82-3cb8-4eff-b686-662f053cc148",
+"district": "Kottayam",
+"rain": 8.4
+},
+{
+"station": "Pothundy Dam",
+"uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
+"district": "Palakkad",
+"rain": 55.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
+"rain": 4.8
+},
+{
+"station": "Moolathara",
+"uuid": "d9b8c2c9-f868-4e74-85b8-34fcbe478e32",
+"district": "Palakkad",
+"rain": 23.0
+},
+{
+"station": "Pampady",
+"uuid": "14ad23ee-e2a1-4070-800c-1550b016083d",
+"district": "Kottayam",
+"rain": 16.4
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 36.3
+},
+{
+"station": "Vellachal",
+"uuid": "61fc6b06-6fc4-4284-9774-93ae6c51e04e",
+"district": "Kasaragod",
+"rain": 8.6
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 12.6
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 3.0
+},
+{
+"station": "Cheruthazham",
+"uuid": "644ac82b-74be-4039-8534-5cb7d694f275",
+"district": "Kannur",
+"rain": 17.2
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 32.0
+},
+{
+"station": "Parambikulam",
+"uuid": "e317c825-eada-492d-a839-d23ea7149cd8",
+"district": "Palakkad",
+"rain": 12.0
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 20.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
+"rain": 19.8
+},
+{
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 2.0
+},
+{
+"station": "Kakkadavu(Cheemeni)",
+"uuid": "ade1a0d3-f600-47fc-885e-233bd381233c",
+"district": "Kasaragod",
+"rain": 12.6
+},
+{
+"station": "Vannapuram",
+"uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
+"district": "Idukki",
+"rain": 3.2
+},
+{
+"station": "Mupli",
+"uuid": "002b6e93-374e-4b74-8246-326cf2685531",
+"district": "Thrissur",
+"rain": 25.0
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 8.4
+},
+{
+"station": "Moozhiyar",
+"uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
+"district": "Pathanamthitta",
+"rain": 2.8
+},
+{
+"station": "Chimmony",
+"uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
+"district": "Thrissur",
+"rain": 50.6
+},
+{
+"station": "Erikkulam",
+"uuid": "24b1575d-f796-4e3d-991c-ef3a1c4ea645",
+"district": "Kasaragod",
+"rain": 10.4
+},
+{
+"station": "Thunakadavu",
+"uuid": "57bad3f2-8941-418c-9ad8-35ff72539899",
+"district": "Palakkad",
+"rain": 17.0
+},
+{
+"station": "Marayoor",
+"uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
+"district": "Idukki",
+"rain": 3.2
+},
+{
+"station": "Kulamavu",
+"uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
+"district": "Idukki",
+"rain": 3.2
+},
+{
+"station": "Varandarapilly",
+"uuid": "181b3f21-87a2-4478-8924-e30a0112b44f",
+"district": "Thrissur",
+"rain": 12.8
+},
+{
+"station": "Pudukkad",
+"uuid": "90422e93-9e49-4e25-93a0-5e0909035ec8",
+"district": "Thrissur",
+"rain": 15.4
+},
+{
+"station": "Pulingome",
+"uuid": "3a8a10d3-c4f3-4468-8aed-b9ca2292ebc6",
+"district": "Kannur",
+"rain": 31.6
+},
+{
+"station": "Walayar Dam",
+"uuid": "56c67aca-7683-4fd7-a99d-c75e6682f3f9",
+"district": "Palakkad",
+"rain": 19.0
+},
+{
+"station": "Karikkadavu",
+"uuid": "a2c0234a-b9c5-4602-9bba-1ec845da0e95",
+"district": "Thrissur",
+"rain": 26.8
+},
+{
+"station": "erimayur",
+"uuid": "7055ee4c-221f-45ac-b552-6d2eae469c6c",
+"district": "Palakkad",
+"rain": 56.0
+},
+{
+"station": "Koduvayur",
+"uuid": "b3737057-8c0e-433e-bb60-523b680c0172",
+"district": "Palakkad",
+"rain": 26.0
+},
+{
+"station": "Olayampadi",
+"uuid": "56ba76f9-c58e-45b8-9dac-cf52a8146396",
+"district": "Kannur",
+"rain": 7.4
+},
+{
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 20.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 94.2
+},
+{
+"station": "Vynthala",
+"uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
+"district": "Thrissur",
+"rain": 14.4
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 11.0
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 38.6
+},
+{
+"station": "Vadasserikkara",
+"uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
+"district": "Pathanamthitta",
+"rain": 1.4
+}
+]
+}

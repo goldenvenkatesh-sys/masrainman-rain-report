@@ -12,6 +12,7 @@ aws,Idukki,Kundala Dam
 aws,Idukki,Meencut
 aws,Idukki,Sengulam Dam
 aws,Idukki,Vellathooval
+aws,Kannur,Aralam
 aws,Kannur,Cheruvanchery
 aws,Kannur,Pinarayi
 aws,Kasaragod,Erikkulam
@@ -41,3 +42,11 @@ aws,Thrissur,Peechi
 aws,Wayanad,Kalpeta
 aws,Wayanad,Karapuzha
 aws,Wayanad,RARS Ambalavayal
+sw,Idukki,Boyce Estate
+sw,Idukki,Chinnar
+sw,Idukki,Kumili
+sw,Idukki,Nedumkandam
+sw,Idukki,Vandanmedu
+sw,Kottayam,Erattupetta
+sw,Kottayam,Mundakayam
+sw,Kottayam,Teekoy Estate
