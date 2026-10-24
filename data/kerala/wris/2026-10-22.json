@@ -1,7 +1,7 @@
 {
 "date": "2026-10-22",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-24T15:03+0530",
+"fetched": "2026-10-24T17:10+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -448,6 +448,12 @@
 "rain": 18.6
 },
 {
+"station": "Pudukkad",
+"uuid": "90422e93-9e49-4e25-93a0-5e0909035ec8",
+"district": "Thrissur",
+"rain": 14.4
+},
+{
 "station": "Pulingome",
 "uuid": "3a8a10d3-c4f3-4468-8aed-b9ca2292ebc6",
 "district": "Kannur",
@@ -458,6 +464,12 @@
 "uuid": "56c67aca-7683-4fd7-a99d-c75e6682f3f9",
 "district": "Palakkad",
 "rain": 2.0
+},
+{
+"station": "Karikkadavu",
+"uuid": "a2c0234a-b9c5-4602-9bba-1ec845da0e95",
+"district": "Thrissur",
+"rain": 31.2
 },
 {
 "station": "erimayur",

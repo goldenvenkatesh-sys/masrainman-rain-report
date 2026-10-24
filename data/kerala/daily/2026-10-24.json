@@ -1588,6 +1588,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Thumburmuzhy",
+"key": "THUMBURMUZHY",
+"rain": 13.6,
+"lat": 10.3,
+"lon": 76.43
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Pudur",
 "key": "PUDUR",
@@ -1630,6 +1639,24 @@
 "rain": 2.0,
 "lat": 9.3794,
 "lon": 76.3567
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Mathilakam",
+"key": "MATHILAKAM",
+"rain": 9.2,
+"lat": 10.2953,
+"lon": 76.1675
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Vettilappara",
+"key": "VETTILAPPARA",
+"rain": 30.0,
+"lat": 10.2906,
+"lon": 76.5092
 },
 {
 "type": "sw",
@@ -1849,6 +1876,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Mupli",
+"key": "MUPLI",
+"rain": 25.0,
+"lat": 10.4167,
+"lon": 76.3961
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
@@ -1864,6 +1900,15 @@
 "rain": 2.8,
 "lat": 9.3106,
 "lon": 77.0708
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Chimmony",
+"key": "CHIMMONY",
+"rain": 50.6,
+"lat": 10.4408,
+"lon": 76.45
 },
 {
 "type": "sw",
@@ -1894,6 +1939,24 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Varandarapilly",
+"key": "VARANDARAPILLY",
+"rain": 12.8,
+"lat": 10.4228,
+"lon": 76.3414
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Pudukkad",
+"key": "PUDUKKAD",
+"rain": 15.4,
+"lat": 10.4375,
+"lon": 76.3803
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Pulingome",
 "key": "PULINGOME",
@@ -1909,6 +1972,15 @@
 "rain": 19.0,
 "lat": 10.84,
 "lon": 76.84
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Karikkadavu",
+"key": "KARIKKADAVU",
+"rain": 26.8,
+"lat": 10.3711,
+"lon": 76.4464
 },
 {
 "type": "sw",

@@ -1,7 +1,7 @@
 {
 "date": "2026-10-24",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-24T15:03+0530",
+"fetched": "2026-10-24T17:10+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -70,6 +70,12 @@
 "rain": 70.8
 },
 {
+"station": "Thumburmuzhy",
+"uuid": "1822a970-9bc6-4229-9575-c516fdbf6eae",
+"district": "Thrissur",
+"rain": 13.6
+},
+{
 "station": "Ottapalam",
 "uuid": "12e20631-688f-46d0-abbc-d77e9f837be4",
 "district": "Palakkad",
@@ -116,6 +122,18 @@
 "uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
 "district": "Alappuzha",
 "rain": 2.0
+},
+{
+"station": "Mathilakam",
+"uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
+"district": "Thrissur",
+"rain": 9.2
+},
+{
+"station": "Vettilappara",
+"uuid": "d4467488-e65e-4dc7-b54d-284adcb2f77f",
+"district": "Thrissur",
+"rain": 30.0
 },
 {
 "station": "Perinthalmanna",
@@ -310,6 +328,12 @@
 "rain": 3.2
 },
 {
+"station": "Mupli",
+"uuid": "002b6e93-374e-4b74-8246-326cf2685531",
+"district": "Thrissur",
+"rain": 25.0
+},
+{
 "station": "Mundakayam",
 "uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
 "district": "Kottayam",
@@ -320,6 +344,12 @@
 "uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
 "district": "Pathanamthitta",
 "rain": 2.8
+},
+{
+"station": "Chimmony",
+"uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
+"district": "Thrissur",
+"rain": 50.6
 },
 {
 "station": "Erikkulam",
@@ -346,6 +376,18 @@
 "rain": 3.2
 },
 {
+"station": "Varandarapilly",
+"uuid": "181b3f21-87a2-4478-8924-e30a0112b44f",
+"district": "Thrissur",
+"rain": 12.8
+},
+{
+"station": "Pudukkad",
+"uuid": "90422e93-9e49-4e25-93a0-5e0909035ec8",
+"district": "Thrissur",
+"rain": 15.4
+},
+{
 "station": "Pulingome",
 "uuid": "3a8a10d3-c4f3-4468-8aed-b9ca2292ebc6",
 "district": "Kannur",
@@ -356,6 +398,12 @@
 "uuid": "56c67aca-7683-4fd7-a99d-c75e6682f3f9",
 "district": "Palakkad",
 "rain": 19.0
+},
+{
+"station": "Karikkadavu",
+"uuid": "a2c0234a-b9c5-4602-9bba-1ec845da0e95",
+"district": "Thrissur",
+"rain": 26.8
 },
 {
 "station": "erimayur",
@@ -386,6 +434,12 @@
 "uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
 "district": "Malappuram",
 "rain": 94.2
+},
+{
+"station": "Vynthala",
+"uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
+"district": "Thrissur",
+"rain": 14.4
 },
 {
 "station": "Chinnar",

@@ -1894,6 +1894,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Pudukkad",
+"key": "PUDUKKAD",
+"rain": 14.4,
+"lat": 10.4375,
+"lon": 76.3803
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Pulingome",
 "key": "PULINGOME",
@@ -1909,6 +1918,15 @@
 "rain": 2.0,
 "lat": 10.84,
 "lon": 76.84
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Karikkadavu",
+"key": "KARIKKADAVU",
+"rain": 31.2,
+"lat": 10.3711,
+"lon": 76.4464
 },
 {
 "type": "sw",
