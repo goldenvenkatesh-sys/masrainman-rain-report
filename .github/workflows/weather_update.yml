@@ -1,7 +1,5 @@
 name: Automated Weather Report & Telegram Update
-- name: Install Dependencies
-        run: |
-          pip install requests python-telegram-bot pytz python-dotenv
+
 on:
   schedule:
     - cron: '0 */3 * * *'  # Runs every 3 hours automatically
@@ -21,7 +19,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install requests python-telegram-bot pytz
+          pip install requests python-telegram-bot pytz python-dotenv
 
       - name: Run Weather Script
         env:
