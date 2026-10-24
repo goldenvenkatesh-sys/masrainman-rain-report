@@ -1417,6 +1417,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Keerampara",
+"key": "KEERAMPARA",
+"rain": 46.8,
+"lat": 10.11,
+"lon": 76.68
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Vidyanagar",
 "key": "VIDYANAGAR",
@@ -1489,6 +1498,24 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kaithapram",
+"key": "KAITHAPRAM",
+"rain": 19.4,
+"lat": 12.1128,
+"lon": 75.2936
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Alakkode",
+"key": "ALAKKODE",
+"rain": 22.0,
+"lat": 12.17,
+"lon": 75.47
+},
+{
+"type": "sw",
 "district": "Alappuzha",
 "station": "Ambalapuzha",
 "key": "AMBALAPUZHA",
@@ -1543,6 +1570,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Painavu",
+"key": "PAINAVU",
+"rain": 63.8,
+"lat": 9.85,
+"lon": 76.95
+},
+{
+"type": "sw",
 "district": "Malappuram",
 "station": "Ambittanpotty",
 "key": "AMBITTANPOTTY",
@@ -1579,12 +1615,30 @@
 },
 {
 "type": "sw",
+"district": "Kottayam",
+"station": "Pampady",
+"key": "PAMPADY",
+"rain": 0.0,
+"lat": 9.5867,
+"lon": 76.6044
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Bhoothathankettu",
 "key": "BHOOTHATHANKETTU",
 "rain": 76.8,
 "lat": 10.1592,
 "lon": 76.6164
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Vellachal",
+"key": "VELLACHAL",
+"rain": 16.8,
+"lat": 12.2019,
+"lon": 75.1861
 },
 {
 "type": "sw",
@@ -1624,12 +1678,57 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Kakkadavu Cheemeni",
+"key": "KAKKADAVU CHEEMENI",
+"rain": 27.4,
+"lat": 12.2667,
+"lon": 75.2811
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Vannapuram",
+"key": "VANNAPURAM",
+"rain": 38.6,
+"lat": 9.97,
+"lon": 76.83
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Thunakadavu",
 "key": "THUNAKADAVU",
 "rain": 15.0,
 "lat": 10.4356,
 "lon": 76.7811
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Marayoor",
+"key": "MARAYOOR",
+"rain": 16.4,
+"lat": 10.3433,
+"lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kulamavu",
+"key": "KULAMAVU",
+"rain": 58.4,
+"lat": 9.7831,
+"lon": 76.8792
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Pulingome",
+"key": "PULINGOME",
+"rain": 41.0,
+"lat": 12.2908,
+"lon": 75.4064
 },
 {
 "type": "sw",
@@ -1648,6 +1747,15 @@
 "rain": 41.0,
 "lat": 10.7056,
 "lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Olayampadi",
+"key": "OLAYAMPADI",
+"rain": 63.4,
+"lat": 12.1833,
+"lon": 75.325
 },
 {
 "type": "sw",
