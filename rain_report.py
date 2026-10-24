@@ -4,6 +4,8 @@ MasRainman · animated rainfall report for Tamil Nadu (TN-SMART) and Kerala (IMD
 Two modes
   daily : one rain-day (24 h ending 08:30 IST). Map colours build up from zero.
   accum : total from a start date to the run day. Map fills day by day.
+  live  : Tamil Nadu only. Rain since 08:30 IST today, so far. Run every 2 hours: each run takes
+          TN-SMART's latest file and adds any new rain to the totals saved by earlier runs.
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
@@ -16,6 +18,8 @@ Examples
   python rain_report.py accum --start 2026-10-01      # Oct 1 to today
   python rain_report.py accum --start 2026-10-01 --end 2026-10-18
   python rain_report.py accum --start 2026-10-01 --live   # also add today's running (partial) day
+  python rain_report.py live                          # rain since 08:30 today, so far
+  python rain_report.py accum --month 2026-10         # whole month (rain-days Oct 1 to Oct 31)
 
 Outputs go to ./out : MP4 video, GIF, and a PNG of the final frame.
 """
@@ -100,15 +104,25 @@ SCALE_DAILY = [  # IMD 24-hour categories
     (204.5, "≥ 204.5", "#9333ea"),
 ]
 
-# theme
-BG = (14, 21, 36)
-PANEL = (22, 31, 50)
-PANEL_EDGE = (36, 49, 74)
-TEXT = (232, 237, 245)
-MUTED = (138, 151, 173)
-ACCENT = (91, 155, 213)
-ACCENT_SOFT = (120, 175, 230)
-TRACK = (40, 52, 76)
+# themes: dark for the daily and multi-day reports, white for the 2-hourly "so far" report
+THEMES = {
+    "dark": dict(BG=(14, 21, 36), PANEL=(22, 31, 50), PANEL_EDGE=(36, 49, 74), TEXT=(232, 237, 245),
+                 MUTED=(138, 151, 173), ACCENT=(91, 155, 213), ACCENT_SOFT=(120, 175, 230), TRACK=(40, 52, 76),
+                 PILL=((25, 38, 62), (45, 70, 110)), BADGE=((10, 16, 28, 215), (60, 90, 140)),
+                 WATERMARK=(255, 255, 255, 9), ZERO="#e4e7ee", INSET_MIX=0.45),
+    "white": dict(BG=(241, 244, 249), PANEL=(255, 255, 255), PANEL_EDGE=(214, 221, 232), TEXT=(17, 24, 39),
+                  MUTED=(90, 102, 122), ACCENT=(29, 99, 186), ACCENT_SOFT=(29, 99, 186), TRACK=(222, 228, 238),
+                  PILL=((228, 238, 252), (176, 200, 235)), BADGE=((255, 255, 255, 235), (176, 200, 235)),
+                  WATERMARK=(0, 0, 0, 7), ZERO="#e9ecf1", INSET_MIX=0.8),
+}
+LIVE_RED = (220, 38, 38)
+
+
+def set_theme(name):
+    globals().update(THEMES[name])
+
+
+set_theme("dark")
 
 
 def hex2rgb(h):
@@ -362,10 +376,11 @@ class Report:
     MAP_BOX = (48, 392, 590, 1066)
     INSET_X = (606, 1032)
 
-    def __init__(self, mode, period, geo, title_dates, sub, scale, card3, headline_thresholds):
+    def __init__(self, mode, period, geo, title_dates, sub, scale, card3, headline_thresholds, live_tag=None):
         self.mode, self.P, self.geo = mode, period, geo
+        self.live_tag = live_tag
         self.lang_code = [k for k, v in LANGS.items() if v is L][0]
-        self.scale = scale
+        self.scale = [(b, lab, ZERO if lab == "ZERO" else c) for b, lab, c in scale]
         self.sub = sub
         self.title_dates = title_dates
         self.card3 = card3                      # (threshold, label, sublabel)
@@ -390,7 +405,7 @@ class Report:
         f = font(30, "SemiBold")
         for y in range(-200, H + 200, 230):
             for x in range(-300, W + 300, 420):
-                dw.text((x + (y // 230) % 2 * 210, y), BRAND, font=f, fill=(255, 255, 255, 9))
+                dw.text((x + (y // 230) % 2 * 210, y), BRAND, font=f, fill=WATERMARK)
         wm = wm.rotate(28, resample=Image.BICUBIC, center=(W / 2, H / 2))
         im.paste(wm, (0, 0), wm)
         d = ImageDraw.Draw(im, "RGBA")
@@ -399,8 +414,14 @@ class Report:
         pill = REGION["pill"].get(self.lang_code, REGION["name"])
         pf = font(22, "SemiBold")
         pw = tw(d, pill, pf) + 40
-        rrect(d, (W - 48 - pw, 44, W - 48, 90), 23, fill=(25, 38, 62), outline=(45, 70, 110))
+        rrect(d, (W - 48 - pw, 44, W - 48, 90), 23, fill=PILL[0], outline=PILL[1])
         d.text((W - 48 - pw + 20, 50), pill, font=pf, fill=ACCENT_SOFT)
+        if self.live_tag:                      # red "live" pill under the region pill
+            lf = font(22, "Bold")
+            lw = tw(d, self.live_tag, lf) + 62
+            rrect(d, (W - 48 - lw, 100, W - 48, 140), 20, fill=LIVE_RED)
+            d.ellipse((W - 48 - lw + 18, 112, W - 48 - lw + 34, 128), fill=(255, 255, 255))
+            d.text((W - 48 - lw + 44, 104), self.live_tag, font=lf, fill=(255, 255, 255))
 
         # panels
         mx0, my0, mx1, my1 = self.MAP_BOX
@@ -494,7 +515,7 @@ class Report:
         vw, vh = vbox[2] - vbox[0], vbox[3] - vbox[1]
         avg = dict(st["top_d"]).get(dn, 0.0)
         col = hex2rgb(self.scale[classify(avg, self.scale)][2])
-        tint = tuple(int(c * 0.45 + b * 0.55) for c, b in zip(col, PANEL))
+        tint = tuple(int(c * INSET_MIX + b * (1 - INSET_MIX)) for c, b in zip(col, PANEL))
         ss = 3
         lay = Image.new("RGBA", (vw * ss, vh * ss), (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
@@ -589,7 +610,7 @@ class Report:
         if badge:
             bf = font(30, "ExtraBold")
             bw_ = tw(d, badge, bf) + 36
-            rrect(d, (x0 + 6, y0 + 6, x0 + 6 + bw_, y0 + 58), 14, fill=(10, 16, 28, 215), outline=(60, 90, 140))
+            rrect(d, (x0 + 6, y0 + 6, x0 + 6 + bw_, y0 + 58), 14, fill=BADGE[0], outline=BADGE[1])
             d.text((x0 + 24, y0 + 10), badge, font=bf, fill=TEXT)
 
         # numbered markers on the top 3 districts' max stations and top 5 stations
@@ -715,11 +736,40 @@ def render_daily(day, P, geo, out_base):
     return wr, im, R.caption(fin_st, sub)
 
 
-def render_accum(P, geo, out_base, live_note=""):
+def render_live(day, upto, P, geo, out_base):
+    """Same picture as the daily report, for the running day up to `upto`."""
+    sub = L["live_sub"].format(d0=dstr(day - timedelta(days=1)), d1=dstr(upto.date()), t=L["time"](upto))
+    v_final = np.nan_to_num(P.V[0])
+    reported = ~np.isnan(P.V[0])
+    R = Report("daily", P, geo, None, sub, SCALE_DAILY, (64.5, "c_thr_daily", "c_thr_daily_sub"),
+               [200, 100, 64.5, 50, 20, 10], live_tag=L["live_tag"])
+    fin_st = R.stats(v_final, reported)
+    badge = L["live_badge"].format(t=L["time"](upto))
+    # bar under the headline: how much of the 24 hours (08:30 to 08:30) has gone by
+    t0 = datetime(day.year, day.month, day.day, 8, 30, tzinfo=tf.IST) - timedelta(days=1)
+    done = min(1.0, max(0.0, (upto - t0).total_seconds() / 86400))
+    wr = Writer(out_base + ".mp4")
+    intro, grow, markers, hold = int(0.5 * FPS), int(4.5 * FPS), int(0.8 * FPS), int(3.0 * FPS)
+    for i in range(intro + grow):
+        t = ease(max(0, i - intro) / grow)
+        im, _ = R.frame(v_final * t, reported, sub, badge=badge, progress=done, final_stats=fin_st)
+        wr.add(im)
+    for i in range(markers):
+        im, _ = R.frame(v_final, reported, sub, badge=badge, progress=done, reveal_markers=(i + 1) / markers,
+                        final_stats=fin_st)
+        wr.add(im)
+    wr.add(im, hold)
+    return wr, im, R.caption(fin_st, sub)
+
+
+def render_accum(P, geo, out_base, live_note="", month=None):
     nd = len(P.dates)
     reported = np.ones(len(P.meta), bool)
 
     def sub_for(k):
+        if month:
+            return L["month_sub"].format(m=L["months_full"][month.month - 1], y=month.year,
+                                         d0=dstr(P.dates[0]), d1=dstr(P.dates[k]))
         return L["accum_sub"].format(d0=dstr(P.dates[0]), d1=dstr(P.dates[k]), n=k + 1) + live_note
 
     R = Report("accum", P, geo, None, sub_for(nd - 1), SCALE_ACCUM, (100, "c_thr_accum", "c_thr_accum_sub"),
@@ -763,13 +813,15 @@ def finish(wr, last, cap, base, gif=True, gif_width=720):
 def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
-    ap.add_argument("mode", choices=["daily", "accum"])
+    ap.add_argument("mode", choices=["daily", "accum", "live"])
     ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala")
     ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
     ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
     ap.add_argument("--start", help="accum: first rain-day, e.g. 2026-10-01 (default Oct 1 of this year)")
     ap.add_argument("--end", help="accum: last rain-day (default: latest)")
+    ap.add_argument("--month", help="accum: a whole month, YYYY-MM, or 'last' for last month")
     ap.add_argument("--live", action="store_true", help="accum, Tamil Nadu: also add today's running day")
+    ap.add_argument("--always", action="store_true", help="live: render even if nothing changed since the last run")
     ap.add_argument("--no-gif", action="store_true")
     ap.add_argument("--gif-width", type=int, default=720)
     a = ap.parse_args()
@@ -786,7 +838,29 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     tag = "" if a.region == "tn" else f"{a.region}_"
 
-    if a.mode == "daily":
+    if a.mode == "live":
+        if a.region != "tn":
+            raise SystemExit("live mode is for Tamil Nadu (TN-SMART) only")
+        now = datetime.now(tf.IST)
+        day = tf.running_day(now)
+        # label with the last half past the hour, when TN-SMART's hourly values come in
+        upto = now.replace(second=0, microsecond=0) - timedelta(minutes=(now.minute - 30) % 60)
+        print(f"{REGION['name']}: rain-day {day} so far (to {upto:%Y-%m-%d %H:%M})")
+        set_theme("white")
+        stations, changed = tf.live_totals(day)
+        if not any(s["rain"] is not None for s in stations):
+            print("No station has reported yet; nothing to render.")
+            return
+        if not changed and not a.always:
+            print("No new rain since the last check; nothing to render.")
+            return
+        P = Period({day: stations}, geo)
+        for lc in langs:
+            set_lang(lc)
+            base = os.path.join(OUT_DIR, f"rain_live_{upto:%Y-%m-%d_%H%M}")
+            print(f"Rendering ({lc}) …")
+            finish(*render_live(day, upto, P, geo, base), base, not a.no_gif, a.gif_width)
+    elif a.mode == "daily":
         day = date.fromisoformat(a.date) if a.date else latest
         print(f"{REGION['name']}: rain-day {day}")
         days = load(day, day)
@@ -801,6 +875,25 @@ def main():
             base = os.path.join(OUT_DIR, f"rain_{tag}daily_{day.isoformat()}" + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
             print(f"Rendering ({lc}) …")
             finish(*render_daily(day, P, geo, base), base, not a.no_gif, a.gif_width)
+    elif a.month:
+        if a.month == "last":
+            m0 = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
+        else:
+            m0 = date.fromisoformat(a.month + "-01")
+        m1 = (m0 + timedelta(days=32)).replace(day=1) - timedelta(days=1)
+        if m1 > latest:
+            raise SystemExit(f"{m0:%B %Y} is not over yet (last complete rain-day {latest})")
+        print(f"{REGION['name']}: month {m0:%Y-%m}, rain-days {m0} … {m1}")
+        days = load(m0, m1)
+        need = 0.8 * ((m1 - m0).days + 1)
+        if len(days) < need:
+            raise SystemExit(f"Only {len(days)} days with data in {m0:%B %Y}; not making a month report")
+        P = Period(days, geo)
+        for lc in langs:
+            set_lang(lc)
+            base = os.path.join(OUT_DIR, f"rain_{tag}month_{m0:%Y-%m}" + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
+            print(f"Rendering month {m0:%Y-%m} ({lc}) …")
+            finish(*render_accum(P, geo, base, month=m0), base, not a.no_gif, a.gif_width)
     else:
         start = date.fromisoformat(a.start) if a.start else date(today.year, 10, 1)
         end = date.fromisoformat(a.end) if a.end else latest

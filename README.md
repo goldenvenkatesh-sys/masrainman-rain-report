@@ -17,6 +17,29 @@ Data: `https://beta-tnsmart.rimes.int/Rainfall_Python_IDW/Hourly_json/hourly_rai
 3. It runs every day at 09:45 IST and makes both reports. To run it yourself: Actions → *TN rainfall report* → *Run workflow*, and choose mode / dates.
 4. Videos are also attached to each run under **Artifacts → rain-report**.
 
+## Tamil Nadu every 2 hours (rain so far)
+
+The *TN rainfall so far* workflow runs every 2 hours, at 10:45 am, 12:45, 2:45 … 6:45 am IST, and makes the same
+picture and video as the daily report for "rain since 8:30 am, so far", on a white background, with a red LIVE tag,
+the time on the map, and a bar showing how much of the 24 hours has gone by. The 24-hour, multi-day and monthly
+reports stay dark. Kerala is not changed: it stays once a day.
+
+Each run downloads TN-SMART's running file again and adds it to the station totals kept by the earlier runs
+(`data/raw/live/<rain-day>.json`, carried between runs in the Actions cache). A station that starts reporting late
+is added when it appears, rain it reported earlier is kept even if a later file leaves it out, and a run with no
+new rain anywhere posts nothing. The full 24 hours (8:30 am to 8:30 am) is the 09:45 daily report.
+
+```
+python rain_report.py live            # rain since 08:30 today, so far
+python rain_report.py live --always   # make it even if nothing changed since the last run
+```
+
+## Monthly total
+
+On the 1st of every month the *TN rainfall report* also makes last month's total (rain-days 1st to last day), for
+Tamil Nadu at 09:45 and Kerala at 12:15. A month with data on fewer than 80% of its days is skipped. To make one
+yourself: `python rain_report.py accum --month 2026-10`, or run the workflow with mode `month`.
+
 ## Run on your PC
 
 ```
