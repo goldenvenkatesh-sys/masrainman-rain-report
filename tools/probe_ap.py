@@ -1,31 +1,35 @@
-"""Temporary: which Andhra Pradesh rain hosts answer a GitHub runner."""
-import re, socket, requests
+"""Temporary: save Andhra Pradesh DES weather pages from a GitHub runner (blocked elsewhere) into probe_out/."""
+import os, re, sys, urllib.parse, requests
 
 H = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"}
-HOSTS = ["desweather.ap.gov.in", "www.apsdps.ap.gov.in", "apwrims.ap.gov.in", "www.apwrims.ap.gov.in", "rtgs.ap.gov.in",
-         "apsdma.ap.gov.in", "apsdmagis.ap.gov.in", "core.ap.gov.in", "aws.imd.gov.in", "city.imd.gov.in",
-         "mausam.imd.gov.in", "indiawris.gov.in", "ksndmc.org", "beta-tnsmart.rimes.int", "apsac.ap.gov.in",
-         "agrisnet.ap.gov.in", "www.ap.gov.in", "apagrisnet.gov.in", "apdrought.ap.gov.in"]
-print("\n===== desweather pages")
-import urllib.parse
+OUT = "probe_out"
+os.makedirs(OUT, exist_ok=True)
 seen = set()
-def show(u, depth=1):
-    if u in seen or len(seen) > 40:
+
+
+def save(u, depth):
+    if u in seen or len(seen) > 80:
         return
     seen.add(u)
     try:
-        r = requests.get(u, headers=H, timeout=(15, 60))
+        r = requests.get(u, headers=H, timeout=(15, 90))
     except Exception as e:
-        print(f"!! {u}: {e}"); return
+        print(f"!! {u}: {e}")
+        return
+    name = re.sub(r"[^A-Za-z0-9._-]+", "_", u.split("://", 1)[1])[:150]
+    with open(os.path.join(OUT, name), "wb") as f:
+        f.write(r.content)
+    print(f"{r.status_code} {len(r.content):8d}B {r.headers.get('content-type')} {u}")
+    if depth == 0 or "html" not in (r.headers.get("content-type") or "") and not u.endswith(".js"):
+        return
     t = r.text
-    print(f"\n----- {r.status_code} {len(t)}B {r.headers.get('content-type')} {u} -> {r.url}")
-    print(t[:12000])
-    for m in sorted(set(re.findall(r"""(?:url|href|src|action|open\(\s*['"](?:GET|POST)['"]\s*,)\s*[:=]?\s*['"]([^'"#]+)['"]""", t, re.I))):
-        print("  >", m)
-    if depth:
-        for m in sorted(set(re.findall(r"""(?:src|url|action)\s*[:=]\s*['"]([^'"#]+\.(?:js|jsp|json|do|php)[^'"]*)['"]""", t, re.I))):
-            full = urllib.parse.urljoin(r.url, m)
-            if "desweather" in full and not re.search(r"jquery|bootstrap|leaflet|highcharts|datatables", full, re.I):
-                show(full, depth - 1)
-show("http://desweather.ap.gov.in/Realtime/Rainfall.jsp")
-show("http://desweather.ap.gov.in/", 0)
+    for m in sorted(set(re.findall(r"""['"]([^'"#\s]+\.(?:js|jsp|json|do|html|php)(?:\?[^'"\s]*)?)['"]""", t))):
+        full = urllib.parse.urljoin(r.url, m)
+        if "desweather" in full and not re.search(r"jquery|bootstrap|leaflet|highcharts|datatables|plugins|vendor|Pdfs", full, re.I):
+            save(full, depth - 1)
+
+
+for s in sys.argv[1:] or ["http://desweather.ap.gov.in/Realtime/Rainfall.jsp", "http://desweather.ap.gov.in/Realtime/Rainfall24.jsp",
+                          "http://desweather.ap.gov.in/Livemap/Apsdpsmapsv1.html", "http://desweather.ap.gov.in/Realtime/WeatherStatus.jsp",
+                          "http://desweather.ap.gov.in/MandalwiseData/Dcumulative.jsp"]:
+    save(s, 2)
