@@ -97,6 +97,13 @@ jobs:
             fi
           done
 
+      - name: Save to the reports branch (website + GitHub app)
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        continue-on-error: true
+        env:
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+        run: bash publish_reports.sh out
+
       - name: Send to Telegram
         if: ${{ github.event.inputs.send != 'no' }}
         env:
