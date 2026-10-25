@@ -4,10 +4,11 @@ on:
   schedule:
     - cron: "15 4 * * *"        # 09:45 IST  Tamil Nadu (TN-SMART)
     - cron: "45 6 * * *"        # 12:15 IST  Kerala (IMD file comes out ~11 am)
+    - cron: "25 4 * * *"        # 09:55 IST  Andhra Pradesh (DES / APSDPS)
   workflow_dispatch:
     inputs:
       region:
-        description: "tn, kl, or both"
+        description: "tn, kl, ap, or both (= all three)"
         default: "tn"
       mode:
         description: "daily, accum, both, or month (last month's total)"
@@ -62,17 +63,27 @@ jobs:
         run: |
           R="${{ github.event.inputs.region }}"
           if [ -z "$R" ]; then
-            if [ "${{ github.event.schedule }}" = "45 6 * * *" ]; then R=kl; else R=tn; fi
+            case "${{ github.event.schedule }}" in
+              "45 6 * * *") R=kl ;;
+              "25 4 * * *") R=ap ;;
+              *) R=tn ;;
+            esac
           fi
           echo "region=$R" >> "$GITHUB_OUTPUT"
 
       - name: Update Kerala files (IMD)
-        if: steps.pick.outputs.region != 'tn'
+        if: steps.pick.outputs.region == 'kl' || steps.pick.outputs.region == 'both'
         run: |
           python fetch_kerala.py
           python kerala_extra.py
           python kerala_data.py
           bash save_kerala.sh
+
+      - name: Update Andhra Pradesh files (DES)
+        if: steps.pick.outputs.region == 'ap' || steps.pick.outputs.region == 'both'
+        run: |
+          python ap_fetch.py daily
+          bash save_ap.sh
 
       - name: Make reports
         env:
@@ -83,7 +94,7 @@ jobs:
           END: ${{ github.event.inputs.end }}
           SCHEDULED: ${{ github.event.schedule }}
         run: |
-          for R in tn kl; do
+          for R in tn kl ap; do
             if [ "$REGION" != "$R" ] && [ "$REGION" != "both" ]; then continue; fi
             if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
               python rain_report.py daily --region $R ${DAY:+--date $DAY}

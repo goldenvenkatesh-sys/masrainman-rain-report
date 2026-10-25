@@ -1,0 +1,80 @@
+name: Andhra Pradesh rainfall so far (every 2 hours)
+
+# Every 2 hours from 10:45 am to 6:45 am IST (same times as Tamil Nadu and Karnataka), take the DES / APSDPS station feed
+# (rain since 08:30), add any new rain to the station totals saved by earlier runs, and post the picture
+# "rain since 08:30 so far" on a white background.
+on:
+  schedule:
+    - cron: "15 5,7,9,11,13,15,17,19,21,23,1 * * *"
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "send to Telegram (yes/no)"
+        default: "yes"
+      always:
+        description: "make the picture even if nothing changed (yes/no)"
+        default: "no"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ap-live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          pip install -r requirements.txt
+
+      # holds data/raw/live/ap_<day>.json (station totals so far)
+      - name: Restore running totals
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: aplive-${{ github.run_id }}
+          restore-keys: aplive-
+
+      # backup for the 09:55 daily report: if GitHub skipped that run, save the finished rain-day here
+      # (DES shows only the latest day, so a day not saved before the next 08:30 is lost)
+      - name: Save finished rain-day if missing
+        continue-on-error: true
+        run: |
+          python ap_fetch.py daily --if-missing
+          bash save_ap.sh
+
+      - name: Make picture
+        run: python rain_report.py live --region ap ${{ github.event.inputs.always == 'yes' && '--always' || '' }}
+
+      - name: Save to the reports branch (website + GitHub app)
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        continue-on-error: true
+        env:
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+        run: bash publish_reports.sh out
+
+      - name: Send to Telegram
+        if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
+        run: python send_telegram.py out/*.mp4
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        with:
+          name: rain-ap-live
+          path: out/
+          retention-days: 7
