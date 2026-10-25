@@ -1,12 +1,11 @@
 name: Karnataka rainfall so far (every 2 hours)
 
-# Every 2 hours from 10:45 am to 6:45 am IST, plus 8:15 am, take KSNDMC's 15-minute rain-gauge table
+# Every 2 hours from 10:45 am to 6:45 am IST (same times as the Tamil Nadu report), take KSNDMC's 15-minute rain-gauge table
 # (rain since 08:30), add any new rain to the gauge totals saved by earlier runs, and post the picture
 # "rain since 08:30 so far" on a white background.
 on:
   schedule:
     - cron: "15 5,7,9,11,13,15,17,19,21,23,1 * * *"
-    - cron: "45 2 * * *"
   workflow_dispatch:
     inputs:
       send:

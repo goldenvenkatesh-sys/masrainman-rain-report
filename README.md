@@ -46,7 +46,7 @@ fire, the second run finds no new rain and posts nothing.
 ## Karnataka every 2 hours (rain so far)
 
 The *Karnataka rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Karnataka
-from KSNDMC's telemetric rain gauges, at 10:45 am, 12:45, 2:45 … 6:45 am and 8:15 am IST, and posts it to Telegram.
+from KSNDMC's telemetric rain gauges, at the same times as Tamil Nadu (10:45 am, 12:45, 2:45 … 6:45 am IST), and posts it to Telegram.
 
 Data: the map inside the KSNDMC weather dashboard (`ksndmc.org/default.aspx/WebDashboard`) is
 `https://ksndmc.org:122/`, and that page asks its own server for the 15-minute rainfall table (ASP.NET callback
