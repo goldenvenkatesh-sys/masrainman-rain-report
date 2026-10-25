@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: tn-live
@@ -29,6 +30,18 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
+      # Karnataka and Andhra Pradesh run at the same time as this one
+      - name: Start Karnataka and Andhra Pradesh live reports
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for wf in ka-live.yml ap-live.yml; do
+            gh workflow run "$wf" -R "$GITHUB_REPOSITORY" --ref main \
+              -f send="${{ github.event.inputs.send || 'yes' }}" -f always="${{ github.event.inputs.always || 'no' }}" \
+              && echo "started $wf"
+          done
 
       - uses: actions/setup-python@v5
         with:
@@ -59,6 +72,7 @@ jobs:
         run: bash publish_reports.sh out
 
       - name: Send to Telegram
+        continue-on-error: true
         if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}

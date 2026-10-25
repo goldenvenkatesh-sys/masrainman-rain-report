@@ -4,8 +4,7 @@ name: Karnataka rainfall so far (every 2 hours)
 # (rain since 08:30), add any new rain to the gauge totals saved by earlier runs, and post the picture
 # "rain since 08:30 so far" on a white background.
 on:
-  schedule:
-    - cron: "15 5,7,9,11,13,15,17,19,21,23,1 * * *"
+  # started by the TN live run each time (GitHub kept skipping a separate timer for this one)
   workflow_dispatch:
     inputs:
       send:
@@ -58,6 +57,7 @@ jobs:
         run: bash publish_reports.sh out
 
       - name: Send to Telegram
+        continue-on-error: true
         if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}

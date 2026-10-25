@@ -2,13 +2,12 @@ name: TN rainfall report
 
 on:
   schedule:
-    - cron: "15 4 * * *"        # 09:45 IST  Tamil Nadu (TN-SMART)
+    - cron: "15 4 * * *"        # 09:45 IST  Tamil Nadu (TN-SMART) + Andhra Pradesh (DES / APSDPS)
     - cron: "45 6 * * *"        # 12:15 IST  Kerala (IMD file comes out ~11 am)
-    - cron: "25 4 * * *"        # 09:55 IST  Andhra Pradesh (DES / APSDPS)
   workflow_dispatch:
     inputs:
       region:
-        description: "tn, kl, ap, or both (= all three)"
+        description: "tn, kl, ap, several (tn ap), or both (= all three)"
         default: "tn"
       mode:
         description: "daily, accum, both, or month (last month's total)"
@@ -62,17 +61,18 @@ jobs:
         id: pick
         run: |
           R="${{ github.event.inputs.region }}"
+          R=$(echo "$R" | tr ',' ' ')
+          if [ "$R" = both ]; then R="tn kl ap"; fi
           if [ -z "$R" ]; then
             case "${{ github.event.schedule }}" in
               "45 6 * * *") R=kl ;;
-              "25 4 * * *") R=ap ;;
-              *) R=tn ;;
+              *) R="tn ap" ;;
             esac
           fi
           echo "region=$R" >> "$GITHUB_OUTPUT"
 
       - name: Update Kerala files (IMD)
-        if: steps.pick.outputs.region == 'kl' || steps.pick.outputs.region == 'both'
+        if: contains(steps.pick.outputs.region, 'kl')
         run: |
           python fetch_kerala.py
           python kerala_extra.py
@@ -80,7 +80,7 @@ jobs:
           bash save_kerala.sh
 
       - name: Update Andhra Pradesh files (DES)
-        if: steps.pick.outputs.region == 'ap' || steps.pick.outputs.region == 'both'
+        if: contains(steps.pick.outputs.region, 'ap')
         run: |
           python ap_fetch.py daily
           bash save_ap.sh
@@ -95,7 +95,7 @@ jobs:
           SCHEDULED: ${{ github.event.schedule }}
         run: |
           for R in tn kl ap; do
-            if [ "$REGION" != "$R" ] && [ "$REGION" != "both" ]; then continue; fi
+            case " $REGION " in *" $R "*) ;; *) continue ;; esac
             if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
               python rain_report.py daily --region $R ${DAY:+--date $DAY}
             fi
@@ -116,6 +116,7 @@ jobs:
         run: bash publish_reports.sh out
 
       - name: Send to Telegram
+        continue-on-error: true
         if: ${{ github.event.inputs.send != 'no' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
