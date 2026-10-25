@@ -25,11 +25,13 @@ def save(u, depth):
     t = r.text
     for m in sorted(set(re.findall(r"""['"]([^'"#\s]+\.(?:js|jsp|json|do|html|php)(?:\?[^'"\s]*)?)['"]""", t))):
         full = urllib.parse.urljoin(r.url, m)
-        if "desweather" in full and not re.search(r"jquery|bootstrap|leaflet|highcharts|datatables|plugins|vendor|Pdfs", full, re.I):
+        if "desweather" in full or "webservice" in full and not re.search(r"jquery|bootstrap|leaflet|highcharts|datatables|plugins|vendor|Pdfs", full, re.I):
             save(full, depth - 1)
 
 
-for s in sys.argv[1:] or ["http://desweather.ap.gov.in/Realtime/Rainfall.jsp", "http://desweather.ap.gov.in/Realtime/Rainfall24.jsp",
-                          "http://desweather.ap.gov.in/Livemap/Apsdpsmapsv1.html", "http://desweather.ap.gov.in/Realtime/WeatherStatus.jsp",
-                          "http://desweather.ap.gov.in/MandalwiseData/Dcumulative.jsp"]:
-    save(s, 2)
+for s in sys.argv[1:] or ["http://desweather.ap.gov.in/Livemap/js/config.json", "http://desweather.ap.gov.in/webservice/rest/json1",
+                          "http://desweather.ap.gov.in/weather/webservice/rest/json1", "http://desweather.ap.gov.in/webservice/rest/todo",
+                          "http://desweather.ap.gov.in/weather/webservice/rest/todo", "http://desweather.ap.gov.in/Livemap/index.html",
+                          "http://desweather.ap.gov.in/Livemap/", "http://desweather.ap.gov.in/AwsData/", "http://desweather.ap.gov.in/aws_report/",
+                          "http://desweather.ap.gov.in/maps.jsp", "http://desweather.ap.gov.in/Fmaps.jsp"]:
+    save(s, 1)
