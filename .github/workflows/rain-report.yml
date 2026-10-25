@@ -102,6 +102,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
+          GH_TOKEN: ${{ github.token }}               # GitHub download backup (publish_github.py)
         run: python send_telegram.py out/*.mp4
 
       - uses: actions/upload-artifact@v4

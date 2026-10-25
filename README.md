@@ -123,3 +123,13 @@ python rain_report.py accum --region kl --lang ml  # Malayalam only
 ```
 
 On GitHub: *TN rainfall report* runs Kerala automatically at 12:15 IST; for a manual run choose region `kl` or `both`.
+
+## Download backup (if Telegram is down)
+
+Every report the workflows send is also put on GitHub:
+
+- **Latest of each kind**: <https://github.com/goldenvenkatesh-sys/masrainman-rain-report/releases/tag/latest>
+  (fixed names, for example `rain_tn_live.mp4`, `rain_daily_ta.png`)
+- **Daily, multi-day and monthly reports by date**: the monthly release, for example `reports-2026-10`.
+
+This is done by `publish_github.py`, which `send_telegram.py` runs before it sends to Telegram.
