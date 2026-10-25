@@ -1,4 +1,4 @@
-name: Karnataka rainfall so far (every 2 hours)
+name: Karnataka rainfall so far (every hour)
 
 # Every 2 hours from 10:45 am to 6:45 am IST (same times as the Tamil Nadu report), take KSNDMC's 15-minute rain-gauge table
 # (rain since 08:30), add any new rain to the gauge totals saved by earlier runs, and post the picture

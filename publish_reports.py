@@ -10,7 +10,7 @@ The reports folder holds:
   README.md                               latest reports with previews (shows in the GitHub app)
 
 What is kept (older ones are removed so the branch stays small):
-  live (rain so far)      the newest 12 per region (one day of 2-hourly pictures)
+  live (rain so far)      the newest 24 per region (one day of hourly pictures)
   daily / accum           the last 10 days
   month                   the last 13 months
 """
@@ -28,7 +28,7 @@ KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "accum": "Total 
          "month": "Monthly total"}
 LANGS = {"ta": "Tamil", "en": "English", "ml": "Malayalam"}
 EXTS = ("mp4", "gif", "png", "txt")
-KEEP_LIVE = 12
+KEEP_LIVE = 24
 KEEP_DAYS = 10
 KEEP_MONTHS = 13
 

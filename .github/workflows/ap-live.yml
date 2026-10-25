@@ -1,4 +1,4 @@
-name: Andhra Pradesh rainfall so far (every 2 hours)
+name: Andhra Pradesh rainfall so far (every hour)
 
 # Every 2 hours from 10:45 am to 6:45 am IST (same times as Tamil Nadu and Karnataka), take the DES / APSDPS station feed
 # (rain since 08:30), add any new rain to the station totals saved by earlier runs, and post the picture
