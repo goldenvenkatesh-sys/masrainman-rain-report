@@ -116,18 +116,19 @@ def running_day(now=None) -> date:
     return now.date() + timedelta(days=1) if t >= 9 * 60 + 30 else now.date()
 
 
-def live_totals(d: date, verbose=True):
+def live_totals(d: date, verbose=True, fetch=None, tag=""):
     """Rain since 08:30 IST for the running rain-day d, added up over every check.
 
     TN-SMART's running file holds each station's total so far. Each check takes the fresh file and
     keeps, station by station, the larger of the saved total and the new one: rain a station
     reported at an earlier check is never lost if a later file drops it or shows the station as
     blank, and stations that start reporting later in the day are added when they appear.
-    The saved totals are in data/raw/live/<d>.json.
+    The saved totals are in data/raw/live/<tag><d>.json. `fetch(d)` gives the fresh station list
+    (default: TN-SMART's running file); Karnataka passes ksndmc_fetch.day_stations with tag "ka_".
     Returns (station list, changed) where changed is False when no station has new rain or
     newly reported since the last check."""
     os.makedirs(LIVE_DIR, exist_ok=True)
-    path = os.path.join(LIVE_DIR, f"{d.isoformat()}.json")
+    path = os.path.join(LIVE_DIR, f"{tag}{d.isoformat()}.json")
     saved = {}
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -135,7 +136,7 @@ def live_totals(d: date, verbose=True):
                 saved[(s["district"], s["station"], round(s["lat"], 3), round(s["lon"], 3))] = s
 
     try:
-        fresh = station_totals(download_day(d, force=not OFFLINE))
+        fresh = fetch(d) if fetch else station_totals(download_day(d, force=not OFFLINE))
     except FileNotFoundError:
         fresh = []
     changed, added, rose = not saved, 0, 0
@@ -160,7 +161,7 @@ def live_totals(d: date, verbose=True):
     # drop saved totals older than a week
     for name in os.listdir(LIVE_DIR):
         try:
-            if date.fromisoformat(name[:10]) < d - timedelta(days=7):
+            if date.fromisoformat(name[-15:-5]) < d - timedelta(days=7):
                 os.remove(os.path.join(LIVE_DIR, name))
         except ValueError:
             pass

@@ -4,12 +4,14 @@ MasRainman · animated rainfall report for Tamil Nadu (TN-SMART) and Kerala (IMD
 Two modes
   daily : one rain-day (24 h ending 08:30 IST). Map colours build up from zero.
   accum : total from a start date to the run day. Map fills day by day.
-  live  : Tamil Nadu only. Rain since 08:30 IST today, so far. Run every 2 hours: each run takes
-          TN-SMART's latest file and adds any new rain to the totals saved by earlier runs.
+  live  : Tamil Nadu and Karnataka. Rain since 08:30 IST today, so far. Run every 2 hours: each run takes
+          the latest TN-SMART file / KSNDMC 15-minute table and adds any new rain to the totals saved by
+          earlier runs.
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
   --region kl             Kerala, English and Malayalam (one video each); --lang en or --lang ml for one
+  --region ka             Karnataka (KSNDMC), English; live mode only
 
 Examples
   python rain_report.py daily --region kl
@@ -40,6 +42,7 @@ from shapely.ops import unary_union
 import tnsmart_fetch as tf
 import tn_names
 import kerala_data
+import ksndmc_fetch
 from lang import LANGS, date_str
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -63,6 +66,11 @@ REGIONS = {
            "langs": ["en", "ml"], "radius": 50, "source": "IMD Thiruvananthapuram, Kerala WRD, KSEB",
            "pill": {"en": "All Kerala", "ml": "കേരളം മുഴുവൻ"},
            "load": lambda a, b: kerala_data.load_days(a, b)},
+    # KSNDMC has ~6,000 telemetric gauges, so a short IDW radius keeps the map local
+    "ka": {"name": "Karnataka", "geo": "ka_districts.geojson", "canon": lambda d: d.strip().title(),
+           "langs": ["en"], "radius": 22, "fill_km": 10, "area_avg": True,
+           "source": "KSNDMC telemetric rain gauges", "pill": {"en": "All Karnataka"},
+           "load": None, "live": ksndmc_fetch.day_stations},
 }
 REGION = REGIONS["tn"]
 L = LANGS["ta"]
@@ -331,6 +339,21 @@ class Field:
         pts = geo.km(glon[inside], glat[inside])
         self.sel = np.where(~np.isnan(lat))[0]           # stations that have coordinates
         lon, lat = lon[self.sel], lat[self.sel]
+        self.n_fill = 0
+        if REGION.get("fill_km"):
+            # the feed lists only gauges with rain: put 0 mm points wherever no gauge is near, so a
+            # lone wet gauge does not colour a whole dry area
+            fk = REGION["fill_km"]
+            g0 = geo.km(*[np.asarray(a) for a in (geo.lon0, geo.lat0)]).ravel()
+            g1 = geo.km(*[np.asarray(a) for a in (geo.lon1, geo.lat1)]).ravel()
+            gx, gy = np.meshgrid(np.arange(g0[0], g1[0], fk), np.arange(g0[1], g1[1], fk))
+            cand = np.column_stack([gx.ravel(), gy.ravel()])
+            dd, _ = cKDTree(geo.km(lon, lat)).query(cand, k=1)
+            fill = cand[dd > fk]
+            self.n_fill = len(fill)
+            flon = fill[:, 0] / (111.32 * geo.kx)
+            flat = fill[:, 1] / 110.57
+            lon, lat = np.concatenate([lon, flon]), np.concatenate([lat, flat])
         tree = cKDTree(geo.km(lon, lat))
         k = min(IDW_K, len(lon))
         d, ix = tree.query(pts, k=k)
@@ -345,7 +368,24 @@ class Field:
         self.wgt = wgt / wgt.sum(axis=1, keepdims=True)
 
     def values(self, v):
-        return (self.wgt * v[self.sel][self.ix]).sum(axis=1)
+        vs = v[self.sel]
+        if self.n_fill:
+            vs = np.concatenate([vs, np.zeros(self.n_fill)])
+        return (self.wgt * vs[self.ix]).sum(axis=1)
+
+    def district_pixels(self, geo, proj):
+        """For each district, the positions of its pixels in values() order."""
+        x0, y0, x1, y1 = self.box
+        flat = np.flatnonzero(self.inside.ravel())
+        pos = np.full(self.inside.size, -1)
+        pos[flat] = np.arange(len(flat))
+        out = {}
+        for dn, g in geo.districts.items():
+            m = Image.new("L", (self.w, self.h), 0)
+            draw_geom(ImageDraw.Draw(m), g, proj, fill=255, off=(x0, y0))
+            p = pos[np.asarray(m).ravel() > 0]
+            out[dn] = p[p >= 0]
+        return out
 
     def image(self, v, scale):
         bounds = np.array([b for b, _, _ in scale])
@@ -389,6 +429,7 @@ class Report:
         self.map_inner = (mx0 + 14, my0 + 14, mx1 - 14, my1 - 40)
         self.proj = Projector((geo.lon0, geo.lat0, geo.lon1, geo.lat1), geo.kx, self.map_inner, pad=6)
         self.field = Field(geo, self.proj, self.map_inner, period.lon, period.lat)
+        self.dpix = self.field.district_pixels(geo, self.proj) if REGION.get("area_avg") else None
         self.created = datetime.now(tf.IST)
         self.base = self._static_layer()
         self.lines = self._boundary_layer()
@@ -465,9 +506,17 @@ class Report:
         P = self.P
         vv = np.where(reported, v, np.nan)
         dist_avg = {}
-        for dn in np.unique(P.dist[reported]):
-            m = (P.dist == dn) & reported
-            dist_avg[dn] = float(np.nanmean(vv[m]))
+        extra = {}
+        if self.dpix:
+            # few gauges list a dry reading, so rank districts by the mean of the map over their area
+            f = self.field.values(np.nan_to_num(vv))
+            dist_avg = {dn: float(f[p].mean()) for dn, p in self.dpix.items() if len(p)}
+            extra = {"area_wet": 100.0 * float(np.mean(f >= 0.5)),
+                     "n_dist_wet": len(set(P.dist[np.nan_to_num(vv) > 0]))}
+        else:
+            for dn in np.unique(P.dist[reported]):
+                m = (P.dist == dn) & reported
+                dist_avg[dn] = float(np.nanmean(vv[m]))
         top_d = sorted(dist_avg.items(), key=lambda kv: -kv[1])
         order = np.argsort(-np.nan_to_num(vv, nan=-1))
         top_s = [i for i in order[:5] if reported[i]]
@@ -479,11 +528,13 @@ class Report:
             "n_dist": len(dist_avg),
             "n_rain": int(np.sum(np.nan_to_num(vv) > 0)),
             "n_thr": int(np.sum(np.nan_to_num(vv) >= self.card3[0])),
-            "state_avg": float(np.nanmean(vv)) if reported.any() else 0.0,
+            "state_avg": (float(self.field.values(np.nan_to_num(vv)).mean()) if self.dpix else
+                          float(np.nanmean(vv)) if reported.any() else 0.0),
             "top_d": top_d,
             "top_s": top_s,
             "counts": counts,
             "vv": vv,
+            **extra,
         }
 
     def headline(self, st):
@@ -493,8 +544,11 @@ class Report:
             for thr in self.thr_list:
                 n = int(np.sum(vv > thr))
                 if n:
-                    return L["head_one" if n == 1 else "head_full"].format(n=n, thr=f"{thr:g}", dist=dname(dn), avg=fmt(avg))
-            return L["head_dist"].format(dist=dname(dn), avg=fmt(avg))
+                    key = "head_one" if n == 1 else "head_full"
+                    key = key + "_area" if self.dpix and key + "_area" in L else key
+                    return L[key].format(n=n, thr=f"{thr:g}", dist=dname(dn), avg=fmt(avg))
+            key = "head_dist_area" if self.dpix and "head_dist_area" in L else "head_dist"
+            return L[key].format(dist=dname(dn), avg=fmt(avg))
         return L["head_none"]
 
     # ---- inset ---------------------------------------------------------
@@ -529,7 +583,7 @@ class Report:
             if not P.has_xy[i]:
                 continue
             x, y = pr(P.lon[i], P.lat[i])
-            r = 7 * ss
+            r = (7 if len(idx) <= 80 else 4) * ss        # smaller dots for dense networks
             c = hex2rgb(self.scale[classify(vv[i], self.scale)][2])
             dl.ellipse((x * ss - r, y * ss - r, x * ss + r, y * ss + r), fill=c + (255,), outline=(15, 20, 32, 255),
                        width=ss)
@@ -580,9 +634,13 @@ class Report:
         # stat cards
         cw = (W - 96 - 3 * 14) / 4
         best_i = st["top_s"][0] if st["top_s"] else None
-        cards = [
-            (L["c_rep"], f"{st['n_rep']}", L["c_rep_sub"].format(n=st['n_dist'])),
-            (L["c_rain"], f"{st['n_rain']}", self.card2_sub(st, v)),
+        if self.dpix:   # only wet gauges are listed, so show wet gauges and the wet share of the area
+            first = [(L["c_gauge_rain"], f"{st['n_rain']}", L["c_rain_dists"].format(n=st["n_dist_wet"])),
+                     (L["c_area"], f"{st['area_wet']:.0f}%", L["c_rain_daily"].format(x=fmt(st['state_avg'])))]
+        else:
+            first = [(L["c_rep"], f"{st['n_rep']}", L["c_rep_sub"].format(n=st['n_dist'])),
+                     (L["c_rain"], f"{st['n_rain']}", self.card2_sub(st, v))]
+        cards = first + [
             (L[self.card3[1]], f"{st['n_thr']}", L[self.card3[2]]),
             (L["c_max"],
              f"{fmt(st['vv'][best_i])} {L['mm']}" if best_i is not None else "—",
@@ -712,6 +770,8 @@ class Writer:
 
 # ----------------------------------------------------------------- modes
 def load(start, end):
+    if REGION["load"] is None:
+        raise SystemExit(f"{REGION['name']}: only live mode is available")
     days = REGION["load"](start, end)
     return {d: v for d, v in days.items() if any(s["rain"] is not None for s in v)}
 
@@ -814,7 +874,7 @@ def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
     ap.add_argument("mode", choices=["daily", "accum", "live"])
-    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala")
+    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka")
     ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
     ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
     ap.add_argument("--start", help="accum: first rain-day, e.g. 2026-10-01 (default Oct 1 of this year)")
@@ -839,17 +899,21 @@ def main():
     tag = "" if a.region == "tn" else f"{a.region}_"
 
     if a.mode == "live":
-        if a.region != "tn":
-            raise SystemExit("live mode is for Tamil Nadu (TN-SMART) only")
+        if a.region == "kl":
+            raise SystemExit("live mode is for Tamil Nadu (TN-SMART) and Karnataka (KSNDMC)")
         now = datetime.now(tf.IST)
         day = tf.running_day(now)
-        # label with the last half past the hour, when TN-SMART's hourly values come in
-        upto = now.replace(second=0, microsecond=0) - timedelta(minutes=(now.minute - 30) % 60)
+        if a.region == "ka":
+            # KSNDMC's table is updated every 15 minutes
+            upto = now.replace(second=0, microsecond=0) - timedelta(minutes=now.minute % 15 + 15)
+        else:
+            # label with the last half past the hour, when TN-SMART's hourly values come in
+            upto = now.replace(second=0, microsecond=0) - timedelta(minutes=(now.minute - 30) % 60)
         print(f"{REGION['name']}: rain-day {day} so far (to {upto:%Y-%m-%d %H:%M})")
         set_theme("white")
-        stations, changed = tf.live_totals(day)
-        if not any(s["rain"] is not None for s in stations):
-            print("No station has reported yet; nothing to render.")
+        stations, changed = tf.live_totals(day, fetch=REGION.get("live"), tag=tag)
+        if not any(s["rain"] for s in stations):
+            print("No station has rain yet; nothing to render.")
             return
         if not changed and not a.always:
             print("No new rain since the last check; nothing to render.")
@@ -857,7 +921,7 @@ def main():
         P = Period({day: stations}, geo)
         for lc in langs:
             set_lang(lc)
-            base = os.path.join(OUT_DIR, f"rain_live_{upto:%Y-%m-%d_%H%M}")
+            base = os.path.join(OUT_DIR, f"rain_{tag}live_{upto:%Y-%m-%d_%H%M}")
             print(f"Rendering ({lc}) …")
             finish(*render_live(day, upto, P, geo, base), base, not a.no_gif, a.gif_width)
     elif a.mode == "daily":
