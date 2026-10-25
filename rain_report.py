@@ -4,14 +4,15 @@ MasRainman · animated rainfall report for Tamil Nadu (TN-SMART) and Kerala (IMD
 Two modes
   daily : one rain-day (24 h ending 08:30 IST). Map colours build up from zero.
   accum : total from a start date to the run day. Map fills day by day.
-  live  : Tamil Nadu and Karnataka. Rain since 08:30 IST today, so far. Run every 2 hours: each run takes
-          the latest TN-SMART file / KSNDMC 15-minute table and adds any new rain to the totals saved by
-          earlier runs.
+  live  : Tamil Nadu, Karnataka and Andhra Pradesh. Rain since 08:30 IST today, so far. Run every 2 hours:
+          each run takes the latest TN-SMART file / KSNDMC 15-minute table / DES station feed and adds any
+          new rain to the totals saved by earlier runs.
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
   --region kl             Kerala, English and Malayalam (one video each); --lang en or --lang ml for one
   --region ka             Karnataka (KSNDMC), English; live mode only
+  --region ap             Andhra Pradesh (DES / APSDPS), English; live mode only
 
 Examples
   python rain_report.py daily --region kl
@@ -43,6 +44,7 @@ import tnsmart_fetch as tf
 import tn_names
 import kerala_data
 import ksndmc_fetch
+import ap_fetch
 from lang import LANGS, date_str
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -71,6 +73,10 @@ REGIONS = {
            "langs": ["en"], "radius": 22, "fill_km": 10, "area_avg": True,
            "source": "KSNDMC telemetric rain gauges", "pill": {"en": "All Karnataka"},
            "load": None, "live": ksndmc_fetch.day_stations},
+    # DES / APSDPS lists all ~2,200 stations, dry ones with 0 mm, so no dry fill is needed
+    "ap": {"name": "Andhra Pradesh", "geo": "ap_districts.geojson", "canon": ap_fetch.canon,
+           "langs": ["en"], "radius": 25, "source": "DES / APSDPS real-time weather stations",
+           "pill": {"en": "All Andhra Pradesh"}, "load": None, "live": ap_fetch.day_stations},
 }
 REGION = REGIONS["tn"]
 L = LANGS["ta"]
@@ -726,7 +732,8 @@ class Report:
         return im, st
 
     def caption(self, st, sub):
-        lines = [L["cap_title"], sub, "", self.headline(st), "", L["cap_top"]]
+        title = L["cap_title"] + (f" · {REGION['name']}" if self.lang_code == "en" else "")
+        lines = [title, sub, "", self.headline(st), "", L["cap_top"]]
         for r, i in enumerate(st["top_s"][:5], 1):
             lines.append(f"{r}. {self.P.names[i]} ({dname(self.P.dist[i])}) – {fmt(st['vv'][i])} {L['mm']}")
         lines += ["", L["cap_src"].format(src=REGION["source"]), f"#{BRAND} · {SITE}"]
@@ -874,7 +881,7 @@ def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
     ap.add_argument("mode", choices=["daily", "accum", "live"])
-    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka")
+    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka, ap = Andhra Pradesh")
     ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
     ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
     ap.add_argument("--start", help="accum: first rain-day, e.g. 2026-10-01 (default Oct 1 of this year)")
@@ -900,12 +907,15 @@ def main():
 
     if a.mode == "live":
         if a.region == "kl":
-            raise SystemExit("live mode is for Tamil Nadu (TN-SMART) and Karnataka (KSNDMC)")
+            raise SystemExit("live mode is for Tamil Nadu (TN-SMART), Karnataka (KSNDMC) and Andhra Pradesh (DES)")
         now = datetime.now(tf.IST)
         day = tf.running_day(now)
         if a.region == "ka":
             # KSNDMC's table is updated every 15 minutes
             upto = now.replace(second=0, microsecond=0) - timedelta(minutes=now.minute % 15 + 15)
+        elif a.region == "ap":
+            # DES stations report on the hour
+            upto = now.replace(minute=0, second=0, microsecond=0)
         else:
             # label with the last half past the hour, when TN-SMART's hourly values come in
             upto = now.replace(second=0, microsecond=0) - timedelta(minutes=(now.minute - 30) % 60)

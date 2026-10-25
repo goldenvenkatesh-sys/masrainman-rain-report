@@ -1,4 +1,4 @@
-# MasRainman · Tamil Nadu, Kerala and Karnataka rainfall report (animated)
+# MasRainman · Tamil Nadu, Kerala, Karnataka and Andhra Pradesh rainfall report (animated)
 
 Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall.
 
@@ -64,6 +64,29 @@ taluk and gram panchayat / hobli, but without coordinates. `ksndmc_fetch.py` rea
 
 ```
 python rain_report.py live --region ka
+```
+
+## Andhra Pradesh every 2 hours (rain so far)
+
+The *Andhra Pradesh rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Andhra
+Pradesh from the DES / APSDPS real-time weather stations, at the same times as Tamil Nadu and Karnataka (10:45 am,
+12:45, 2:45 … 6:45 am IST), and posts it to Telegram. The caption starts with "Rainfall Report · Andhra Pradesh"
+(Karnataka's now says "· Karnataka") so the posts are easy to tell apart.
+
+Data: the station map on desweather.ap.gov.in (`Livemap/Apsdpsmapsv1.html`) reads
+`http://desweather.ap.gov.in/webservice/rest/json1`, a list of all ~2,200 stations with latitude, longitude, district,
+mandal and `rain` = rain since 8:30 am (the same numbers as `Realtime/Rainfall.jsp`). Dry stations are listed with 0,
+-1 means not reporting, and a station whose last report (`ldate`) is older than the start of the rain-day is skipped.
+`ap_fetch.py` reads it. apsdps.ap.gov.in itself does not answer from outside India, but desweather.ap.gov.in does
+(over http; its https certificate is self-signed).
+
+- District boundaries: `data/ap_districts.geojson`, the 28 districts the feed uses. It starts from the 26 districts of
+  2022 and splits Prakasam (Markapuram) and Alluri Sitharama Raju (Polavaram) by the feed's own station districts;
+  `tools/build_ap_districts.py` rebuilds it.
+- English only for now.
+
+```
+python rain_report.py live --region ap
 ```
 
 ## Monthly total
