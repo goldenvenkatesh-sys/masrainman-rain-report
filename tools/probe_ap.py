@@ -1,42 +1,24 @@
-"""Temporary: look around the Andhra Pradesh rain sites from a GitHub runner (they are blocked elsewhere)."""
-import re, sys, urllib.parse, requests
+"""Temporary: which Andhra Pradesh rain hosts answer a GitHub runner."""
+import re, socket, requests
 
 H = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"}
-START = sys.argv[1:] or [
-    "https://apsdps.ap.gov.in/", "http://apsdps.ap.gov.in/",
-    "https://apsdmagis.ap.gov.in/weather-watch/index.html",
-    "https://apsdmagis.ap.gov.in/openweather/hub.html", "https://apsdmagis.ap.gov.in/",
-]
-KEY = re.compile(r"""["'`]([^"'`\s]*(?:api|json|rain|aws|ashx|asmx|svc|\.php|MapServer|FeatureServer|geojson|csv|report|weather|data)[^"'`\s]*)["'`]""", re.I)
-seen = set()
-
-
-def visit(u, depth):
-    if u in seen or len(seen) > 60:
-        return
-    seen.add(u)
+HOSTS = ["apsdps.ap.gov.in", "www.apsdps.ap.gov.in", "apwrims.ap.gov.in", "www.apwrims.ap.gov.in", "rtgs.ap.gov.in",
+         "apsdma.ap.gov.in", "apsdmagis.ap.gov.in", "core.ap.gov.in", "aws.imd.gov.in", "city.imd.gov.in",
+         "mausam.imd.gov.in", "indiawris.gov.in", "ksndmc.org", "beta-tnsmart.rimes.int", "apsac.ap.gov.in",
+         "agrisnet.ap.gov.in", "www.ap.gov.in", "apagrisnet.gov.in", "apdrought.ap.gov.in"]
+for h in HOSTS:
     try:
-        r = requests.get(u, headers=H, timeout=40)
+        addrs = sorted({a[4][0] for a in socket.getaddrinfo(h, 443)})
     except Exception as e:
-        print(f"!! {u}: {e}")
-        return
-    t = r.text
-    print(f"\n===== {r.status_code} {len(t)}B {r.headers.get('content-type')} {u} -> {r.url}")
-    if "html" in (r.headers.get("content-type") or ""):
-        print(re.sub(r"\s+", " ", t)[:2500])
-    hits = sorted(set(KEY.findall(t)))
-    for h in hits[:120]:
-        print("  >", h[:200])
-    if depth == 0:
-        return
-    links = set(re.findall(r"""(?:src|href)=["']([^"'#]+)["']""", t)) | {h for h in hits if h.endswith((".js", ".json", ".html", ".geojson"))}
-    for l in sorted(links):
-        full = urllib.parse.urljoin(r.url, l)
-        host = urllib.parse.urlparse(full).netloc
-        if "ap.gov.in" in host and full.split("?")[0].endswith((".js", ".json", ".html", ".geojson", "/", ".aspx", ".php")) \
-                and not re.search(r"jquery|bootstrap|leaflet|font", full, re.I):
-            visit(full, depth - 1)
-
-
-for s in START:
-    visit(s, 2)
+        print(f"{h:28s} DNS fail {e}")
+        continue
+    res = []
+    for scheme in ("https", "http"):
+        try:
+            r = requests.get(f"{scheme}://{h}/", headers=H, timeout=(12, 25))
+            title = re.search(r"<title>(.*?)</title>", r.text, re.S | re.I)
+            res.append(f"{scheme}:{r.status_code} {len(r.text)}B {r.url} [{(title.group(1).strip() if title else '')[:60]}]")
+            break
+        except Exception as e:
+            res.append(f"{scheme}:ERR {type(e).__name__}: {str(e)[-90:]}")
+    print(f"{h:28s} {addrs} :: {' | '.join(res)}")
