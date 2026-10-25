@@ -1,4 +1,4 @@
-# MasRainman · Tamil Nadu rainfall report (animated)
+# MasRainman · Tamil Nadu, Kerala and Karnataka rainfall report (animated)
 
 Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall.
 
@@ -32,6 +32,38 @@ new rain anywhere posts nothing. The full 24 hours (8:30 am to 8:30 am) is the 0
 ```
 python rain_report.py live            # rain since 08:30 today, so far
 python rain_report.py live --always   # make it even if nothing changed since the last run
+```
+
+### Making "every 2 hours" reliable
+
+GitHub's timer sometimes starts runs late or skips them. To make sure every slot runs, add a free job at
+**cron-job.org** at 10:45, 12:45, … 06:45 IST (every 2 hours at :45):
+`POST https://api.github.com/repos/goldenvenkatesh-sys/masrainman-rain-report/actions/workflows/tn-live.yml/dispatches`
+with headers `Authorization: Bearer <fine-grained token with Actions: read & write on this repo>` and
+`Accept: application/vnd.github+json`, and body `{"ref":"main"}`. The GitHub timer can stay on too: if both
+fire, the second run finds no new rain and posts nothing.
+
+## Karnataka every 2 hours (rain so far)
+
+The *Karnataka rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Karnataka
+from KSNDMC's telemetric rain gauges, at the same times as Tamil Nadu (10:45 am, 12:45, 2:45 … 6:45 am IST), and posts it to Telegram.
+
+Data: the map inside the KSNDMC weather dashboard (`ksndmc.org/default.aspx/WebDashboard`) is
+`https://ksndmc.org:122/`, and that page asks its own server for the 15-minute rainfall table (ASP.NET callback
+`showRain15Q`). It lists every gauge with at least 0.5 mm since 8:30 am (about 3,000 on a wet day) by district,
+taluk and gram panchayat / hobli, but without coordinates. `ksndmc_fetch.py` reads it.
+
+- Gauge positions are in `data/ka_gauges.csv`. Each gauge is named after its gram panchayat, so it is placed at the
+  centre of the village of that name in the same taluk (village centres from the DataMeet Indian Village Boundaries,
+  ODbL). About 1 in 8 have no matching village and go to the middle of the other gauges of the same hobli.
+  `tools/build_ka_gauges.py` rebuilds the file. A gauge that is not in the file yet is placed the same way at run time.
+- Gauges that are dry are not listed, so the map puts 0 mm wherever no gauge with rain is within 10 km, and districts
+  are ranked by the average of the map over their area instead of by the average of the listed gauges.
+- District boundaries: `data/ka_districts.geojson` (31 districts; Vijayanagara cut out of Ballari from its 2011 taluks).
+- English only for now. A Kannada version needs a Kannada font and the district names in Kannada.
+
+```
+python rain_report.py live --region ka
 ```
 
 ## Monthly total
