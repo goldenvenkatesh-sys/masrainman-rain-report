@@ -16,6 +16,11 @@ import time
 
 import requests
 
+from publish_github import publish
+
+# Backup first: the reports land on GitHub even if Telegram is down or the bot is blocked.
+publish([a for a in sys.argv[1:] if a.endswith(".mp4")])
+
 token = os.environ.get("TELEGRAM_BOT_TOKEN")
 chats = [c.strip() for c in os.environ.get("TELEGRAM_CHAT_ID", "").split(",") if c.strip()]
 if not token or not chats:
