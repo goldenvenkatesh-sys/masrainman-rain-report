@@ -1,7 +1,7 @@
 {
 "date": "2026-10-24",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-24T17:10+0530",
+"fetched": "2026-10-25T11:56+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -34,10 +34,22 @@
 "rain": 14.2
 },
 {
+"station": "Kottiyoor",
+"uuid": "140a7d12-e361-4da8-9091-74efd38584c2",
+"district": "Kannur",
+"rain": 56.2
+},
+{
 "station": "Kurudamannil",
 "uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
 "district": "Pathanamthitta",
 "rain": 1.4
+},
+{
+"station": "Nedumpoil",
+"uuid": "c2b64113-f171-41ac-a25f-77a86d76a2d6",
+"district": "Kannur",
+"rain": 52.0
 },
 {
 "station": "meenkara",
@@ -64,6 +76,12 @@
 "rain": 27.4
 },
 {
+"station": "Maloor",
+"uuid": "21a2953f-4e29-4199-8643-ec88a1d3a89d",
+"district": "Kannur",
+"rain": 41.6
+},
+{
 "station": "Chittadi",
 "uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
 "district": "Palakkad",
@@ -74,6 +92,12 @@
 "uuid": "1822a970-9bc6-4229-9575-c516fdbf6eae",
 "district": "Thrissur",
 "rain": 13.6
+},
+{
+"station": "Kannavam",
+"uuid": "3ae109f5-ce16-471d-9860-55b423ca0445",
+"district": "Kannur",
+"rain": 46.4
 },
 {
 "station": "Ottapalam",
@@ -128,6 +152,12 @@
 "uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
 "district": "Thrissur",
 "rain": 9.2
+},
+{
+"station": "Palappuzha",
+"uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
+"district": "Kannur",
+"rain": 18.2
 },
 {
 "station": "Vettilappara",
@@ -310,6 +340,12 @@
 "rain": 19.8
 },
 {
+"station": "Vanimel",
+"uuid": "1e67352a-5687-4327-813b-cc313f98bbe8",
+"district": "Kozhikode",
+"rain": 77.3
+},
+{
 "station": "Erattupetta",
 "uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
 "district": "Kottayam",
@@ -346,6 +382,24 @@
 "rain": 2.8
 },
 {
+"station": "Pazhassi",
+"uuid": "ad97f04d-13db-4d6b-aa12-f016aff8884c",
+"district": "Kannur",
+"rain": 39.2
+},
+{
+"station": "FCS Mangattuparamba",
+"uuid": "dc469b45-cfcb-4b5e-99a4-c4597db5c0ed",
+"district": "Kannur",
+"rain": 48.8
+},
+{
+"station": "Thillenkeri",
+"uuid": "2e439884-bef8-4247-aa19-50d8f25dfb99",
+"district": "Kannur",
+"rain": 46.1
+},
+{
 "station": "Chimmony",
 "uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
 "district": "Thrissur",
@@ -368,6 +422,18 @@
 "uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
 "district": "Idukki",
 "rain": 3.2
+},
+{
+"station": "Payyavoor",
+"uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
+"district": "Kannur",
+"rain": 64.0
+},
+{
+"station": "Cheruvanchery",
+"uuid": "a77beecc-8641-434c-9575-ed6cd9f30580",
+"district": "Kannur",
+"rain": 47.0
 },
 {
 "station": "Kulamavu",

@@ -1444,6 +1444,24 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kottiyoor",
+"key": "KOTTIYOOR",
+"rain": 16.0,
+"lat": 11.8731,
+"lon": 75.8672
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Nedumpoil",
+"key": "NEDUMPOIL",
+"rain": 0.4,
+"lat": 11.86,
+"lon": 75.74
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Meenkara",
 "key": "MEENKARA",
@@ -1468,6 +1486,15 @@
 "rain": 0.0,
 "lat": 12.7153,
 "lon": 74.8903
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Maloor",
+"key": "MALOOR",
+"rain": 0.6,
+"lat": 11.9,
+"lon": 75.6331
 },
 {
 "type": "sw",
@@ -1504,6 +1531,15 @@
 "rain": 2.2,
 "lat": 10.3,
 "lon": 76.43
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Kannavam",
+"key": "KANNAVAM",
+"rain": 0.0,
+"lat": 11.83,
+"lon": 75.66
 },
 {
 "type": "sw",
@@ -1558,6 +1594,15 @@
 "rain": 0.0,
 "lat": 10.2953,
 "lon": 76.1675
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Palappuzha",
+"key": "PALAPPUZHA",
+"rain": 0.0,
+"lat": 11.9614,
+"lon": 75.7153
 },
 {
 "type": "sw",
@@ -1759,6 +1804,15 @@
 },
 {
 "type": "sw",
+"district": "Kozhikode",
+"station": "Vanimel",
+"key": "VANIMEL",
+"rain": 6.1,
+"lat": 11.7044,
+"lon": 75.6858
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Erattupetta",
 "key": "ERATTUPETTA",
@@ -1822,6 +1876,33 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Pazhassi",
+"key": "PAZHASSI",
+"rain": 4.4,
+"lat": 11.9667,
+"lon": 75.6167
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "FCS Mangattuparamba",
+"key": "FCS MANGATTUPARAMBA",
+"rain": 4.6,
+"lat": 11.9828,
+"lon": 75.3639
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Thillenkeri",
+"key": "THILLENKERI",
+"rain": 1.0,
+"lat": 11.9331,
+"lon": 75.6664
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Chimmony",
 "key": "CHIMMONY",
@@ -1858,6 +1939,15 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Payyavoor",
+"key": "PAYYAVOOR",
+"rain": 9.4,
+"lat": 12.0581,
+"lon": 75.5728
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Amalanagar",
 "key": "AMALANAGAR",
@@ -1873,6 +1963,15 @@
 "rain": 0.0,
 "lat": 8.9061,
 "lon": 77.0539
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Cheruvanchery",
+"key": "CHERUVANCHERY",
+"rain": 7.0,
+"lat": 11.8128,
+"lon": 75.6256
 },
 {
 "type": "sw",

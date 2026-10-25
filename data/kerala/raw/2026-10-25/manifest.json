@@ -1,0 +1,59 @@
+{
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "ecaf84cda055d1db5f881f49e011d6c4155bfc17",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 05:42:02 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "8394556691bb9d024184e3101488ca911bace49d",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 06:02:56 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "ac22ebd0cd130e6f0f9825ed0e606d425fe70acd",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 05:57:33 GMT"
+  },
+  {
+   "name": "ksdma_RF-MAP-10-AM-1.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-MAP-10-AM-1.jpeg",
+   "sha1": "916d670962199d90925c5f98a8a4f2c9955d4a98",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 05:18:55 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-ENG-10-AM-1.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-ENG-10-AM-1.jpeg",
+   "sha1": "87b8c67a4e65eda41ef03bbbdf77589d9150498a",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 05:18:57 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-MAL-10-AM-1.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-MAL-10-AM-1.jpeg",
+   "sha1": "edec1a8c2c8280689b4bc3ec31fab20ad4098a72",
+   "saved_at": "2026-10-25T11:55+05:30",
+   "last_modified": "Sun, 25 Oct 2026 05:18:58 GMT"
+  }
+ ],
+ "checks": {
+  "imd_station_daily.pdf": 200,
+  "imd_rainfall_map.jpg": 200,
+  "imd_season.pdf": 200,
+  "ksdma_page_http": 200,
+  "ksdma_24-HR-RAINFALL-4.jpeg": 200,
+  "ksdma_Actual-Vs-Prediction-19.pdf": 200,
+  "ksdma_RF-MAP-10-AM-1.jpeg": 200,
+  "ksdma_RF-TB-ENG-10-AM-1.jpeg": 200,
+  "ksdma_RF-TB-MAL-10-AM-1.jpeg": 200,
+  "ksdma_page": "5 files linked",
+  "imd_aws_portal": 200
+ }
+}
