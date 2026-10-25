@@ -23,7 +23,8 @@ jobs:
 
       - name: Run Weather Script
         env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          RAIN_REPORT_CHAT_IDS: ${{ secrets.RAIN_REPORT_CHAT_IDS }}
+          RAIN_REPORT_CHAT_IDS: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
         run: |
           python bot.py
