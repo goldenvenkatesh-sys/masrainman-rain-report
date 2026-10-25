@@ -878,6 +878,128 @@ def finish(wr, last, cap, base, gif=True, gif_width=720):
         print(f"  gif   : {base}.gif  ({os.path.getsize(base + '.gif') / 1e6:.1f} MB)")
 
 
+# ----------------------------------------------------------------- station list picture
+LIST_TXT = {
+    "ta": {"title": "நிலைய வாரியான மழை அளவு", "days": "மழை நாட்கள்", "stations": "நிலையங்கள்", "avg": "சராசரி",
+           "dry": "மழை இல்லாத {n} நிலையங்கள் பட்டியலில் இல்லை", "contd": "(தொடர்ச்சி)",
+           "count": "{n} நிலையங்களில் மழை · {d} மாவட்டங்கள்"},
+    "en": {"title": "Station-wise rainfall", "days": "rainy days", "stations": "stations", "avg": "avg",
+           "dry": "{n} stations with no rain are not listed", "contd": "(contd.)",
+           "count": "Rain at {n} stations · {d} districts"},
+    "ml": {"title": "സ്റ്റേഷൻ തിരിച്ചുള്ള മഴ", "days": "മഴ ദിവസങ്ങൾ", "stations": "സ്റ്റേഷനുകൾ", "avg": "ശരാശരി",
+           "dry": "മഴ ലഭിക്കാത്ത {n} സ്റ്റേഷനുകൾ ഒഴിവാക്കി", "contd": "(തുടർച്ച)",
+           "count": "{n} സ്റ്റേഷനുകളിൽ മഴ · {d} ജില്ലകൾ"},
+}
+
+
+def station_list(path, P, v, reported, scale, sub, days=None):
+    """Tall PNG: every station with rain, by district (A–Z), wettest first, with its mm
+    (and rainy days for the season total). Light background so it reads and prints well."""
+    lc = [k for k, x in LANGS.items() if x is L][0]
+    T = LIST_TXT.get(lc, LIST_TXT["en"])
+    vv = np.where(reported, np.nan_to_num(v), np.nan)
+    wet = np.nan_to_num(vv) > 0
+    n_dry = int(np.sum(reported & ~wet))
+    groups = {}
+    for i in np.flatnonzero(wet):
+        groups.setdefault(str(P.dist[i]), []).append(i)
+    if not groups:
+        print("  list  : no station with rain, no station list")
+        return
+    BG, CARD, TXT, MUT, LINE = (255, 255, 255), (241, 245, 251), (17, 24, 39), (96, 108, 128), (226, 232, 240)
+    HEAD, ACC = (14, 21, 36), (29, 99, 186)
+    WD, PAD, GAP, NCOL = 1620, 40, 28, 3
+    RH, DH = 34, 50
+    colw = (WD - 2 * PAD - GAP * (NCOL - 1)) // NCOL
+    items = []                        # (kind, payload)
+    for dn in sorted(groups):
+        ix = sorted(groups[dn], key=lambda i: (-vv[i], P.names[i]))
+        items.append(("h", dn, len(ix), float(np.mean(vv[ix]))))
+        items += [("r", i, None, None) for i in ix]
+    total = sum(DH if k == "h" else RH for k, *_ in items)
+    target = total / NCOL
+    cols, cur, h, last_h = [], [], 0, None
+    for it in items:
+        ih = DH if it[0] == "h" else RH
+        if cur and h + ih > target * 1.02 and len(cols) < NCOL - 1:
+            if it[0] == "h" or (cur and cur[-1][0] == "h"):
+                carry = [cur.pop()] if cur[-1][0] == "h" else []
+                cols.append(cur); cur, h = carry, sum(DH for _ in carry)
+            else:
+                cols.append(cur)
+                cur, h = [("c",) + last_h[1:]], DH
+        cur.append(it); h += ih
+        if it[0] == "h":
+            last_h = it
+    cols.append(cur)
+    body_h = max(sum(DH if c[0] in "hc" else RH for c in col) for col in cols)
+    TOP, FOOT = 330, 80
+    im = Image.new("RGB", (WD, TOP + body_h + FOOT + 20), BG)
+    d = ImageDraw.Draw(im)
+    # header band
+    d.rectangle((0, 0, WD, 210), fill=HEAD)
+    state = {"ta": "தமிழ்நாடு", "ml": "കേരളം"}.get(lc, REGION["name"]) if lc != "en" else REGION["name"]
+    title = f"{state} · {T['title']}"
+    d.text((PAD, 26), title, font=font(52, "Bold"), fill=(255, 255, 255))
+    d.text((PAD, 104), sub, font=font(30), fill=(190, 205, 228))
+    info = T["count"].format(n=int(wet.sum()), d=len(groups)) + (" · " + T["dry"].format(n=n_dry) if n_dry else "")
+    if days is not None:
+        info += f" · ( ) = {T['days']}"
+    d.text((PAD, 152), info, font=font(26), fill=(150, 170, 200))
+    text_right(d, (WD - PAD, 32), BRAND, font(34, "Bold"), (120, 175, 230))
+    # legend (unit once at the start; wraps to a second row if needed)
+    fl = font(24)
+    x, y = PAD, 232
+    d.text((x, y), L["mm"] + ":", font=font(24, "Bold"), fill=TXT)
+    x += int(tw(d, L["mm"] + ":", font(24, "Bold"))) + 18
+    for b, lab, c in scale:
+        if lab == "ZERO":
+            continue
+        wdt = 32 + int(tw(d, lab, fl)) + 26
+        if x + wdt > WD - PAD:
+            x, y = PAD, y + 36
+        rrect(d, (x, y + 6, x + 24, y + 30), 5, fill=hex2rgb(c))
+        d.text((x + 32, y), lab, font=fl, fill=TXT)
+        x += wdt
+    # columns
+    fn, fv, fd, fh = font(25), font(25, "Bold"), font(21), font(27, "Bold")
+    for ci, col in enumerate(cols):
+        x0, y = PAD + ci * (colw + GAP), TOP
+        for k, it in enumerate(col):
+            if it[0] in "hc":
+                _, dn, n, avg = it
+                rrect(d, (x0, y + 6, x0 + colw, y + DH - 4), 8, fill=ACC)
+                name = dname(dn) + (" " + T["contd"] if it[0] == "c" else "")
+                d.text((x0 + 14, y + 10), ellipsize(d, name, fh, colw - 28 - int(tw(d, f"{T['avg']} {fmt(avg)}", fd)) - 16), font=fh, fill=(255, 255, 255))
+                text_right(d, (x0 + colw - 14, y + 14), f"{T['avg']} {fmt(avg)}", fd, (220, 232, 250))
+                y += DH
+                zebra = 0
+            else:
+                i = it[1]
+                zebra ^= 1
+                if zebra:
+                    d.rectangle((x0, y, x0 + colw, y + RH), fill=CARD)
+                rrect(d, (x0 + 8, y + 9, x0 + 24, y + 25), 4, fill=hex2rgb(scale[classify(vv[i], scale)][2]))
+                val = fmt(vv[i])
+                right = x0 + colw - 10
+                text_right(d, (right, y + 2), val, fv, TXT)
+                rw = tw(d, val, fv) + 14
+                if days is not None:
+                    dt = f"({int(days[i])})"
+                    text_right(d, (right - rw, y + 6), dt, fd, MUT)
+                    rw += tw(d, dt, fd) + 12
+                d.text((x0 + 34, y + 2), ellipsize(d, P.names[i], fn, colw - 44 - rw), font=fn, fill=TXT)
+                y += RH
+        if ci:
+            d.line((x0 - GAP // 2, TOP, x0 - GAP // 2, TOP + body_h), fill=LINE, width=2)
+    fy = TOP + body_h + 24
+    d.line((PAD, fy, WD - PAD, fy), fill=LINE, width=2)
+    d.text((PAD, fy + 16), L["cap_src"].format(src=REGION["source"]), font=font(24), fill=MUT)
+    text_right(d, (WD - PAD, fy + 16), f"{BRAND} · {SITE}", font(24, "Bold"), ACC)
+    im.save(path, optimize=True)
+    print(f"  list  : {path}  ({int(wet.sum())} stations, {im.height}px tall)")
+
+
 def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
@@ -950,6 +1072,8 @@ def main():
             base = os.path.join(OUT_DIR, f"rain_{tag}daily_{day.isoformat()}" + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
             print(f"Rendering ({lc}) …")
             finish(*render_daily(day, P, geo, base), base, not a.no_gif, a.gif_width)
+            station_list(base + "_list.png", P, np.nan_to_num(P.V[0]), ~np.isnan(P.V[0]), SCALE_DAILY,
+                         L["daily_sub"].format(d0=dstr(day - timedelta(days=1)), d1=dstr(day)))
     elif a.month:
         if a.month == "last":
             m0 = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
@@ -985,6 +1109,9 @@ def main():
                                 + (f"_{lc}" if len(REGION['langs']) > 1 else ""))
             print(f"Rendering {len(P.dates)} days ({lc}) …")
             finish(*render_accum(P, geo, base, note), base, not a.no_gif, a.gif_width)
+            station_list(base + "_list.png", P, P.cum[-1], np.ones(len(P.meta), bool), SCALE_ACCUM,
+                         L["accum_sub"].format(d0=dstr(P.dates[0]), d1=dstr(P.dates[-1]), n=len(P.dates)) + note,
+                         days=P.rainy_days[-1])
 
 
 if __name__ == "__main__":

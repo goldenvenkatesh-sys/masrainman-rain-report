@@ -93,6 +93,11 @@ def main(out_dir, rep):
                 info["files"][e] = "files/" + base + "." + e
                 if e != "txt":
                     info["files"][e + "_mb"] = round(os.path.getsize(src) / 1e6, 1)
+        lst = os.path.join(out_dir, base + "_list.png")     # station-wise readings (daily / accum)
+        if os.path.exists(lst):
+            shutil.copy(lst, os.path.join(files, base + "_list.png"))
+            info["files"]["list"] = "files/" + base + "_list.png"
+            info["files"]["list_mb"] = round(os.path.getsize(lst) / 1e6, 1)
         if info["files"].get("txt"):
             info["caption"] = open(os.path.join(files, base + ".txt"), encoding="utf-8").read().strip()
         info["made"] = now.isoformat(timespec="minutes")
@@ -118,7 +123,7 @@ def main(out_dir, rep):
         keep[it["id"]] = it
 
     # remove files no longer listed
-    wanted = {os.path.basename(p) for it in keep.values() for e, p in it["files"].items() if e in EXTS}
+    wanted = {os.path.basename(p) for it in keep.values() for e, p in it["files"].items() if not e.endswith("_mb")}
     for fn in os.listdir(files):
         if fn not in wanted:
             os.remove(os.path.join(files, fn))
@@ -147,6 +152,8 @@ def write_readme(rep, reports, now):
         if it["region"] == "kl":
             title += f" ({LANGS.get(it['lang'], it['lang'])})"
         links = " · ".join(f"[{e.upper()}]({f[e]})" for e in ("mp4", "gif", "png") if f.get(e))
+        if f.get("list"):
+            links += f" · [Station list]({f['list']})"
         lines += [f"## {title}", f"{it['label']} — {links}", ""]
         if f.get("png"):
             lines += [f"![{title}]({f['png']})", ""]
@@ -154,6 +161,8 @@ def write_readme(rep, reports, now):
     for it in reports:
         f = it["files"]
         links = " ".join(f"[{e.upper()}]({f[e]})" for e in ("mp4", "gif", "png") if f.get(e))
+        if f.get("list"):
+            links += f" [LIST]({f['list']})"
         lines.append(f"| {it['region_name']} · {it['kind_name']} | {it['label']} | {links} |")
     with open(os.path.join(rep, "README.md"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
