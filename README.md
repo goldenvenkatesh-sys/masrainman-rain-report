@@ -17,6 +17,24 @@ Data: `https://beta-tnsmart.rimes.int/Rainfall_Python_IDW/Hourly_json/hourly_rai
 3. It runs every day at 09:45 IST and makes both reports. To run it yourself: Actions → *TN rainfall report* → *Run workflow*, and choose mode / dates.
 4. Videos are also attached to each run under **Artifacts → rain-report**.
 
+## Where to find the reports (phone friendly)
+
+Every report (24-hour, multi-day, monthly and the 2-hourly "rain so far") is also saved to the
+**`reports` branch** by `publish_reports.sh`:
+
+- **MasRainman model-maps site** (Cloudflare, login protected): *Rain reports* page, with preview and
+  MP4 / GIF / PNG download buttons for Tamil Nadu, Kerala and Karnataka.
+- **GitHub phone app**: open this repo → switch the branch to `reports` → the README shows the latest
+  report of each kind with a picture; tap a file, then ⋯ → *Download*.
+
+Kept: the newest 12 "rain so far" pictures per state, 10 days of daily / multi-day reports and
+13 months of monthly totals. The branch is saved as one fresh commit each time, so old videos don't
+pile up in the repo.
+
+Optional secret **`WN3_DISPATCH_TOKEN`** (fine-grained token, *Actions: read and write* on
+`masrainman-weathernext3`): the site republishes within a few minutes of each report. Without it the
+site checks for new reports every 2 hours.
+
 ## Tamil Nadu every 2 hours (rain so far)
 
 The *TN rainfall so far* workflow runs every 2 hours, at 10:45 am, 12:45, 2:45 … 6:45 am IST, and makes the same
