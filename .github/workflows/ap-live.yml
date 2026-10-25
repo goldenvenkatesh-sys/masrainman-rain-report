@@ -7,9 +7,6 @@ on:
   # started by the TN live run each time (GitHub kept skipping a separate timer for this one)
   workflow_dispatch:
     inputs:
-      send:
-        description: "send to Telegram (yes/no)"
-        default: "yes"
       always:
         description: "make the picture even if nothing changed (yes/no)"
         default: "no"
@@ -63,14 +60,6 @@ jobs:
         env:
           WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
         run: bash publish_reports.sh out
-
-      - name: Send to Telegram
-        continue-on-error: true
-        if: ${{ github.event.inputs.send != 'no' && hashFiles('out/*.mp4') != '' }}
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
-        run: python send_telegram.py out/*.mp4
 
       - uses: actions/upload-artifact@v4
         if: ${{ hashFiles('out/*.mp4') != '' }}

@@ -21,9 +21,6 @@ on:
       end:
         description: "accum: end YYYY-MM-DD (blank = latest)"
         default: ""
-      send:
-        description: "send to Telegram (yes/no)"
-        default: "yes"
 
 permissions:
   contents: write
@@ -114,14 +111,6 @@ jobs:
         env:
           WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
         run: bash publish_reports.sh out
-
-      - name: Send to Telegram
-        continue-on-error: true
-        if: ${{ github.event.inputs.send != 'no' }}
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
-        run: python send_telegram.py out/*.mp4
 
       - uses: actions/upload-artifact@v4
         with:

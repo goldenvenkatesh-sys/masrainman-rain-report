@@ -10,9 +10,6 @@ on:
     - cron: "15 * * * *"
   workflow_dispatch:
     inputs:
-      send:
-        description: "send to Telegram (yes/no; blank = only on the 2-hourly slots 10:45, 12:45 … IST)"
-        default: ""
       always:
         description: "make the picture even if nothing changed (yes/no)"
         default: "no"
@@ -31,18 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       skip: ${{ steps.c.outputs.skip }}
-      send: ${{ steps.c.outputs.send }}
     steps:
       - id: c
         env:
-          SEND: ${{ github.event.inputs.send }}
           ALWAYS: ${{ github.event.inputs.always }}
         run: |
-          H=$(TZ=Asia/Kolkata date +%-H)
-          if [ -z "$SEND" ]; then
-            if [ $((H % 2)) -eq 0 ]; then SEND=yes; else SEND=no; fi
-          fi
-          echo "send=$SEND" >> "$GITHUB_OUTPUT"
           made=$(curl -s "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/reports/index.json?t=$(date +%s)" | python3 -c "
           import json,sys
           try: d=json.load(sys.stdin)
@@ -54,7 +44,7 @@ jobs:
             echo "Last TN live picture: $made ($age min ago)"
             [ "$age" -lt 40 ] && skip=yes
           fi
-          echo "skip=$skip" >> "$GITHUB_OUTPUT"; echo "skip=$skip send=$SEND"
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"; echo "skip=$skip"
 
   live:
     needs: check
@@ -72,7 +62,7 @@ jobs:
         run: |
           for wf in ka-live.yml ap-live.yml; do
             gh workflow run "$wf" -R "$GITHUB_REPOSITORY" --ref main \
-              -f send="${{ needs.check.outputs.send }}" -f always="${{ github.event.inputs.always || 'no' }}" \
+              -f always="${{ github.event.inputs.always || 'no' }}" \
               && echo "started $wf"
           done
 
@@ -103,14 +93,6 @@ jobs:
         env:
           WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
         run: bash publish_reports.sh out
-
-      - name: Send to Telegram
-        continue-on-error: true
-        if: ${{ needs.check.outputs.send == 'yes' && hashFiles('out/*.mp4') != '' }}
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.RAIN_REPORT_CHAT_IDS || secrets.TELEGRAM_CHAT_ID }}
-        run: python send_telegram.py out/*.mp4
 
       - uses: actions/upload-artifact@v4
         if: ${{ hashFiles('out/*.mp4') != '' }}

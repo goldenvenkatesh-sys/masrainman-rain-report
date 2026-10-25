@@ -11,11 +11,8 @@ Data: `https://beta-tnsmart.rimes.int/Rainfall_Python_IDW/Hourly_json/hourly_rai
 ## Run on GitHub (recommended)
 
 1. Create a new repo (for example `masrainman-rain-report`) and upload everything in this folder, including `.github/`.
-2. Optional, to post to Telegram: Settings → Secrets and variables → Actions → add
-   - `TELEGRAM_BOT_TOKEN`: your bot token
-   - `RAIN_REPORT_CHAT_IDS`: chat ids, comma separated (for example your id and the users' group id `-100…`)
-3. It runs every day at 09:45 IST and makes both reports. To run it yourself: Actions → *TN rainfall report* → *Run workflow*, and choose mode / dates.
-4. Videos are also attached to each run under **Artifacts → rain-report**.
+2. It runs every day at 09:45 IST and makes both reports. To run it yourself: Actions → *TN rainfall report* → *Run workflow*, and choose mode / dates.
+3. Videos are also attached to each run under **Artifacts → rain-report**.
 
 ## Where to find the reports (phone friendly)
 
@@ -64,7 +61,7 @@ fire, the second run finds no new rain and posts nothing.
 ## Karnataka every 2 hours (rain so far)
 
 The *Karnataka rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Karnataka
-from KSNDMC's telemetric rain gauges, at the same times as Tamil Nadu (10:45 am, 12:45, 2:45 … 6:45 am IST), and posts it to Telegram.
+from KSNDMC's telemetric rain gauges, at the same times as Tamil Nadu (10:45 am, 12:45, 2:45 … 6:45 am IST).
 
 Data: the map inside the KSNDMC weather dashboard (`ksndmc.org/default.aspx/WebDashboard`) is
 `https://ksndmc.org:122/`, and that page asks its own server for the 15-minute rainfall table (ASP.NET callback
