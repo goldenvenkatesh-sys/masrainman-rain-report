@@ -66,20 +66,30 @@ taluk and gram panchayat / hobli, but without coordinates. `ksndmc_fetch.py` rea
 python rain_report.py live --region ka
 ```
 
-## Andhra Pradesh every 2 hours (rain so far)
+## Andhra Pradesh: every 2 hours, daily, multi-day and monthly
 
-The *Andhra Pradesh rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Andhra
-Pradesh from the DES / APSDPS real-time weather stations, at the same times as Tamil Nadu and Karnataka (10:45 am,
-12:45, 2:45 … 6:45 am IST), and posts it to Telegram. The caption starts with "Rainfall Report · Andhra Pradesh"
-(Karnataka's now says "· Karnataka") so the posts are easy to tell apart.
+Andhra Pradesh gets the same reports as Tamil Nadu, from the DES / APSDPS real-time weather stations:
 
-Data: the station map on desweather.ap.gov.in (`Livemap/Apsdpsmapsv1.html`) reads
-`http://desweather.ap.gov.in/webservice/rest/json1`, a list of all ~2,200 stations with latitude, longitude, district,
-mandal and `rain` = rain since 8:30 am (the same numbers as `Realtime/Rainfall.jsp`). Dry stations are listed with 0,
--1 means not reporting, and a station whose last report (`ldate`) is older than the start of the rain-day is skipped.
-`ap_fetch.py` reads it. apsdps.ap.gov.in itself does not answer from outside India, but desweather.ap.gov.in does
-(over http; its https certificate is self-signed).
+- *Andhra Pradesh rainfall so far* (`ap-live.yml`): the white "rain since 8:30 am, so far" picture at the same
+  times as Tamil Nadu and Karnataka (10:45 am, 12:45, 2:45 … 6:45 am IST).
+- *TN rainfall report* at 09:55 IST: the dark 24-hour report and the total since Oct 1, and on the 1st of the month
+  last month's total (a month with data on fewer than 80% of its days is skipped).
 
+The caption starts with "Rainfall Report · Andhra Pradesh" (Karnataka's now says "· Karnataka") so the posts are
+easy to tell apart.
+
+Data:
+- Live: the station map on desweather.ap.gov.in (`Livemap/Apsdpsmapsv1.html`) reads
+  `http://desweather.ap.gov.in/webservice/rest/json1`, a list of all ~2,200 stations with latitude, longitude,
+  district, mandal and `rain` = rain since 8:30 am (the same numbers as `Realtime/Rainfall.jsp`). Dry stations are
+  listed with 0, -1 means not reporting, and a station whose last report (`ldate`) is older than the start of the
+  rain-day is skipped.
+- Finished days: `Realtime/Rainfall24.jsp` lists the last full 24 hours (8:30 am to 8:30 am) by station id. The
+  09:55 run saves it to `data/ap/daily/<rain-day>.json` (rain by station id) and keeps every station's position and
+  name in `data/ap/stations.json`. The site shows only the latest day, so the archive starts on 2026-10-24, and each
+  2-hourly run also saves the day if the 09:55 run was skipped. The first monthly total will be November 2026.
+- `ap_fetch.py` reads both. apsdps.ap.gov.in itself does not answer from outside India, but desweather.ap.gov.in does
+  (over http; its https certificate is self-signed).
 - District boundaries: `data/ap_districts.geojson`, the 28 districts the feed uses. It starts from the 26 districts of
   2022 and splits Prakasam (Markapuram) and Alluri Sitharama Raju (Polavaram) by the feed's own station districts;
   `tools/build_ap_districts.py` rebuilds it.
@@ -87,6 +97,10 @@ mandal and `rain` = rain since 8:30 am (the same numbers as `Realtime/Rainfall.j
 
 ```
 python rain_report.py live --region ap
+python ap_fetch.py daily                      # save the finished rain-day
+python rain_report.py daily --region ap
+python rain_report.py accum --region ap --start 2026-10-24
+python rain_report.py accum --region ap --month 2026-11
 ```
 
 ## Monthly total

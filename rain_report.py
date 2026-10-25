@@ -12,7 +12,7 @@ Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
   --region kl             Kerala, English and Malayalam (one video each); --lang en or --lang ml for one
   --region ka             Karnataka (KSNDMC), English; live mode only
-  --region ap             Andhra Pradesh (DES / APSDPS), English; live mode only
+  --region ap             Andhra Pradesh (DES / APSDPS), English
 
 Examples
   python rain_report.py daily --region kl
@@ -76,7 +76,8 @@ REGIONS = {
     # DES / APSDPS lists all ~2,200 stations, dry ones with 0 mm, so no dry fill is needed
     "ap": {"name": "Andhra Pradesh", "geo": "ap_districts.geojson", "canon": ap_fetch.canon,
            "langs": ["en"], "radius": 25, "source": "DES / APSDPS real-time weather stations",
-           "pill": {"en": "All Andhra Pradesh"}, "load": None, "live": ap_fetch.day_stations},
+           "pill": {"en": "All Andhra Pradesh"}, "load": lambda a, b: ap_fetch.load_days(a, b),
+           "live": ap_fetch.day_stations},
 }
 REGION = REGIONS["tn"]
 L = LANGS["ta"]

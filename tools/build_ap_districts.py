@@ -18,7 +18,7 @@ import sys
 
 import numpy as np
 from scipy.spatial import Voronoi
-from shapely.geometry import MultiPoint, Point, Polygon, mapping, shape
+from shapely.geometry import Point, Polygon, mapping, shape
 from shapely.ops import unary_union
 
 sys.path.insert(0, __file__.rsplit("/tools/", 1)[0])

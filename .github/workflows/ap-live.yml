@@ -15,6 +15,9 @@ on:
         description: "make the picture even if nothing changed (yes/no)"
         default: "no"
 
+permissions:
+  contents: write
+
 concurrency:
   group: ap-live
   cancel-in-progress: false
@@ -43,6 +46,14 @@ jobs:
           path: data/raw
           key: aplive-${{ github.run_id }}
           restore-keys: aplive-
+
+      # backup for the 09:55 daily report: if GitHub skipped that run, save the finished rain-day here
+      # (DES shows only the latest day, so a day not saved before the next 08:30 is lost)
+      - name: Save finished rain-day if missing
+        continue-on-error: true
+        run: |
+          python ap_fetch.py daily --if-missing
+          bash save_ap.sh
 
       - name: Make picture
         run: python rain_report.py live --region ap ${{ github.event.inputs.always == 'yes' && '--always' || '' }}
