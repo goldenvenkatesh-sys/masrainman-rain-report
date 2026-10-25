@@ -1513,6 +1513,69 @@
 "rain": 0.5,
 "lat": 9.967,
 "lon": 76.299
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Vidyanagar",
+"key": "VIDYANAGAR",
+"rain": 7.2,
+"lat": 12.5144,
+"lon": 75.0188
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Paika",
+"key": "PAIKA",
+"rain": 30.0,
+"lat": 12.5433,
+"lon": 75.1056
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Manjeswaram",
+"key": "MANJESWARAM",
+"rain": 0.0,
+"lat": 12.7153,
+"lon": 74.8903
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Kalliyot",
+"key": "KALLIYOT",
+"rain": 0.1,
+"lat": 12.4144,
+"lon": 75.1483
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Madhur",
+"key": "MADHUR",
+"rain": 3.0,
+"lat": 12.5239,
+"lon": 75.0047
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Uppala",
+"key": "UPPALA",
+"rain": 0.0,
+"lat": 12.7236,
+"lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Padiyathadukka",
+"key": "PADIYATHADUKKA",
+"rain": 61.2,
+"lat": 12.5575,
+"lon": 75.2
 }
 ]
 }
