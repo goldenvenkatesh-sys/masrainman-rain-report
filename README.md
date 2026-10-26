@@ -4,10 +4,13 @@ Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall
 
 - **daily**: one rain-day (24 h ending 08:30 IST). The map colours build up from zero.
 - **accum**: total from a start date to today. The map fills day by day with a date counter.
-- **live24** (Tamil Nadu): "Past 24 Hours Observed Rainfall", a 22.5 s portrait video (1080x1350). The rain-day
-  is replayed hour by hour on a hillshaded terrain map (SRTM via AWS Terrain Tiles, cached in `data/raw/terrain/`);
-  the camera follows the gauge with the heaviest rain each hour, then shows the whole state and ends with the
-  five wettest stations. Made with the daily report at 09:45 IST (`rain-report.yml`, mode `daily`, `both` or
+- **live24** (Tamil Nadu): "Past 24 Hours Observed Rainfall", a ~29 s 9:16 video (1080x1920) for Reels/Shorts.
+  It opens with the answer (a Tamil headline and the biggest 24-hour total counting up), then replays the rain-day
+  hour by hour on a hillshaded terrain map (SRTM via AWS Terrain Tiles, cached in `data/raw/terrain/`) with a
+  24-hour rain clock; the camera follows the gauge with the heaviest rain each hour, then shows the whole state.
+  It ends with the five wettest stations and "Did the models get it right?": heavy-rain districts caught by the
+  ECMWF IFS and AIFS forecasts (ECMWF open data, `models.py`) and WeatherNext 3 when its data is provided
+  (`WN3_RAIN_URL` or `data/raw/models/wn3_<date>.json`; otherwise it shows "no forecast"). Made with the daily report at 09:45 IST (`rain-report.yml`, mode `daily`, `both` or
   `live24`), or `python rain_report.py live24 --date 2026-10-26`. Other states can be added in `live24.py`
   (`REGIONS24`).
 

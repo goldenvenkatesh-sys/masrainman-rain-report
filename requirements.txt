@@ -6,3 +6,4 @@ requests
 imageio-ffmpeg
 pdfplumber
 opencv-python-headless
+eccodes
