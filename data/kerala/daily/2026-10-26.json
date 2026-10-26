@@ -1453,6 +1453,24 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kottiyoor",
+"key": "KOTTIYOOR",
+"rain": 0.0,
+"lat": 11.8731,
+"lon": 75.8672
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Nedumpoil",
+"key": "NEDUMPOIL",
+"rain": 1.4,
+"lat": 11.86,
+"lon": 75.74
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
@@ -1471,12 +1489,30 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Maloor",
+"key": "MALOOR",
+"rain": 1.2,
+"lat": 11.9,
+"lon": 75.6331
+},
+{
+"type": "sw",
 "district": "Pathanamthitta",
 "station": "Nilackal",
 "key": "NILACKAL",
 "rain": 62.8,
 "lat": 9.3897,
 "lon": 77.0108
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Kannavam",
+"key": "KANNAVAM",
+"rain": 6.2,
+"lat": 11.83,
+"lon": 75.66
 },
 {
 "type": "sw",
@@ -1495,6 +1531,15 @@
 "rain": 68.4,
 "lat": 8.6928,
 "lon": 76.8186
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Palappuzha",
+"key": "PALAPPUZHA",
+"rain": 0.0,
+"lat": 11.9614,
+"lon": 75.7153
 },
 {
 "type": "sw",
@@ -1597,6 +1642,15 @@
 },
 {
 "type": "sw",
+"district": "Kozhikode",
+"station": "Vanimel",
+"key": "VANIMEL",
+"rain": 0.0,
+"lat": 11.7044,
+"lon": 75.6858
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Erattupetta",
 "key": "ERATTUPETTA",
@@ -1633,12 +1687,48 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Pazhassi",
+"key": "PAZHASSI",
+"rain": 0.0,
+"lat": 11.9667,
+"lon": 75.6167
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "FCS Mangattuparamba",
+"key": "FCS MANGATTUPARAMBA",
+"rain": 2.6,
+"lat": 11.9828,
+"lon": 75.3639
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Thillenkeri",
+"key": "THILLENKERI",
+"rain": 0.0,
+"lat": 11.9331,
+"lon": 75.6664
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Marayoor",
 "key": "MARAYOOR",
 "rain": 26.4,
 "lat": 10.3433,
 "lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Payyavoor",
+"key": "PAYYAVOOR",
+"rain": 0.0,
+"lat": 12.0581,
+"lon": 75.5728
 },
 {
 "type": "sw",

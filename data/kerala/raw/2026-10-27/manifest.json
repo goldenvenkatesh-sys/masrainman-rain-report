@@ -1,0 +1,15 @@
+{
+ "files": [],
+ "checks": {
+  "imd_station_daily.pdf": 200,
+  "imd_rainfall_map.jpg": 200,
+  "imd_season.pdf": 200,
+  "ksdma_page_http": 200,
+  "ksdma_24-Hr-Rainfall-map-5.jpeg": 200,
+  "ksdma_Actual-Vs-Prediciton.pdf": 200,
+  "ksdma_RF-ENG-17.jpeg": 200,
+  "ksdma_RF-MAL-16.jpeg": 200,
+  "ksdma_page": "4 files linked",
+  "imd_aws_portal": 200
+ }
+}
