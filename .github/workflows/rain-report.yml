@@ -93,6 +93,8 @@ jobs:
           # live24 reads the WeatherNext 3 24-h rain from the weathernext3 repo with this token
           WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
           WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
+          # ...or, without a token, the public copy the model-maps workflow publishes on Cloudflare
+          WN3_RAIN_URL: https://masrainman-wn3-data.pages.dev/wn3_{D}.json
         run: |
           for R in tn kl ap; do
             case " $REGION " in *" $R "*) ;; *) continue ;; esac
