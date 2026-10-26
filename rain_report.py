@@ -8,7 +8,7 @@ Two modes
           each run takes the latest TN-SMART file / KSNDMC 15-minute table / DES station feed and adds any
           new rain to the totals saved by earlier runs.
   live24: Tamil Nadu. "Past 24 hours observed rainfall": the rain-day replayed hour by hour on a terrain
-          map with a rain clock, toppers and a model scorecard, 1080x1920 (see live24.py).
+          map, 1080x1350 (see live24.py).
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
