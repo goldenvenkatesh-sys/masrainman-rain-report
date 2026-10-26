@@ -148,6 +148,28 @@ def hex2rgb(h):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
+# ----------------------------------------------------------------- logo
+# MasRainman rainbow-cloud logo, transparent. The _dark copy has white lettering for dark backgrounds.
+LOGO = {False: os.path.join(HERE, "assets", "masrainman_logo.png"),
+        True: os.path.join(HERE, "assets", "masrainman_logo_dark.png")}
+_logo_cache = {}
+
+
+def logo(height, on_dark=True):
+    key = (height, on_dark)
+    if key not in _logo_cache:
+        im = Image.open(LOGO[on_dark]).convert("RGBA")
+        _logo_cache[key] = im.resize((round(im.width * height / im.height), height), Image.LANCZOS)
+    return _logo_cache[key]
+
+
+def put_logo(im, right, top, height, on_dark=True):
+    """Paste the logo with its top-right corner at (right, top); returns its width."""
+    lg = logo(height, on_dark)
+    im.paste(lg, (int(right - lg.width), int(top)), lg)
+    return lg.width
+
+
 # ----------------------------------------------------------------- fonts
 _font_cache = {}
 
@@ -461,18 +483,24 @@ class Report:
         im.paste(wm, (0, 0), wm)
         d = ImageDraw.Draw(im, "RGBA")
 
-        d.text((48, 26), L["title"], font=font(56, "ExtraBold"), fill=TEXT)
+        # logo in the top-right corner, the region (and live) pills to its left
+        r = W - 48 - put_logo(im, W - 40, 12, 100, on_dark=sum(BG) < 300) - 14
+        d = ImageDraw.Draw(im, "RGBA")
         pill = REGION["pill"].get(self.lang_code, REGION["name"])
         pf = font(22, "SemiBold")
         pw = tw(d, pill, pf) + 40
-        rrect(d, (W - 48 - pw, 44, W - 48, 90), 23, fill=PILL[0], outline=PILL[1])
-        d.text((W - 48 - pw + 20, 50), pill, font=pf, fill=ACCENT_SOFT)
+        ts = 56                                 # title size, smaller if it would run into the pill
+        while ts > 40 and tw(d, L["title"], font(ts, "ExtraBold")) > r - pw - 48 - 24:
+            ts -= 2
+        d.text((48, 26 + (56 - ts) // 2), L["title"], font=font(ts, "ExtraBold"), fill=TEXT)
+        rrect(d, (r - pw, 44, r, 90), 23, fill=PILL[0], outline=PILL[1])
+        d.text((r - pw + 20, 50), pill, font=pf, fill=ACCENT_SOFT)
         if self.live_tag:                      # red "live" pill under the region pill
             lf = font(22, "Bold")
             lw = tw(d, self.live_tag, lf) + 62
-            rrect(d, (W - 48 - lw, 100, W - 48, 140), 20, fill=LIVE_RED)
-            d.ellipse((W - 48 - lw + 18, 112, W - 48 - lw + 34, 128), fill=(255, 255, 255))
-            d.text((W - 48 - lw + 44, 104), self.live_tag, font=lf, fill=(255, 255, 255))
+            rrect(d, (r - lw, 100, r, 140), 20, fill=LIVE_RED)
+            d.ellipse((r - lw + 18, 112, r - lw + 34, 128), fill=(255, 255, 255))
+            d.text((r - lw + 44, 104), self.live_tag, font=lf, fill=(255, 255, 255))
 
         # panels
         mx0, my0, mx1, my1 = self.MAP_BOX
@@ -950,7 +978,9 @@ def station_list(path, P, v, reported, scale, sub, days=None):
     if days is not None:
         info += f" · ( ) = {T['days']}"
     d.text((PAD, 152), info, font=font(26), fill=(150, 170, 200))
-    text_right(d, (WD - PAD, 32), BRAND, font(34, "Bold"), (120, 175, 230))
+    lw = put_logo(im, WD - PAD, 14, 182)
+    d = ImageDraw.Draw(im)
+    text_right(d, (WD - PAD - lw - 24, 32), BRAND, font(34, "Bold"), (120, 175, 230))
     # legend (unit once at the start; wraps to a second row if needed)
     fl = font(24)
     x, y = PAD, 232

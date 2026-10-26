@@ -315,6 +315,8 @@ class Live24:
         text(d, (43 + d.textlength(s0, font=f25), 140), "  ·  Past 24 Hours Observed Rainfall", f25, SOFT)
         text(d, (43, 172), f"Ending {D.day.day} {D.day:%b %Y}, 8:30 AM IST  ·  Hourly accumulation of "
                            f"rain-gauge observations", font(16), MUTED)
+        rr.put_logo(im, 1037, 16, 128)          # stays on every scene: they only cover below the header
+        d = ImageDraw.Draw(im, "RGBA")
         d.rectangle((43, 195, 107, 197), fill=GOLD)
         d.line((107, 196, 1037, 196), fill=(30, 35, 45), width=1)
         for box in [(38, 216, 323, 415), (38, 440, 323, 590), (38, 614, 323, 742), (38, 766, 323, 1063),
