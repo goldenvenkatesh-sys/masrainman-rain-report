@@ -1,13 +1,19 @@
 {
 "date": "2026-10-26",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-26T14:19+0530",
+"fetched": "2026-10-26T16:39+0530",
 "stations": [
 {
 "station": "Piravom",
 "uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
 "district": "Ernakulam",
 "rain": 19.0
+},
+{
+"station": "Braemore",
+"uuid": "8be590b3-6cf8-421c-a3dc-bc6e53af69cc",
+"district": "Thiruvananthapuram",
+"rain": 36.2
 },
 {
 "station": "Keerampara",
@@ -58,6 +64,18 @@
 "rain": 62.8
 },
 {
+"station": "Valayinkil",
+"uuid": "ad063010-6357-4257-bb01-a3e8292f889b",
+"district": "Thiruvananthapuram",
+"rain": 47.4
+},
+{
+"station": "Attingal",
+"uuid": "0cb6eb68-a911-4a35-8c14-7ff739c6dc4d",
+"district": "Thiruvananthapuram",
+"rain": 68.4
+},
+{
 "station": "Boyce Estate",
 "uuid": "53728cef-53c0-4371-930f-f84496435648",
 "district": "Idukki",
@@ -92,6 +110,12 @@
 "uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
 "district": "Kottayam",
 "rain": 9.0
+},
+{
+"station": "Varkala",
+"uuid": "40270ba2-9070-46fb-880f-624cd75ccaf2",
+"district": "Thiruvananthapuram",
+"rain": 29.6
 },
 {
 "station": "Madhur",
@@ -158,6 +182,12 @@
 "uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
 "district": "Idukki",
 "rain": 19.5
+},
+{
+"station": "Vamanapuram",
+"uuid": "a2e16314-f70c-420f-9c24-435caa5b68dd",
+"district": "Thiruvananthapuram",
+"rain": 71.2
 },
 {
 "station": "Chinnar",

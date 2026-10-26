@@ -1417,6 +1417,15 @@
 },
 {
 "type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Braemore",
+"key": "BRAEMORE",
+"rain": 36.2,
+"lat": 8.7367,
+"lon": 77.0786
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Keerampara",
 "key": "KEERAMPARA",
@@ -1468,6 +1477,24 @@
 "rain": 62.8,
 "lat": 9.3897,
 "lon": 77.0108
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Valayinkil",
+"key": "VALAYINKIL",
+"rain": 47.4,
+"lat": 8.6764,
+"lon": 77.0914
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Attingal",
+"key": "ATTINGAL",
+"rain": 68.4,
+"lat": 8.6928,
+"lon": 76.8186
 },
 {
 "type": "sw",
@@ -1612,6 +1639,15 @@
 "rain": 19.5,
 "lat": 9.7831,
 "lon": 76.8792
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Vamanapuram",
+"key": "VAMANAPURAM",
+"rain": 71.2,
+"lat": 8.7167,
+"lon": 76.8953
 },
 {
 "type": "sw",

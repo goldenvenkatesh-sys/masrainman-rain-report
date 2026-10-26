@@ -1,13 +1,19 @@
 {
 "date": "2026-10-23",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-25T11:56+0530",
+"fetched": "2026-10-26T16:39+0530",
 "stations": [
 {
 "station": "Piravom",
 "uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
 "district": "Ernakulam",
 "rain": 2.0
+},
+{
+"station": "Braemore",
+"uuid": "8be590b3-6cf8-421c-a3dc-bc6e53af69cc",
+"district": "Thiruvananthapuram",
+"rain": 62.4
 },
 {
 "station": "Keerampara",
@@ -136,6 +142,12 @@
 "rain": 19.4
 },
 {
+"station": "Valayinkil",
+"uuid": "ad063010-6357-4257-bb01-a3e8292f889b",
+"district": "Thiruvananthapuram",
+"rain": 8.2
+},
+{
 "station": "Alakkode",
 "uuid": "e4a9f142-3bbc-4ed5-b105-48851ba0cc50",
 "district": "Kannur",
@@ -152,6 +164,12 @@
 "uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
 "district": "Thrissur",
 "rain": 19.0
+},
+{
+"station": "Attingal",
+"uuid": "0cb6eb68-a911-4a35-8c14-7ff739c6dc4d",
+"district": "Thiruvananthapuram",
+"rain": 1.8
 },
 {
 "station": "Palappuzha",
@@ -248,6 +266,12 @@
 "uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
 "district": "Alappuzha",
 "rain": 0.0
+},
+{
+"station": "Varkala",
+"uuid": "40270ba2-9070-46fb-880f-624cd75ccaf2",
+"district": "Thiruvananthapuram",
+"rain": 0.6
 },
 {
 "station": "Moolathara",
@@ -398,6 +422,12 @@
 "uuid": "181b3f21-87a2-4478-8924-e30a0112b44f",
 "district": "Thrissur",
 "rain": 53.6
+},
+{
+"station": "Vamanapuram",
+"uuid": "a2e16314-f70c-420f-9c24-435caa5b68dd",
+"district": "Thiruvananthapuram",
+"rain": 2.2
 },
 {
 "station": "Pudukkad",
