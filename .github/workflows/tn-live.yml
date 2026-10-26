@@ -66,44 +66,6 @@ jobs:
               && echo "started $wf"
           done
 
-      # The 24-hour reports and the model maps, started at their IST times from here, because
-      # GitHub's own timer often skips them or runs them hours late. A daily report that is
-      # already made today is not made again; a missed one is tried again the next hour.
-      - name: Start daily reports and model maps when due
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
-        run: |
-          idx=$(curl -s "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/reports/index.json?t=$(date +%s)")
-          made_today() {   # $1 = region: was its 24-hour report made today (IST)?
-            m=$(echo "$idx" | python3 -c "
-          import json,sys
-          try: d=json.load(sys.stdin)
-          except Exception: d={'reports':[]}
-          print(max([r['made'] for r in d['reports'] if r['region']=='$1' and r['kind']=='daily'] or ['']))")
-            [ -n "$m" ] && [ "$(TZ=Asia/Kolkata date -d "$m" +%F)" = "$(TZ=Asia/Kolkata date +%F)" ]
-          }
-          h=$((10#$(TZ=Asia/Kolkata date +%H)))
-          echo "IST hour: $h"
-          # 09:45 Tamil Nadu + Andhra Pradesh (tried again up to 11:45 if missed)
-          if [ "$h" -ge 9 ] && [ "$h" -le 11 ] && ! made_today tn; then
-            gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region="tn ap" -f mode=both \
-              && echo "started TN + AP 24-hour reports"
-          fi
-          # 12:45 Kerala, after IMD's file at ~11 am (tried again up to 15:45 if missed)
-          if [ "$h" -ge 12 ] && [ "$h" -le 15 ] && ! made_today kl; then
-            gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region=kl -f mode=both \
-              && echo "started Kerala 24-hour report"
-          fi
-          # Model maps at 00:45, 06:45, 13:45 and 17:45 IST
-          case "$h" in
-            0|6|13|17)
-              GH_TOKEN="$WN3_DISPATCH_TOKEN" gh workflow run weathernext3.yml \
-                -R goldenvenkatesh-sys/masrainman-weathernext3 --ref main \
-                && echo "started model maps" ;;
-          esac
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -138,3 +100,45 @@ jobs:
           name: rain-live
           path: out/
           retention-days: 7
+
+  # The 24-hour reports and the model maps, started at their IST times from here, because
+  # GitHub's own timer often skips them or runs them hours late. A daily report that is
+  # already made today is not made again; a missed one is tried again the next hour.
+  # Its own job, so it runs even in an hour whose picture an earlier run already made.
+  due:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start daily reports and model maps when due
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+        run: |
+          idx=$(curl -s "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/reports/index.json?t=$(date +%s)")
+          made_today() {   # $1 = region: was its 24-hour report made today (IST)?
+            m=$(echo "$idx" | python3 -c "
+          import json,sys
+          try: d=json.load(sys.stdin)
+          except Exception: d={'reports':[]}
+          print(max([r['made'] for r in d['reports'] if r['region']=='$1' and r['kind']=='daily'] or ['']))")
+            [ -n "$m" ] && [ "$(TZ=Asia/Kolkata date -d "$m" +%F)" = "$(TZ=Asia/Kolkata date +%F)" ]
+          }
+          h=$((10#$(TZ=Asia/Kolkata date +%H)))
+          echo "IST hour: $h"
+          # 09:45 Tamil Nadu + Andhra Pradesh (tried again up to 11:45 if missed)
+          if [ "$h" -ge 9 ] && [ "$h" -le 11 ] && ! made_today tn; then
+            gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region="tn ap" -f mode=both \
+              && echo "started TN + AP 24-hour reports"
+          fi
+          # 12:45 Kerala, after IMD's file at ~11 am (tried again up to 15:45 if missed)
+          if [ "$h" -ge 12 ] && [ "$h" -le 15 ] && ! made_today kl; then
+            gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region=kl -f mode=both \
+              && echo "started Kerala 24-hour report"
+          fi
+          # Model maps at 00:45, 06:45, 13:45 and 17:45 IST
+          case "$h" in
+            0|6|13|17)
+              GH_TOKEN="$WN3_DISPATCH_TOKEN" gh workflow run weathernext3.yml \
+                -R goldenvenkatesh-sys/masrainman-weathernext3 --ref main \
+                && echo "started model maps" ;;
+          esac
