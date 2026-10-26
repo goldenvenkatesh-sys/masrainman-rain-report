@@ -7,6 +7,8 @@ Two modes
   live  : Tamil Nadu, Karnataka and Andhra Pradesh. Rain since 08:30 IST today, so far. Run every 2 hours:
           each run takes the latest TN-SMART file / KSNDMC 15-minute table / DES station feed and adds any
           new rain to the totals saved by earlier runs.
+  live24: Tamil Nadu. "Past 24 hours observed rainfall": the rain-day replayed hour by hour on a terrain
+          map, 1080x1350 (see live24.py).
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
@@ -23,6 +25,7 @@ Examples
   python rain_report.py accum --start 2026-10-01 --live   # also add today's running (partial) day
   python rain_report.py live                          # rain since 08:30 today, so far
   python rain_report.py accum --month 2026-10         # whole month (rain-days Oct 1 to Oct 31)
+  python rain_report.py live24 --date 2026-10-26      # past 24 hours, hour by hour (Tamil Nadu)
 
 Outputs go to ./out : MP4 video, GIF, and a PNG of the final frame.
 """
@@ -748,12 +751,13 @@ class Report:
 
 # ----------------------------------------------------------------- video
 class Writer:
-    def __init__(self, path):
+    def __init__(self, path, size=None):
         import imageio_ffmpeg
         self.ff = imageio_ffmpeg.get_ffmpeg_exe()
         self.path = path
+        w, h = size or (W, H)
         self.p = subprocess.Popen(
-            [self.ff, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
+            [self.ff, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
              "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "19",
              "-pix_fmt", "yuv420p", "-movflags", "+faststart", path],
             stdin=subprocess.PIPE)
@@ -1003,7 +1007,7 @@ def station_list(path, P, v, reported, scale, sub, days=None):
 def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
-    ap.add_argument("mode", choices=["daily", "accum", "live"])
+    ap.add_argument("mode", choices=["daily", "accum", "live", "live24"])
     ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka, ap = Andhra Pradesh")
     ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
     ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
@@ -1028,7 +1032,11 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     tag = "" if a.region == "tn" else f"{a.region}_"
 
-    if a.mode == "live":
+    if a.mode == "live24":
+        import live24
+        day = date.fromisoformat(a.date) if a.date else latest
+        live24.run(a.region, day, OUT_DIR)
+    elif a.mode == "live":
         if a.region == "kl":
             raise SystemExit("live mode is for Tamil Nadu (TN-SMART), Karnataka (KSNDMC) and Andhra Pradesh (DES)")
         now = datetime.now(tf.IST)

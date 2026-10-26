@@ -105,6 +105,42 @@ def station_totals(records):
     return out
 
 
+def hourly_stations(d: date):
+    """Hour-by-hour rain for rain-day d: (station list, hours) where hours is a (24 x stations) list of
+    mm in each hour, 08:30-09:30 first. Only stations with a 24-hour total are listed; a blank hour
+    counts as 0."""
+    recs = download_day(d)
+    stations, rows = [], []
+    for s, r in zip(station_totals(recs), _with_coords(recs)):
+        if s["rain"] is None:
+            continue
+        hrs = []
+        for k in _HOUR_KEYS:
+            v = r.get(k)
+            hrs.append(float(v) if isinstance(v, (int, float)) and 0 <= v <= 500 else 0.0)
+        stations.append(s)
+        rows.append(hrs)
+    return stations, [list(h) for h in zip(*rows)] if rows else [[] for _ in _HOUR_KEYS]
+
+
+_HOUR_KEYS = [f"{(9 + i - 1) % 12 + 1:02d}:30 {'AM' if (9 + i) % 24 < 12 else 'PM'}" for i in range(24)]
+
+
+def _with_coords(records):
+    """The raw records that station_totals() keeps, in the same order."""
+    out = []
+    for s in records:
+        try:
+            lat, lon = float(s.get("latitude")), float(s.get("longitude"))
+        except (TypeError, ValueError):
+            continue
+        if lat > 70 and lon < 20:
+            lat, lon = lon, lat
+        if 7.5 <= lat <= 14.0 and 75.8 <= lon <= 80.6:
+            out.append(s)
+    return out
+
+
 LIVE_DIR = os.path.join(RAW_DIR, "live")
 
 

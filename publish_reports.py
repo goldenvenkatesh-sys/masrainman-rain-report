@@ -11,7 +11,7 @@ The reports folder holds:
 
 What is kept (older ones are removed so the branch stays small):
   live (rain so far)      the newest 24 per region (one day of hourly pictures)
-  daily / accum           the last 10 days
+  daily / live24 / accum  the last 10 days
   month                   the last 13 months
 """
 import json
@@ -24,7 +24,7 @@ from datetime import datetime, timedelta, timezone
 IST = timezone(timedelta(hours=5, minutes=30))
 REGIONS = {"": ("tn", "Tamil Nadu"), "kl_": ("kl", "Kerala"), "ka_": ("ka", "Karnataka"),
            "ap_": ("ap", "Andhra Pradesh")}
-KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "accum": "Total rain (multi-day)",
+KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "live24": "Past 24 hours, hour by hour", "accum": "Total rain (multi-day)",
          "month": "Monthly total"}
 LANGS = {"ta": "Tamil", "en": "English", "ml": "Malayalam"}
 EXTS = ("mp4", "gif", "png", "txt")
@@ -33,7 +33,7 @@ KEEP_DAYS = 10
 KEEP_MONTHS = 13
 
 NAME = re.compile(
-    r"^rain_(?P<tag>kl_|ka_|ap_)?(?P<kind>live|daily|accum|month)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
+    r"^rain_(?P<tag>kl_|ka_|ap_)?(?P<kind>live24|live|daily|accum|month)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
 
 
 def parse(base):
@@ -48,7 +48,7 @@ def parse(base):
             t = datetime.strptime(rest, "%Y-%m-%d_%H%M")
             day, label = t.date().isoformat(), "up to " + t.strftime("%d %b, %I:%M %p").replace(" 0", " ")
             sort = t.strftime("%Y-%m-%dT%H:%M")
-        elif kind == "daily":
+        elif kind in ("daily", "live24"):
             d = datetime.strptime(rest, "%Y-%m-%d")
             day, label, sort = rest, "rain-day " + d.strftime("%d %b %Y"), rest + "T08:30"
         elif kind == "month":

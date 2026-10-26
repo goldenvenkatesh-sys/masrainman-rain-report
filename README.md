@@ -4,6 +4,14 @@ Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall
 
 - **daily**: one rain-day (24 h ending 08:30 IST). The map colours build up from zero.
 - **accum**: total from a start date to today. The map fills day by day with a date counter.
+- **live24** (Tamil Nadu): "Past 24 Hours Observed Rainfall", a 36.5 s portrait video (1080x1350). The rain-day
+  is replayed hour by hour on a hillshaded terrain map (SRTM via AWS Terrain Tiles, cached in `data/raw/terrain/`);
+  the camera follows the gauge with the heaviest rain each hour, then shows the whole state. Then come the five
+  wettest stations, a 24-hour rain clock (when the rain fell) and "Did the models get it right?": heavy-rain
+  districts caught by the ECMWF IFS and AIFS forecasts (ECMWF open data, `models.py`) and by WeatherNext 3 when
+  its data is provided (`WN3_RAIN_URL` or `data/raw/models/wn3_<date>.json`; otherwise "no forecast"). Made with the daily report at 09:45 IST (`rain-report.yml`, mode `daily`, `both` or
+  `live24`), or `python rain_report.py live24 --date 2026-10-26`. Other states can be added in `live24.py`
+  (`REGIONS24`).
 
 Data: `https://beta-tnsmart.rimes.int/Rainfall_Python_IDW/Hourly_json/hourly_rainfall_YYYY-MM-DD.json`
 (one file per rain-day, about 1,565 stations with latitude/longitude). Downloaded days are cached in `data/raw/`.

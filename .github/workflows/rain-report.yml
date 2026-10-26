@@ -10,7 +10,7 @@ on:
         description: "tn, kl, ap, several (tn ap), or both (= all three)"
         default: "tn"
       mode:
-        description: "daily, accum, both, or month (last month's total)"
+        description: "daily, accum, both, live24 (TN past-24-hours video only), or month (last month's total)"
         default: "both"
       date:
         description: "daily: rain-day YYYY-MM-DD (blank = latest)"
@@ -90,11 +90,18 @@ jobs:
           START: ${{ github.event.inputs.start }}
           END: ${{ github.event.inputs.end }}
           SCHEDULED: ${{ github.event.schedule }}
+          # live24 reads the WeatherNext 3 24-h rain from the weathernext3 repo with this token
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+          WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
         run: |
           for R in tn kl ap; do
             case " $REGION " in *" $R "*) ;; *) continue ;; esac
             if [ "$MODE" = "daily" ] || [ "$MODE" = "both" ]; then
               python rain_report.py daily --region $R ${DAY:+--date $DAY}
+            fi
+            # Tamil Nadu: the same rain-day replayed hour by hour (1080x1350 video)
+            if [ "$R" = tn ] && { [ "$MODE" = "daily" ] || [ "$MODE" = "both" ] || [ "$MODE" = "live24" ]; }; then
+              python rain_report.py live24 --region tn ${DAY:+--date $DAY} || echo "No past-24-hours video"
             fi
             if [ "$MODE" = "accum" ] || [ "$MODE" = "both" ]; then
               python rain_report.py accum --region $R ${START:+--start $START} ${END:+--end $END}

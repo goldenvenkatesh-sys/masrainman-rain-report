@@ -5,3 +5,5 @@ pillow>=10.0
 requests
 imageio-ffmpeg
 pdfplumber
+opencv-python-headless
+eccodes
