@@ -101,7 +101,7 @@ jobs:
           path: out/
           retention-days: 7
 
-  # The 24-hour reports and the model maps, started at their IST times from here, because
+  # The 24-hour reports, started at their IST times from here, because
   # GitHub's own timer often skips them or runs them hours late. A daily report that is
   # already made today is not made again; a missed one is tried again the next hour.
   # Its own job, so it runs even in an hour whose picture an earlier run already made.
@@ -135,10 +135,3 @@ jobs:
             gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region=kl -f mode=both \
               && echo "started Kerala 24-hour report"
           fi
-          # Model maps at 00:45, 06:45, 13:45 and 17:45 IST
-          case "$h" in
-            0|6|13|17)
-              GH_TOKEN="$WN3_DISPATCH_TOKEN" gh workflow run weathernext3.yml \
-                -R goldenvenkatesh-sys/masrainman-weathernext3 --ref main \
-                && echo "started model maps" ;;
-          esac
