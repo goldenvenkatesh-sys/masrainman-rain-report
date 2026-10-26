@@ -1,8 +1,20 @@
 {
 "date": "2026-10-25",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-25T18:40+0530",
+"fetched": "2026-10-26T14:19+0530",
 "stations": [
+{
+"station": "Piravom",
+"uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
+"district": "Ernakulam",
+"rain": 8.0
+},
+{
+"station": "Keerampara",
+"uuid": "efec9ceb-ccfb-4420-adec-bcee35bfa775",
+"district": "Ernakulam",
+"rain": 25.4
+},
 {
 "station": "Vidyanagar",
 "uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
@@ -16,10 +28,46 @@
 "rain": 30.0
 },
 {
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 26.6
+},
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
+"rain": 20.0
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
+"rain": 64.0
+},
+{
 "station": "Manjeswaram",
 "uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
 "district": "Kasaragod",
 "rain": 0.0
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 20.0
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 25.4
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
+"rain": 12.6
 },
 {
 "station": "Kalliyot",
@@ -28,10 +76,34 @@
 "rain": 0.1
 },
 {
+"station": "Painavu",
+"uuid": "592d9655-4170-477d-81c3-debd437adad8",
+"district": "Idukki",
+"rain": 11.4
+},
+{
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 11.0
+},
+{
 "station": "Madhur",
 "uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
 "district": "Kasaragod",
 "rain": 3.0
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 11.0
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
+"rain": 10.0
 },
 {
 "station": "Uppala",
@@ -44,6 +116,54 @@
 "uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
 "district": "Kasaragod",
 "rain": 61.2
+},
+{
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 15.3
+},
+{
+"station": "Vannapuram",
+"uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
+"district": "Idukki",
+"rain": 4.2
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 30.0
+},
+{
+"station": "Moozhiyar",
+"uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
+"district": "Pathanamthitta",
+"rain": 42.0
+},
+{
+"station": "Marayoor",
+"uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
+"district": "Idukki",
+"rain": 2.3
+},
+{
+"station": "Kulamavu",
+"uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
+"district": "Idukki",
+"rain": 16.5
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 32.0
+},
+{
+"station": "Vadasserikkara",
+"uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
+"district": "Pathanamthitta",
+"rain": 37.8
 }
 ]
 }
