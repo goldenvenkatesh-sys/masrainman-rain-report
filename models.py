@@ -7,10 +7,13 @@ is taken from the run issued at 12 UTC on D-2 (5:30 PM IST, the evening before t
   ECMWF IFS   open data, 0.25°, 3-hourly steps: tp(39 h) - tp(15 h)
   ECMWF AIFS  open data (aifs-single), 0.25°, 6-hourly steps: steps 15 and 39 are the mean of the
               steps either side
-  WeatherNext 3  needs Google Cloud access that this repository does not have. It is read from a JSON
-              file if one is provided: data/raw/models/wn3_<D>.json or the URL in WN3_RAIN_URL
-              (with {D} for the date), holding {"lat": [...], "lon": [...], "mm": [[...]]} (24-h rain, mm,
-              rows = lat) for the same window.
+  WeatherNext 3  comes from Google Cloud, which this repository cannot read. The weathernext3 repository's
+              model-maps workflow saves the 24-h rain of each run for these windows; it is read from
+              there with a GitHub token (WN3_READ_TOKEN, else WN3_DISPATCH_TOKEN) that can read that repo:
+              site-data branch, rain24/wn3_<run YYYYMMDD_HH>.json = {"run": ..., "windows": {"<D>":
+              {"lat": [...], "lon": [...], "mm": [[...]]}}} (24-h rain, mm, rows = lat).
+              A local file data/raw/models/wn3_<D>.json ({"lat", "lon", "mm"}) or WN3_RAIN_URL (with {D})
+              is used instead when present.
 
 Only the small "tp" field is downloaded (HTTP range request from the .index file), from
 data.ecmwf.int or, for older runs, the AWS open-data mirror. Files are cached in data/raw/models/.
@@ -98,8 +101,36 @@ def _ecmwf_24h(model, day):
     return la, lo, np.maximum(b - a, 0)
 
 
+WN3_REPO = "goldenvenkatesh-sys/masrainman-weathernext3"
+
+
+def _wn3_github(day, path):
+    """Fetch this window from the weathernext3 repo's site-data branch into `path`."""
+    token = os.environ.get("WN3_READ_TOKEN") or os.environ.get("WN3_DISPATCH_TOKEN")
+    if not token:
+        raise FileNotFoundError("WeatherNext 3: no GitHub token to read the weathernext3 repo")
+    api = f"https://api.github.com/repos/{WN3_REPO}/contents"
+    hdr = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github.raw+json"}
+    r = requests.get(f"{api}/README.md", headers=hdr, timeout=30)
+    if r.status_code != 200:
+        raise PermissionError(f"WeatherNext 3: the token cannot read {WN3_REPO} contents (HTTP {r.status_code}); "
+                              f"it needs Contents: read on that repository")
+    run = run_for(day)
+    r = requests.get(f"{api}/rain24/wn3_{run:%Y%m%d_%H}.json", params={"ref": "site-data"}, headers=hdr, timeout=60)
+    if r.status_code != 200:
+        raise FileNotFoundError(f"WeatherNext 3: no rain24 file for the {run:%Y-%m-%d %H}z run (HTTP {r.status_code})")
+    win = r.json().get("windows", {}).get(day.isoformat())
+    if not win:
+        raise FileNotFoundError(f"WeatherNext 3: the {run:%Y-%m-%d %H}z run has no window ending {day}")
+    os.makedirs(CACHE, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(win, f)
+
+
 def _wn3_24h(day):
     path = os.path.join(CACHE, f"wn3_{day.isoformat()}.json")
+    if not os.path.exists(path) and not os.environ.get("WN3_RAIN_URL"):
+        _wn3_github(day, path)
     url = os.environ.get("WN3_RAIN_URL")
     if not os.path.exists(path) and url:
         r = requests.get(url.replace("{D}", day.isoformat()), timeout=30)
