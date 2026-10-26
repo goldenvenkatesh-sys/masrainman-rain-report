@@ -90,6 +90,9 @@ jobs:
           START: ${{ github.event.inputs.start }}
           END: ${{ github.event.inputs.end }}
           SCHEDULED: ${{ github.event.schedule }}
+          # live24 reads the WeatherNext 3 24-h rain from the weathernext3 repo with this token
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+          WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
         run: |
           for R in tn kl ap; do
             case " $REGION " in *" $R "*) ;; *) continue ;; esac
