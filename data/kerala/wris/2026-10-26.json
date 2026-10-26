@@ -1,7 +1,7 @@
 {
 "date": "2026-10-26",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-26T16:39+0530",
+"fetched": "2026-10-26T19:05+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -64,6 +64,12 @@
 "rain": 62.8
 },
 {
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 3.2
+},
+{
 "station": "Valayinkil",
 "uuid": "ad063010-6357-4257-bb01-a3e8292f889b",
 "district": "Thiruvananthapuram",
@@ -94,6 +100,12 @@
 "rain": 48.2
 },
 {
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 12.44
+},
+{
 "station": "Kalliyot",
 "uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
 "district": "Kasaragod",
@@ -116,6 +128,12 @@
 "uuid": "40270ba2-9070-46fb-880f-624cd75ccaf2",
 "district": "Thiruvananthapuram",
 "rain": 29.6
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 6.0
 },
 {
 "station": "Madhur",

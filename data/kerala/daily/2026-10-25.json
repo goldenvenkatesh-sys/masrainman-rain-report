@@ -1633,6 +1633,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 15.6,
+"lat": 10.1592,
+"lon": 76.6164
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Madhur",
 "key": "MADHUR",
