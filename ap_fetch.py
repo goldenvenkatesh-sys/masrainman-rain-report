@@ -163,10 +163,12 @@ def _positions(live_rows):
     return known
 
 
-def update_daily(want=None, verbose=True):
+def update_daily(want=None, verbose=True, wait=True):
     """Save the last finished rain-day from Rainfall24.jsp to data/ap/daily/<day>.json.
-    With `want`, wait (up to ~40 min) for the page to move on to that rain-day."""
-    for attempt in range(9):
+    With `want`, wait (up to ~40 min) for the page to move on to that rain-day.
+    With wait=False (the hourly live backup), look once and save nothing if the page has not moved on yet,
+    so the live picture is not held up past the job's time limit."""
+    for attempt in range(9 if wait else 1):
         if os.environ.get("APSDPS_DAY_SAMPLE"):
             with open(os.environ["APSDPS_DAY_SAMPLE"], encoding="utf-8", errors="replace") as f:
                 html = f.read()
@@ -175,6 +177,9 @@ def update_daily(want=None, verbose=True):
         day, rows = parse_day_table(html)
         if want is None or day >= want or os.environ.get("APSDPS_DAY_SAMPLE"):
             break
+        if not wait:
+            print(f"  Rainfall24.jsp still shows {day}, not {want} yet; leaving it for a later run")
+            return None
         print(f"  Rainfall24.jsp still shows {day}; waiting for {want}")
         time.sleep(300)
     try:
@@ -240,7 +245,8 @@ if __name__ == "__main__":
         if "--if-missing" in sys.argv and os.path.exists(os.path.join(DAILY, f"{last.isoformat()}.json")):
             print(f"  DES AP rain-day {last} already saved")
         else:
-            update_daily(want=want)
+            # --if-missing is the hourly backup: never wait for the page, the live picture comes next
+            update_daily(want=want, wait="--if-missing" not in sys.argv)
         raise SystemExit
     st = stations(tf.running_day(datetime.now(tf.IST)))
     st.sort(key=lambda s: -(s["rain"] or 0))
