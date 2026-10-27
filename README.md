@@ -183,20 +183,3 @@ python rain_report.py accum --region kl --lang ml  # Malayalam only
 ```
 
 On GitHub: *TN rainfall report* runs Kerala automatically at 12:15 IST; for a manual run choose region `kl` or `both`.
-
-## Satellite rain (GPM), once a day
-
-`gpm-sat.yml` runs at about 9:10 am IST and makes two English reports per state (Tamil Nadu, Karnataka,
-Andhra Pradesh), saved to the `reports` branch like the others:
-
-- **Satellite rain, past 24 hours** (`rain_<tag>sat24_<end IST>_en`): NASA/JAXA IMERG Early, the 48 newest
-  half-hours (about 4 hours behind real time) added up on a 0.1° grid. Video fills half-hour by half-hour, then
-  lists the wettest districts (average over the district). A satellite estimate, not gauge readings.
-- **Satellite radar 3D** (`rain_<tag>gpm3d_<pass IST>_en`): each GPM radar pass (2A.Ku) with rain over the
-  state in the last 24 hours (at most two per state), drawn in 3D up to 18 km: coloured by rain rate, then by
-  rain / mixed / snow and ice. The radar only passes over a state about once or twice a day, and NASA's radar
-  files can be a day behind; then the newest 24 hours of passes is used.
-
-Needs a free NASA Earthdata login (urs.earthdata.nasa.gov) as secrets **`EARTHDATA_USER`** and
-**`EARTHDATA_PASS`**; in the Earthdata profile, *Applications → Authorized Apps* must include
-*NASA GESDISC DATA ARCHIVE*. Try it without NASA: `python gpm_sat.py --demo` (made-up data).
