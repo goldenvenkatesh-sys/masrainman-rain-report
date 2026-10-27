@@ -904,6 +904,24 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Vidyanagar",
+"key": "VIDYANAGAR",
+"rain": 0.4,
+"lat": 12.5144,
+"lon": 75.0188
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Paika",
+"key": "PAIKA",
+"rain": 0.0,
+"lat": 12.5433,
+"lon": 75.1056
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
@@ -913,12 +931,39 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Manjeswaram",
+"key": "MANJESWARAM",
+"rain": 0.0,
+"lat": 12.7153,
+"lon": 74.8903
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Neryamangalam",
+"key": "NERYAMANGALAM",
+"rain": 0.0,
+"lat": 10.0914,
+"lon": 76.6883
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Boyce Estate",
 "key": "BOYCE ESTATE",
 "rain": 0.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Kalliyot",
+"key": "KALLIYOT",
+"rain": 0.0,
+"lat": 12.4144,
+"lon": 75.1483
 },
 {
 "type": "sw",
@@ -958,6 +1003,24 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 0.0,
+"lat": 10.1592,
+"lon": 76.6164
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Madhur",
+"key": "MADHUR",
+"rain": 0.0,
+"lat": 12.5239,
+"lon": 75.0047
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Nedumkandam",
 "key": "NEDUMKANDAM",
@@ -982,6 +1045,15 @@
 "rain": 0.0,
 "lat": 11.1086,
 "lon": 75.8156
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Padiyathadukka",
+"key": "PADIYATHADUKKA",
+"rain": 0.0,
+"lat": 12.5575,
+"lon": 75.2
 },
 {
 "type": "sw",

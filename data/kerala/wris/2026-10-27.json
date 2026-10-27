@@ -1,7 +1,7 @@
 {
 "date": "2026-10-27",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-27T16:05+0530",
+"fetched": "2026-10-27T23:32+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -16,10 +16,34 @@
 "rain": 0.0
 },
 {
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 0.4
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
 "station": "Kumili",
 "uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
 "district": "Idukki",
 "rain": 12.0
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 0.0
 },
 {
 "station": "Perinthalmanna",
@@ -38,6 +62,18 @@
 "uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
 "district": "Kottayam",
 "rain": 0.8
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 0.0
 },
 {
 "station": "Painavu",
@@ -64,6 +100,18 @@
 "rain": 0.0
 },
 {
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
 "station": "Nedumkandam",
 "uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
 "district": "Idukki",
@@ -79,6 +127,12 @@
 "station": "Parappanangadi",
 "uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
 "district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
 "rain": 0.0
 },
 {
