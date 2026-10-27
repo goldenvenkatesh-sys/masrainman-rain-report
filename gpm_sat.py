@@ -428,6 +428,11 @@ def make_sat24(key, data, out_dir):
 
 
 # ----------------------------------------------------------------- GPM radar 3D passes
+def note(msg, level="notice"):
+    """Print, and on GitHub Actions also show it on the run page (annotations)."""
+    print(("::%s::" % level if os.environ.get("GITHUB_ACTIONS") else "") + msg)
+
+
 def radar_read(path):
     import h5py
     with h5py.File(path, "r") as f:
@@ -627,12 +632,12 @@ def radar_passes(sess, regions):
     now = datetime.now(UTC)
     grans = cmr_search(RADAR, now - timedelta(hours=72), now, big)
     if not grans:
-        print("  no radar passes in the last 72 hours (NASA's radar files can be a day or two behind)")
+        note("Radar: no GPM passes found in the last 72 hours (NASA's radar files can be a day or two behind)")
         return []
     newest = grans[-1][2]
     # past 24 h; if NASA's radar files are behind, the 24 h up to the newest file
     use = [g for g in grans if g[2] >= min(now, newest) - timedelta(hours=24)]
-    print(f"  radar: {len(use)} pass(es) to check (newest file ends {newest:%d %b %H:%M} UTC)")
+    note(f"Radar: {len(grans)} pass(es) in 72 h, {len(use)} to check; newest file ends {newest:%d %b %H:%M} UTC")
     found = []
     for g in use:
         p = sess.get(g[3], os.path.join(RAW, "radar", os.path.basename(urlparse(g[3]).path)))
@@ -642,7 +647,7 @@ def radar_passes(sess, regions):
             if c is None:
                 continue
             rain = int(((c["rate"] >= 0.5) & c["inside"][..., None]).sum())
-            print(f"    {g[0][:60]} over {k}: {rain} rain points")
+            note(f"Radar pass {c['times'][0]:%d %b %H:%M} UTC over {k}: {rain} rain points")
             if rain >= 300:
                 found.append((k, rain, c))
         os.remove(p)                     # big files: don't keep them
@@ -726,7 +731,7 @@ def main():
             else:
                 passes = radar_passes(sess, regions)
             if not passes:
-                print("  No radar pass with rain over these states in the last 24 hours.")
+                note("Radar: no pass with rain over these states in the last 24 hours")
             for k, c in passes:
                 made.append(make_gpm3d(k, c, a.out))
         except SystemExit:
@@ -737,7 +742,7 @@ def main():
 
     print(f"Made {len(made)} report(s).")
     if problems:
-        print("Problems:", "; ".join(problems))
+        note("Problems: " + "; ".join(problems), "warning")
         sys.exit(1 if not made else 0)
 
 
