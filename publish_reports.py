@@ -71,7 +71,8 @@ def main(out_dir, rep):
     os.makedirs(files, exist_ok=True)
     idx_path = os.path.join(rep, "index.json")
     try:
-        items = {i["id"]: i for i in json.load(open(idx_path, encoding="utf-8"))["reports"]}
+        # (report kinds this script doesn't know, e.g. the removed satellite ones, are dropped)
+        items = {i["id"]: i for i in json.load(open(idx_path, encoding="utf-8"))["reports"] if i.get("kind") in KINDS}
     except (OSError, ValueError, KeyError):
         items = {}
 
