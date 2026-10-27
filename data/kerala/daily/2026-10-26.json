@@ -1588,6 +1588,24 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Ambittanpotty",
+"key": "AMBITTANPOTTY",
+"rain": 2.2,
+"lat": 11.4197,
+"lon": 76.2411
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Nilambur Manavedan HS",
+"key": "NILAMBUR MANAVEDAN HS",
+"rain": 13.6,
+"lat": 11.2853,
+"lon": 76.2317
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Bhoothathankettu",
 "key": "BHOOTHATHANKETTU",
@@ -1630,6 +1648,15 @@
 "rain": 0.0,
 "lat": 12.7236,
 "lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Parappanangadi",
+"key": "PARAPPANANGADI",
+"rain": 0.0,
+"lat": 11.1086,
+"lon": 75.8156
 },
 {
 "type": "sw",
@@ -1750,12 +1777,39 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Pandikkad",
+"key": "PANDIKKAD",
+"rain": 4.4,
+"lat": 11.1075,
+"lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Edakkara",
+"key": "EDAKKARA",
+"rain": 19.6,
+"lat": 11.3856,
+"lon": 76.315
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Chinnar",
 "key": "CHINNAR",
 "rain": 12.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "FCS Malappuram",
+"key": "FCS MALAPPURAM",
+"rain": 13.0,
+"lat": 11.0408,
+"lon": 76.0781
 },
 {
 "type": "sw",

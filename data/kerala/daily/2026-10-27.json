@@ -1,0 +1,1023 @@
+{
+"date": "2026-10-27",
+"source": "data/kerala/raw/2026-10-27/imd_station_daily.pdf",
+"stations": [
+{
+"type": "rg",
+"district": "Kasaragod",
+"station": "Hosdurg",
+"key": "HOSDURG",
+"rain": 0.0,
+"lat": 12.3,
+"lon": 75.1
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "Aluva",
+"key": "ALUVA",
+"rain": 0.0,
+"lat": 10.12,
+"lon": 76.35
+},
+{
+"type": "rg",
+"district": "Kasaragod",
+"station": "Kudulu",
+"key": "KUDULU",
+"rain": 0.0,
+"lat": 12.5,
+"lon": 75.0
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "NAS Kochi",
+"key": "NAS KOCHI",
+"rain": 0.0,
+"lat": 9.97,
+"lon": 76.23
+},
+{
+"type": "rg",
+"district": "Kasaragod",
+"station": "Kasargod",
+"key": "KASARGOD",
+"rain": null,
+"lat": 12.5,
+"lon": 74.99
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "Ernakulam South",
+"key": "ERNAKULAM SOUTH",
+"rain": 0.0,
+"lat": 9.97,
+"lon": 76.28
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "Cheruthazham",
+"key": "CHERUTHAZHAM",
+"rain": null,
+"lat": 12.06,
+"lon": 75.25
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "C.I.A.L. Kochi",
+"key": "CIAL KOCHI",
+"rain": 0.0,
+"lat": 10.15,
+"lon": 76.4
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "Taliparamba",
+"key": "TALIPARAMBA",
+"rain": 0.0,
+"lat": 12.05,
+"lon": 75.35
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "Piravom",
+"key": "PIRAVOM",
+"rain": null,
+"lat": 9.8,
+"lon": 76.47
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "Thalassery",
+"key": "THALASSERY",
+"rain": 0.0,
+"lat": 11.75,
+"lon": 75.49
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "Perumbavur",
+"key": "PERUMBAVUR",
+"rain": 0.0,
+"lat": 10.12,
+"lon": 76.48
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "Irikkur",
+"key": "IRIKKUR",
+"rain": 0.0,
+"lat": 11.97,
+"lon": 75.55
+},
+{
+"type": "rg",
+"district": "Ernakulam",
+"station": "Paravur",
+"key": "PARAVUR",
+"rain": null,
+"lat": 10.15,
+"lon": 76.22
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "AMS Kannur",
+"key": "AMS KANNUR",
+"rain": 0.0,
+"lat": 11.9,
+"lon": 75.53
+},
+{
+"type": "rg",
+"district": "Kannur",
+"station": "Kannur",
+"key": "KANNUR",
+"rain": 0.0,
+"lat": 11.87,
+"lon": 75.37
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Cherthala",
+"key": "CHERTHALA",
+"rain": 0.0,
+"lat": 9.7,
+"lon": 76.33
+},
+{
+"type": "rg",
+"district": "Kozhikode",
+"station": "Kozhikode",
+"key": "KOZHIKODE",
+"rain": 0.0,
+"lat": 11.25,
+"lon": 75.78
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Chengannur",
+"key": "CHENGANNUR",
+"rain": null,
+"lat": 9.32,
+"lon": 76.62
+},
+{
+"type": "rg",
+"district": "Kozhikode",
+"station": "Quilandy",
+"key": "QUILANDY",
+"rain": 0.0,
+"lat": 11.45,
+"lon": 75.7
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Kayamkulam",
+"key": "KAYAMKULAM",
+"rain": 0.0,
+"lat": 9.18,
+"lon": 76.5
+},
+{
+"type": "rg",
+"district": "Kozhikode",
+"station": "Vadakara",
+"key": "VADAKARA",
+"rain": 0.0,
+"lat": 11.6,
+"lon": 75.58
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Mavelikkara",
+"key": "MAVELIKKARA",
+"rain": 0.1,
+"lat": 9.25,
+"lon": 76.53
+},
+{
+"type": "rg",
+"district": "Wayanad",
+"station": "Pookot",
+"key": "POOKOT",
+"rain": null,
+"lat": 11.53,
+"lon": 76.02
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Alappuzha",
+"key": "ALAPPUZHA",
+"rain": null,
+"lat": 9.55,
+"lon": 76.33
+},
+{
+"type": "rg",
+"district": "Wayanad",
+"station": "Kuppady",
+"key": "KUPPADY",
+"rain": 0.0,
+"lat": 11.68,
+"lon": 76.27
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Mancompu",
+"key": "MANCOMPU",
+"rain": 0.0,
+"lat": 9.44,
+"lon": 76.42
+},
+{
+"type": "rg",
+"district": "Wayanad",
+"station": "Vythiri",
+"key": "VYTHIRI",
+"rain": 0.0,
+"lat": 11.55,
+"lon": 76.03
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Haripad",
+"key": "HARIPAD",
+"rain": 0.0,
+"lat": 9.28,
+"lon": 76.45
+},
+{
+"type": "rg",
+"district": "Wayanad",
+"station": "Mananthavady",
+"key": "MANANTHAVADY",
+"rain": 0.0,
+"lat": 11.8,
+"lon": 76.02
+},
+{
+"type": "rg",
+"district": "Alappuzha",
+"station": "Kayamkulam Agri",
+"key": "KAYAMKULAM AGRI",
+"rain": null,
+"lat": 9.17,
+"lon": 76.52
+},
+{
+"type": "rg",
+"district": "Wayanad",
+"station": "Ambalavayal",
+"key": "AMBALAVAYAL",
+"rain": 0.0,
+"lat": 11.62,
+"lon": 76.2
+},
+{
+"type": "rg",
+"district": "Kottayam",
+"station": "Kumarakom",
+"key": "KUMARAKOM",
+"rain": 0.0,
+"lat": 9.62,
+"lon": 76.43
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Ponnani",
+"key": "PONNANI",
+"rain": 0.0,
+"lat": 10.78,
+"lon": 75.92
+},
+{
+"type": "rg",
+"district": "Kottayam",
+"station": "Kanjirappally",
+"key": "KANJIRAPPALLY",
+"rain": 0.8,
+"lat": 9.56,
+"lon": 76.79
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Nilambur",
+"key": "NILAMBUR",
+"rain": 0.0,
+"lat": 11.28,
+"lon": 76.23
+},
+{
+"type": "rg",
+"district": "Kottayam",
+"station": "Kozha",
+"key": "KOZHA",
+"rain": null,
+"lat": 9.75,
+"lon": 76.57
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Manjeri",
+"key": "MANJERI",
+"rain": 0.0,
+"lat": 11.12,
+"lon": 76.13
+},
+{
+"type": "rg",
+"district": "Kottayam",
+"station": "Vaikom",
+"key": "VAIKOM",
+"rain": 0.0,
+"lat": 9.75,
+"lon": 76.4
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Angadippuram",
+"key": "ANGADIPPURAM",
+"rain": 5.4,
+"lat": 10.97,
+"lon": 76.2
+},
+{
+"type": "rg",
+"district": "Kottayam",
+"station": "Kottayam",
+"key": "KOTTAYAM",
+"rain": 0.0,
+"lat": 9.58,
+"lon": 76.52
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Perinthalmanna",
+"key": "PERINTHALMANNA",
+"rain": null,
+"lat": 10.97,
+"lon": 76.23
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Idukki",
+"key": "IDUKKI",
+"rain": 0.2,
+"lat": 9.83,
+"lon": 76.92
+},
+{
+"type": "rg",
+"district": "Malappuram",
+"station": "Karipur AP",
+"key": "KARIPUR AP",
+"rain": 0.0,
+"lat": 11.13,
+"lon": 75.95
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Peermade",
+"key": "PEERMADE",
+"rain": 0.0,
+"lat": 9.57,
+"lon": 76.98
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Kollengode",
+"key": "KOLLENGODE",
+"rain": 0.0,
+"lat": 10.62,
+"lon": 76.72
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Thodupuzha",
+"key": "THODUPUZHA",
+"rain": 0.0,
+"lat": 9.83,
+"lon": 76.67
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Chittur",
+"key": "CHITTUR",
+"rain": 0.0,
+"lat": 10.7,
+"lon": 76.73
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Munnar",
+"key": "MUNNAR",
+"rain": 0.0,
+"lat": 10.1,
+"lon": 77.07
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Alathur",
+"key": "ALATHUR",
+"rain": 0.0,
+"lat": 10.63,
+"lon": 76.55
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Myladumpara",
+"key": "MYLADUMPARA",
+"rain": 3.8,
+"lat": 9.13,
+"lon": 77.03
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Erimayur",
+"key": "ERIMAYUR",
+"rain": null,
+"lat": 10.65,
+"lon": 76.47
+},
+{
+"type": "rg",
+"district": "Idukki",
+"station": "Devikulam",
+"key": "DEVIKULAM",
+"rain": null,
+"lat": 10.06,
+"lon": 77.12
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Ottappalam",
+"key": "OTTAPPALAM",
+"rain": 0.0,
+"lat": 10.78,
+"lon": 76.38
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Parambikulam",
+"key": "PARAMBIKULAM",
+"rain": 0.0,
+"lat": 10.33,
+"lon": 76.75
+},
+{
+"type": "rg",
+"district": "Pathanamthitta",
+"station": "Kurudamannil",
+"key": "KURUDAMANNIL",
+"rain": 0.0,
+"lat": 9.35,
+"lon": 76.74
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Thrithala",
+"key": "THRITHALA",
+"rain": 0.0,
+"lat": 10.83,
+"lon": 76.1
+},
+{
+"type": "rg",
+"district": "Pathanamthitta",
+"station": "Konni",
+"key": "KONNI",
+"rain": 2.0,
+"lat": 9.23,
+"lon": 76.87
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Palakkad",
+"key": "PALAKKAD",
+"rain": 0.0,
+"lat": 10.77,
+"lon": 76.65
+},
+{
+"type": "rg",
+"district": "Pathanamthitta",
+"station": "Thiruvalla",
+"key": "THIRUVALLA",
+"rain": null,
+"lat": 9.38,
+"lon": 76.57
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Mannarkad",
+"key": "MANNARKAD",
+"rain": 0.0,
+"lat": 10.98,
+"lon": 76.47
+},
+{
+"type": "rg",
+"district": "Kollam",
+"station": "Aryankavu",
+"key": "ARYANKAVU",
+"rain": 0.1,
+"lat": 8.98,
+"lon": 77.17
+},
+{
+"type": "rg",
+"district": "Palakkad",
+"station": "Pattambi",
+"key": "PATTAMBI",
+"rain": 0.0,
+"lat": 10.8,
+"lon": 76.2
+},
+{
+"type": "rg",
+"district": "Kollam",
+"station": "Kollam",
+"key": "KOLLAM",
+"rain": 0.0,
+"lat": 8.88,
+"lon": 76.6
+},
+{
+"type": "rg",
+"district": "Kollam",
+"station": "Punalur",
+"key": "PUNALUR",
+"rain": 0.0,
+"lat": 9.0,
+"lon": 76.92
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Thrissur",
+"key": "THRISSUR",
+"rain": null,
+"lat": 10.52,
+"lon": 76.22
+},
+{
+"type": "rg",
+"district": "Thiruvananthapuram",
+"station": "Varkala",
+"key": "VARKALA",
+"rain": 55.4,
+"lat": 8.74,
+"lon": 76.72
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Kodungallur",
+"key": "KODUNGALLUR",
+"rain": 0.0,
+"lat": 10.22,
+"lon": 76.2
+},
+{
+"type": "rg",
+"district": "Thiruvananthapuram",
+"station": "Neyyattinkara",
+"key": "NEYYATTINKARA",
+"rain": 0.0,
+"lat": 8.38,
+"lon": 77.08
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Kunnamkulam",
+"key": "KUNNAMKULAM",
+"rain": 0.0,
+"lat": 10.65,
+"lon": 76.07
+},
+{
+"type": "rg",
+"district": "Thiruvananthapuram",
+"station": "Trivandrum AP",
+"key": "THIRUVANANTHAPURAM AIRPORT",
+"rain": 0.4,
+"lat": 8.48,
+"lon": 76.92
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Vynthala",
+"key": "VYNTHALA",
+"rain": null,
+"lat": 10.26,
+"lon": 76.3
+},
+{
+"type": "rg",
+"district": "Thiruvananthapuram",
+"station": "Nedumangad",
+"key": "NEDUMANGAD",
+"rain": null,
+"lat": 8.6,
+"lon": 77.0
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Irinjalakuda",
+"key": "IRINJALAKUDA",
+"rain": 0.0,
+"lat": 10.34,
+"lon": 76.21
+},
+{
+"type": "rg",
+"district": "Thiruvananthapuram",
+"station": "Trivandrum City",
+"key": "THIRUVANANTHAPURAM",
+"rain": 2.3,
+"lat": 8.47,
+"lon": 76.95
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Enamackel",
+"key": "ENAMACKEL",
+"rain": null,
+"lat": 10.5,
+"lon": 76.1
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Chalakudy",
+"key": "CHALAKUDY",
+"rain": 0.0,
+"lat": 10.3,
+"lon": 76.33
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Vadakkancherry",
+"key": "VADAKKANCHERRY",
+"rain": 0.0,
+"lat": 10.66,
+"lon": 76.24
+},
+{
+"type": "rg",
+"district": "Thrissur",
+"station": "Vellanikkara",
+"key": "VELLANIKKARA",
+"rain": 0.0,
+"lat": 10.53,
+"lon": 76.28
+},
+{
+"type": "aws",
+"district": "Idukki",
+"station": "Vellathooval",
+"key": "VELLATHOOVAL",
+"rain": 67.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Thiruvananthapuram",
+"station": "Pirappancode",
+"key": "PIRAPPANCODE",
+"rain": 35.5,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Idukki",
+"station": "Pampadumpara",
+"key": "PAMPADUMPARA",
+"rain": 24.5,
+"lat": 9.8,
+"lon": 77.15
+},
+{
+"type": "aws",
+"district": "Thiruvananthapuram",
+"station": "Thattathumala",
+"key": "THATTATHUMALA",
+"rain": 16.5,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Ernakulam",
+"station": "Mattancherry",
+"key": "MATTANCHERRY",
+"rain": 12.0,
+"lat": 9.96,
+"lon": 76.26
+},
+{
+"type": "aws",
+"district": "Idukki",
+"station": "Sengulam Dam",
+"key": "SENGULAM DAM",
+"rain": 11.5,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Thiruvananthapuram",
+"station": "Ponmudi",
+"key": "PONMUDI",
+"rain": 11.5,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Wayanad",
+"station": "Padinjarathara Dam",
+"key": "PADINJARATHARA DAM",
+"rain": 7.0,
+"lat": 11.656,
+"lon": 75.946
+},
+{
+"type": "aws",
+"district": "Thrissur",
+"station": "College Of Agriculture Vellanikkara",
+"key": "COLLEGE OF AGRICULTURE VELLANIKKARA",
+"rain": 4.5,
+"lat": 10.55,
+"lon": 76.28
+},
+{
+"type": "aws",
+"district": "Thiruvananthapuram",
+"station": "Palode",
+"key": "PALODE",
+"rain": 2.5,
+"lat": 8.72,
+"lon": 77.03
+},
+{
+"type": "aws",
+"district": "Idukki",
+"station": "KVK Idukki Santhanpara",
+"key": "KVK IDUKKI SANTHANPARA",
+"rain": 3.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Idukki",
+"station": "Anayirankal Dam",
+"key": "ANAYIRANKAL DAM",
+"rain": 2.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Thiruvananthapuram",
+"station": "Thiruvananthapuram",
+"key": "THIRUVANANTHAPURAM",
+"rain": 2.0,
+"lat": 8.48,
+"lon": 76.95
+},
+{
+"type": "aws",
+"district": "Palakkad",
+"station": "Kanjirapuzha",
+"key": "KANJIRAPUZHA",
+"rain": 1.5,
+"lat": 10.99,
+"lon": 76.53
+},
+{
+"type": "aws",
+"district": "Kollam",
+"station": "Punalur",
+"key": "PUNALUR",
+"rain": 0.5,
+"lat": 9.0,
+"lon": 76.92
+},
+{
+"type": "aws",
+"district": "Palakkad",
+"station": "Mannarkkad",
+"key": "MANNARKKAD",
+"rain": 0.5,
+"lat": 10.99,
+"lon": 76.46
+},
+{
+"type": "aws",
+"district": "Pathanamthitta",
+"station": "Laha",
+"key": "LAHA",
+"rain": 0.5,
+"lat": 9.38,
+"lon": 77.0
+},
+{
+"type": "aws",
+"district": "Kozhikode",
+"station": "Vadakara",
+"key": "VADAKARA",
+"rain": 1.0,
+"lat": 11.6,
+"lon": 75.58
+},
+{
+"type": "aws",
+"district": "Kottayam",
+"station": "Vadavathoor",
+"key": "VADAVATHOOR",
+"rain": 0.5,
+"lat": null,
+"lon": null
+},
+{
+"type": "aws",
+"district": "Pathanamthitta",
+"station": "Konni",
+"key": "KONNI",
+"rain": 1.0,
+"lat": 9.23,
+"lon": 76.87
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kumili",
+"key": "KUMILI",
+"rain": 12.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Boyce Estate",
+"key": "BOYCE ESTATE",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Teekoy Estate",
+"key": "TEEKOY ESTATE",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Ambittanpotty",
+"key": "AMBITTANPOTTY",
+"rain": 0.0,
+"lat": 11.4197,
+"lon": 76.2411
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Nilambur Manavedan HS",
+"key": "NILAMBUR MANAVEDAN HS",
+"rain": 0.0,
+"lat": 11.2853,
+"lon": 76.2317
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Nedumkandam",
+"key": "NEDUMKANDAM",
+"rain": 29.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Vandanmedu",
+"key": "VANDANMEDU",
+"rain": 5.2,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Parappanangadi",
+"key": "PARAPPANANGADI",
+"rain": 0.0,
+"lat": 11.1086,
+"lon": 75.8156
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Erattupetta",
+"key": "ERATTUPETTA",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Mundakayam",
+"key": "MUNDAKAYAM",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Pandikkad",
+"key": "PANDIKKAD",
+"rain": 0.0,
+"lat": 11.1075,
+"lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Edakkara",
+"key": "EDAKKARA",
+"rain": 0.0,
+"lat": 11.3856,
+"lon": 76.315
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Chinnar",
+"key": "CHINNAR",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "FCS Malappuram",
+"key": "FCS MALAPPURAM",
+"rain": 0.0,
+"lat": 11.0408,
+"lon": 76.0781
+}
+]
+}

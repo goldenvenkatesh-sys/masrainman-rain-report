@@ -1,0 +1,103 @@
+{
+"date": "2026-10-27",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-10-27T12:50+0530",
+"stations": [
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
+"rain": 12.0
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 5.0
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 0.8
+},
+{
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 29.0
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
+"rain": 5.2
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 0.0
+}
+]
+}
