@@ -895,6 +895,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Keerampara",
+"key": "KEERAMPARA",
+"rain": 0.0,
+"lat": 10.11,
+"lon": 76.68
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
@@ -910,6 +919,15 @@
 "rain": 0.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Painavu",
+"key": "PAINAVU",
+"rain": 5.2,
+"lat": 9.85,
+"lon": 76.95
 },
 {
 "type": "sw",
@@ -976,12 +994,39 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Vannapuram",
+"key": "VANNAPURAM",
+"rain": 0.0,
+"lat": 9.97,
+"lon": 76.83
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
 "rain": 0.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Marayoor",
+"key": "MARAYOOR",
+"rain": 0.0,
+"lat": 10.3433,
+"lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kulamavu",
+"key": "KULAMAVU",
+"rain": 0.0,
+"lat": 9.7831,
+"lon": 76.8792
 },
 {
 "type": "sw",
