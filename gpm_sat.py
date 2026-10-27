@@ -94,14 +94,27 @@ def _fonts():
 _fonts()
 
 
-def put_logo(fig, height=92, pad=34):
+def header(fig, kicker, title, sub, logo_h=104, gap=26):
+    """Kicker, title and time lines with the logo just to their right; the whole group centred over the map."""
+    rows = [(0.955, kicker, GOLD, 20), (0.918, title, TEXT, 34), (0.888, sub, SOFT, 19)]
+    texts = [fig.text(0.5, y, s, color=c, fontsize=fs, weight="bold" if fs > 19 else "normal", ha="center")
+             for y, s, c, fs in rows]
+    r = fig.canvas.get_renderer()
+    boxes = [t.get_window_extent(r) for t in texts]
+    wt = max(b.width for b in boxes)
+    im = None
     p = os.path.join(HERE, "assets", "masrainman_logo_dark.png")
-    if not os.path.exists(p):
-        return
-    from PIL import Image
-    im = Image.open(p).convert("RGBA")
-    im = im.resize((round(im.width * height / im.height), height), Image.LANCZOS)
-    fig.figimage(np.asarray(im), xo=W - im.width - pad, yo=H - height - 22, zorder=10)
+    if os.path.exists(p):
+        from PIL import Image
+        im = Image.open(p).convert("RGBA")
+        im = im.resize((round(im.width * logo_h / im.height), logo_h), Image.LANCZOS)
+    lw = im.width + gap if im is not None else 0
+    left = (W - (wt + lw)) / 2
+    for t in texts:
+        t.set_x((left + wt / 2) / W)
+    if im is not None:
+        top, bot = max(b.y1 for b in boxes), min(b.y0 for b in boxes)
+        fig.figimage(np.asarray(im), xo=int(left + wt + gap), yo=int((top + bot) / 2 - logo_h / 2), zorder=10)
 
 
 def hex2rgb(h):
@@ -371,10 +384,7 @@ def make_sat24(key, data, out_dir):
 
     from scipy.ndimage import zoom
     fig = plt.figure(figsize=(W / 100, H / 100), dpi=100, facecolor=BG)
-    fig.text(0.06, 0.955, "SATELLITE RAINFALL", color=GOLD, fontsize=20, weight="bold")
-    fig.text(0.06, 0.918, f"{name} · past 24 hours", color=TEXT, fontsize=34, weight="bold")
-    fig.text(0.06, 0.888, f"{t_ist(t0)} → {t_ist(t1)} IST", color=SOFT, fontsize=19)
-    put_logo(fig)
+    header(fig, "SATELLITE RAINFALL", f"{name} · past 24 hours", f"{t_ist(t0)} → {t_ist(t1)} IST")
     ax = fig.add_axes([0.06, 0.335, 0.88, 0.535])
     draw_map_base(ax, box, geo, others)
     layer = ax.imshow(np.zeros((2, 2, 4)), extent=ext, origin="lower", zorder=2, interpolation="bilinear")
@@ -491,12 +501,9 @@ def make_gpm3d(key, c, out_dir):
     sm = surf >= 0.2
 
     fig = plt.figure(figsize=(W / 100, H / 100), dpi=100, facecolor=BG)
-    fig.text(0.06, 0.955, "SATELLITE RADAR · 3D", color=GOLD, fontsize=20, weight="bold")
-    fig.text(0.06, 0.918, f"{name} · GPM pass", color=TEXT, fontsize=34, weight="bold")
-    fig.text(0.06, 0.888, f"{t_ist(tmid)} IST  ({tmid:%H:%M} UTC)", color=SOFT, fontsize=19)
-    put_logo(fig)
+    header(fig, "SATELLITE RADAR · 3D", f"{name} · GPM pass", f"{t_ist(tmid)} IST  ({tmid:%H:%M} UTC)")
     ax = fig.add_axes([-0.06, 0.13, 1.12, 0.78], projection="3d", facecolor=BG)
-    ax.set_box_aspect(((x1 - x0) * kx, (y1 - y0), 0.42 * max((x1 - x0) * kx, y1 - y0)), zoom=1.2)
+    ax.set_box_aspect(((x1 - x0) * kx, (y1 - y0), 0.42 * max((x1 - x0) * kx, y1 - y0)), zoom=1.05)
 
     def outlines():
         for geo_ in others + [geo]:
