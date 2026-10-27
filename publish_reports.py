@@ -11,7 +11,7 @@ The reports folder holds:
 
 What is kept (older ones are removed so the branch stays small):
   live (rain so far)      the newest 24 per region (one day of hourly pictures)
-  daily / live24 / accum  the last 10 days (also the satellite sat24 / gpm3d reports)
+  daily / live24 / accum  the last 10 days
   month                   the last 13 months
 """
 import json
@@ -25,7 +25,7 @@ IST = timezone(timedelta(hours=5, minutes=30))
 REGIONS = {"": ("tn", "Tamil Nadu"), "kl_": ("kl", "Kerala"), "ka_": ("ka", "Karnataka"),
            "ap_": ("ap", "Andhra Pradesh")}
 KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "live24": "Past 24 hours, hour by hour", "accum": "Total rain (multi-day)",
-         "month": "Monthly total", "sat24": "Satellite rain, past 24 hours", "gpm3d": "Satellite radar 3D pass"}
+         "month": "Monthly total"}
 LANGS = {"ta": "Tamil", "en": "English", "ml": "Malayalam"}
 EXTS = ("mp4", "gif", "png", "txt")
 KEEP_LIVE = 24
@@ -33,7 +33,7 @@ KEEP_DAYS = 10
 KEEP_MONTHS = 13
 
 NAME = re.compile(
-    r"^rain_(?P<tag>kl_|ka_|ap_)?(?P<kind>live24|live|daily|accum|month|sat24|gpm3d)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
+    r"^rain_(?P<tag>kl_|ka_|ap_)?(?P<kind>live24|live|daily|accum|month)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
 
 
 def parse(base):
@@ -48,11 +48,6 @@ def parse(base):
             t = datetime.strptime(rest, "%Y-%m-%d_%H%M")
             day, label = t.date().isoformat(), "up to " + t.strftime("%d %b, %I:%M %p").replace(" 0", " ")
             sort = t.strftime("%Y-%m-%dT%H:%M")
-        elif kind in ("sat24", "gpm3d"):          # <time, IST>: end of the 24 h / time of the pass
-            t = datetime.strptime(rest, "%Y-%m-%d_%H%M")
-            when = t.strftime("%d %b, %I:%M %p").replace(" 0", " ")
-            day, sort = t.date().isoformat(), t.strftime("%Y-%m-%dT%H:%M")
-            label = ("24 h up to " if kind == "sat24" else "pass at ") + when
         elif kind in ("daily", "live24"):
             d = datetime.strptime(rest, "%Y-%m-%d")
             day, label, sort = rest, "rain-day " + d.strftime("%d %b %Y"), rest + "T08:30"
