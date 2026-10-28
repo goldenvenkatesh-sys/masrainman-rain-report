@@ -1,0 +1,16 @@
+{
+ "files": [],
+ "checks": {
+  "imd_station_daily.pdf": "error: ConnectionError",
+  "imd_rainfall_map.jpg": "error: ConnectionError",
+  "imd_season.pdf": "error: ConnectionError",
+  "ksdma_page_http": 200,
+  "ksdma_24-RF-5.jpeg": 200,
+  "ksdma_ACTUL-VS-PREDICTION-8.pdf": 200,
+  "ksdma_RF-ENG-18.jpeg": 200,
+  "ksdma_RF-MAL-17.jpeg": 200,
+  "ksdma_RF-MAP-25.jpeg": 200,
+  "ksdma_page": "5 files linked",
+  "imd_aws_portal": "error: ConnectionError"
+ }
+}
