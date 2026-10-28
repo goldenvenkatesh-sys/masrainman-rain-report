@@ -5,6 +5,8 @@
 # The branch is saved as a single fresh commit each time (no file history), so old
 # videos don't pile up in the repo. Several workflows can finish at the same time,
 # so a push that loses the race starts again from the newest branch (up to 5 tries).
+# Each fetch/push is capped at 3 minutes: a push stuck after losing the race used to
+# hang until the 20-minute job limit and the report never got saved.
 #
 # Optional secret WN3_DISPATCH_TOKEN: a fine-grained token with "Actions: read and write"
 # on goldenvenkatesh-sys/masrainman-weathernext3. Without it the site still picks the
@@ -20,7 +22,7 @@ ok=0
 for try in 1 2 3 4 5; do
   rm -rf "$WORK" && mkdir -p "$WORK"
   OLD=""
-  if git fetch -q --depth 1 origin "$BRANCH" 2>/dev/null; then
+  if timeout 180 git -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=60 fetch -q --depth 1 origin "$BRANCH" 2>/dev/null; then
     OLD=$(git rev-parse FETCH_HEAD)
     git --work-tree="$WORK" checkout -q FETCH_HEAD -- . && git reset -q
   fi
@@ -38,11 +40,11 @@ for try in 1 2 3 4 5; do
   URL=$(git remote get-url origin)
   AUTH=$(git config --get-all http.https://github.com/.extraheader || true)
   # replace the branch only if nobody changed it since we fetched it (empty OLD = it must not exist yet)
-  if git -C "$WORK" ${AUTH:+-c http.https://github.com/.extraheader="$AUTH"} push -q \
+  if timeout 180 git -C "$WORK" -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=60 ${AUTH:+-c http.https://github.com/.extraheader="$AUTH"} push -q \
        --force-with-lease="$BRANCH:$OLD" "$URL" "HEAD:$BRANCH"; then
     ok=1; echo "Saved to the '$BRANCH' branch."; break
   fi
-  echo "Another run saved reports at the same time; trying again ($try/5)…"
+  echo "Push rejected or timed out (another run may have saved at the same time); trying again ($try/5)…"
   sleep $((try * 7))
 done
 [ "$ok" = 1 ] || { echo "Could not save the reports branch."; exit 1; }
