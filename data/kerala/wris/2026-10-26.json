@@ -1,7 +1,7 @@
 {
 "date": "2026-10-26",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-28T16:36+0530",
+"fetched": "2026-10-28T20:35+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -361,6 +361,12 @@
 "station": "Payyavoor",
 "uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
 "district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Kollam",
+"uuid": "3d3d8bca-7cdc-47eb-bad4-058d966617ff",
+"district": "Kollam",
 "rain": 0.0
 },
 {

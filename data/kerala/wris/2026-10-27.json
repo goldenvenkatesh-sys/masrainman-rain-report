@@ -1,7 +1,7 @@
 {
 "date": "2026-10-27",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-28T16:36+0530",
+"fetched": "2026-10-28T20:35+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -100,6 +100,18 @@
 "rain": 27.6
 },
 {
+"station": "Kottarakkara",
+"uuid": "699dfafc-9f93-44cf-a2a7-c91bffe7fdc0",
+"district": "Kollam",
+"rain": 0.0
+},
+{
+"station": "Ayiroor",
+"uuid": "31bdc490-7594-4f52-8677-18ac9966006d",
+"district": "Thiruvananthapuram",
+"rain": 4.2
+},
+{
 "station": "Perinthalmanna",
 "uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
 "district": "Malappuram",
@@ -178,6 +190,12 @@
 "rain": 0.0
 },
 {
+"station": "Paravoor",
+"uuid": "62e6c654-748c-45b9-beeb-9fc282c7699c",
+"district": "Kollam",
+"rain": 1.2
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
@@ -212,6 +230,12 @@
 "uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
 "district": "Idukki",
 "rain": 29.0
+},
+{
+"station": "Ayoor",
+"uuid": "a982c741-72cf-4e82-bbd3-c6b3dded2fa5",
+"district": "Kollam",
+"rain": 1.0
 },
 {
 "station": "Vandanmedu",
@@ -265,6 +289,12 @@
 "station": "Marayoor",
 "uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Kollam",
+"uuid": "3d3d8bca-7cdc-47eb-bad4-058d966617ff",
+"district": "Kollam",
 "rain": 0.0
 },
 {

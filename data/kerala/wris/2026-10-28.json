@@ -1,7 +1,7 @@
 {
 "date": "2026-10-28",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-28T16:36+0530",
+"fetched": "2026-10-28T20:35+0530",
 "stations": [
 {
 "station": "Braemore",
@@ -82,6 +82,18 @@
 "rain": 0.0
 },
 {
+"station": "Kottarakkara",
+"uuid": "699dfafc-9f93-44cf-a2a7-c91bffe7fdc0",
+"district": "Kollam",
+"rain": 0.0
+},
+{
+"station": "Ayiroor",
+"uuid": "31bdc490-7594-4f52-8677-18ac9966006d",
+"district": "Thiruvananthapuram",
+"rain": 0.0
+},
+{
 "station": "Pokkunni",
 "uuid": "92fe39fa-0d86-4799-8535-c6380fbbcf9b",
 "district": "Palakkad",
@@ -118,6 +130,12 @@
 "rain": 0.0
 },
 {
+"station": "Paravoor",
+"uuid": "62e6c654-748c-45b9-beeb-9fc282c7699c",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
@@ -148,6 +166,12 @@
 "rain": 0.0
 },
 {
+"station": "Ayoor",
+"uuid": "a982c741-72cf-4e82-bbd3-c6b3dded2fa5",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Uppala",
 "uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
 "district": "Kasaragod",
@@ -169,6 +193,12 @@
 "station": "Thunakadavu",
 "uuid": "57bad3f2-8941-418c-9ad8-35ff72539899",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kollam",
+"uuid": "3d3d8bca-7cdc-47eb-bad4-058d966617ff",
+"district": "Kollam",
 "rain": 0.0
 },
 {
