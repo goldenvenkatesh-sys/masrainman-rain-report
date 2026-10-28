@@ -1,7 +1,7 @@
 {
 "date": "2026-10-21",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-26T16:39+0530",
+"fetched": "2026-10-28T16:36+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -253,7 +253,7 @@
 "station": "Aluva",
 "uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
 "district": "Ernakulam",
-"rain": 0.4
+"rain": 0.0
 },
 {
 "station": "Malampuzha",

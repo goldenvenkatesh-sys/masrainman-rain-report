@@ -1,7 +1,7 @@
 {
 "date": "2026-10-16",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-24T17:10+0530",
+"fetched": "2026-10-28T16:36+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -253,7 +253,7 @@
 "station": "Elanad",
 "uuid": "624bede1-7686-4ff2-b6d4-980e7d860756",
 "district": "Thrissur",
-"rain": 31.0
+"rain": 15.0
 },
 {
 "station": "Chulliar Dam",
