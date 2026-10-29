@@ -751,6 +751,24 @@
 },
 {
 "type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Braemore",
+"key": "BRAEMORE",
+"rain": 0.8,
+"lat": 8.7367,
+"lon": 77.0786
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Keerampara",
+"key": "KEERAMPARA",
+"rain": 0.0,
+"lat": 10.11,
+"lon": 76.68
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
@@ -778,12 +796,30 @@
 },
 {
 "type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Valayinkil",
+"key": "VALAYINKIL",
+"rain": 0.0,
+"lat": 8.6764,
+"lon": 77.0914
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Alakkode",
 "key": "ALAKKODE",
 "rain": 0.0,
 "lat": 12.17,
 "lon": 75.47
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Attingal",
+"key": "ATTINGAL",
+"rain": 0.0,
+"lat": 8.6928,
+"lon": 76.8186
 },
 {
 "type": "sw",
@@ -802,6 +838,15 @@
 "rain": 0.0,
 "lat": 9.4114,
 "lon": 76.8744
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Painavu",
+"key": "PAINAVU",
+"rain": 0.0,
+"lat": 9.85,
+"lon": 76.95
 },
 {
 "type": "sw",
@@ -868,6 +913,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Vannapuram",
+"key": "VANNAPURAM",
+"rain": 0.0,
+"lat": 9.97,
+"lon": 76.83
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
@@ -883,6 +937,33 @@
 "rain": 0.0,
 "lat": 12.2989,
 "lon": 75.155
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Marayoor",
+"key": "MARAYOOR",
+"rain": 0.0,
+"lat": 10.3433,
+"lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kulamavu",
+"key": "KULAMAVU",
+"rain": 0.0,
+"lat": 9.7831,
+"lon": 76.8792
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Vamanapuram",
+"key": "VAMANAPURAM",
+"rain": 2.2,
+"lat": 8.7167,
+"lon": 76.8953
 },
 {
 "type": "sw",
