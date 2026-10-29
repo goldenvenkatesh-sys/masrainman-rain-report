@@ -751,6 +751,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Kumili",
+"key": "KUMILI",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Neryamangalam",
 "key": "NERYAMANGALAM",
@@ -760,12 +769,156 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kaithapram",
+"key": "KAITHAPRAM",
+"rain": 0.0,
+"lat": 12.1128,
+"lon": 75.2936
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Alakkode",
+"key": "ALAKKODE",
+"rain": 0.0,
+"lat": 12.17,
+"lon": 75.47
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Boyce Estate",
+"key": "BOYCE ESTATE",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Perumthenaruvi",
+"key": "PERUMTHENARUVI",
+"rain": 0.0,
+"lat": 9.4114,
+"lon": 76.8744
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Teekoy Estate",
+"key": "TEEKOY ESTATE",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Bhoothathankettu",
 "key": "BHOOTHATHANKETTU",
 "rain": 0.0,
 "lat": 10.1592,
 "lon": 76.6164
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Vellachal",
+"key": "VELLACHAL",
+"rain": 0.0,
+"lat": 12.2019,
+"lon": 75.1861
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Nedumkandam",
+"key": "NEDUMKANDAM",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Vandanmedu",
+"key": "VANDANMEDU",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Erattupetta",
+"key": "ERATTUPETTA",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Kakkadavu Cheemeni",
+"key": "KAKKADAVU CHEEMENI",
+"rain": 0.0,
+"lat": 12.2667,
+"lon": 75.2811
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Mundakayam",
+"key": "MUNDAKAYAM",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Erikkulam",
+"key": "ERIKKULAM",
+"rain": 0.0,
+"lat": 12.2989,
+"lon": 75.155
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Pulingome",
+"key": "PULINGOME",
+"rain": 0.0,
+"lat": 12.2908,
+"lon": 75.4064
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Olayampadi",
+"key": "OLAYAMPADI",
+"rain": 0.0,
+"lat": 12.1833,
+"lon": 75.325
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Chinnar",
+"key": "CHINNAR",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Vadasserikkara",
+"key": "VADASSERIKKARA",
+"rain": 0.0,
+"lat": 9.3333,
+"lon": 76.8308
 }
 ]
 }

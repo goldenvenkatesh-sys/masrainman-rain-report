@@ -1651,12 +1651,30 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kaithapram",
+"key": "KAITHAPRAM",
+"rain": 35.6,
+"lat": 12.1128,
+"lon": 75.2936
+},
+{
+"type": "sw",
 "district": "Thiruvananthapuram",
 "station": "Valayinkil",
 "key": "VALAYINKIL",
 "rain": 48.2,
 "lat": 8.6764,
 "lon": 77.0914
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Alakkode",
+"key": "ALAKKODE",
+"rain": 67.0,
+"lat": 12.17,
+"lon": 75.47
 },
 {
 "type": "sw",
@@ -1796,6 +1814,15 @@
 {
 "type": "sw",
 "district": "Kasaragod",
+"station": "Vellachal",
+"key": "VELLACHAL",
+"rain": 1.0,
+"lat": 12.2019,
+"lon": 75.1861
+},
+{
+"type": "sw",
+"district": "Kasaragod",
 "station": "Madhur",
 "key": "MADHUR",
 "rain": 3.0,
@@ -1855,6 +1882,15 @@
 "rain": 15.3,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Kakkadavu Cheemeni",
+"key": "KAKKADAVU CHEEMENI",
+"rain": 2.6,
+"lat": 12.2667,
+"lon": 75.2811
 },
 {
 "type": "sw",
@@ -1957,6 +1993,15 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Pulingome",
+"key": "PULINGOME",
+"rain": 111.0,
+"lat": 12.2908,
+"lon": 75.4064
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Walayar Dam",
 "key": "WALAYAR DAM",
@@ -1972,6 +2017,15 @@
 "rain": 2.0,
 "lat": 10.7056,
 "lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Olayampadi",
+"key": "OLAYAMPADI",
+"rain": 67.4,
+"lat": 12.1833,
+"lon": 75.325
 },
 {
 "type": "sw",

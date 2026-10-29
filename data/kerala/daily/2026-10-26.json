@@ -1552,12 +1552,30 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Kaithapram",
+"key": "KAITHAPRAM",
+"rain": 0.0,
+"lat": 12.1128,
+"lon": 75.2936
+},
+{
+"type": "sw",
 "district": "Thiruvananthapuram",
 "station": "Valayinkil",
 "key": "VALAYINKIL",
 "rain": 47.4,
 "lat": 8.6764,
 "lon": 77.0914
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Alakkode",
+"key": "ALAKKODE",
+"rain": 0.0,
+"lat": 12.17,
+"lon": 75.47
 },
 {
 "type": "sw",
@@ -1697,6 +1715,15 @@
 {
 "type": "sw",
 "district": "Kasaragod",
+"station": "Vellachal",
+"key": "VELLACHAL",
+"rain": 0.0,
+"lat": 12.2019,
+"lon": 75.1861
+},
+{
+"type": "sw",
+"district": "Kasaragod",
 "station": "Madhur",
 "key": "MADHUR",
 "rain": 0.0,
@@ -1768,6 +1795,15 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Kakkadavu Cheemeni",
+"key": "KAKKADAVU CHEEMENI",
+"rain": 0.0,
+"lat": 12.2667,
+"lon": 75.2811
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Vannapuram",
 "key": "VANNAPURAM",
@@ -1822,6 +1858,15 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Erikkulam",
+"key": "ERIKKULAM",
+"rain": 0.0,
+"lat": 12.2989,
+"lon": 75.155
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Thunakadavu",
 "key": "THUNAKADAVU",
@@ -1867,6 +1912,15 @@
 },
 {
 "type": "sw",
+"district": "Kannur",
+"station": "Pulingome",
+"key": "PULINGOME",
+"rain": 0.6,
+"lat": 12.2908,
+"lon": 75.4064
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Walayar Dam",
 "key": "WALAYAR DAM",
@@ -1882,6 +1936,15 @@
 "rain": 29.0,
 "lat": 10.7056,
 "lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Kannur",
+"station": "Olayampadi",
+"key": "OLAYAMPADI",
+"rain": 0.0,
+"lat": 12.1833,
+"lon": 75.325
 },
 {
 "type": "sw",
