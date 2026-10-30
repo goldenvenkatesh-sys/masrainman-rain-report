@@ -20,6 +20,34 @@
    "sha1": "dbf537b7b1239816e1a0ee6ddccf6e5a1cf09b2f",
    "saved_at": "2026-10-30T11:49+05:30",
    "last_modified": "Fri, 30 Oct 2026 05:23:33 GMT"
+  },
+  {
+   "name": "ksdma_24-HR-RAINFALL-7.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/24-HR-RAINFALL-7.jpeg",
+   "sha1": "6e8913b229c0a918556eaa5c65a245f0106e73c1",
+   "saved_at": "2026-10-30T16:54+05:30",
+   "last_modified": "Fri, 30 Oct 2026 06:34:30 GMT"
+  },
+  {
+   "name": "ksdma_Actual-Vs-Prediction-22.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/Actual-Vs-Prediction-22.pdf",
+   "sha1": "fdb0ec2e581b1549d213b7799455d9060bf36eb8",
+   "saved_at": "2026-10-30T16:54+05:30",
+   "last_modified": "Fri, 30 Oct 2026 06:34:33 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-ENG-4.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-ENG-4.jpeg",
+   "sha1": "5f9c69f24f4be39b433e76413a7732569b6f6165",
+   "saved_at": "2026-10-30T16:54+05:30",
+   "last_modified": "Fri, 30 Oct 2026 08:07:23 GMT"
+  },
+  {
+   "name": "ksdma_RF-TB-MAL-4.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/10/RF-TB-MAL-4.jpeg",
+   "sha1": "af66aa9938e19cad71398ed7e7d977d33e08bc8e",
+   "saved_at": "2026-10-30T16:54+05:30",
+   "last_modified": "Fri, 30 Oct 2026 08:07:24 GMT"
   }
  ],
  "checks": {
@@ -32,6 +60,10 @@
   "ksdma_RF-ENG-19.jpeg": 200,
   "ksdma_RF-MAL-TAB-1.jpeg": 200,
   "ksdma_page": "4 files linked",
-  "imd_aws_portal": 200
+  "imd_aws_portal": 200,
+  "ksdma_24-HR-RAINFALL-7.jpeg": 200,
+  "ksdma_Actual-Vs-Prediction-22.pdf": 200,
+  "ksdma_RF-TB-ENG-4.jpeg": 200,
+  "ksdma_RF-TB-MAL-4.jpeg": 200
  }
 }
