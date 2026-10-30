@@ -895,6 +895,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Thumburmuzhy",
+"key": "THUMBURMUZHY",
+"rain": 0.0,
+"lat": 10.3,
+"lon": 76.43
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Ottapalam",
 "key": "OTTAPALAM",
@@ -967,6 +976,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Mathilakam",
+"key": "MATHILAKAM",
+"rain": 32.3,
+"lat": 10.2953,
+"lon": 76.1675
+},
+{
+"type": "sw",
 "district": "Thiruvananthapuram",
 "station": "Attingal",
 "key": "ATTINGAL",
@@ -982,6 +1000,15 @@
 "rain": 0.0,
 "lat": 9.0039,
 "lon": 76.7819
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Vettilappara",
+"key": "VETTILAPPARA",
+"rain": 1.2,
+"lat": 10.2906,
+"lon": 76.5092
 },
 {
 "type": "sw",
@@ -1201,12 +1228,30 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Mupli",
+"key": "MUPLI",
+"rain": 3.9,
+"lat": 10.4167,
+"lon": 76.3961
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
 "rain": 1.6,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Chimmony",
+"key": "CHIMMONY",
+"rain": 6.4,
+"lat": 10.4408,
+"lon": 76.45
 },
 {
 "type": "sw",
@@ -1246,12 +1291,30 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Varandarapilly",
+"key": "VARANDARAPILLY",
+"rain": 11.8,
+"lat": 10.4228,
+"lon": 76.3414
+},
+{
+"type": "sw",
 "district": "Thiruvananthapuram",
 "station": "Vamanapuram",
 "key": "VAMANAPURAM",
 "rain": 0.0,
 "lat": 8.7167,
 "lon": 76.8953
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Pudukkad",
+"key": "PUDUKKAD",
+"rain": 13.6,
+"lat": 10.4375,
+"lon": 76.3803
 },
 {
 "type": "sw",
@@ -1270,6 +1333,15 @@
 "rain": 0.0,
 "lat": 10.84,
 "lon": 76.84
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Karikkadavu",
+"key": "KARIKKADAVU",
+"rain": 0.0,
+"lat": 10.3711,
+"lon": 76.4464
 },
 {
 "type": "sw",
