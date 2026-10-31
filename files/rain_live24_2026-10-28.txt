@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 27 Oct to 8:30 am 28 Oct 2026 · hour by hour
+
+Rainfall toppers:
+1. Thadikarakonam (Kanniyakumari) – 41.6 mm
+2. Sulore (Kanniyakumari) – 28.4 mm
+3. Masarpatti (Thoothukudi) – 21.2 mm
+4. Vadakkupachaiyar Dam (Tirunelveli) – 20.8 mm
+5. Chittar Dam 2 (Sivalogam) ARG (Kanniyakumari) – 16.0 mm
+
+Heaviest in one hour: 26.8 mm at Thadikarakonam (Kanniyakumari), hour ending 3:30 PM
+Rain at 96 of 1344 stations · 0 with heavy rain or more
+Most of it fell 1:30 PM – 4:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 3 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

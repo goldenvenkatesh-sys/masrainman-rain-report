@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 26 Oct to 8:30 am 27 Oct 2026 · hour by hour
+
+Rainfall toppers:
+1. Erukandurai (Tirunelveli) – 54.0 mm
+2. Chettikulam (Tirunelveli) – 53.6 mm
+3. Thopputhurai (Nagapattinam) – 49.6 mm
+4. Kodiyakkarai ARG (Nagapattinam) – 43.2 mm
+5. Naluvethapathi (Nagapattinam) – 39.2 mm
+
+Heaviest in one hour: 41.2 mm at Chettikulam (Tirunelveli), hour ending 8:30 PM
+Rain at 373 of 1341 stations · 0 with heavy rain or more
+Most of it fell 4:30 PM – 10:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 8 districts)
+  WeatherNext 3: 4 caught, 3 false alarms
+  ECMWF IFS: 4 caught, 6 false alarms
+  ECMWF AIFS: 4 caught, 3 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

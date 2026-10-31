@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 25 Oct to 8:30 am 26 Oct 2026 · hour by hour
+
+Rainfall toppers:
+1. Karatholuvu (Tiruppur) – 160.0 mm
+2. Othakalmandabam (Coimbatore) – 156.4 mm
+3. Sanaveli (Ramanathapuram) – 126.4 mm
+4. Madathupalayam (Tiruppur) – 120.0 mm
+5. Sekkanthidal (Ramanathapuram) – 116.8 mm
+
+Heaviest in one hour: 64.0 mm at Othakalmandabam (Coimbatore), hour ending 3:30 PM
+Rain at 1090 of 1347 stations · 39 with heavy rain or more
+Most of it fell 3:30 PM – 10:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 6 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 5 caught, 6 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com
