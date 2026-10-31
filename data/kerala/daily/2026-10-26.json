@@ -1534,6 +1534,15 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Konni Estate",
+"key": "KONNI ESTATE",
+"rain": 28.1,
+"lat": 9.1819,
+"lon": 76.9089
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Kannavam",
 "key": "KANNAVAM",
@@ -1903,6 +1912,15 @@
 },
 {
 "type": "sw",
+"district": "Kollam",
+"station": "Soornad",
+"key": "SOORNAD",
+"rain": 25.0,
+"lat": 9.1036,
+"lon": 76.6206
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Erikkulam",
 "key": "ERIKKULAM",
@@ -2062,6 +2080,15 @@
 "rain": 32.6,
 "lat": 9.3333,
 "lon": 76.8308
+},
+{
+"type": "sw",
+"district": "Kollam",
+"station": "Achencoil",
+"key": "ACHENCOIL",
+"rain": 26.8,
+"lat": 9.0924,
+"lon": 77.122
 }
 ]
 }
