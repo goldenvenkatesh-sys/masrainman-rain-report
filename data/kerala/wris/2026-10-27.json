@@ -1,7 +1,7 @@
 {
 "date": "2026-10-27",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-31T15:13+0530",
+"fetched": "2026-10-31T16:26+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -31,6 +31,12 @@
 "station": "Paika",
 "uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Kozha",
+"uuid": "a28651a6-77d8-4615-9ef5-7376406ac8d8",
+"district": "Kottayam",
 "rain": 0.0
 },
 {
@@ -274,6 +280,12 @@
 "rain": 1.2
 },
 {
+"station": "Kottayam",
+"uuid": "fd7fad82-3cb8-4eff-b686-662f053cc148",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
@@ -295,6 +307,12 @@
 "station": "Moolathara",
 "uuid": "d9b8c2c9-f868-4e74-85b8-34fcbe478e32",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Pampady",
+"uuid": "14ad23ee-e2a1-4070-800c-1550b016083d",
+"district": "Kottayam",
 "rain": 0.0
 },
 {

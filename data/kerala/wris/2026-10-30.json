@@ -1,7 +1,7 @@
 {
 "date": "2026-10-30",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-31T15:13+0530",
+"fetched": "2026-10-31T16:26+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -13,6 +13,12 @@
 "station": "Paika",
 "uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Kozha",
+"uuid": "a28651a6-77d8-4615-9ef5-7376406ac8d8",
+"district": "Kottayam",
 "rain": 0.0
 },
 {
@@ -70,6 +76,12 @@
 "rain": 0.0
 },
 {
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
 "station": "Boyce Estate",
 "uuid": "53728cef-53c0-4371-930f-f84496435648",
 "district": "Idukki",
@@ -106,9 +118,33 @@
 "rain": 0.0
 },
 {
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Kottayam",
+"uuid": "fd7fad82-3cb8-4eff-b686-662f053cc148",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
 "station": "Aryankavu",
 "uuid": "1c10d529-2d2a-47c3-b7fa-9ebd1e45a331",
 "district": "Kollam",
+"rain": 0.0
+},
+{
+"station": "Pampady",
+"uuid": "14ad23ee-e2a1-4070-800c-1550b016083d",
+"district": "Kottayam",
 "rain": 0.0
 },
 {
@@ -146,6 +182,12 @@
 "uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
 "district": "Kasaragod",
 "rain": 0.3
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 0.0
 },
 {
 "station": "Padiyathadukka",
@@ -208,6 +250,18 @@
 "rain": 0.0
 },
 {
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
 "station": "Vynthala",
 "uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
 "district": "Thrissur",
@@ -217,6 +271,12 @@
 "station": "Chinnar",
 "uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
 "rain": 0.0
 },
 {

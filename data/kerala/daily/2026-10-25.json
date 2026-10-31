@@ -1840,6 +1840,15 @@
 },
 {
 "type": "sw",
+"district": "Kottayam",
+"station": "Pampady",
+"key": "PAMPADY",
+"rain": 8.4,
+"lat": 9.5867,
+"lon": 76.6044
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Bhoothathankettu",
 "key": "BHOOTHATHANKETTU",
@@ -1891,6 +1900,15 @@
 "rain": 0.0,
 "lat": 12.7236,
 "lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Parappanangadi",
+"key": "PARAPPANANGADI",
+"rain": 33.2,
+"lat": 11.1086,
+"lon": 75.8156
 },
 {
 "type": "sw",
