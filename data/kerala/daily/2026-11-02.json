@@ -1192,6 +1192,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Neryamangalam",
+"key": "NERYAMANGALAM",
+"rain": 0.0,
+"lat": 10.0914,
+"lon": 76.6883
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Boyce Estate",
 "key": "BOYCE ESTATE",
@@ -1216,6 +1225,15 @@
 "rain": 12.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 0.0,
+"lat": 10.1592,
+"lon": 76.6164
 },
 {
 "type": "sw",
