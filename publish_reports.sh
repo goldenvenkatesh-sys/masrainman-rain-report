@@ -20,7 +20,8 @@ ok=0
 for try in 1 2 3 4 5; do
   rm -rf "$WORK" && mkdir -p "$WORK"
   OLD=""
-  if git fetch -q --depth 1 origin "$BRANCH" 2>/dev/null; then
+  # time limits: a stuck fetch/push used to hang until the job timed out (28 Oct 22:45 TN run)
+  if timeout 120 git fetch -q --depth 1 origin "$BRANCH" 2>/dev/null; then
     OLD=$(git rev-parse FETCH_HEAD)
     git --work-tree="$WORK" checkout -q FETCH_HEAD -- . && git reset -q
   fi
@@ -38,11 +39,11 @@ for try in 1 2 3 4 5; do
   URL=$(git remote get-url origin)
   AUTH=$(git config --get-all http.https://github.com/.extraheader || true)
   # replace the branch only if nobody changed it since we fetched it (empty OLD = it must not exist yet)
-  if git -C "$WORK" ${AUTH:+-c http.https://github.com/.extraheader="$AUTH"} push -q \
+  if timeout 180 git -C "$WORK" ${AUTH:+-c http.https://github.com/.extraheader="$AUTH"} push -q \
        --force-with-lease="$BRANCH:$OLD" "$URL" "HEAD:$BRANCH"; then
     ok=1; echo "Saved to the '$BRANCH' branch."; break
   fi
-  echo "Another run saved reports at the same time; trying again ($try/5)…"
+  echo "Push was rejected or timed out (another run may have saved at the same time); trying again ($try/5)…"
   sleep $((try * 7))
 done
 [ "$ok" = 1 ] || { echo "Could not save the reports branch."; exit 1; }
