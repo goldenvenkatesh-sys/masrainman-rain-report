@@ -1,7 +1,7 @@
 {
 "date": "2026-10-28",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-31T16:26+0530",
+"fetched": "2026-11-03T12:33+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -397,7 +397,7 @@
 "station": "Mupli",
 "uuid": "002b6e93-374e-4b74-8246-326cf2685531",
 "district": "Thrissur",
-"rain": 3.9
+"rain": 3.7
 },
 {
 "station": "Mundakayam",
