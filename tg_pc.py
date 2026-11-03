@@ -3,7 +3,7 @@ Telangana: run this on the PC (in India) every hour. It reads TGDPS, saves data/
 which then makes the Telangana reports (tg-report.yml).
 
     python tg_pc.py            # one run: rain so far (the 08:25 run also saves the finished rain-day)
-    python tg_pc.py --setup    # Windows: add an hourly Task Scheduler job (at :25 past every hour)
+    python tg_pc.py --setup    # Windows: silent job every hour at :25 and when you sign in
 
 Needs git with push access to this repo (the same login you use for git push) and
 `pip install -r requirements.txt`.
@@ -24,12 +24,26 @@ def git(*args, check=True):
 
 
 def setup():
+    """Windows: one Task Scheduler job that runs silently (pythonw, no window)
+       - every hour at :25,
+       - 1 minute after you sign in to Windows (so turning the PC on updates at once),
+       - as soon as possible after a run that was missed while the PC was off or asleep,
+       - and wakes the PC from sleep for the hourly run."""
     py = sys.executable.replace("python.exe", "pythonw.exe") if os.name == "nt" else sys.executable
-    cmd = ["schtasks", "/Create", "/F", "/TN", "MasRainman Telangana rain", "/SC", "HOURLY", "/ST", "00:25",
-           "/TR", f'"{py}" "{os.path.join(HERE, "tg_pc.py")}"']
-    print(" ".join(cmd))
-    subprocess.run(cmd, check=True)
-    print("Done: runs every hour at :25. Check it in Task Scheduler → 'MasRainman Telangana rain'.")
+    script = os.path.join(HERE, "tg_pc.py")
+    ps = f"""
+$a = New-ScheduledTaskAction -Execute '{py}' -Argument '"{script}"' -WorkingDirectory '{HERE}'
+$t1 = New-ScheduledTaskTrigger -Once -At '00:25' -RepetitionInterval (New-TimeSpan -Hours 1)
+$t2 = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+$t2.Delay = 'PT1M'
+$s = New-ScheduledTaskSettingsSet -StartWhenAvailable -WakeToRun -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
+     -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
+Register-ScheduledTask -TaskName 'MasRainman Telangana rain' -Action $a -Trigger $t1,$t2 -Settings $s -Force | Out-Null
+"""
+    subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps], check=True)
+    print("Done: runs silently every hour at :25 and 1 minute after you sign in to Windows,\n"
+          "catches up on missed runs and wakes the PC from sleep. "
+          "See Task Scheduler → 'MasRainman Telangana rain'.")
 
 
 def main():

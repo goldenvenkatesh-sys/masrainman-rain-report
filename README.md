@@ -131,7 +131,7 @@ python rain_report.py accum --region ap --month 2026-11
 Telangana gets the same reports as Andhra Pradesh from TGDPS's automatic weather stations. TGDPS does not answer
 from outside India, so GitHub cannot read it: the PC in India does.
 
-- `tg_pc.py` (on the PC, every hour at :25 from Windows Task Scheduler; `python tg_pc.py --setup` adds the job)
+- `tg_pc.py` (on the PC, silently every hour at :25 and 1 minute after signing in to Windows; `python tg_pc.py --setup` adds the job)
   runs `tg_fetch.py`, which reads `liverain.jsp` (rain since 8:30 am, only stations with rain are listed, so every
   other station is saved as 0 mm) into `data/tg/live/<rain-day>.json`. The 08:25 run also saves the finished
   rain-day to `data/tg/daily/<rain-day>.json` (it misses at most the last few minutes before 8:30). Then it
