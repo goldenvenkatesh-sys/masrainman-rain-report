@@ -10,9 +10,14 @@ The reports folder holds:
   README.md                               latest reports with previews (shows in the GitHub app)
 
 What is kept (older ones are removed so the branch stays small):
-  live (rain so far)      the newest 24 per region (one day of hourly pictures)
-  daily / live24 / accum  the last 10 days (also the satellite sat24 / gpm3d reports)
+  live (rain so far)      the newest 12 per region (half a day of hourly pictures)
+  daily / live24          the last 5 days (also the satellite sat24 / gpm3d reports)
+  accum                   the newest 2 per region, language and start date, within 5 days
+                          (each one already includes the days before it)
   month                   the last 13 months
+
+The branch is pushed as one fresh commit every run, so its total size decides how long
+the save takes; at ~900 MB the fetch + push ran past the 20-minute job limit.
 """
 import json
 import os
@@ -28,8 +33,9 @@ KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "live24": "Past 
          "month": "Monthly total", "sat24": "Satellite rain, past 24 hours", "gpm3d": "Satellite radar 3D pass"}
 LANGS = {"ta": "Tamil", "en": "English", "ml": "Malayalam"}
 EXTS = ("mp4", "gif", "png", "txt")
-KEEP_LIVE = 24
-KEEP_DAYS = 10
+KEEP_LIVE = 12
+KEEP_DAYS = 5
+KEEP_ACCUM = 2
 KEEP_MONTHS = 13
 
 NAME = re.compile(
@@ -111,7 +117,7 @@ def main(out_dir, rep):
         print("  added:", base)
 
     # keep the newest live pictures per region, and recent daily/accum/month reports
-    keep, live_count = {}, {}
+    keep, live_count, accum_count = {}, {}, {}
     day_cut = (now - timedelta(days=KEEP_DAYS)).date().isoformat()
     month_cut = (now.replace(day=1) - timedelta(days=31 * KEEP_MONTHS)).date().isoformat()
     for it in sorted(items.values(), key=lambda i: i["sort"], reverse=True):
@@ -125,6 +131,11 @@ def main(out_dir, rep):
                 continue
         elif it["day"] < day_cut:
             continue
+        elif k == "accum":
+            key = (it["region"], it["lang"], it["id"].split("_to_")[0])
+            accum_count[key] = accum_count.get(key, 0) + 1
+            if accum_count[key] > KEEP_ACCUM:
+                continue
         keep[it["id"]] = it
 
     # remove files no longer listed
