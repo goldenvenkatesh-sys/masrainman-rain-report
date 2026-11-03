@@ -922,12 +922,30 @@
 },
 {
 "type": "sw",
+"district": "Kollam",
+"station": "Kottarakkara",
+"key": "KOTTARAKKARA",
+"rain": 0.0,
+"lat": 9.0039,
+"lon": 76.7819
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Vettilappara",
 "key": "VETTILAPPARA",
 "rain": 0.0,
 "lat": 10.2906,
 "lon": 76.5092
+},
+{
+"type": "sw",
+"district": "Thiruvananthapuram",
+"station": "Ayiroor",
+"key": "AYIROOR",
+"rain": 0.0,
+"lat": 8.7794,
+"lon": 76.7178
 },
 {
 "type": "sw",
@@ -994,6 +1012,15 @@
 },
 {
 "type": "sw",
+"district": "Kollam",
+"station": "Paravoor",
+"key": "PARAVOOR",
+"rain": 0.0,
+"lat": 8.7819,
+"lon": 76.6689
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Pampady",
 "key": "PAMPADY",
@@ -1036,6 +1063,15 @@
 "rain": 0.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Kollam",
+"station": "Ayoor",
+"key": "AYOOR",
+"rain": 0.0,
+"lat": 8.8919,
+"lon": 76.8664
 },
 {
 "type": "sw",

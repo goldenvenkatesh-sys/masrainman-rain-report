@@ -1,7 +1,7 @@
 {
 "date": "2026-10-30",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-02T13:01+0530",
+"fetched": "2026-11-03T18:18+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -112,9 +112,21 @@
 "rain": 0.0
 },
 {
+"station": "Kottarakkara",
+"uuid": "699dfafc-9f93-44cf-a2a7-c91bffe7fdc0",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Vettilappara",
 "uuid": "d4467488-e65e-4dc7-b54d-284adcb2f77f",
 "district": "Thrissur",
+"rain": 0.0
+},
+{
+"station": "Ayiroor",
+"uuid": "31bdc490-7594-4f52-8677-18ac9966006d",
+"district": "Thiruvananthapuram",
 "rain": 0.0
 },
 {
@@ -178,6 +190,12 @@
 "rain": 0.0
 },
 {
+"station": "Paravoor",
+"uuid": "62e6c654-748c-45b9-beeb-9fc282c7699c",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Kottayam",
 "uuid": "fd7fad82-3cb8-4eff-b686-662f053cc148",
 "district": "Kottayam",
@@ -211,6 +229,12 @@
 "station": "Nedumkandam",
 "uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Ayoor",
+"uuid": "a982c741-72cf-4e82-bbd3-c6b3dded2fa5",
+"district": "Kollam",
 "rain": 0.0
 },
 {
@@ -319,6 +343,12 @@
 "station": "Payyavoor",
 "uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
 "district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Kollam",
+"uuid": "3d3d8bca-7cdc-47eb-bad4-058d966617ff",
+"district": "Kollam",
 "rain": 0.0
 },
 {
