@@ -21,6 +21,9 @@ on:
       end:
         description: "accum: end YYYY-MM-DD (blank = latest)"
         default: ""
+      auto:
+        description: "yes = started by the cron-job.org timer (acts like the GitHub schedule, e.g. month report on the 1st)"
+        default: "no"
 
 permissions:
   contents: write
@@ -89,7 +92,7 @@ jobs:
           DAY: ${{ github.event.inputs.date }}
           START: ${{ github.event.inputs.start }}
           END: ${{ github.event.inputs.end }}
-          SCHEDULED: ${{ github.event.schedule }}
+          SCHEDULED: ${{ github.event.schedule || (github.event.inputs.auto == 'yes' && 'auto' || '') }}
           # live24 reads the WeatherNext 3 24-h rain from the weathernext3 repo with this token
           WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
           WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}

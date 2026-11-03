@@ -66,6 +66,17 @@ with headers `Authorization: Bearer <fine-grained token with Actions: read & wri
 `Accept: application/vnd.github+json`, and body `{"ref":"main"}`. The GitHub timer can stay on too: if both
 fire, the second run finds no new rain and posts nothing.
 
+### Making the daily reports on time (cron-job.org)
+
+GitHub starts the scheduled *TN rainfall report* runs 6–10 hours late. Two cron-job.org jobs (time zone
+Asia/Kolkata) start them on time:
+`POST https://api.github.com/repos/goldenvenkatesh-sys/masrainman-rain-report/actions/workflows/rain-report.yml/dispatches`
+with the same headers as above, and body
+- 09:45 IST: `{"ref":"main","inputs":{"region":"tn ap","mode":"both","auto":"yes"}}`
+- 12:15 IST: `{"ref":"main","inputs":{"region":"kl","mode":"both","auto":"yes"}}`
+
+`auto: yes` makes the run behave like the GitHub schedule (month total on the 1st). The GitHub timer stays as a backup.
+
 ## Karnataka every 2 hours (rain so far)
 
 The *Karnataka rainfall so far* workflow makes the same white "rain since 8:30 am, so far" picture for Karnataka
