@@ -1,0 +1,55 @@
+name: Cyclone landfall animation (satellite rain)
+
+# Makes the landfall animation for a storm in data/cyclones/<name>.json from NASA/JAXA GPM IMERG Early
+# (rain every 30 minutes, about 4 hours behind real time) with the IMD track.
+# Output: MP4, GIF, PNG and caption, saved to the 'cyclone' branch (cyclone/<name>/) and as a run artifact.
+on:
+  workflow_dispatch:
+    inputs:
+      storm:
+        description: "storm file in data/cyclones (without .json)"
+        default: "murasu"
+
+permissions:
+  contents: write
+
+jobs:
+  landfall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        timeout-minutes: 10
+        run: pip install numpy scipy "shapely>=2.0" "pillow>=10.0" requests imageio-ffmpeg h5py matplotlib
+
+      - name: Make animation
+        env:
+          EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
+          EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
+        run: python cyclone_landfall.py "data/cyclones/${{ github.event.inputs.storm }}.json" --out out
+
+      - name: Save to the cyclone branch
+        run: |
+          S="${{ github.event.inputs.storm }}"
+          mkdir -p /tmp/pub && cp out/cyclone_* /tmp/pub/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git fetch -q --depth 1 origin cyclone && git checkout -q -B cyclone origin/cyclone || git checkout -q --orphan cyclone
+          git rm -rq --cached . 2>/dev/null || true
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name cyclone -exec rm -rf {} +
+          mkdir -p "cyclone/$S" && cp /tmp/pub/* "cyclone/$S/"
+          git add cyclone
+          git commit -qm "Cyclone $S landfall animation $(TZ=Asia/Kolkata date +'%Y-%m-%d %H:%M')" && git push -q -f origin cyclone
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cyclone-landfall
+          path: out/
+          retention-days: 14

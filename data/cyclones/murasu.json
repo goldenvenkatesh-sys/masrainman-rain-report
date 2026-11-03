@@ -1,0 +1,21 @@
+{
+  "name": "Murasu",
+  "category_at_landfall": "Severe Cyclonic Storm",
+  "winds_at_landfall": "100–110 km/h, gusting 120 km/h",
+  "landfall_text": "Crossed the south Andhra Pradesh coast near Ongole",
+  "start_utc": "2026-11-02T00:00Z",
+  "end_utc": "2026-11-03T06:00Z",
+  "box": [77.4, 11.6, 84.6, 18.4],
+  "track_note": "IMD positions; the line between fixes is interpolated",
+  "track": [
+    {"t": "2026-11-01T21:00Z", "lat": 13.6, "lon": 82.5, "src": "IMD 02:30 IST 2 Nov"},
+    {"t": "2026-11-02T04:30Z", "lat": 13.9, "lon": 81.8, "src": "IMD 10:00 IST 2 Nov"},
+    {"t": "2026-11-02T23:00Z", "lat": 15.5, "lon": 80.2, "src": "IMD landfall near Ongole", "landfall": true}
+  ],
+  "after_landfall": "Moving north-northwest inland and weakening",
+  "towns": [
+    ["Ongole", 15.50, 80.05], ["Nellore", 14.44, 79.99], ["Chennai", 13.08, 80.27],
+    ["Machilipatnam", 16.19, 81.13], ["Vijayawada", 16.51, 80.65], ["Kavali", 14.91, 79.99],
+    ["Bapatla", 15.90, 80.47], ["Guntur", 16.31, 80.44], ["Hyderabad", 17.39, 78.49]
+  ]
+}
