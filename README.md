@@ -142,8 +142,10 @@ from outside India, so GitHub cannot read it: the PC in India does.
   update, and the dark 24-hour report + total since Oct 1 (+ last month's total on the 1st) after a daily one.
 - Station positions are kept in `data/tg/stations.json`. District boundaries: `data/tg_districts.geojson`
   (33 districts; Warangal Rural/Urban renamed Warangal/Hanumakonda). English only for now.
-- If the PC is off, Telangana is simply not updated until it is on again; a missed rain-day is lost, as TGDPS
-  shows only the latest one.
+- If the PC was off at 08:25, the finished rain-day comes from TGDPS's mandal-wise page instead
+  (`mandaldata.jsp?s1=1..33`, the official 24-hour rainfall of all ~620 mandals, up all day): every run fetches it
+  (`python tg_fetch.py day`), so switching the PC on any time that day still gives the 24-hour report. Each mandal
+  is placed at the middle of its stations. A day the PC is off from 08:30 to the next 08:30 is lost.
 
 ```
 python rain_report.py live --region tg

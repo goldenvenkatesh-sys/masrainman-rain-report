@@ -229,6 +229,114 @@ def save_live(verbose=True):
     return day
 
 
+# ------------------------------------------------------------------ PC side: finished day from mandal pages
+# mandaldata.jsp?s1=1..33 (one page per district, in this order) lists every mandal's official rainfall for
+# the last finished rain-day ("Today's Rainfall", 24 h ending 08:30 on the date shown) and stays up all day,
+# so the 24-hour report can be made whenever the PC is switched on, not only at 08:25. Each mandal is placed
+# at the middle of its stations (station mandal names from values.jsp, matched loosely).
+MANDAL_DISTRICTS = ["Adilabad", "Kumuram Bheem Asifabad", "Mancherial", "Nirmal", "Nizamabad", "Jagtial",
+                    "Peddapalli", "Jayashankar Bhupalapally", "Bhadradri Kothagudem", "Mahabubabad", "Warangal",
+                    "Hanumakonda", "Karimnagar", "Rajanna Sircilla", "Kamareddy", "Sangareddy", "Medak", "Siddipet",
+                    "Jangaon", "Yadadri Bhuvanagiri", "Medchal Malkajgiri", "Hyderabad", "Ranga Reddy", "Vikarabad",
+                    "Mahabubnagar", "Jogulamba Gadwal", "Wanaparthy", "Nagarkurnool", "Nalgonda", "Suryapet",
+                    "Khammam", "Mulugu", "Narayanpet"]
+# mandal page spelling -> station (values.jsp) spelling, where the loose match misses
+# (keys are _mkey() of the mandal page's name)
+_MANDAL_ALIAS = {"nennal": "Nennel", "mutarammantani": "Mutharam(MNT)", "ganagavaram": "Gangaram",
+                 "inole": "Inavole", "naikal": "Nyalkal", "ielal": "Yalal", "aiza": "Ieeja"}
+
+
+def _mkey(s):
+    s = (s or "").lower().replace("(u)", " urban").replace("(r)", " rural")
+    s = re.sub(r"[^a-z]", "", s)
+    for a, b in [("pally", "palle"), ("palli", "palle"), ("oo", "u"), ("ee", "i"), ("th", "t"), ("dh", "d"),
+                 ("bh", "b"), ("kh", "k"), ("gh", "g"), ("w", "v"), ("aa", "a"), ("y", "i")]:
+        s = s.replace(a, b)
+    return s
+
+
+def fetch_mandal_day():
+    """(rain-day, [(district, mandal, rain)]) from the 33 mandaldata.jsp pages."""
+    day, rows = None, []
+    for i, dist in enumerate(MANDAL_DISTRICTS, 1):
+        html = _get(f"mandaldata.jsp?s1={i}")
+        m = re.search(r"Rainfall\s*\(mm\)\s*on\s*(\d+/\d+/\d{4})", _text(html))
+        if m:
+            d = datetime.strptime(m.group(1), "%d/%m/%Y").date()
+            if day and d != day:
+                raise ValueError(f"mandaldata.jsp pages show different dates ({day}, {d}); try later")
+            day = d
+        for tr in re.split(r"<tr[^>]*>", html)[1:]:
+            c = [_text(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)]
+            if len(c) >= 3 and c[0].isdigit():
+                try:
+                    rows.append((dist, c[1], float(c[2])))
+                except ValueError:
+                    rows.append((dist, c[1], None))
+    if not day or not rows:
+        raise ValueError("mandaldata.jsp: no date or no mandals found")
+    return day, rows
+
+
+def mandal_points(rows, known, verbose=True):
+    """Place each mandal at the middle of its stations: [{district, station, lat, lon, rain}]."""
+    import difflib
+    from shapely.geometry import Point
+    _district_of(17.4, 78.5)                                     # loads _DIST
+    shapes = dict(_DIST)
+    by = {}
+    for g in known.values():
+        by.setdefault(_mkey(g.get("mandal")), []).append(g)
+    out, miss = [], []
+    for dist, mandal, rain in rows:
+        k = _mkey(_MANDAL_ALIAS.get(_mkey(mandal), mandal))
+        c = by.get(k)
+        if not c:
+            close = difflib.get_close_matches(k, list(by), 1, 0.85)
+            c = by.get(close[0]) if close else None
+        if not c:
+            miss.append(f"{mandal} ({dist})")
+            continue
+        poly = shapes.get(dist)
+        if poly is not None:                                       # same-name mandals in other districts: keep the near ones
+            near = [g for g in c if poly.distance(Point(g["lon"], g["lat"])) < 0.15]
+            c = near or c
+        lat = sum(g["lat"] for g in c) / len(c)
+        lon = sum(g["lon"] for g in c) / len(c)
+        out.append({"district": dist, "station": mandal.replace("_", " ").strip(), "lat": round(lat, 5),
+                    "lon": round(lon, 5), "rain": rain if rain is None or 0 <= rain <= 1500 else None})
+    if verbose:
+        print(f"  TGDPS mandals: {len(out)} placed" + (f", {len(miss)} not found: {', '.join(miss)}" if miss else ""))
+    return out
+
+
+def save_mandal_day(verbose=True):
+    """PC: save the last finished rain-day from the mandal pages, unless the 08:25 run already saved that day
+    station by station. Re-saved only when TGDPS changes a number. Returns the rain-day or None."""
+    day, rows = fetch_mandal_day()
+    path = os.path.join(DAILY, f"{day.isoformat()}.json")
+    old = None
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            old = json.load(f)
+        if "points" not in old:
+            if verbose:
+                print(f"  rain-day {day} already saved station by station")
+            return None
+    pts = mandal_points(rows, _load_known(), verbose)
+    if old and old["points"] == pts:
+        if verbose:
+            print(f"  rain-day {day} (mandals) unchanged")
+        return None
+    os.makedirs(DAILY, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"rain_day": day.isoformat(), "source": "TGDPS mandal-wise rainfall", "points": pts},
+                  f, ensure_ascii=False, separators=(",", ":"))
+    if verbose:
+        print(f"  TGDPS rain-day {day} saved from {len(pts)} mandals")
+    return day
+
+
 # ------------------------------------------------------------------ GitHub side: reading the saved files
 def day_stations(d: date):
     """For tnsmart_fetch.live_totals: the PC's latest snapshot of rain-day d (empty if it has not sent one)."""
@@ -251,9 +359,13 @@ def load_days(start, end, verbose=True):
         p = os.path.join(DAILY, f"{d.isoformat()}.json")
         if os.path.exists(p):
             with open(p, encoding="utf-8") as f:
-                rain = json.load(f)["rain"]
-            days[d] = [{"district": g["district"], "station": g["name"], "lat": g["lat"], "lon": g["lon"], "rain": r}
-                       for sid, r in rain.items() for g in [known.get(sid)] if g and g.get("lat") is not None]
+                saved = json.load(f)
+            if "points" in saved:                                  # mandal-wise day (PC was off at 08:25)
+                days[d] = saved["points"]
+            else:
+                days[d] = [{"district": g["district"], "station": g["name"], "lat": g["lat"], "lon": g["lon"],
+                            "rain": r}
+                           for sid, r in saved["rain"].items() for g in [known.get(sid)] if g and g.get("lat") is not None]
             if verbose:
                 print(f"  {d}  {sum(1 for r in days[d] if r['rain'] is not None)} stations")
         elif verbose:
@@ -264,8 +376,11 @@ def load_days(start, end, verbose=True):
 
 if __name__ == "__main__":
     # python tg_fetch.py           save rain so far (and, after 07:30, the finished rain-day)
+    # python tg_fetch.py day       save the last finished rain-day from the mandal pages (any time of day)
     # python tg_fetch.py stations  look up every station's position (first run; later runs do this by themselves)
     if sys.argv[1:2] == ["stations"]:
         update_stations()
+    elif sys.argv[1:2] == ["day"]:
+        save_mandal_day()
     else:
         save_live()

@@ -62,15 +62,18 @@ jobs:
           echo "$CH" | grep -q '^data/tg/live/' && M="live"
           echo "$CH" | grep -q '^data/tg/daily/' && M="$M both"
           echo "mode=$M" >> "$GITHUB_OUTPUT"
+          # the finished rain-day that arrived (the PC may send it hours after 08:30)
+          D=$(echo "$CH" | sed -n 's#^data/tg/daily/\([0-9-]*\)\.json$#\1#p' | sort | tail -1)
+          echo "day=$D" >> "$GITHUB_OUTPUT"
 
       - name: Make reports
         env:
           MODE: ${{ steps.what.outputs.mode }}
-          DAY: ${{ github.event.inputs.date }}
+          DAY: ${{ github.event.inputs.date || steps.what.outputs.day }}
         run: |
           case " $MODE " in *" live "*) python rain_report.py live --region tg ;; esac
           case " $MODE " in *" both "*|*" daily "*) python rain_report.py daily --region tg ${DAY:+--date $DAY} ;; esac
-          case " $MODE " in *" both "*|*" accum "*) python rain_report.py accum --region tg || echo "No total yet" ;; esac
+          case " $MODE " in *" both "*|*" accum "*) python rain_report.py accum --region tg ${DAY:+--end $DAY} || echo "No total yet" ;; esac
           if [ "$MODE" = month ] || { [[ " $MODE " == *" both "* ]] && [ "$(TZ=Asia/Kolkata date +%d)" = "01" ]; }; then
             python rain_report.py accum --region tg --month last || echo "No month report"
           fi

@@ -58,7 +58,11 @@ def main():
     try:
         tg_fetch.save_live()          # after 07:30 this also saves the finished rain-day
     except Exception as e:
-        print(f"  TGDPS failed: {e}")
+        print(f"  TGDPS live failed: {e}")
+    try:
+        tg_fetch.save_mandal_day()    # finished rain-day from the mandal pages, if 08:25 was missed
+    except Exception as e:
+        print(f"  TGDPS mandal day failed: {e}")
 
     git("add", "data/tg")
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:
