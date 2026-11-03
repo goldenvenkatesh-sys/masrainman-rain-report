@@ -2,8 +2,8 @@
 Telangana: run this on the PC (in India) every hour. It reads TGDPS, saves data/tg and pushes it to GitHub,
 which then makes the Telangana reports (tg-report.yml).
 
-    python tg_pc.py            # one run: live "rain so far", plus the finished rain-day once it is out
-    python tg_pc.py --setup    # Windows: add an hourly Task Scheduler job (at :20 past every hour)
+    python tg_pc.py            # one run: rain so far (the 08:25 run also saves the finished rain-day)
+    python tg_pc.py --setup    # Windows: add an hourly Task Scheduler job (at :25 past every hour)
 
 Needs git with push access to this repo (the same login you use for git push) and
 `pip install -r requirements.txt`.
@@ -25,11 +25,11 @@ def git(*args, check=True):
 
 def setup():
     py = sys.executable.replace("python.exe", "pythonw.exe") if os.name == "nt" else sys.executable
-    cmd = ["schtasks", "/Create", "/F", "/TN", "MasRainman Telangana rain", "/SC", "HOURLY", "/ST", "00:20",
+    cmd = ["schtasks", "/Create", "/F", "/TN", "MasRainman Telangana rain", "/SC", "HOURLY", "/ST", "00:25",
            "/TR", f'"{py}" "{os.path.join(HERE, "tg_pc.py")}"']
     print(" ".join(cmd))
     subprocess.run(cmd, check=True)
-    print("Done: runs every hour at :20. Check it in Task Scheduler → 'MasRainman Telangana rain'.")
+    print("Done: runs every hour at :25. Check it in Task Scheduler → 'MasRainman Telangana rain'.")
 
 
 def main():
@@ -42,16 +42,9 @@ def main():
     git("pull", "--rebase", "-q", check=False)
 
     try:
-        tg_fetch.save_live()
+        tg_fetch.save_live()          # after 07:30 this also saves the finished rain-day
     except Exception as e:
-        print(f"  live failed: {e}")
-    # the finished rain-day (08:30 to 08:30): try every run until it is saved
-    today = tf.today_ist()
-    if tf.rain_day_is_complete(today) and not os.path.exists(os.path.join(tg_fetch.DAILY, f"{today}.json")):
-        try:
-            tg_fetch.save_daily()
-        except Exception as e:
-            print(f"  daily failed: {e}")
+        print(f"  TGDPS failed: {e}")
 
     git("add", "data/tg")
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:

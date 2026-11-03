@@ -131,9 +131,13 @@ python rain_report.py accum --region ap --month 2026-11
 Telangana gets the same reports as Andhra Pradesh from TGDPS's automatic weather stations. TGDPS does not answer
 from outside India, so GitHub cannot read it: the PC in India does.
 
-- `tg_pc.py` (on the PC, every hour at :20 from Windows Task Scheduler; `python tg_pc.py --setup` adds the job)
-  runs `tg_fetch.py live` (rain since 8:30 am so far, `data/tg/live/<rain-day>.json`) and, once the rain-day
-  is over, `tg_fetch.py daily` (`data/tg/daily/<rain-day>.json`), and pushes `data/tg`. Its log is `tg_pc.log`.
+- `tg_pc.py` (on the PC, every hour at :25 from Windows Task Scheduler; `python tg_pc.py --setup` adds the job)
+  runs `tg_fetch.py`, which reads `liverain.jsp` (rain since 8:30 am, only stations with rain are listed, so every
+  other station is saved as 0 mm) into `data/tg/live/<rain-day>.json`. The 08:25 run also saves the finished
+  rain-day to `data/tg/daily/<rain-day>.json` (it misses at most the last few minutes before 8:30). Then it
+  pushes `data/tg`. Its log is `tg_pc.log`.
+- Station positions (about 1,100 stations) come from `values.jsp?s1=<id>`, looked up once and kept in
+  `data/tg/stations.json`; the district maps (`livejsp/*.jsp`) are checked once a day for new stations.
 - That push starts *Telangana rainfall report* (`tg-report.yml`): the white "rain so far" picture after a live
   update, and the dark 24-hour report + total since Oct 1 (+ last month's total on the 1st) after a daily one.
 - Station positions are kept in `data/tg/stations.json`. District boundaries: `data/tg_districts.geojson`

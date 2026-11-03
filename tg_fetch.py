@@ -3,9 +3,10 @@ Telangana rain: the TGDPS (Telangana Development Planning Society) AWS / rain-ga
 
 TGDPS's website does not answer from outside India, so GitHub's runners cannot read it. The work is split:
 
-  On the PC in India (tg_pc.py, every hour from Windows Task Scheduler):
-      python tg_fetch.py live      -> data/tg/live/<rain-day>.json   rain since 08:30 so far, every station
-      python tg_fetch.py daily     -> data/tg/daily/<rain-day>.json  the finished 24 hours (08:30 to 08:30)
+  On the PC in India (tg_pc.py, every hour at :25 from Windows Task Scheduler):
+      python tg_fetch.py   -> data/tg/live/<rain-day>.json   rain since 08:30 so far, every station
+                              data/tg/daily/<rain-day>.json  the run between 07:30 and 08:30 also saves the
+                                                             finished 24 hours (missing at most its last minutes)
   and pushes data/tg to GitHub.
 
   On GitHub (tg-report.yml, started by that push):
@@ -60,16 +61,117 @@ def canon(d):
 
 
 # ------------------------------------------------------------------ PC side: reading TGDPS
+#
+# liverain.jsp   "Today's Rainfall (mm) from DD/MM/YYYY 08:30Hrs to DD/MM/YYYY HH:MMHrs": one row per station
+#                WITH rain (S.No, Aws Id, District, Mandal, Location, Rainfall); dry stations are not listed.
+# values.jsp?s1=<id>   one station: location, mandal, latitude, longitude.
+# livejsp/<District>.jsp   district maps linking every station id (about 1,100 in all).
+BASE = "https://tgdps.telangana.gov.in/"
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36 "
+                         "(MasRainman rainfall report)"}
+
+
+def _get(path, retries=3):
+    import requests
+    last = None
+    for attempt in range(retries):
+        try:
+            r = requests.get(BASE + path, headers=HEADERS, timeout=(20, 90))
+            r.raise_for_status()
+            return r.text
+        except Exception as e:
+            last = e
+            time.sleep(5 * (attempt + 1))
+    raise RuntimeError(f"TGDPS {path} failed: {last}")
+
+
+def _text(html):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).replace("&nbsp;", " ").strip()
+
+
 def fetch_live():
-    """[(station id, district, mandal, name, lat, lon, rain since 08:30)] from TGDPS, now.
+    """(end of period as datetime IST, [(id, district, mandal, location, rain)]) from liverain.jsp."""
+    html = _get("liverain.jsp")
+    m = re.search(r"from\s*(\d+/\d+/\d{4})\s*08:30\s*Hrs\s*to\s*(\d+/\d+/\d{4})\s*(\d+):(\d+)\s*Hrs", _text(html))
+    if not m:
+        raise ValueError("liverain.jsp: no time period found")
+    end = datetime.strptime(f"{m.group(2)} {m.group(3)}:{m.group(4)}", "%d/%m/%Y %H:%M").replace(tzinfo=tf.IST)
+    rows = []
+    for tr in re.split(r"<tr[^>]*>", html)[1:]:
+        c = [_text(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)]
+        if len(c) >= 6 and c[0].isdigit() and c[1].isdigit():
+            try:
+                rain = float(c[5])
+            except ValueError:
+                continue
+            rows.append((c[1], c[2], c[3], c[4], rain))
+    return end, rows
 
-    Filled in once TGDPS's page format has been checked from the PC (it cannot be seen from outside India)."""
-    raise NotImplementedError("TGDPS reader not written yet: run from the PC so its page format can be checked")
+
+def all_station_ids():
+    """Every station id on TGDPS's district maps."""
+    ids = set()
+    for page in sorted(set(re.findall(r"livejsp/[A-Za-z_]+\.jsp", _get("aws.jsp")))):
+        ids.update(re.findall(r"\.jsp\?s1=(\d+)", _get(page)))
+    return ids
 
 
-def fetch_day():
-    """(rain-day, [(station id, district, mandal, name, rain)]) for the last finished 24 hours."""
-    raise NotImplementedError("TGDPS reader not written yet: run from the PC so its page format can be checked")
+def station_info(sid):
+    """{lat, lon, name, mandal} from values.jsp, or None."""
+    t = _text(_get(f"values.jsp?s1={sid}"))
+    g = lambda pat: (re.search(pat, t) or [None, None])[1]
+    try:
+        lat, lon = float(g(r"Latitude\s+([\d.]+)")), float(g(r"Longitude\s+([\d.]+)"))
+    except (TypeError, ValueError):
+        return None
+    return {"lat": round(lat, 5), "lon": round(lon, 5), "name": (g(r"AWS Location\s+(.*?)\s+Mandal Name") or "").strip(),
+            "mandal": (g(r"Mandal Name\s+(.*?)\s+Latitude") or "").strip()}
+
+
+def _district_of(lat, lon):
+    """District containing a point, from data/tg_districts.geojson."""
+    global _DIST
+    from shapely.geometry import Point, shape
+    if "_DIST" not in globals():
+        with open(os.path.join(HERE, "data", "tg_districts.geojson"), encoding="utf-8") as f:
+            _DIST = [(ft["properties"]["district"], shape(ft["geometry"])) for ft in json.load(f)["features"]]
+    p = Point(lon, lat)
+    best = min(_DIST, key=lambda dg: dg[1].distance(p))
+    return best[0]
+
+
+def update_stations(extra_ids=(), verbose=True):
+    """Add positions for stations not yet in data/tg/stations.json (all of them the first time; once a day
+    the district maps are checked for new ones). Returns the station dict."""
+    known = _load_known()
+    ids = set(extra_ids)
+    stamp = os.path.join(TG_DIR, ".stations_checked")
+    today = tf.today_ist().isoformat()
+    if not known or not os.path.exists(stamp) or open(stamp).read().strip() != today:
+        try:
+            ids |= all_station_ids()
+            os.makedirs(TG_DIR, exist_ok=True)
+            with open(stamp, "w") as f:
+                f.write(today)
+        except RuntimeError as e:
+            print(f"  {e}")
+    new = [i for i in sorted(ids) if i not in known]
+    for i, sid in enumerate(new):
+        try:
+            info = station_info(sid)
+        except RuntimeError as e:
+            print(f"  {e}")
+            continue
+        if info and _inside(info["lat"], info["lon"]):
+            info["district"] = _district_of(info["lat"], info["lon"])
+            known[sid] = info
+        if verbose and (i + 1) % 100 == 0:
+            print(f"  positions: {i + 1}/{len(new)}")
+    if new:
+        _save_known(known)
+        if verbose:
+            print(f"  TGDPS: {len(known)} stations with a position ({len(new)} looked up)")
+    return known
 
 
 def _load_known():
@@ -90,51 +192,40 @@ def _inside(lat, lon):
     return lat is not None and lon is not None and BOX[0] < lat < BOX[2] and BOX[1] < lon < BOX[3]
 
 
+def _rain_day(end):
+    """Rain-day (24 h ending 08:30 on that date) of a period ending at `end`."""
+    return end.date() if (end.hour, end.minute) <= (8, 30) else end.date() + timedelta(days=1)
+
+
 def save_live(verbose=True):
-    """PC: save rain since 08:30 so far to data/tg/live/<rain-day>.json (stations without a position are left out)."""
-    now = datetime.now(tf.IST)
-    day = tf.running_day(now)
-    known = _load_known()
-    out = []
-    for sid, dist, mandal, name, lat, lon, rain in fetch_live():
-        sid = str(sid)
-        if _inside(lat, lon):
-            known[sid] = {"lat": round(lat, 5), "lon": round(lon, 5), "district": canon(dist),
-                          "name": name, "mandal": mandal}
-        g = known.get(sid)
-        if not g:
-            continue
-        if rain is not None and not 0 <= rain <= 1500:
-            rain = None
-        out.append({"district": g["district"], "station": g["name"], "lat": g["lat"], "lon": g["lon"], "rain": rain})
-    _save_known(known)
+    """PC: save rain since 08:30 so far to data/tg/live/<rain-day>.json. TGDPS lists only stations with rain,
+    so every other known station is saved as 0 mm. In the last hour of the rain-day (after 07:30) the same
+    numbers are also saved as the finished day, data/tg/daily/<rain-day>.json."""
+    end, rows = fetch_live()
+    known = update_stations(r[0] for r in rows)
+    day = _rain_day(end)
+    rain = {sid: 0.0 for sid in known}
+    for sid, dist, mandal, loc, r in rows:
+        if sid in known and 0 <= r <= 1500:
+            rain[sid] = r
+    out = [{"district": g["district"], "station": g["name"], "lat": g["lat"], "lon": g["lon"], "rain": rain[sid]}
+           for sid, g in sorted(known.items())]
     os.makedirs(LIVE, exist_ok=True)
     with open(os.path.join(LIVE, f"{day.isoformat()}.json"), "w", encoding="utf-8") as f:
-        json.dump({"rain_day": day.isoformat(), "fetched": now.isoformat(timespec="minutes"), "stations": out},
+        json.dump({"rain_day": day.isoformat(), "upto": end.isoformat(timespec="minutes"), "stations": out},
                   f, ensure_ascii=False, separators=(",", ":"))
     for old in sorted(os.listdir(LIVE))[:-3]:                     # keep the last 3 running days
         os.remove(os.path.join(LIVE, old))
     if verbose:
-        print(f"  TGDPS live {day}: {len(out)} stations, {sum(1 for s in out if s['rain'])} with rain")
-    return day
-
-
-def save_daily(verbose=True):
-    """PC: save the finished rain-day to data/tg/daily/<rain-day>.json (rain by station id)."""
-    day, rows = fetch_day()
-    known = _load_known()
-    for sid, dist, mandal, name, _ in rows:
-        g = known.setdefault(str(sid), {"lat": None, "lon": None})
-        g.update(district=canon(dist), name=name or mandal, mandal=mandal)
-    _save_known(known)
-    os.makedirs(DAILY, exist_ok=True)
-    rain = {str(sid): (r if r is not None and 0 <= r <= 1500 else None) for sid, _, _, _, r in rows}
-    with open(os.path.join(DAILY, f"{day.isoformat()}.json"), "w", encoding="utf-8") as f:
-        json.dump({"rain_day": day.isoformat(), "rain": rain}, f, separators=(",", ":"))
-    if verbose:
-        nopos = sum(1 for sid in rain if known.get(sid, {}).get("lat") is None)
-        print(f"  TGDPS rain-day {day}: {sum(1 for r in rain.values() if r is not None)} stations, "
-              f"{sum(1 for r in rain.values() if r)} with rain, {nopos} without a position")
+        print(f"  TGDPS live {day} (to {end:%H:%M}): {len(out)} stations, {sum(1 for s in out if s['rain'])} with rain"
+              f"{'' if len(rows) == sum(1 for r in rows if r[0] in known) else ' (some without a position)'}")
+    if (end.hour, end.minute) >= (7, 30) and (end.hour, end.minute) <= (8, 30):
+        os.makedirs(DAILY, exist_ok=True)
+        with open(os.path.join(DAILY, f"{day.isoformat()}.json"), "w", encoding="utf-8") as f:
+            json.dump({"rain_day": day.isoformat(), "upto": end.isoformat(timespec="minutes"), "rain": rain},
+                      f, separators=(",", ":"))
+        if verbose:
+            print(f"  TGDPS rain-day {day} saved as finished (to {end:%H:%M})")
     return day
 
 
@@ -147,7 +238,7 @@ def day_stations(d: date):
         return []
     with open(p, encoding="utf-8") as f:
         snap = json.load(f)
-    print(f"  TGDPS snapshot from {snap.get('fetched')}: {len(snap['stations'])} stations")
+    print(f"  TGDPS rain to {snap.get('upto')}: {len(snap['stations'])} stations")
     return snap["stations"]
 
 
@@ -172,10 +263,9 @@ def load_days(start, end, verbose=True):
 
 
 if __name__ == "__main__":
-    what = sys.argv[1:2] or ["live"]
-    if what == ["live"]:
-        save_live()
-    elif what == ["daily"]:
-        save_daily()
+    # python tg_fetch.py           save rain so far (and, after 07:30, the finished rain-day)
+    # python tg_fetch.py stations  look up every station's position (first run; later runs do this by themselves)
+    if sys.argv[1:2] == ["stations"]:
+        update_stations()
     else:
-        raise SystemExit("usage: python tg_fetch.py live|daily")
+        save_live()
