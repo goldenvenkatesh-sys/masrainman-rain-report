@@ -152,7 +152,7 @@ def running_day(now=None) -> date:
     return now.date() + timedelta(days=1) if t >= 9 * 60 + 30 else now.date()
 
 
-def live_totals(d: date, verbose=True, fetch=None, tag=""):
+def live_totals(d: date, verbose=True, fetch=None, tag="", upto=None):
     """Rain since 08:30 IST for the running rain-day d, added up over every check.
 
     TN-SMART's running file holds each station's total so far. Each check takes the fresh file and
@@ -162,7 +162,11 @@ def live_totals(d: date, verbose=True, fetch=None, tag=""):
     The saved totals are in data/raw/live/<tag><d>.json. `fetch(d)` gives the fresh station list
     (default: TN-SMART's running file); Karnataka passes ksndmc_fetch.day_stations with tag "ka_".
     Returns (station list, changed) where changed is False when no station has new rain or
-    newly reported since the last check."""
+    newly reported since the last check.
+
+    For the other states (tag set) each check also adds a snapshot of the totals, timed `upto`, to
+    data/raw/live/<tag>snaps_<d>.json; snapshot_hours() turns those into the hour-by-hour rain of the
+    past-24-hours video (live24), since KSNDMC, DES and TGDPS only give the total so far."""
     os.makedirs(LIVE_DIR, exist_ok=True)
     path = os.path.join(LIVE_DIR, f"{tag}{d.isoformat()}.json")
     saved = {}
@@ -194,6 +198,8 @@ def live_totals(d: date, verbose=True, fetch=None, tag=""):
     with open(path, "w", encoding="utf-8") as f:
         json.dump({"rain_day": d.isoformat(), "checked": datetime.now(IST).isoformat(timespec="minutes"),
                    "stations": stations}, f, ensure_ascii=False)
+    if tag:
+        _snapshot(d, tag, stations, upto or datetime.now(IST))
     # drop saved totals older than a week
     for name in os.listdir(LIVE_DIR):
         try:
@@ -205,6 +211,96 @@ def live_totals(d: date, verbose=True, fetch=None, tag=""):
         rep = sum(1 for s in stations if s["rain"] is not None)
         print(f"  {d} (running)  {rep} stations so far; {added} started reporting, {rose} had more rain")
     return stations, changed
+
+
+def _skey(s):
+    return [s["district"], s["station"], round(s["lat"], 3), round(s["lon"], 3)]
+
+
+def _snapshot(d, tag, stations, upto):
+    """Add the running totals at `upto` to data/raw/live/<tag>snaps_<d>.json:
+    {"rain_day", "st": [[district, station, lat, lon], ...], "snaps": [{"t": time, "v": {index: mm}}]}.
+    Only stations that have reported are listed in st; v holds the ones with rain (others are 0)."""
+    path = os.path.join(LIVE_DIR, f"{tag}snaps_{d.isoformat()}.json")
+    j = {"rain_day": d.isoformat(), "st": [], "snaps": []}
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                j = json.load(f)
+        except ValueError:
+            pass
+    idx = {tuple(k): i for i, k in enumerate(j["st"])}
+    v = {}
+    for s in stations:
+        if s["rain"] is None:
+            continue
+        k = tuple(_skey(s))
+        if k not in idx:
+            idx[k] = len(j["st"])
+            j["st"].append(list(k))
+        if s["rain"] > 0:
+            v[str(idx[k])] = round(float(s["rain"]), 1)
+    end = datetime(d.year, d.month, d.day, 8, 30, tzinfo=IST)
+    t = min(upto, end).isoformat(timespec="minutes")
+    j["snaps"] = sorted([x for x in j["snaps"] if x["t"] != t] + [{"t": t, "v": v}], key=lambda x: x["t"])
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(j, f, ensure_ascii=False, separators=(",", ":"))
+
+
+def snapshot_hours(d: date, tag, final=None, min_snaps=6):
+    """Hour-by-hour rain of rain-day d from the snapshots saved by live_totals(): (stations, hours) as
+    hourly_stations() gives for TN-SMART. Between two snapshots the rain is spread evenly over the time
+    between them (a missed hourly check makes that rain look steady across the gap). `final`, the station
+    list of the finished day when the state publishes one (DES, TGDPS), sets each station's 08:30 total.
+    Raises FileNotFoundError when there are too few snapshots (the checks had not started yet)."""
+    import numpy as np
+    path = os.path.join(LIVE_DIR, f"{tag}snaps_{d.isoformat()}.json")
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"no hourly snapshots for {d} ({path})")
+    with open(path, encoding="utf-8") as f:
+        j = json.load(f)
+    snaps, st = j["snaps"], j["st"]
+    t0 = datetime(d.year, d.month, d.day, 8, 30, tzinfo=IST) - timedelta(days=1)
+    hrs = [(datetime.fromisoformat(x["t"]) - t0).total_seconds() / 3600 for x in snaps]
+    keep = [i for i, h in enumerate(hrs) if 0 < h <= 24]
+    if len(keep) < min_snaps or not st:
+        raise FileNotFoundError(f"only {len(keep)} hourly snapshots for {d}; need {min_snaps}")
+    n = len(st)
+    xs = [0.0] + [hrs[i] for i in keep]
+    Y = np.zeros((len(xs), n))
+    for r, i in enumerate(keep, 1):
+        for k, v in snaps[i]["v"].items():
+            Y[r, int(k)] = v
+    Y = np.maximum.accumulate(Y, axis=0)            # totals never go down
+    matched = 0
+    if final:
+        by = {tuple(k): i for i, k in enumerate(st)}
+        loose = {(k[1], round(k[2], 2), round(k[3], 2)): i for i, k in enumerate(st)}
+        F = Y[-1].copy()
+        for s in final:
+            if s.get("rain") is None:
+                continue
+            i = by.get(tuple(_skey(s)))
+            if i is None:
+                i = loose.get((s["station"], round(s["lat"], 2), round(s["lon"], 2)))
+            if i is not None:
+                F[i] = max(F[i], float(s["rain"]))
+                matched += 1
+        if xs[-1] < 24:
+            xs.append(24.0)
+            Y = np.vstack([Y, F])
+        else:
+            Y[-1] = F
+    grid = np.arange(25, dtype=float)
+    cum = np.empty((25, n))
+    for i in range(n):
+        cum[:, i] = np.interp(grid, xs, Y[:, i])
+    hours = np.maximum(np.diff(cum, axis=0), 0)
+    stations = [{"district": k[0], "station": k[1], "lat": k[2], "lon": k[3], "rain": float(cum[-1, i])}
+                for i, k in enumerate(st)]
+    print(f"  {len(keep)} hourly snapshots ({snaps[keep[0]]['t'][11:16]} to {snaps[keep[-1]]['t'][11:16]})"
+          + (f", finished-day totals for {matched} stations" if final else ""))
+    return stations, hours.tolist()
 
 
 def load_days(start: date, end: date, verbose=True):

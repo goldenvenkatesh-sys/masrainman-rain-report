@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "live, daily, accum, both (daily + accum) or month"
+        description: "live, daily, accum, both (daily + accum), month or live24 (past 24 hours video for date)"
         default: "live"
       date:
         description: "daily: rain-day YYYY-MM-DD (blank = latest saved)"
@@ -27,7 +27,7 @@ concurrency:
 jobs:
   report:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -77,6 +77,17 @@ jobs:
           if [ "$MODE" = month ] || { [[ " $MODE " == *" both "* ]] && [ "$(TZ=Asia/Kolkata date +%d)" = "01" ]; }; then
             python rain_report.py accum --region tg --month last || echo "No month report"
           fi
+
+      # once a day after 08:30: the finished rain-day replayed hour by hour, from the hourly snapshots of the
+      # live runs (saved in data/raw by the cache above)
+      - name: Past 24 hours video (hour by hour)
+        if: contains(steps.what.outputs.mode, 'live')
+        continue-on-error: true
+        env:
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+          WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
+          WN3_RAIN_URL: https://wn3data.masrainman-wn3.pages.dev/wn3_{D}.json
+        run: bash live24_due.sh tg "${{ steps.what.outputs.mode == 'live24' && github.event.inputs.date || '' }}"
 
       - name: Save to the reports branch (website + GitHub app)
         if: ${{ hashFiles('out/*.mp4') != '' }}

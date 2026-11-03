@@ -8,6 +8,12 @@ rain fell, and "Did the models get it right?": the heavy-rain districts each mod
 
   python rain_report.py live24                      # Tamil Nadu, latest complete rain-day
   python rain_report.py live24 --date 2026-10-26
+  python rain_report.py live24 --region ka            # Karnataka (also ap = Andhra Pradesh, tg = Telangana)
+
+Tamil Nadu has true hourly gauge values (TN-SMART). KSNDMC, DES and TGDPS only show the rain so far, so for
+Karnataka, Andhra Pradesh and Telangana the hours come from the hourly "rain so far" checks (live mode), which
+save a snapshot of every station's total each time (tnsmart_fetch.snapshot_hours). Andhra Pradesh and
+Telangana's finished-day files set the 08:30 totals. Kerala has no hourly gauge feed yet.
 
 Adding a state: give it an entry in REGIONS24 below with
   native   state name in its own script, and native_font, a font in fonts/ that has that script
@@ -28,8 +34,10 @@ from scipy.spatial import cKDTree
 from shapely.geometry import Polygon
 from shapely.ops import unary_union
 
+import ap_fetch
 import models
 import rain_report as rr
+import tg_fetch
 import terrain
 import tnsmart_fetch as tf
 
@@ -39,6 +47,25 @@ REGIONS24 = {
            "peaks": [("Doddabetta", 11.40, 76.74), ("Anamalai", 10.35, 77.05), ("Kodaikanal", 10.24, 77.49),
                      ("Shevaroy", 11.80, 78.22), ("Kolli Hills", 11.27, 78.36), ("Javadhu", 12.57, 78.83),
                      ("Megamalai", 9.66, 77.39), ("Pothigai", 8.60, 77.25)]},
+    "ka": {"native": "ಕರ್ನಾಟಕ", "native_font": "NotoSansKannada-ExtraBold.ttf",
+           "hourly": lambda d: tf.snapshot_hours(d, "ka_"),
+           "source": "KSNDMC", "network": "Telemetric rain gauge",
+           "sub": "Hourly checks of the rain-gauge totals",
+           "peaks": [("Mullayanagiri", 13.39, 75.72), ("Kudremukh", 13.13, 75.27), ("Agumbe", 13.50, 75.09),
+                     ("Tadiandamol", 12.21, 75.62), ("Nandi Hills", 13.37, 77.68), ("BR Hills", 11.99, 77.14),
+                     ("Kodachadri", 13.86, 74.87)]},
+    "ap": {"native": "ఆంధ్రప్రదేశ్", "native_font": "NotoSansTelugu-ExtraBold.ttf",
+           "hourly": lambda d: tf.snapshot_hours(d, "ap_", final=ap_fetch.load_days(d, d, verbose=False).get(d)),
+           "source": "DES / APSDPS", "network": "Weather station",
+           "sub": "Hourly checks of the station totals",
+           "peaks": [("Tirumala", 13.68, 79.35), ("Horsley Hills", 13.66, 78.40), ("Srisailam", 16.07, 78.87),
+                     ("Araku", 18.33, 82.87), ("Lambasingi", 17.81, 82.53), ("Nallamala", 15.45, 78.75)]},
+    "tg": {"native": "తెలంగాణ", "native_font": "NotoSansTelugu-ExtraBold.ttf",
+           "hourly": lambda d: tf.snapshot_hours(d, "tg_", final=tg_fetch.load_days(d, d, verbose=False).get(d)),
+           "source": "TGDPS", "network": "Weather station",
+           "sub": "Hourly checks of the station totals",
+           "peaks": [("Ananthagiri Hills", 17.30, 77.85), ("Amrabad", 16.38, 78.83), ("Satmala", 19.40, 78.30),
+                     ("Kawal", 19.10, 79.00)]},
 }
 
 # ----------------------------------------------------------------- look
@@ -313,8 +340,8 @@ class Live24:
         s0 = self.region["name"].upper()
         text(d, (43, 140), s0, f25, SOFT)
         text(d, (43 + d.textlength(s0, font=f25), 140), "  ·  Past 24 Hours Observed Rainfall", f25, SOFT)
-        text(d, (43, 172), f"Ending {D.day.day} {D.day:%b %Y}, 8:30 AM IST  ·  Hourly accumulation of "
-                           f"rain-gauge observations", font(16), MUTED)
+        text(d, (43, 172), f"Ending {D.day.day} {D.day:%b %Y}, 8:30 AM IST  ·  "
+                           + self.R.get("sub", "Hourly accumulation of rain-gauge observations"), font(16), MUTED)
         rr.put_logo(im, 1037, 16, 128)          # stays on every scene: they only cover below the header
         d = ImageDraw.Draw(im, "RGBA")
         d.rectangle((43, 195, 107, 197), fill=GOLD)
@@ -870,7 +897,10 @@ def run(region_key, day, out_dir):
         raise SystemExit(f"live24 is not set up for {rr.REGIONS[region_key]['name']} yet (see live24.py)")
     R = REGIONS24[region_key]
     geo = rr.Geo(rr.REGIONS[region_key])
-    stations, hours = R["hourly"](day)
+    try:
+        stations, hours = R["hourly"](day)
+    except FileNotFoundError as e:
+        raise SystemExit(f"No hourly data for {day}: {e}")
     if not stations:
         raise SystemExit(f"No hourly data for {day}")
     D = Day(day, stations, hours, geo)

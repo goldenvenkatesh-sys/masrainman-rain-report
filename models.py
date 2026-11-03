@@ -31,7 +31,7 @@ CACHE = os.path.join(os.environ.get("TNRAIN_RAW_DIR") or os.path.join(HERE, "dat
 MIRRORS = ["https://data.ecmwf.int/forecasts", "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com"]
 ECMWF = {"ifs": ("ifs", "fc"), "aifs": ("aifs-single", "fc")}
 NAMES = {"wn3": "WeatherNext 3", "ifs": "ECMWF IFS", "aifs": "ECMWF AIFS"}
-BOX = (7.0, 15.0, 74.5, 81.5)          # lat0, lat1, lon0, lon1 kept from each global field
+BOX = (7.0, 20.5, 73.5, 85.0)          # lat0, lat1, lon0, lon1 kept from each global field (south India)
 
 
 def run_for(day):
@@ -149,6 +149,10 @@ def _wn3_24h(day):
 def district_max(la, lo, mm, geo, step=0.05):
     """Highest forecast 24-h rain (mm) in each district: the field (bilinear) on a 0.05° lattice inside it."""
     from shapely import contains_xy
+    x0, y0, x1, y1 = geo.state.bounds
+    if la.min() > y0 + 0.1 or la.max() < y1 - 0.1 or lo.min() > x0 + 0.1 or lo.max() < x1 - 0.1:
+        raise ValueError(f"forecast grid ({la.min():.1f}-{la.max():.1f}N, {lo.min():.1f}-{lo.max():.1f}E) "
+                         f"does not cover the state")
     order = np.argsort(la)
     la, mm = la[order], mm[order]
     out = {}

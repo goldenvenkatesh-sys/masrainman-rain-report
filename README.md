@@ -12,6 +12,13 @@ Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall
   its data is provided (`WN3_RAIN_URL` or `data/raw/models/wn3_<date>.json`; otherwise "no forecast"). Made with the daily report at 09:45 IST (`rain-report.yml`, mode `daily`, `both` or
   `live24`), or `python rain_report.py live24 --date 2026-10-26`. Other states can be added in `live24.py`
   (`REGIONS24`).
+  **Karnataka, Andhra Pradesh, Telangana** get the same video (`rain_ka_/ap_/tg_live24_<date>`). KSNDMC, DES and
+  TGDPS only give the rain so far, so every hourly "rain so far" run also saves a snapshot of each station's
+  total (`data/raw/live/<tag>snaps_<day>.json`, in the workflow cache) and the video rebuilds the hours from those
+  snapshots (rain between two checks is spread evenly across the gap). AP and TG's finished-day files set the
+  08:30 totals. Made once a day by the first live run after 08:35 IST (`ka-live.yml`, `ap-live.yml`,
+  `tg-report.yml`, via `live24_due.sh`), or by hand: `ka-live.yml` / `ap-live.yml` input `past24` = date,
+  `tg-report.yml` mode `live24` + date. Kerala has no hourly gauge feed, so no Kerala video yet.
 
 Data: `https://beta-tnsmart.rimes.int/Rainfall_Python_IDW/Hourly_json/hourly_rainfall_YYYY-MM-DD.json`
 (one file per rain-day, about 1,565 stations with latitude/longitude). Downloaded days are cached in `data/raw/`.

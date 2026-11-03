@@ -7,8 +7,9 @@ Two modes
   live  : Tamil Nadu, Karnataka and Andhra Pradesh. Rain since 08:30 IST today, so far. Run every 2 hours:
           each run takes the latest TN-SMART file / KSNDMC 15-minute table / DES station feed and adds any
           new rain to the totals saved by earlier runs.
-  live24: Tamil Nadu. "Past 24 hours observed rainfall": the rain-day replayed hour by hour on a terrain
-          map, 1080x1350 (see live24.py).
+  live24: "Past 24 hours observed rainfall": the rain-day replayed hour by hour on a terrain map, 1080x1350
+          (see live24.py). Tamil Nadu from TN-SMART's hourly values; Karnataka, Andhra Pradesh and Telangana
+          from the hourly "rain so far" checks of the live mode.
 
 Regions / languages
   --region tn  (default)  Tamil Nadu, Tamil
@@ -27,6 +28,7 @@ Examples
   python rain_report.py live                          # rain since 08:30 today, so far
   python rain_report.py accum --month 2026-10         # whole month (rain-days Oct 1 to Oct 31)
   python rain_report.py live24 --date 2026-10-26      # past 24 hours, hour by hour (Tamil Nadu)
+  python rain_report.py live24 --region ap --date 2026-11-05
 
 Outputs go to ./out : MP4 video, GIF, and a PNG of the final frame.
 """
@@ -1090,7 +1092,7 @@ def main():
             upto = now.replace(second=0, microsecond=0) - timedelta(minutes=(now.minute - 30) % 60)
         print(f"{REGION['name']}: rain-day {day} so far (to {upto:%Y-%m-%d %H:%M})")
         set_theme("white")
-        stations, changed = tf.live_totals(day, fetch=REGION.get("live"), tag=tag)
+        stations, changed = tf.live_totals(day, fetch=REGION.get("live"), tag=tag, upto=upto)
         if not any(s["rain"] for s in stations):
             print("No station has rain yet; nothing to render.")
             return
