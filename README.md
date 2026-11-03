@@ -1,4 +1,4 @@
-# MasRainman · Tamil Nadu, Kerala, Karnataka and Andhra Pradesh rainfall report (animated)
+# MasRainman · Tamil Nadu, Kerala, Karnataka, Andhra Pradesh and Telangana rainfall report (animated)
 
 Makes a Tamil infographic video (MP4 + GIF + PNG) from TN-SMART station rainfall.
 
@@ -124,6 +124,27 @@ python ap_fetch.py daily                      # save the finished rain-day
 python rain_report.py daily --region ap
 python rain_report.py accum --region ap --start 2026-10-24
 python rain_report.py accum --region ap --month 2026-11
+```
+
+## Telangana: every hour, daily, multi-day and monthly (data from the PC)
+
+Telangana gets the same reports as Andhra Pradesh from TGDPS's automatic weather stations. TGDPS does not answer
+from outside India, so GitHub cannot read it: the PC in India does.
+
+- `tg_pc.py` (on the PC, every hour at :20 from Windows Task Scheduler; `python tg_pc.py --setup` adds the job)
+  runs `tg_fetch.py live` (rain since 8:30 am so far, `data/tg/live/<rain-day>.json`) and, once the rain-day
+  is over, `tg_fetch.py daily` (`data/tg/daily/<rain-day>.json`), and pushes `data/tg`. Its log is `tg_pc.log`.
+- That push starts *Telangana rainfall report* (`tg-report.yml`): the white "rain so far" picture after a live
+  update, and the dark 24-hour report + total since Oct 1 (+ last month's total on the 1st) after a daily one.
+- Station positions are kept in `data/tg/stations.json`. District boundaries: `data/tg_districts.geojson`
+  (33 districts; Warangal Rural/Urban renamed Warangal/Hanumakonda). English only for now.
+- If the PC is off, Telangana is simply not updated until it is on again; a missed rain-day is lost, as TGDPS
+  shows only the latest one.
+
+```
+python rain_report.py live --region tg
+python rain_report.py daily --region tg
+python rain_report.py accum --region tg --month 2026-11
 ```
 
 ## Monthly total

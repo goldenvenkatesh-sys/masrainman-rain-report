@@ -1,0 +1,90 @@
+name: Telangana rainfall report
+
+# TGDPS does not answer from outside India, so the PC in India (tg_pc.py) reads it every hour and pushes
+# data/tg here. Each push starts this workflow:
+#   data/tg/live/   changed -> white "rain since 8:30 am, so far" picture (like Andhra Pradesh)
+#   data/tg/daily/  changed -> dark 24-hour report + total since Oct 1 (+ last month's total on the 1st)
+on:
+  push:
+    branches: [main]
+    paths: ["data/tg/**"]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "live, daily, accum, both (daily + accum) or month"
+        default: "live"
+      date:
+        description: "daily: rain-day YYYY-MM-DD (blank = latest saved)"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tg-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          pip install -r requirements.txt
+
+      # holds data/raw/live/tg_<day>.json (station totals so far)
+      - name: Restore running totals
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: tglive-${{ github.run_id }}
+          restore-keys: tglive-
+
+      - name: What changed
+        id: what
+        run: |
+          if [ "${{ github.event_name }}" = workflow_dispatch ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          CH=$(git diff --name-only HEAD~1 HEAD -- data/tg || true)
+          M=""
+          echo "$CH" | grep -q '^data/tg/live/' && M="live"
+          echo "$CH" | grep -q '^data/tg/daily/' && M="$M both"
+          echo "mode=$M" >> "$GITHUB_OUTPUT"
+
+      - name: Make reports
+        env:
+          MODE: ${{ steps.what.outputs.mode }}
+          DAY: ${{ github.event.inputs.date }}
+        run: |
+          case " $MODE " in *" live "*) python rain_report.py live --region tg ;; esac
+          case " $MODE " in *" both "*|*" daily "*) python rain_report.py daily --region tg ${DAY:+--date $DAY} ;; esac
+          case " $MODE " in *" both "*|*" accum "*) python rain_report.py accum --region tg || echo "No total yet" ;; esac
+          if [ "$MODE" = month ] || { [[ " $MODE " == *" both "* ]] && [ "$(TZ=Asia/Kolkata date +%d)" = "01" ]; }; then
+            python rain_report.py accum --region tg --month last || echo "No month report"
+          fi
+
+      - name: Save to the reports branch (website + GitHub app)
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        continue-on-error: true
+        env:
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+        run: bash publish_reports.sh out
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('out/*.mp4') != '' }}
+        with:
+          name: rain-tg
+          path: out/
+          retention-days: 7

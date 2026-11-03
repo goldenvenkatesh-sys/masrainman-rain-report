@@ -15,6 +15,7 @@ Regions / languages
   --region kl             Kerala, English and Malayalam (one video each); --lang en or --lang ml for one
   --region ka             Karnataka (KSNDMC), English; live mode only
   --region ap             Andhra Pradesh (DES / APSDPS), English
+  --region tg             Telangana (TGDPS, data pushed from the PC), English
 
 Examples
   python rain_report.py daily --region kl
@@ -48,6 +49,7 @@ import tn_names
 import kerala_data
 import ksndmc_fetch
 import ap_fetch
+import tg_fetch
 from lang import LANGS, date_str
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -81,6 +83,12 @@ REGIONS = {
            "langs": ["en"], "radius": 25, "source": "DES / APSDPS real-time weather stations",
            "pill": {"en": "All Andhra Pradesh"}, "load": lambda a, b: ap_fetch.load_days(a, b),
            "live": ap_fetch.day_stations},
+    # TGDPS AWS / rain gauges; read on the PC in India (tg_fetch.py) and pushed here, since TGDPS
+    # does not answer from outside India
+    "tg": {"name": "Telangana", "geo": "tg_districts.geojson", "canon": tg_fetch.canon,
+           "langs": ["en"], "radius": 25, "source": "TGDPS automatic weather stations",
+           "pill": {"en": "All Telangana"}, "load": lambda a, b: tg_fetch.load_days(a, b),
+           "live": tg_fetch.day_stations},
 }
 REGION = REGIONS["tn"]
 L = LANGS["ta"]
@@ -1038,7 +1046,7 @@ def main():
     global REGION
     ap = argparse.ArgumentParser(description="MasRainman animated rainfall report")
     ap.add_argument("mode", choices=["daily", "accum", "live", "live24"])
-    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka, ap = Andhra Pradesh")
+    ap.add_argument("--region", choices=list(REGIONS), default="tn", help="tn = Tamil Nadu, kl = Kerala, ka = Karnataka, ap = Andhra Pradesh, tg = Telangana")
     ap.add_argument("--lang", help="ta, en or ml (default: the region's languages)")
     ap.add_argument("--date", help="daily: rain-day (24 h ending 08:30 IST on this date). Default: latest")
     ap.add_argument("--start", help="accum: first rain-day, e.g. 2026-10-01 (default Oct 1 of this year)")
@@ -1068,14 +1076,14 @@ def main():
         live24.run(a.region, day, OUT_DIR)
     elif a.mode == "live":
         if a.region == "kl":
-            raise SystemExit("live mode is for Tamil Nadu (TN-SMART), Karnataka (KSNDMC) and Andhra Pradesh (DES)")
+            raise SystemExit("live mode is for Tamil Nadu, Karnataka, Andhra Pradesh and Telangana")
         now = datetime.now(tf.IST)
         day = tf.running_day(now)
         if a.region == "ka":
             # KSNDMC's table is updated every 15 minutes
             upto = now.replace(second=0, microsecond=0) - timedelta(minutes=now.minute % 15 + 15)
-        elif a.region == "ap":
-            # DES stations report on the hour
+        elif a.region in ("ap", "tg"):
+            # DES / TGDPS stations report on the hour
             upto = now.replace(minute=0, second=0, microsecond=0)
         else:
             # label with the last half past the hour, when TN-SMART's hourly values come in
