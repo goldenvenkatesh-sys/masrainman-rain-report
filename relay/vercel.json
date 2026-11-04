@@ -3,5 +3,5 @@
   "functions": {
     "api/tgdps.py": { "maxDuration": 60 }
   },
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ."
+  "ignoreCommand": "[ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- ."
 }
