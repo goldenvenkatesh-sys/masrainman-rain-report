@@ -575,7 +575,7 @@ class Live24:
 
     # ---- toppers card ---------------------------------------------------------
     def toppers(self, last, t):
-        """The day's five wettest stations, fading in over the last map frame. t = frames since start."""
+        """The day's ten wettest stations, fading in over the last map frame. t = frames since start."""
         D = self.D
         im = last.copy()
         a0 = min(1.0, t / 12)
@@ -584,33 +584,34 @@ class Live24:
         d = ImageDraw.Draw(im, "RGBA")
         if a0 < 1:
             return im
-        order = [int(i) for i in np.argsort(-D.total)[:5] if D.total[i] > 0]
+        order = [int(i) for i in np.argsort(-D.total)[:10] if D.total[i] > 0]
         text(d, (540, 262), spaced("RAINFALL TOPPERS"), font(40, "Bold"), TEXT, "ms")
-        text(d, (540, 291), f"Top 5 of {D.n:,} stations  ·  past 24 hours  ·  {self.R['source']} "
+        text(d, (540, 291), f"Top {len(order)} of {D.n:,} stations  ·  past 24 hours  ·  {self.R['source']} "
                             f"{self.R['network'].lower()}s", font(15), MUTED, "ms")
         text(d, (540, 314), self.highlight(order), font(15, "Bold"), GOLD, "ms")
         top = D.total[order[0]] if order else 1
         for r, i in enumerate(order):
-            ra = min(1.0, max(0.0, (t - 12 - 7 * r) / 10))
+            ra = min(1.0, max(0.0, (t - 12 - 4 * r) / 8))
             if ra <= 0:
                 continue
             al = int(255 * ra)
-            y0 = 330 + 158 * r
+            y0 = 330 + 79 * r
             v = D.total[i]
             col = colour(v)
             if r == 0:
-                d.rectangle((43, y0, 1037, y0 + 150), fill=(30, 27, 19, al))
-                d.rectangle((43, y0, 46, y0 + 150), fill=GOLD + (al,))
-            elif r:
-                d.line((43, y0 - 4, 1037, y0 - 4), fill=(32, 37, 46, al))
-            text(d, (65, y0 + 58), f"{r + 1:02d}", font(22, "Bold"), (GOLD if r == 0 else MUTED) + (al,))
-            text(d, (125, y0 + 48), fit(d, D.names[i], font(26, "Bold"), 600), font(26, "Bold"), TEXT + (al,))
-            text(d, (125, y0 + 76), f"{D.dist[i]}  ·  {self.R['network']}", font(15), MUTED + (al,))
-            text(d, (1030, y0 + 62), mm1(v), font(40, "Bold"), TEXT + (al,), "rs")
-            text(d, (1030, y0 + 84), "mm", font(13), MUTED + (al,), "rs")
-            text(d, (1030, y0 + 104), spaced(category(v)), font(12, "Bold"), col + (al,), "rs")
-            d.rectangle((125, y0 + 106, 910, y0 + 112), fill=(38, 43, 52, al))
-            d.rectangle((125, y0 + 106, 125 + 785 * (v / top) * rr.ease_out(ra), y0 + 112), fill=col + (al,))
+                d.rectangle((43, y0, 1037, y0 + 75), fill=(30, 27, 19, al))
+                d.rectangle((43, y0, 46, y0 + 75), fill=GOLD + (al,))
+            else:
+                d.line((43, y0 - 2, 1037, y0 - 2), fill=(32, 37, 46, al))
+            text(d, (65, y0 + 42), f"{r + 1:02d}", font(20, "Bold"), (GOLD if r == 0 else MUTED) + (al,))
+            text(d, (125, y0 + 32), fit(d, D.names[i], font(23, "Bold"), 600), font(23, "Bold"), TEXT + (al,))
+            text(d, (125, y0 + 54), f"{D.dist[i]}  ·  {self.R['network']}", font(14), MUTED + (al,))
+            vs = mm1(v)
+            text(d, (985, y0 + 44), vs, font(32, "Bold"), TEXT + (al,), "rs")
+            text(d, (1030, y0 + 44), "mm", font(13), MUTED + (al,), "rs")
+            text(d, (1030, y0 + 66), spaced(category(v)), font(11, "Bold"), col + (al,), "rs")
+            d.rectangle((125, y0 + 62, 760, y0 + 66), fill=(38, 43, 52, al))
+            d.rectangle((125, y0 + 62, 125 + 635 * (v / top) * rr.ease_out(ra), y0 + 66), fill=col + (al,))
         sa = min(1.0, max(0.0, (t - 50) / 10))
         if sa > 0:
             al = int(255 * sa)
@@ -638,7 +639,7 @@ class Live24:
     def caption(self):
         D = self.D
         d0, d1 = D.t0.date(), D.day
-        order = [int(i) for i in np.argsort(-D.total)[:5] if D.total[i] > 0]
+        order = [int(i) for i in np.argsort(-D.total)[:10] if D.total[i] > 0]
         lines = [f"🌧 {self.region['name']} · Past 24 hours observed rainfall",
                  f"8:30 am {d0.day} {d0:%b} to 8:30 am {d1.day} {d1:%b %Y} · hour by hour", "", "Rainfall toppers:"]
         for r, i in enumerate(order, 1):
