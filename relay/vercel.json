@@ -2,6 +2,5 @@
   "regions": ["bom1"],
   "functions": {
     "api/tgdps.py": { "maxDuration": 60 }
-  },
-  "ignoreCommand": "[ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- ."
+  }
 }
