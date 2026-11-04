@@ -11,7 +11,9 @@ The reports folder holds:
 
 What is kept (older ones are removed so the branch stays small):
   live (rain so far)      the newest 24 per region (one day of hourly pictures)
-  daily / live24 / accum  the last 10 days (also the satellite sat24 / gpm3d reports)
+  daily / live24          the last 10 days (also the satellite sat24 / gpm3d reports)
+  accum                   the newest 2 per region and language (each is a running total, so older ones
+                          add little; they were 40% of the branch)
   month                   the last 13 months
 """
 import json
@@ -31,6 +33,7 @@ EXTS = ("mp4", "gif", "png", "txt")
 KEEP_LIVE = 24
 KEEP_DAYS = 10
 KEEP_MONTHS = 13
+KEEP_ACCUM = 2
 
 NAME = re.compile(
     r"^rain_(?P<tag>kl_|ka_|ap_|tg_)?(?P<kind>live24|live|daily|accum|month|sat24|gpm3d)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
@@ -111,7 +114,7 @@ def main(out_dir, rep):
         print("  added:", base)
 
     # keep the newest live pictures per region, and recent daily/accum/month reports
-    keep, live_count = {}, {}
+    keep, live_count, accum_count = {}, {}, {}
     day_cut = (now - timedelta(days=KEEP_DAYS)).date().isoformat()
     month_cut = (now.replace(day=1) - timedelta(days=31 * KEEP_MONTHS)).date().isoformat()
     for it in sorted(items.values(), key=lambda i: i["sort"], reverse=True):
@@ -119,6 +122,11 @@ def main(out_dir, rep):
         if k == "live":
             live_count[it["region"]] = live_count.get(it["region"], 0) + 1
             if live_count[it["region"]] > KEEP_LIVE:
+                continue
+        elif k == "accum":
+            key = (it["region"], it["lang"])
+            accum_count[key] = accum_count.get(key, 0) + 1
+            if accum_count[key] > KEEP_ACCUM or it["day"] < day_cut:
                 continue
         elif k == "month":
             if it["day"] < month_cut:
