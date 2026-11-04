@@ -1,7 +1,7 @@
 {
 "date": "2026-11-04",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-04T12:49+0530",
+"fetched": "2026-11-05T01:18+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -16,6 +16,18 @@
 "rain": 21.0
 },
 {
+"station": "Kottiyoor",
+"uuid": "140a7d12-e361-4da8-9091-74efd38584c2",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Nedumpoil",
+"uuid": "c2b64113-f171-41ac-a25f-77a86d76a2d6",
+"district": "Kannur",
+"rain": 0.0
+},
+{
 "station": "Kumili",
 "uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
 "district": "Idukki",
@@ -28,9 +40,27 @@
 "rain": 4.2
 },
 {
+"station": "Maloor",
+"uuid": "21a2953f-4e29-4199-8643-ec88a1d3a89d",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Kannavam",
+"uuid": "3ae109f5-ce16-471d-9860-55b423ca0445",
+"district": "Kannur",
+"rain": 0.0
+},
+{
 "station": "neryamangalam",
 "uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
 "district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Palappuzha",
+"uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
+"district": "Kannur",
 "rain": 0.0
 },
 {
@@ -100,6 +130,12 @@
 "rain": 5.9
 },
 {
+"station": "Vanimel",
+"uuid": "1e67352a-5687-4327-813b-cc313f98bbe8",
+"district": "Kozhikode",
+"rain": 0.0
+},
+{
 "station": "Erattupetta",
 "uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
 "district": "Kottayam",
@@ -110,6 +146,36 @@
 "uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
 "district": "Kottayam",
 "rain": 0.6
+},
+{
+"station": "Pazhassi",
+"uuid": "ad97f04d-13db-4d6b-aa12-f016aff8884c",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "FCS Mangattuparamba",
+"uuid": "dc469b45-cfcb-4b5e-99a4-c4597db5c0ed",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Thillenkeri",
+"uuid": "2e439884-bef8-4247-aa19-50d8f25dfb99",
+"district": "Kannur",
+"rain": 28.1
+},
+{
+"station": "Payyavoor",
+"uuid": "a9d1834c-9c2c-47a9-a555-7abccf9966a1",
+"district": "Kannur",
+"rain": 0.0
+},
+{
+"station": "Cheruvanchery",
+"uuid": "a77beecc-8641-434c-9575-ed6cd9f30580",
+"district": "Kannur",
+"rain": 0.0
 },
 {
 "station": "Chinnar",
