@@ -32,6 +32,9 @@ aws,Pathanamthitta,Kunnamthanam
 aws,Pathanamthitta,Ranni Chethackal
 aws,Pathanamthitta,Thiruvalla Kallunkal
 aws,Pathanamthitta,Ulanadu
+aws,Thiruvananthapuram,Mairport (Chakka)
+aws,Thiruvananthapuram,Mthattathumala
+aws,Thiruvananthapuram,Mthiruvananthapuram
 aws,Thiruvananthapuram,Peppara
 aws,Thiruvananthapuram,Pirappancode
 aws,Thiruvananthapuram,Ponmudi
