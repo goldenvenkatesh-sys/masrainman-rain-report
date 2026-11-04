@@ -1,0 +1,68 @@
+name: Telangana TGDPS fetch (every hour)
+
+# TGDPS only answers from India, so GitHub reads it through the relay on Vercel's Mumbai server (relay/).
+# Each run does what tg_pc.py did on the PC: save rain since 08:30 so far (data/tg/live), and in the last hour
+# of the rain-day (07:30-08:30 IST) the finished 24 hours (data/tg/daily); if that hour was missed, the
+# finished day from TGDPS's mandal pages. Then it starts tg-report.yml for whatever changed.
+#
+# Started every hour by tn-live.yml (:45 IST), and by its own timer twice more just before 08:30 IST so the
+# finished day is caught close to its end. Needs the repo secret TGDPS_KEY.
+on:
+  schedule:
+    - cron: "5,50 2 * * *"    # 07:35 and 08:20 IST, inside the finished-day window
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tg-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TGDPS_RELAY: https://masrainman-rain-report-relay.vercel.app/api/tgdps
+      TGDPS_KEY: ${{ secrets.TGDPS_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -q requests "shapely>=2.0"
+
+      - name: Read TGDPS
+        run: |
+          if [ -z "$TGDPS_KEY" ]; then echo "::error::Add the repo secret TGDPS_KEY (the relay's KEY)"; exit 1; fi
+          python tg_fetch.py      || echo "::warning::TGDPS live failed"
+          python tg_fetch.py day  || echo "::warning::TGDPS mandal day failed"
+
+      - name: Save and start the report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add data/tg
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          CH=$(git diff --cached --name-only -- data/tg)
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Telangana rainfall files $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do
+            git push -q && break
+            git pull -q --rebase
+          done
+          # a push made with GitHub's own token does not start tg-report.yml, so start it here
+          M=""
+          echo "$CH" | grep -q '^data/tg/live/'  && M="live"
+          echo "$CH" | grep -q '^data/tg/daily/' && M="$M both"
+          D=$(echo "$CH" | sed -n 's#^data/tg/daily/\([0-9-]*\)\.json$#\1#p' | sort | tail -1)
+          M=$(echo $M)
+          if [ -n "$M" ]; then
+            gh workflow run tg-report.yml -R "$GITHUB_REPOSITORY" --ref main -f mode="$M" -f date="$D" \
+              && echo "started tg-report ($M ${D})"
+          fi

@@ -1,4 +1,7 @@
 """
+NOTE (Nov 2026): GitHub now reads TGDPS itself through the Vercel relay (tg-fetch.yml), so this PC job is
+no longer needed. Turn off the Task Scheduler job "MasRainman Telangana rain" so the two do not both push.
+
 Telangana: run this on the PC (in India) every hour. It reads TGDPS, saves data/tg and pushes it to GitHub,
 which then makes the Telangana reports (tg-report.yml).
 

@@ -65,6 +65,7 @@ jobs:
               -f always="${{ github.event.inputs.always || 'no' }}" \
               && echo "started $wf"
           done
+          gh workflow run tg-fetch.yml -R "$GITHUB_REPOSITORY" --ref main && echo "started tg-fetch.yml"
 
       - uses: actions/setup-python@v5
         with:

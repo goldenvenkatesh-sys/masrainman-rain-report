@@ -71,12 +71,23 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
                          "(MasRainman rainfall report)"}
 
 
+# On GitHub (outside India) TGDPS is read through the relay on Vercel's Mumbai server (relay/), set by
+# TGDPS_RELAY (its /api/tgdps address) and TGDPS_KEY. On the PC in India neither is set and TGDPS is read directly.
+RELAY = os.environ.get("TGDPS_RELAY", "").strip()
+RELAY_KEY = os.environ.get("TGDPS_KEY", "").strip()
+
+
 def _get(path, retries=3):
     import requests
+    if RELAY:
+        page, _, s1 = path.partition("?s1=")
+        url, params = RELAY, {"k": RELAY_KEY, "p": page, **({"s1": s1} if s1 else {})}
+    else:
+        url, params = BASE + path, None
     last = None
     for attempt in range(retries):
         try:
-            r = requests.get(BASE + path, headers=HEADERS, timeout=(20, 90))
+            r = requests.get(url, params=params, headers=HEADERS, timeout=(20, 90))
             r.raise_for_status()
             return r.text
         except Exception as e:
