@@ -461,6 +461,7 @@ class Report:
     def __init__(self, mode, period, geo, title_dates, sub, scale, card3, headline_thresholds, live_tag=None):
         self.mode, self.P, self.geo = mode, period, geo
         self.live_tag = live_tag
+        self.n_top = 10 if mode in ("daily", "live") else 5   # stations listed: live + 24-hour show 10
         self.lang_code = [k for k, v in LANGS.items() if v is L][0]
         self.scale = [(b, lab, ZERO if lab == "ZERO" else c) for b, lab, c in scale]
         self.sub = sub
@@ -522,7 +523,7 @@ class Report:
             rrect(d, (ix0, y0, ix1, y0 + 214), 16, fill=PANEL, outline=PANEL_EDGE)
         rrect(d, (48, 1084, 528, 1404), 16, fill=PANEL, outline=PANEL_EDGE)
         rrect(d, (544, 1084, 1032, 1404), 16, fill=PANEL, outline=PANEL_EDGE)
-        d.text((68, 1098), L["top_st"], font=font(20, "SemiBold"), fill=MUTED)
+        d.text((68, 1098), L["top_st"].format(n=self.n_top), font=font(20, "SemiBold"), fill=MUTED)
         d.text((564, 1098), L["top_di"], font=font(20, "SemiBold"), fill=MUTED)
         rrect(d, (48, 1420, 1032, 1532), 16, fill=PANEL, outline=PANEL_EDGE)
         d.text((68, 1430), L["legend"], font=font(19, "SemiBold"), fill=MUTED)
@@ -567,7 +568,7 @@ class Report:
                 dist_avg[dn] = float(np.nanmean(vv[m]))
         top_d = sorted(dist_avg.items(), key=lambda kv: -kv[1])
         order = np.argsort(-np.nan_to_num(vv, nan=-1))
-        top_s = [i for i in order[:5] if reported[i]]
+        top_s = [i for i in order[:self.n_top] if reported[i]]
         counts = [0] * len(self.scale)
         for x in vv[reported]:
             counts[classify(x, self.scale)] += 1
@@ -722,7 +723,7 @@ class Report:
         # numbered markers on the top 3 districts' max stations and top 5 stations
         if reveal_markers > 0:
             a = int(255 * ease(reveal_markers))
-            for rank, i in enumerate(fs["top_s"][:5], 1):
+            for rank, i in enumerate(fs["top_s"][:self.n_top], 1):
                 if not self.P.has_xy[i]:
                     continue
                 x, y = self.proj(self.P.lon[i], self.P.lat[i])
@@ -737,8 +738,24 @@ class Report:
                 y0c = self.MAP_BOX[1] + k * 230
                 self.draw_inset(im, d, k + 1, st["top_d"][k][0], st, (self.INSET_X[0], y0c, self.INSET_X[1], y0c + 214))
 
-        # top 5 stations
-        for r, i in enumerate(st["top_s"]):
+        # top stations: 5 roomy rows, or 10 compact one-line rows (name · district)
+        if self.n_top > 5:
+            fn, fdist, fv = font(19, "Bold"), font(15), font(21, "Bold")
+            for r, i in enumerate(st["top_s"]):
+                y = 1130 + r * 27
+                d.ellipse((68, y + 1, 92, y + 25), fill=(110, 60, 180) if r < 3 else (150, 80, 210))
+                rf = font(14, "Bold")
+                d.text((80 - tw(d, str(r + 1), rf) / 2, y + 4), str(r + 1), font=rf, fill=(255, 255, 255))
+                vs = fmt(st["vv"][i])
+                room = 508 - tw(d, vs, fv) - 14 - 104
+                nm = ellipsize(d, self.P.names[i], fn, room)
+                d.text((104, y), nm, font=fn, fill=TEXT)
+                left = room - tw(d, nm, fn) - 10
+                if left > 40:
+                    d.text((104 + tw(d, nm, fn) + 8, y + 4), ellipsize(d, "· " + dname(self.P.dist[i]), fdist, left),
+                           font=fdist, fill=MUTED)
+                text_right(d, (508, y - 1), vs, fv, TEXT)
+        for r, i in enumerate(st["top_s"] if self.n_top <= 5 else []):
             y = 1140 + r * 52
             d.ellipse((68, y + 2, 100, y + 34), fill=(110, 60, 180) if r < 2 else (150, 80, 210))
             d.text((79 if r < 9 else 74, y + 3), str(r + 1), font=font(19, "Bold"), fill=(255, 255, 255))
@@ -775,8 +792,8 @@ class Report:
 
     def caption(self, st, sub):
         title = L["cap_title"] + (f" · {REGION['name']}" if self.lang_code == "en" else "")
-        lines = [title, sub, "", self.headline(st), "", L["cap_top"]]
-        for r, i in enumerate(st["top_s"][:5], 1):
+        lines = [title, sub, "", self.headline(st), "", L["cap_top"].format(n=self.n_top)]
+        for r, i in enumerate(st["top_s"][:self.n_top], 1):
             lines.append(f"{r}. {self.P.names[i]} ({dname(self.P.dist[i])}) – {fmt(st['vv'][i])} {L['mm']}")
         lines += ["", L["cap_src"].format(src=REGION["source"]), f"#{BRAND} · {SITE}"]
         return "\n".join(lines)
