@@ -22,9 +22,11 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Sa
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         q = {k: v[0] for k, v in parse_qs(urlparse(self.path).query).items()}
-        key = os.environ.get("KEY", "")
-        if not key or q.get("k") != key:
-            return self._send(403, "no")
+        key = os.environ.get("KEY", "").strip()
+        if not key:
+            return self._send(403, "no: KEY is not set in Vercel (Settings > Environment Variables, then redeploy)")
+        if (q.get("k") or "").strip() != key:
+            return self._send(403, f"no: wrong key (the KEY in Vercel has {len(key)} characters)")
         p = q.get("p", "liverain.jsp")
         if not re.fullmatch(r"[\w/.]+\.jsp", p) or ".." in p:
             return self._send(400, "bad page")
