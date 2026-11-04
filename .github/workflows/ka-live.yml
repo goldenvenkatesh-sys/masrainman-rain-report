@@ -49,6 +49,13 @@ jobs:
       - name: Make picture
         run: python rain_report.py live --region ka ${{ github.event.inputs.always == 'yes' && '--always' || '' }}
 
+      # finished rain-days go to data/ka/daily, used by the MasRainMan forecast verification
+      - name: Save finished rain-days
+        continue-on-error: true
+        run: |
+          python ksndmc_fetch.py daily
+          bash save_ka.sh
+
       # once a day after 08:30: the finished rain-day replayed hour by hour, from this workflow's hourly snapshots
       - name: Past 24 hours video (hour by hour)
         continue-on-error: true

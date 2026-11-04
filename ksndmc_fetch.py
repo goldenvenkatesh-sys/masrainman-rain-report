@@ -125,7 +125,34 @@ def day_stations(d: date):
     return stations()
 
 
+def save_finished(verbose=True):
+    """Keep finished rain-days in data/ka/daily/<rain-day>.json as [lat, lon, rain] points, for later
+    checks of forecasts. KSNDMC has no finished-day table, so these are the last running totals saved
+    by the live checks (data/raw/live/ka_<day>.json); rain after the day's last check is not in them."""
+    live = os.path.join(tf.RAW_DIR, "live")
+    daily = os.path.join(HERE, "data", "ka", "daily")
+    os.makedirs(daily, exist_ok=True)
+    running = tf.running_day()
+    for name in sorted(os.listdir(live)) if os.path.isdir(live) else []:
+        m = re.fullmatch(r"ka_(\d{4}-\d{2}-\d{2})\.json", name)
+        target = os.path.join(daily, f"{m[1]}.json") if m else None
+        if not m or date.fromisoformat(m[1]) >= running or os.path.exists(target):
+            continue
+        with open(os.path.join(live, name), encoding="utf-8") as f:
+            js = json.load(f)
+        points = [[s["lat"], s["lon"], s["rain"]] for s in js["stations"] if s["rain"] is not None]
+        with open(target, "w", encoding="utf-8") as f:
+            json.dump({"rain_day": m[1], "source": "KSNDMC live totals", "last_check": js.get("checked"),
+                       "points": points}, f, separators=(",", ":"))
+        if verbose:
+            print(f"  KSNDMC rain-day {m[1]}: {len(points)} gauges saved (last check {js.get('checked')})")
+
+
 if __name__ == "__main__":
+    import sys
+    if sys.argv[1:2] == ["daily"]:
+        save_finished()
+        raise SystemExit
     st = stations()
     st.sort(key=lambda s: -s["rain"])
     for s in st[:10]:
