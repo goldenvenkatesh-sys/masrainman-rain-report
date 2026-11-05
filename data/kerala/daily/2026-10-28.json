@@ -1111,6 +1111,24 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Vazhani",
+"key": "VAZHANI",
+"rain": 0.0,
+"lat": 10.6339,
+"lon": 76.3069
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Elanad",
+"key": "ELANAD",
+"rain": 0.0,
+"lat": 10.62,
+"lon": 76.42
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Chulliar Dam",
 "key": "CHULLIAR DAM",
@@ -1489,12 +1507,30 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Pazhayannur",
+"key": "PAZHAYANNUR",
+"rain": 0.0,
+"lat": 10.67,
+"lon": 76.42
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Olayampadi",
 "key": "OLAYAMPADI",
 "rain": 0.0,
 "lat": 12.1833,
 "lon": 75.325
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Cheerakuzhy",
+"key": "CHEERAKUZHY",
+"rain": 0.0,
+"lat": 10.6,
+"lon": 76.3331
 },
 {
 "type": "sw",

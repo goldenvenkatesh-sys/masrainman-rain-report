@@ -1,7 +1,7 @@
 {
 "date": "2026-10-24",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-10-31T15:13+0530",
+"fetched": "2026-11-05T12:49+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -232,6 +232,18 @@
 "rain": 17.6
 },
 {
+"station": "Vazhani",
+"uuid": "b3f9878a-0a10-43e4-8614-cc437810cf8c",
+"district": "Thrissur",
+"rain": 14.4
+},
+{
+"station": "Elanad",
+"uuid": "624bede1-7686-4ff2-b6d4-980e7d860756",
+"district": "Thrissur",
+"rain": 42.0
+},
+{
 "station": "Chulliar Dam",
 "uuid": "bb1793ef-f171-4760-85e3-9e597615551d",
 "district": "Palakkad",
@@ -442,6 +454,12 @@
 "rain": 46.1
 },
 {
+"station": "Kunnamkulam",
+"uuid": "0cc6e1e2-a4d7-4df7-b488-355bc1e8d375",
+"district": "Thrissur",
+"rain": 44.6
+},
+{
 "station": "Chimmony",
 "uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
 "district": "Thrissur",
@@ -496,6 +514,12 @@
 "rain": 12.8
 },
 {
+"station": "Thrithala",
+"uuid": "e140ddaf-07b0-4ed1-b3d7-ff0d3d5d0a58",
+"district": "Palakkad",
+"rain": 45.0
+},
+{
 "station": "Vamanapuram",
 "uuid": "a2e16314-f70c-420f-9c24-435caa5b68dd",
 "district": "Thiruvananthapuram",
@@ -538,6 +562,12 @@
 "rain": 26.0
 },
 {
+"station": "Pazhayannur",
+"uuid": "0b8a3ad2-1d84-490b-9b44-a0e8c84224ef",
+"district": "Thrissur",
+"rain": 22.0
+},
+{
 "station": "Olayampadi",
 "uuid": "56ba76f9-c58e-45b8-9dac-cf52a8146396",
 "district": "Kannur",
@@ -548,6 +578,12 @@
 "uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
 "district": "Malappuram",
 "rain": 20.0
+},
+{
+"station": "Cheerakuzhy",
+"uuid": "c12b3a90-c87e-432b-9efe-365ef576c3a4",
+"district": "Thrissur",
+"rain": 24.4
 },
 {
 "station": "Edakkara",
