@@ -1,7 +1,7 @@
 {
 "date": "2026-11-05",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-05T12:49+0530",
+"fetched": "2026-11-05T18:43+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -16,10 +16,28 @@
 "rain": 0.0
 },
 {
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
+"rain": 0.0
+},
+{
 "station": "Manjeswaram",
 "uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
 "district": "Kasaragod",
 "rain": 0.0
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 72.6
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 29.0
 },
 {
 "station": "Kalliyot",
@@ -28,9 +46,27 @@
 "rain": 0.0
 },
 {
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 10.0
+},
+{
 "station": "Madhur",
 "uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
 "rain": 0.0
 },
 {
@@ -44,6 +80,24 @@
 "uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
 "district": "Kasaragod",
 "rain": 1.8
+},
+{
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 53.0
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 61.4
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 6.0
 }
 ]
 }
