@@ -7,6 +7,8 @@ name: Telangana TGDPS fetch (every hour)
 #
 # Started every hour by tn-live.yml (:45 IST), and by its own timer twice more just before 08:30 IST so the
 # finished day is caught close to its end. Needs the repo secret TGDPS_KEY.
+# data/tg/.stations_checked is committed, so the full station scan (aws.jsp + every district map) runs once a
+# day instead of on every run (each fresh checkout used to lack it).
 on:
   schedule:
     - cron: "5,50 2 * * *"    # 07:35 and 08:20 IST, inside the finished-day window
@@ -41,7 +43,14 @@ jobs:
         run: |
           if [ -z "$TGDPS_KEY" ]; then echo "::error::Add the repo secret TGDPS_KEY (the relay's KEY)"; exit 1; fi
           python tg_fetch.py      || echo "::warning::TGDPS live failed"
-          python tg_fetch.py day  || echo "::warning::TGDPS mandal day failed"
+          # the 33 mandal pages only matter once the rain-day has finished (08:30 IST); reading them every hour
+          # used ~33 Vercel relay calls an hour for nothing, so read them only 08:30-13:59 IST
+          HM=$((10#$(TZ=Asia/Kolkata date +%H%M)))
+          if [ $HM -ge 830 ] && [ $HM -lt 1400 ]; then
+            python tg_fetch.py day  || echo "::warning::TGDPS mandal day failed"
+          else
+            echo "mandal day: skipped outside 08:30-13:59 IST"
+          fi
 
       - name: Save and start the report
         env:
