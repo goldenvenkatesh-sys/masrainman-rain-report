@@ -103,10 +103,11 @@ def _text(html):
 def fetch_live():
     """(end of period as datetime IST, [(id, district, mandal, location, rain)]) from liverain.jsp."""
     html = _get("liverain.jsp")
-    m = re.search(r"from\s*(\d+/\d+/\d{4})\s*08:30\s*Hrs\s*to\s*(\d+/\d+/\d{4})\s*(\d+):(\d+)\s*Hrs", _text(html))
+    # after midnight TGDPS drops the minutes: "to 05/11/2026 06Hrs" instead of "to 04/11/2026 23:00Hrs"
+    m = re.search(r"from\s*(\d+/\d+/\d{4})\s*08:30\s*Hrs\s*to\s*(\d+/\d+/\d{4})\s*(\d+)(?:[:.](\d+))?\s*Hrs", _text(html))
     if not m:
         raise ValueError("liverain.jsp: no time period found")
-    end = datetime.strptime(f"{m.group(2)} {m.group(3)}:{m.group(4)}", "%d/%m/%Y %H:%M").replace(tzinfo=tf.IST)
+    end = datetime.strptime(f"{m.group(2)} {m.group(3)}:{m.group(4) or '00'}", "%d/%m/%Y %H:%M").replace(tzinfo=tf.IST)
     rows = []
     for tr in re.split(r"<tr[^>]*>", html)[1:]:
         c = [_text(x) for x in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)]
