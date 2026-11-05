@@ -105,7 +105,9 @@ def fetch_live():
     html = _get("liverain.jsp")
     m = re.search(r"from\s*(\d+/\d+/\d{4})\s*08:30\s*Hrs\s*to\s*(\d+/\d+/\d{4})\s*(\d+):(\d+)\s*Hrs", _text(html))
     if not m:
-        raise ValueError("liverain.jsp: no time period found")
+        t = _text(re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", html))
+        hits = [t[max(0, x.start()-200):x.start()+250] for x in re.finditer(r"(?i)hrs|rainfall|from|no data|not", t)][:12]
+        raise ValueError("liverain.jsp: no time period found; len=%d tr=%d text=%r ;; HITS=%r" % (len(html), html.lower().count("<tr"), t[:2500], hits))
     end = datetime.strptime(f"{m.group(2)} {m.group(3)}:{m.group(4)}", "%d/%m/%Y %H:%M").replace(tzinfo=tf.IST)
     rows = []
     for tr in re.split(r"<tr[^>]*>", html)[1:]:
