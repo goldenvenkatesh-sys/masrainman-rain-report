@@ -751,7 +751,7 @@ class Live24:
         text(d, (cx0, cy0 - 34), clock(now), font(22, "Bold"), GOLD, "ms")
         text(d, (cx0, cy0 + 22), f"{int(np.sum(D.at(tau) >= 0.1))}", font(54, "Bold"), TEXT, "ms")
         text(d, (cx0, cy0 + 46), f"of {D.n} stations with rain", font(14, "Bold"), MUTED, "ms")
-        text(d, (540, 1132), "Slice length: state-average rain in the hour  ·  colour: the heaviest gauge in it",
+        text(d, (540, 1132), "Slice length: average rain over all gauges in the hour  ·  colour: the heaviest gauge in it",
              font(15), MUTED, "ms")
         if t >= 150:
             al = int(255 * rr.ease((t - 150) / 12))
