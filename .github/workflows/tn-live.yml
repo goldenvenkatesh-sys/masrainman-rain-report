@@ -54,13 +54,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Karnataka and Andhra Pradesh run at the same time as this one
-      - name: Start Karnataka and Andhra Pradesh live reports
+      # Karnataka, Andhra Pradesh and KTCC run at the same time as this one
+      - name: Start Karnataka, Andhra Pradesh and KTCC live reports
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for wf in ka-live.yml ap-live.yml; do
+          for wf in ka-live.yml ap-live.yml ktcc-live.yml; do
             gh workflow run "$wf" -R "$GITHUB_REPOSITORY" --ref main \
               -f always="${{ github.event.inputs.always || 'no' }}" \
               && echo "started $wf"
@@ -130,6 +130,17 @@ jobs:
           if [ "$h" -ge 9 ] && [ "$h" -le 11 ] && ! made_today tn; then
             gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region="tn ap" -f mode=both \
               && echo "started TN + AP 24-hour reports"
+          fi
+          # 10:45 KTCC past-24-hours video (tried again up to 12:45 if missed)
+          if [ "$h" -ge 10 ] && [ "$h" -le 12 ]; then
+            km=$(echo "$idx" | python3 -c "
+          import json,sys
+          try: d=json.load(sys.stdin)
+          except Exception: d={'reports':[]}
+          print(max([r['made'] for r in d['reports'] if r['region']=='ktcc' and r['kind']=='live24'] or ['']))")
+            if [ -z "$km" ] || [ "$(TZ=Asia/Kolkata date -d "$km" +%F)" != "$(TZ=Asia/Kolkata date +%F)" ]; then
+              gh workflow run ktcc-live24.yml -R "$GITHUB_REPOSITORY" --ref main && echo "started KTCC 24-hour video"
+            fi
           fi
           # 12:45 Kerala, after IMD's file at ~11 am (tried again up to 15:45 if missed)
           if [ "$h" -ge 12 ] && [ "$h" -le 15 ] && ! made_today kl; then
