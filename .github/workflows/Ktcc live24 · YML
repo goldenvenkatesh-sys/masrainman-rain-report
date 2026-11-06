@@ -1,0 +1,59 @@
+name: KTCC past 24 hours video
+
+# KTCC = Kancheepuram, Tiruvallur, Chennai, Chengalpattu.
+# Same video as the Tamil Nadu past-24-hours one, with only the gauges of those four districts.
+# Runs every day at 10:00 IST (after TN-SMART's 08:30 file is up) and on demand.
+# The video, picture and caption are saved as the "ktcc-live24" artifact on the run page.
+on:
+  schedule:
+    - cron: "30 4 * * *"        # 10:00 IST
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "rain-day YYYY-MM-DD (24 h ending 08:30 IST on this date; blank = latest)"
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ktcc-live24
+  cancel-in-progress: false
+
+jobs:
+  ktcc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          pip install -r requirements.txt
+
+      - name: Cache downloaded TN-SMART days
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: tnsmart-${{ github.run_id }}
+          restore-keys: tnsmart-
+
+      - name: Make the KTCC video
+        env:
+          DAY: ${{ github.event.inputs.date }}
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+          WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
+          WN3_RAIN_URL: https://wn3data.masrainman-wn3.pages.dev/wn3_{D}.json
+        run: python ktcc.py ${DAY:+--date $DAY}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ktcc-live24
+          path: out/rain_ktcc_live24_*
+          retention-days: 14
