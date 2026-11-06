@@ -1,7 +1,7 @@
 {
 "date": "2026-11-03",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-05T01:18+0530",
+"fetched": "2026-11-06T18:28+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -22,6 +22,12 @@
 "rain": 20.0
 },
 {
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
 "station": "Nedumpoil",
 "uuid": "c2b64113-f171-41ac-a25f-77a86d76a2d6",
 "district": "Kannur",
@@ -31,6 +37,12 @@
 "station": "Kumili",
 "uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
 "rain": 0.0
 },
 {
@@ -85,6 +97,12 @@
 "station": "Kanjirappally",
 "uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
 "district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
 "rain": 0.0
 },
 {
@@ -170,6 +188,12 @@
 "uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
 "district": "Kottayam",
 "rain": 2.6
+},
+{
+"station": "Moozhiyar",
+"uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
+"district": "Pathanamthitta",
+"rain": 0.0
 },
 {
 "station": "Pazhassi",

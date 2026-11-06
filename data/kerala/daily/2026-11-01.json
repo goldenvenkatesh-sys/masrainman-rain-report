@@ -823,6 +823,15 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Nilackal",
+"key": "NILACKAL",
+"rain": 0.0,
+"lat": 9.3897,
+"lon": 77.0108
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Kannavam",
 "key": "KANNAVAM",
@@ -865,6 +874,15 @@
 "rain": 0.0,
 "lat": 8.7794,
 "lon": 76.7178
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Perumthenaruvi",
+"key": "PERUMTHENARUVI",
+"rain": 0.0,
+"lat": 9.4114,
+"lon": 76.8744
 },
 {
 "type": "sw",
@@ -958,6 +976,15 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Moozhiyar",
+"key": "MOOZHIYAR",
+"rain": 0.0,
+"lat": 9.3106,
+"lon": 77.0708
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Pazhassi",
 "key": "PAZHASSI",
@@ -1018,6 +1045,15 @@
 "rain": 0.0,
 "lat": 9.7831,
 "lon": 76.8792
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Vadasserikkara",
+"key": "VADASSERIKKARA",
+"rain": 0.0,
+"lat": 9.3333,
+"lon": 76.8308
 }
 ]
 }

@@ -27,6 +27,34 @@
    "sha1": "4f155a79255e1aeb89055b1a76a7561dc00419d4",
    "saved_at": "2026-11-06T12:49+05:30",
    "last_modified": "Fri, 06 Nov 2026 06:40:07 GMT"
+  },
+  {
+   "name": "ksdma_24-Hr-Rainfall-map.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/24-Hr-Rainfall-map.jpeg",
+   "sha1": "cec59cbdb47e89ba7745d3d6218b315ffcd7d6fe",
+   "saved_at": "2026-11-06T18:27+05:30",
+   "last_modified": "Fri, 06 Nov 2026 08:24:16 GMT"
+  },
+  {
+   "name": "ksdma_RF-ENG-3.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/RF-ENG-3.jpeg",
+   "sha1": "8452a2f785556ccd3b917ac992f18813c51fe867",
+   "saved_at": "2026-11-06T18:27+05:30",
+   "last_modified": "Fri, 06 Nov 2026 08:22:12 GMT"
+  },
+  {
+   "name": "ksdma_RF-MAL-2.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/RF-MAL-2.jpeg",
+   "sha1": "d3744eef2599f0e7c6af54156634ce14869b7209",
+   "saved_at": "2026-11-06T18:27+05:30",
+   "last_modified": "Fri, 06 Nov 2026 08:22:13 GMT"
+  },
+  {
+   "name": "ksdma_RF-MAP-5.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/RF-MAP-5.jpeg",
+   "sha1": "c980d652d701c719b1bed9dea648e754857a0b49",
+   "saved_at": "2026-11-06T18:27+05:30",
+   "last_modified": "Fri, 06 Nov 2026 08:22:14 GMT"
   }
  ],
  "checks": {
@@ -38,8 +66,12 @@
   "ksdma_RF-MAL-04.00-PM.jpeg": 200,
   "ksdma_RF-MAP-04.00-PM.jpeg": 200,
   "ksdma_rf-eng-04.00-pm.jpeg": 200,
-  "ksdma_page": "4 files linked",
+  "ksdma_page": "5 files linked",
   "imd_aws_portal": 200,
-  "ksdma_Actual-Vs-Prediction-2.pdf": 200
+  "ksdma_Actual-Vs-Prediction-2.pdf": 200,
+  "ksdma_24-Hr-Rainfall-map.jpeg": 200,
+  "ksdma_RF-ENG-3.jpeg": 200,
+  "ksdma_RF-MAL-2.jpeg": 200,
+  "ksdma_RF-MAP-5.jpeg": 200
  }
 }

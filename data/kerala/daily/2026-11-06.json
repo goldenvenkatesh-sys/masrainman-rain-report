@@ -1360,6 +1360,15 @@
 "rain": 0.5,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 10.6,
+"lat": 10.1592,
+"lon": 76.6164
 }
 ]
 }
