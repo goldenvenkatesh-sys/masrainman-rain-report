@@ -922,6 +922,24 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Vazhani",
+"key": "VAZHANI",
+"rain": 0.0,
+"lat": 10.6339,
+"lon": 76.3069
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Elanad",
+"key": "ELANAD",
+"rain": 0.0,
+"lat": 10.62,
+"lon": 76.42
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Kalliyot",
 "key": "KALLIYOT",
@@ -1228,12 +1246,30 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Pazhayannur",
+"key": "PAZHAYANNUR",
+"rain": 0.0,
+"lat": 10.67,
+"lon": 76.42
+},
+{
+"type": "sw",
 "district": "Malappuram",
 "station": "Pandikkad",
 "key": "PANDIKKAD",
 "rain": 0.0,
 "lat": 11.1075,
 "lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Cheerakuzhy",
+"key": "CHEERAKUZHY",
+"rain": 0.0,
+"lat": 10.6,
+"lon": 76.3331
 },
 {
 "type": "sw",
