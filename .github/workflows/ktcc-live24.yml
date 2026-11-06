@@ -3,7 +3,8 @@ name: KTCC past 24 hours video
 # KTCC = Kancheepuram, Tiruvallur, Chennai, Chengalpattu.
 # Same video as the Tamil Nadu past-24-hours one, with only the gauges of those four districts.
 # Runs every day at 10:00 IST (after TN-SMART's 08:30 file is up) and on demand.
-# The video, picture and caption are saved as the "ktcc-live24" artifact on the run page.
+# The video, picture and caption go to the `reports` branch (the WeatherNext 3 site's Rain reports page
+# shows them under KTCC) and are also kept as the "ktcc-live24" artifact on the run page.
 on:
   schedule:
     - cron: "30 4 * * *"        # 10:00 IST
@@ -14,7 +15,7 @@ on:
         default: ""
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ktcc-live24
@@ -51,6 +52,13 @@ jobs:
           WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
           WN3_RAIN_URL: https://wn3data.masrainman-wn3.pages.dev/wn3_{D}.json
         run: python ktcc.py ${DAY:+--date $DAY}
+
+      - name: Save to the reports branch (website + GitHub app)
+        if: ${{ hashFiles('out/rain_ktcc_*.mp4') != '' }}
+        continue-on-error: true
+        env:
+          WN3_DISPATCH_TOKEN: ${{ secrets.WN3_DISPATCH_TOKEN }}
+        run: bash publish_reports.sh out
 
       - uses: actions/upload-artifact@v4
         with:
