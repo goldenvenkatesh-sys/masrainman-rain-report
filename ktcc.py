@@ -14,6 +14,8 @@ Gauges come from two sources, added together:
   python ktcc.py                          # latest complete rain-day (24 h ending 08:30 IST)
   python ktcc.py --date 2026-11-05
   python ktcc.py --date 2026-11-05 --imd imd_2026-11-05.csv
+  python ktcc.py live                     # "rain so far" picture for the running day (hourly, like Tamil Nadu)
+  python ktcc.py live --always            # ...even if no new rain since the last check
 
 IMD file format
   CSV  : station,district,lat,lon,h01,h02,...,h24      (district may be blank: found from lat/lon)
@@ -140,6 +142,16 @@ def make_hourly(imd_path=None):
     return hourly
 
 
+def _live_fetch(d):
+    """TN-SMART's running file for rain-day d, only the gauges of the four districts."""
+    out = []
+    for s in tf.station_totals(tf.download_day(d, force=not tf.OFFLINE)):
+        c = tn_names.canon(s["district"])
+        if c in KTCC:
+            out.append(dict(s, district=c))
+    return out
+
+
 # ----------------------------------------------------------------- registration
 def register(imd_path=None):
     _build_geojson()
@@ -147,7 +159,7 @@ def register(imd_path=None):
         "name": "Chennai Region", "geo": GEO_FILE, "canon": tn_names.canon, "langs": ["ta"],
         "radius": 18,                 # dense gauges over a small area: keep the rain field local
         "source": "TN-SMART (TNSDMA)" + (" + IMD" if imd_path else ""), "pill": {"ta": "KTCC"},
-        "load": None,
+        "load": None, "live": _live_fetch,
     }
     live24.REGIONS24["ktcc"] = {
         "native": "KTCC", "native_font": "MuktaMalar-ExtraBold.ttf", "hourly": make_hourly(imd_path),
@@ -161,11 +173,18 @@ def register(imd_path=None):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="KTCC past-24-hours rainfall video")
+    ap = argparse.ArgumentParser(description="KTCC rainfall videos")
+    ap.add_argument("mode", nargs="?", choices=["live24", "live"], default="live24",
+                    help="live24 = past 24 hours video (default); live = rain so far in the running day")
+    ap.add_argument("--always", action="store_true", help="live: make the picture even if nothing changed")
     ap.add_argument("--date", help="rain-day (24 h ending 08:30 IST on this date); default: latest complete")
     ap.add_argument("--imd", help="IMD hourly gauge file (CSV or JSON, see top of this file)")
     ap.add_argument("--out", default=rr.OUT_DIR)
     a = ap.parse_args()
+    if a.mode == "live":
+        register(None)
+        sys.argv = ["rain_report.py", "live", "--region", "ktcc"] + (["--always"] if a.always else [])
+        return rr.main()
     today = tf.today_ist()
     latest = today if tf.rain_day_is_complete(today) else today - timedelta(days=1)
     day = date.fromisoformat(a.date) if a.date else latest
