@@ -25,7 +25,8 @@ from datetime import datetime, timedelta, timezone
 
 IST = timezone(timedelta(hours=5, minutes=30))
 REGIONS = {"": ("tn", "Tamil Nadu"), "kl_": ("kl", "Kerala"), "ka_": ("ka", "Karnataka"),
-           "ap_": ("ap", "Andhra Pradesh"), "tg_": ("tg", "Telangana")}
+           "ap_": ("ap", "Andhra Pradesh"), "tg_": ("tg", "Telangana"),
+           "ktcc_": ("ktcc", "KTCC")}
 KINDS = {"live": "Rain so far (live)", "daily": "24-hour rain", "live24": "Past 24 hours, hour by hour", "accum": "Total rain (multi-day)",
          "month": "Monthly total", "sat24": "Satellite rain, past 24 hours", "gpm3d": "Satellite radar 3D pass"}
 LANGS = {"ta": "Tamil", "en": "English", "ml": "Malayalam"}
@@ -36,7 +37,7 @@ KEEP_MONTHS = 13
 KEEP_ACCUM = 2
 
 NAME = re.compile(
-    r"^rain_(?P<tag>kl_|ka_|ap_|tg_)?(?P<kind>live24|live|daily|accum|month|sat24|gpm3d)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
+    r"^rain_(?P<tag>kl_|ka_|ap_|tg_|ktcc_)?(?P<kind>live24|live|daily|accum|month|sat24|gpm3d)_(?P<rest>.+?)(?:_(?P<lang>ta|en|ml))?$")
 
 
 def parse(base):
