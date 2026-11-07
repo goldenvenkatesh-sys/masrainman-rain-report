@@ -1,7 +1,7 @@
 {
 "date": "2026-10-27",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-05T12:49+0530",
+"fetched": "2026-11-07T17:14+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -208,6 +208,12 @@
 "rain": 0.8
 },
 {
+"station": "Kunnamangalam",
+"uuid": "497f3fbd-a6a1-4d34-9bc2-d4ac24813a77",
+"district": "Kozhikode",
+"rain": 0.0
+},
+{
 "station": "Perumthenaruvi",
 "uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
 "district": "Pathanamthitta",
@@ -394,6 +400,12 @@
 "rain": 0.0
 },
 {
+"station": "Thamarassery",
+"uuid": "f46bcc52-67dd-418c-afda-ddaf1fd4c495",
+"district": "Kozhikode",
+"rain": 0.0
+},
+{
 "station": "Vanimel",
 "uuid": "1e67352a-5687-4327-813b-cc313f98bbe8",
 "district": "Kozhikode",
@@ -508,6 +520,12 @@
 "rain": 0.0
 },
 {
+"station": "Perambra",
+"uuid": "e8d23203-f589-417e-a6d8-d199e65f59ae",
+"district": "Kozhikode",
+"rain": 0.0
+},
+{
 "station": "Kulamavu",
 "uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
 "district": "Idukki",
@@ -595,6 +613,12 @@
 "station": "Edakkara",
 "uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
 "district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Thikkodi",
+"uuid": "cd320d66-fe8a-4aa9-bc35-d829ba39446b",
+"district": "Kozhikode",
 "rain": 0.0
 },
 {

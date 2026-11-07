@@ -57,3 +57,5 @@ sw,Idukki,Vandanmedu
 sw,Kottayam,Erattupetta
 sw,Kottayam,Mundakayam
 sw,Kottayam,Teekoy Estate
+sw,Kozhikode,Perambra
+sw,Kozhikode,Thikkodi

@@ -1255,6 +1255,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Ollukara",
+"key": "OLLUKARA",
+"rain": 0.0,
+"lat": 10.5333,
+"lon": 76.2667
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Meenkara",
 "key": "MEENKARA",
@@ -1279,6 +1288,15 @@
 "rain": 0.0,
 "lat": 12.7153,
 "lon": 74.8903
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Triprayar",
+"key": "TRIPRAYAR",
+"rain": 0.0,
+"lat": 10.4011,
+"lon": 76.1192
 },
 {
 "type": "sw",
@@ -1315,6 +1333,15 @@
 "rain": 72.6,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Kozhikode",
+"station": "Kunnamangalam",
+"key": "KUNNAMANGALAM",
+"rain": 3.0,
+"lat": 11.3,
+"lon": 75.88
 },
 {
 "type": "sw",
@@ -1444,6 +1471,15 @@
 },
 {
 "type": "sw",
+"district": "Kozhikode",
+"station": "Thamarassery",
+"key": "THAMARASSERY",
+"rain": 0.0,
+"lat": 11.42,
+"lon": 75.94
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Erattupetta",
 "key": "ERATTUPETTA",
@@ -1471,6 +1507,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Vaniampara",
+"key": "VANIAMPARA",
+"rain": 0.0,
+"lat": 10.5722,
+"lon": 76.425
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Thunakadavu",
 "key": "THUNAKADAVU",
@@ -1480,12 +1525,39 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Panachery",
+"key": "PANACHERY",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.3
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Marayoor",
 "key": "MARAYOOR",
 "rain": 0.0,
 "lat": 10.3433,
 "lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Amalanagar",
+"key": "AMALANAGAR",
+"rain": 0.0,
+"lat": 10.5664,
+"lon": 76.1664
+},
+{
+"type": "sw",
+"district": "Kozhikode",
+"station": "Perambra",
+"key": "PERAMBRA",
+"rain": 8.0,
+"lat": null,
+"lon": null
 },
 {
 "type": "sw",
@@ -1516,12 +1588,30 @@
 },
 {
 "type": "sw",
+"district": "Kozhikode",
+"station": "Thikkodi",
+"key": "THIKKODI",
+"rain": 0.0,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Chinnar",
 "key": "CHINNAR",
 "rain": 6.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Enamakkal",
+"key": "ENAMAKKAL",
+"rain": 0.0,
+"lat": 10.5083,
+"lon": 76.1083
 }
 ]
 }

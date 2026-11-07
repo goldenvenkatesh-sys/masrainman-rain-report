@@ -1841,6 +1841,15 @@
 {
 "type": "sw",
 "district": "Kozhikode",
+"station": "Thamarassery",
+"key": "THAMARASSERY",
+"rain": 6.4,
+"lat": 11.42,
+"lon": 75.94
+},
+{
+"type": "sw",
+"district": "Kozhikode",
 "station": "Vanimel",
 "key": "VANIMEL",
 "rain": 0.0,
@@ -1984,6 +1993,15 @@
 },
 {
 "type": "sw",
+"district": "Kozhikode",
+"station": "Perambra",
+"key": "PERAMBRA",
+"rain": 27.9,
+"lat": null,
+"lon": null
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kulamavu",
 "key": "KULAMAVU",
@@ -2098,6 +2116,15 @@
 "rain": 19.6,
 "lat": 11.3856,
 "lon": 76.315
+},
+{
+"type": "sw",
+"district": "Kozhikode",
+"station": "Thikkodi",
+"key": "THIKKODI",
+"rain": 1.2,
+"lat": null,
+"lon": null
 },
 {
 "type": "sw",
