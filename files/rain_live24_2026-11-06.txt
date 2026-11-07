@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 5 Nov to 8:30 am 6 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Nammiyampattu (Tiruvannamalai) – 59.2 mm
+2. Maduramangalam (Kancheepuram) – 52.4 mm
+3. Chittrakottai (Ramanathapuram) – 49.6 mm
+4. Virupakshipuram (Vellore) – 43.6 mm
+5. Muthulapuram (Thoothukudi) – 42.0 mm
+6. Tirukoilur (Kallakurichi) – 40.0 mm
+7. Peranamallur (Tiruvannamalai) – 39.6 mm
+8. Manavur (Tiruvallur) – 39.2 mm
+9. Kayalpattinam (Thoothukudi) – 39.2 mm
+10. Edaicode (Kanniyakumari) – 35.6 mm
+
+Heaviest in one hour: 37.2 mm at Nammiyampattu (Tiruvannamalai), hour ending 9:30 PM
+Rain at 768 of 1314 stations · 0 with heavy rain or more
+Most of it fell 11:30 AM – 7:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 28 districts)
+  WeatherNext 3: 1 caught, 1 false alarms
+  ECMWF IFS: 6 caught, 2 false alarms
+  ECMWF AIFS: 5 caught, 1 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

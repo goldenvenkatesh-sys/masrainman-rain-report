@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 31 Oct to 8:30 am 1 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Puthupeerkadavu (Erode) – 44.0 mm
+2. Denad (Nilgiris) – 43.6 mm
+3. Sikkarasampalayam (Erode) – 34.8 mm
+4. Kengarai (Nilgiris) – 32.0 mm
+5. Kallampalayam (Nilgiris) – 24.8 mm
+
+Heaviest in one hour: 41.2 mm at Denad (Nilgiris), hour ending 5:30 AM
+Rain at 76 of 1318 stations · 0 with heavy rain or more
+Most of it fell 3:30 AM – 5:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 4 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

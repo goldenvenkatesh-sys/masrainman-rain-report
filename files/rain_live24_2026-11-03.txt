@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 2 Nov to 8:30 am 3 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Cuddalore ARG (Cuddalore) – 88.4 mm
+2. Pathirikuppam (Cuddalore) – 55.6 mm
+3. Thorapadi (Villupuram) – 43.2 mm
+4. Siruvachur (Salem) – 38.0 mm
+5. ICF (Chennai) – 36.8 mm
+
+Heaviest in one hour: 63.2 mm at Cuddalore ARG (Cuddalore), hour ending 6:30 AM
+Rain at 303 of 1316 stations · 1 with heavy rain or more
+Most of it fell 2:30 PM – 6:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 1 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 5 Nov to 8:30 am 6 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Lakshmipura (Mandya) – 284.8 mm
+2. Manila (Dakshina Kannada) – 118.2 mm
+3. Chikkayyana Chattra (Mysuru) – 110.5 mm
+4. Tumbadi (Tumakuru) – 83.0 mm
+5. Vaddagere (Tumakuru) – 77.0 mm
+6. Bukkapatna (Tumakuru) – 69.0 mm
+7. Koratagere (Tumakuru) – 67.0 mm
+8. Tatanahalli (Hassan) – 66.5 mm
+9. Koratagere 1 (Tumakuru) – 65.8 mm
+10. Nagamangala (Mandya) – 64.0 mm
+
+Heaviest in one hour: 89.5 mm at Lakshmipura (Mandya), hour ending 7:30 AM
+Rain at 1178 of 3913 stations · 9 with heavy rain or more
+Most of it fell 9:30 PM – 2:30 AM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 5 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

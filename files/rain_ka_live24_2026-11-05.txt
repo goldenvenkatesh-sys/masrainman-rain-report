@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 4 Nov to 8:30 am 5 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Valpadi (Dakshina Kannada) – 93.0 mm
+2. Billapura (Bengaluru Urban) – 85.8 mm
+3. Sarjapur (Bengaluru Urban) – 80.5 mm
+4. Renjala (Udupi) – 76.5 mm
+5. Attibele (Bengaluru Urban) – 73.0 mm
+6. Neriga (Bengaluru Urban) – 71.0 mm
+7. Handenahalli (Bengaluru Urban) – 71.0 mm
+8. Irvathauru (Udupi) – 66.0 mm
+9. Mayasandra (Bengaluru Urban) – 62.5 mm
+10. Kodathi (Bengaluru Urban) – 60.0 mm
+
+Heaviest in one hour: 55.0 mm at Valpadi (Dakshina Kannada), hour ending 6:30 PM
+Rain at 879 of 3866 stations · 8 with heavy rain or more
+Most of it fell 2:30 PM – 6:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 3 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

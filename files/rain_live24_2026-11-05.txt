@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 4 Nov to 8:30 am 5 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Thudiyalur (Coimbatore) – 103.6 mm
+2. Kengarai (Nilgiris) – 87.6 mm
+3. Kalpudur (Vellore) – 77.2 mm
+4. Devikapuram (Tiruvannamalai) – 75.2 mm
+5. Katpadi AWS (Vellore) – 73.6 mm
+6. Nariyanahalli (Dharmapuri) – 68.0 mm
+7. Perunali (Ramanathapuram) – 64.8 mm
+8. Kolapakkam (Kancheepuram) – 64.4 mm
+9. Anchetty ARG (Krishnagiri) – 63.6 mm
+10. Modikuppam (Krishnagiri) – 61.6 mm
+
+Heaviest in one hour: 62.0 mm at Kalpudur (Vellore), hour ending 6:30 PM
+Rain at 620 of 1319 stations · 7 with heavy rain or more
+Most of it fell 1:30 PM – 9:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 6 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

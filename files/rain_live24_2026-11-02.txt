@@ -1,0 +1,21 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 1 Nov to 8:30 am 2 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Kadapakkam (Chennai) – 150.0 mm
+2. Z 05 Parrys (W 60) (Chennai) – 148.8 mm
+3. Z 02 Manali New town (W 15) (Chennai) – 141.6 mm
+4. Z 02 Manali (W 19) (Chennai) – 136.0 mm
+5. Z 02 Manali New town (W 18) (Chennai) – 131.2 mm
+
+Heaviest in one hour: 46.0 mm at Z 05 Parrys (W 60) (Chennai), hour ending 10:30 PM
+Rain at 224 of 1303 stations · 45 with heavy rain or more
+Most of it fell 10:30 PM – 1:30 AM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

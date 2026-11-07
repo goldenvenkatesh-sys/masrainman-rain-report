@@ -1,0 +1,21 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 3 Nov to 8:30 am 4 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Edlapadu PoliceStation (Palnadu) – 269.4 mm
+2. Marripalem (Palnadu) – 263.8 mm
+3. Penumantra 33/11 kv (West Godavari) – 257.6 mm
+4. Ganapavaram (Palnadu) – 246.8 mm
+5. Thurlapadu (Palnadu) – 246.2 mm
+
+Heaviest in one hour: 72.4 mm at Ghantasala (Krishna), hour ending 11:30 PM
+Rain at 1504 of 2140 stations · 331 with heavy rain or more
+Most of it fell 8:30 AM – 3:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 14 districts)
+  WeatherNext 3: no forecast
+  ECMWF IFS: 8 caught, 0 false alarms
+  ECMWF AIFS: 10 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com
