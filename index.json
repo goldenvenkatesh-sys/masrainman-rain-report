@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-08T00:49+05:30",
+ "updated": "2026-11-08T00:50+05:30",
  "reports": [
+  {
+   "id": "rain_ktcc_live_2026-11-08_0030",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-08",
+   "label": "up to 08 Nov, 12:30 AM",
+   "sort": "2026-11-08T00:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-08_0030.mp4",
+    "mp4_mb": 0.7,
+    "gif": "files/rain_ktcc_live_2026-11-08_0030.gif",
+    "gif_mb": 1.4,
+    "png": "files/rain_ktcc_live_2026-11-08_0030.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-08_0030.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 7 காலை 8:30 முதல் நவ. 8 இரவு 12:30 வரை\n\n1 நிலையத்தில் 20 மி.மீ.க்கு மேல் மழை பதிவு; மாவட்டங்களில் சென்னை 1.2 மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 12 Meenambakkam (PAL) (சென்னை) – 24.2 மி.மீ.\n2. Z 14 Madipakkam (W 169) (சென்னை) – 13.8 மி.மீ.\n3. Nellikupam (செங்கல்பட்டு) – 10.8 மி.மீ.\n4. Z 14 Madipakkam (W 188) (சென்னை) – 6.6 மி.மீ.\n5. Z 15 Uthandi (W 200) (சென்னை) – 5.4 மி.மீ.\n6. Kottavakkam (காஞ்சிபுரம்) – 5.2 மி.மீ.\n7. Z 15 Okkiyam Thoraipakkam (W 195) (சென்னை) – 5.0 மி.மீ.\n8. Mappedu (திருவள்ளூர்) – 4.4 மி.மீ.\n9. Somangalam (காஞ்சிபுரம்) – 4.0 மி.மீ.\n10. Z 12 Alandhur (PAL) (சென்னை) – 3.8 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-08T00:50+05:30"
+  },
   {
    "id": "rain_ka_live_2026-11-08_0030",
    "region": "ka",
