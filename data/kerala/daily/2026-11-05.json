@@ -1228,6 +1228,15 @@
 },
 {
 "type": "sw",
+"district": "Ernakulam",
+"station": "Keerampara",
+"key": "KEERAMPARA",
+"rain": 1.2,
+"lat": 10.11,
+"lon": 76.68
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Vidyanagar",
 "key": "VIDYANAGAR",
@@ -1243,6 +1252,15 @@
 "rain": 0.0,
 "lat": 12.5433,
 "lon": 75.1056
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Meenkara",
+"key": "MEENKARA",
+"rain": 3.0,
+"lat": 10.62,
+"lon": 76.8
 },
 {
 "type": "sw",
@@ -1264,12 +1282,66 @@
 },
 {
 "type": "sw",
+"district": "Palakkad",
+"station": "Chittadi",
+"key": "CHITTADI",
+"rain": 23.6,
+"lat": 10.5814,
+"lon": 76.5197
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pudur",
+"key": "PUDUR",
+"rain": 11.4,
+"lat": 11.1583,
+"lon": 76.6417
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Chittoor Bharathapuzha",
+"key": "CHITTOOR BHARATHAPUZHA",
+"rain": 16.2,
+"lat": 10.7,
+"lon": 76.74
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Boyce Estate",
 "key": "BOYCE ESTATE",
 "rain": 72.6,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pokkunni",
+"key": "POKKUNNI",
+"rain": 3.2,
+"lat": 10.5667,
+"lon": 76.7
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Malampuzha",
+"key": "MALAMPUZHA",
+"rain": 3.2,
+"lat": 10.8339,
+"lon": 76.6831
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Chulliar Dam",
+"key": "CHULLIAR DAM",
+"rain": 11.0,
+"lat": 10.6,
+"lon": 76.76
 },
 {
 "type": "sw",
@@ -1282,12 +1354,39 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Painavu",
+"key": "PAINAVU",
+"rain": 30.0,
+"lat": 9.85,
+"lon": 76.95
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Teekoy Estate",
 "key": "TEEKOY ESTATE",
 "rain": 10.0,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Pothundy Dam",
+"key": "POTHUNDY DAM",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.6306
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Moolathara",
+"key": "MOOLATHARA",
+"rain": 10.2,
+"lat": 10.5583,
+"lon": 76.6528
 },
 {
 "type": "sw",
@@ -1354,12 +1453,66 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Vannapuram",
+"key": "VANNAPURAM",
+"rain": 1.2,
+"lat": 9.97,
+"lon": 76.83
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
 "rain": 61.4,
 "lat": null,
 "lon": null
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Thunakadavu",
+"key": "THUNAKADAVU",
+"rain": 0.0,
+"lat": 10.4356,
+"lon": 76.7811
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Marayoor",
+"key": "MARAYOOR",
+"rain": 0.0,
+"lat": 10.3433,
+"lon": 77.1844
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Kulamavu",
+"key": "KULAMAVU",
+"rain": 1.3,
+"lat": 9.7831,
+"lon": 76.8792
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Walayar Dam",
+"key": "WALAYAR DAM",
+"rain": 2.0,
+"lat": 10.84,
+"lon": 76.84
+},
+{
+"type": "sw",
+"district": "Palakkad",
+"station": "Koduvayur",
+"key": "KODUVAYUR",
+"rain": 0.0,
+"lat": 10.7056,
+"lon": 76.5889
 },
 {
 "type": "sw",
