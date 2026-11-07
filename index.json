@@ -1,6 +1,54 @@
 {
- "updated": "2026-11-08T00:50+05:30",
+ "updated": "2026-11-08T00:52+05:30",
  "reports": [
+  {
+   "id": "rain_tg_daily_2026-11-08",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "daily",
+   "kind_name": "24-hour rain",
+   "lang": "en",
+   "day": "2026-11-08",
+   "label": "rain-day 08 Nov 2026",
+   "sort": "2026-11-08T08:30",
+   "files": {
+    "mp4": "files/rain_tg_daily_2026-11-08.mp4",
+    "mp4_mb": 0.8,
+    "gif": "files/rain_tg_daily_2026-11-08.gif",
+    "gif_mb": 1.8,
+    "png": "files/rain_tg_daily_2026-11-08.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_tg_daily_2026-11-08.txt",
+    "list": "files/rain_tg_daily_2026-11-08_list.png",
+    "list_mb": 0.3
+   },
+   "caption": "🌧 Rainfall Report · Telangana\n24-hour rainfall · 8:30 am 7 Nov to 8:30 am 8 Nov\n\n1 station recorded over 64.5 mm; Mahabubabad leads the districts with a station average of 12.6 mm.\n\nTop 10 stations:\n1. Maripeda (Mahabubabad) – 74.8 mm\n2. Kuravi (Mahabubabad) – 61.4 mm\n3. Noothankal (Suryapet) – 45.3 mm\n4. Bayyaram (Mahabubabad) – 37.8 mm\n5. Bhongiri (Yadadri Bhuvanagiri) – 31.9 mm\n6. Atmakur S (Suryapet) – 27.5 mm\n7. Dudyal (Vikarabad) – 26.5 mm\n8. Maddirala (Suryapet) – 25.1 mm\n9. Mahabubabad (Mahabubabad) – 23.8 mm\n10. Singareni (Khammam) – 19.7 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-08T00:52+05:30"
+  },
+  {
+   "id": "rain_tg_accum_2026-11-03_to_2026-11-08",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "accum",
+   "kind_name": "Total rain (multi-day)",
+   "lang": "en",
+   "day": "2026-11-08",
+   "label": "03 Nov → 08 Nov 2026",
+   "sort": "2026-11-08T08:30",
+   "files": {
+    "mp4": "files/rain_tg_accum_2026-11-03_to_2026-11-08.mp4",
+    "mp4_mb": 0.6,
+    "gif": "files/rain_tg_accum_2026-11-03_to_2026-11-08.gif",
+    "gif_mb": 1.2,
+    "png": "files/rain_tg_accum_2026-11-03_to_2026-11-08.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_tg_accum_2026-11-03_to_2026-11-08.txt",
+    "list": "files/rain_tg_accum_2026-11-03_to_2026-11-08_list.png",
+    "list_mb": 1.4
+   },
+   "caption": "🌧 Rainfall Report · Telangana\nTotal rainfall · 3 Nov to 8 Nov (6 days)\n\n2 stations recorded over 200 mm; Bhadradri Kothagudem leads the districts with a station average of 48.2 mm.\n\nTop 5 stations:\n1. Mulakalapalle (Bhadradri Kothagudem) – 238.9 mm\n2. Vemsoor (Khammam) – 208.6 mm\n3. Kalluru (Khammam) – 199.7 mm\n4. Dammapeta (Bhadradri Kothagudem) – 196.1 mm\n5. Penuballi (Khammam) – 195.1 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-08T00:52+05:30"
+  },
   {
    "id": "rain_live_2026-11-08_0030",
    "region": "tn",
@@ -66,6 +114,28 @@
    },
    "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 7 Nov to 12:30 am 8 Nov\n\n17 stations recorded over 20 mm; Bengaluru Urban leads the districts with an area average of 3.0 mm.\n\nTop 10 stations:\n1. H.Gollahalli (Kolar) – 45.0 mm\n2. Doddagubbi (Bengaluru Urban) – 40.5 mm\n3. Nelavagilu (Bengaluru Rural) – 36.5 mm\n4. Pandeshwara (Udupi) – 35.0 mm\n5. Thorekadanahalli (Mandya) – 33.5 mm\n6. Mudiyanur (Kolar) – 26.0 mm\n7. Halaguru (Mandya) – 26.0 mm\n8. Nandagudi (Bengaluru Rural) – 23.8 mm\n9. Devalapura (Mandya) – 23.5 mm\n10. Horamavu-2 (Bengaluru Urban) – 23.5 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-08T00:49+05:30"
+  },
+  {
+   "id": "rain_tg_live_2026-11-08_0000",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-08",
+   "label": "up to 08 Nov, 12:00 AM",
+   "sort": "2026-11-08T00:00",
+   "files": {
+    "mp4": "files/rain_tg_live_2026-11-08_0000.mp4",
+    "mp4_mb": 0.7,
+    "gif": "files/rain_tg_live_2026-11-08_0000.gif",
+    "gif_mb": 1.3,
+    "png": "files/rain_tg_live_2026-11-08_0000.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_tg_live_2026-11-08_0000.txt"
+   },
+   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 7 Nov to 12:00 am 8 Nov\n\n1 station recorded over 20 mm; Narayanpet leads the districts with a station average of 2.2 mm.\n\nTop 10 stations:\n1. Jaklair (Narayanpet) – 24.5 mm\n2. Dhanwada (Narayanpet) – 15.0 mm\n3. Arvapalli H/o Jajireddigudem (Suryapet) – 13.3 mm\n4. Narayanapur (Yadadri Bhuvanagiri) – 10.8 mm\n5. Pillidarga Ward Office: Borabanda (Medchal Malkajgiri) – 7.5 mm\n6. Yellandu (Bhadradri Kothagudem) – 6.8 mm\n7. Kesamudram (Mahabubabad) – 5.3 mm\n8. Yellanki (Yadadri Bhuvanagiri) – 5.0 mm\n9. Williamkonda H/o Miraspally (Wanaparthy) – 4.3 mm\n10. Pallegudem (Khammam) – 4.3 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-08T00:52+05:30"
   },
   {
    "id": "rain_ap_live_2026-11-08_0000",
@@ -2418,30 +2488,6 @@
    "made": "2026-11-06T08:51+05:30"
   },
   {
-   "id": "rain_tg_accum_2026-11-03_to_2026-11-06",
-   "region": "tg",
-   "region_name": "Telangana",
-   "kind": "accum",
-   "kind_name": "Total rain (multi-day)",
-   "lang": "en",
-   "day": "2026-11-06",
-   "label": "03 Nov → 06 Nov 2026",
-   "sort": "2026-11-06T08:30",
-   "files": {
-    "mp4": "files/rain_tg_accum_2026-11-03_to_2026-11-06.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_tg_accum_2026-11-03_to_2026-11-06.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_tg_accum_2026-11-03_to_2026-11-06.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_tg_accum_2026-11-03_to_2026-11-06.txt",
-    "list": "files/rain_tg_accum_2026-11-03_to_2026-11-06_list.png",
-    "list_mb": 1.1
-   },
-   "caption": "🌧 Rainfall Report · Telangana\nTotal rainfall · 3 Nov to 6 Nov (4 days)\n\n2 stations recorded over 200 mm; Bhadradri Kothagudem leads the districts with a station average of 48.1 mm.\n\nTop 5 stations:\n1. Mulakalapalle (Bhadradri Kothagudem) – 238.9 mm\n2. Vemsoor (Khammam) – 208.6 mm\n3. Kalluru (Khammam) – 199.7 mm\n4. Dammapeta (Bhadradri Kothagudem) – 196.1 mm\n5. Penuballi (Khammam) – 195.1 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-06T08:51+05:30"
-  },
-  {
    "id": "rain_live_2026-11-06_0830",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -3196,28 +3242,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 5 Nov to 1:00 am 6 Nov\n\n2 stations recorded over 50 mm; Nellore leads the districts with a station average of 4.4 mm.\n\nTop 10 stations:\n1. Nellore (Nellore) – 53.2 mm\n2. Nellore(A) (Nellore) – 52.8 mm\n3. Injaram (Kakinada) – 41.5 mm\n4. Vidavalur (Nellore) – 40.2 mm\n5. Isakapalli (Nellore) – 38.5 mm\n6. Bogole (Nellore) – 34.5 mm\n7. Allur (Nellore) – 32.5 mm\n8. MunicipalOffice ARG (Parvathipuram Manyam) – 27.2 mm\n9. Rapur (Nellore) – 25.2 mm\n10. Chinthavaram (Nellore) – 24.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-06T01:50+05:30"
-  },
-  {
-   "id": "rain_tg_live_2026-11-06_0000",
-   "region": "tg",
-   "region_name": "Telangana",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-06",
-   "label": "up to 06 Nov, 12:00 AM",
-   "sort": "2026-11-06T00:00",
-   "files": {
-    "mp4": "files/rain_tg_live_2026-11-06_0000.mp4",
-    "mp4_mb": 0.6,
-    "gif": "files/rain_tg_live_2026-11-06_0000.gif",
-    "gif_mb": 1.2,
-    "png": "files/rain_tg_live_2026-11-06_0000.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_tg_live_2026-11-06_0000.txt"
-   },
-   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 5 Nov to 12:00 am 6 Nov\n\nSiddipet leads the districts with a station average of 0.6 mm.\n\nTop 10 stations:\n1. Peddakodur (Siddipet) – 9.8 mm\n2. Laxmidevipalli (Bhadradri Kothagudem) – 9.8 mm\n3. Raghavapur (Siddipet) – 9.3 mm\n4. Peddur (Rajanna Sircilla) – 6.8 mm\n5. Namapur (Rajanna Sircilla) – 3.3 mm\n6. Mulugu FCRI (Siddipet) – 3.3 mm\n7. Edulagattepalli (Karimnagar) – 3.3 mm\n8. P.Domalapalle (Nalgonda) – 3.0 mm\n9. Garimellapadu (Bhadradri Kothagudem) – 3.0 mm\n10. Velganoor (Mancherial) – 3.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-06T00:51+05:30"
   },
   {
    "id": "rain_ap_live_2026-11-06_0000",
