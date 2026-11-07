@@ -68,6 +68,28 @@
    "made": "2026-11-08T00:49+05:30"
   },
   {
+   "id": "rain_ap_live_2026-11-08_0000",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-08",
+   "label": "up to 08 Nov, 12:00 AM",
+   "sort": "2026-11-08T00:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-08_0000.mp4",
+    "mp4_mb": 0.8,
+    "gif": "files/rain_ap_live_2026-11-08_0000.gif",
+    "gif_mb": 1.5,
+    "png": "files/rain_ap_live_2026-11-08_0000.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ap_live_2026-11-08_0000.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 7 Nov to 12:00 am 8 Nov\n\n1 station recorded over 50 mm; Nellore leads the districts with a station average of 1.9 mm.\n\nTop 10 stations:\n1. Akkampet (Nellore) – 53.5 mm\n2. Butchayyapeta ARG (Anakapalli) – 35.8 mm\n3. Srungavarapukota ARG (Vizianagaram) – 28.7 mm\n4. Molakalapundla ARG (Nellore) – 27.9 mm\n5. Nellore (Nellore) – 25.5 mm\n6. Srirangarajapuram ARG (Chittoor) – 23.1 mm\n7. Govt.Jr.College ARG (YSR Kadapa) – 20.0 mm\n8. GovtDegreecollege Srinivas colony ARG (Parvathipuram Manyam) – 19.2 mm\n9. Allampadu (Nellore) – 18.5 mm\n10. Nalakaluva Smruthivanam (Nandyal) – 15.9 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-08T00:50+05:30"
+  },
+  {
    "id": "rain_live_2026-11-07_2330",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -3366,28 +3388,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 5 Nov to 7:00 pm 5 Nov\n\n2 stations recorded over 50 mm; Nellore leads the districts with a station average of 4.4 mm.\n\nTop 10 stations:\n1. Nellore (Nellore) – 53.2 mm\n2. Nellore(A) (Nellore) – 52.8 mm\n3. Injaram (Kakinada) – 41.5 mm\n4. Vidavalur (Nellore) – 40.2 mm\n5. Isakapalli (Nellore) – 38.5 mm\n6. Bogole (Nellore) – 34.5 mm\n7. Allur (Nellore) – 32.5 mm\n8. Rapur (Nellore) – 25.2 mm\n9. Chinthavaram (Nellore) – 24.0 mm\n10. CWC NELLORE (Nellore) – 23.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-05T19:51+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-05_1800",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-05",
-   "label": "up to 05 Nov, 6:00 PM",
-   "sort": "2026-11-05T18:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-05_1800.mp4",
-    "mp4_mb": 0.8,
-    "gif": "files/rain_ap_live_2026-11-05_1800.gif",
-    "gif_mb": 1.6,
-    "png": "files/rain_ap_live_2026-11-05_1800.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ap_live_2026-11-05_1800.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 5 Nov to 6:00 pm 5 Nov\n\n2 stations recorded over 50 mm; Nellore leads the districts with a station average of 4.4 mm.\n\nTop 10 stations:\n1. Nellore (Nellore) – 53.2 mm\n2. Nellore(A) (Nellore) – 52.8 mm\n3. Injaram (Kakinada) – 41.5 mm\n4. Vidavalur (Nellore) – 40.2 mm\n5. Isakapalli (Nellore) – 38.5 mm\n6. Bogole (Nellore) – 34.5 mm\n7. Allur (Nellore) – 32.5 mm\n8. Rapur (Nellore) – 25.2 mm\n9. Chinthavaram (Nellore) – 24.0 mm\n10. CWC NELLORE (Nellore) – 23.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-05T18:55+05:30"
   },
   {
    "id": "rain_sat24_2026-11-05_1129_en",
