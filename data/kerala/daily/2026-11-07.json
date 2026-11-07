@@ -1426,6 +1426,24 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Vidyanagar",
+"key": "VIDYANAGAR",
+"rain": 24.2,
+"lat": 12.5144,
+"lon": 75.0188
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Paika",
+"key": "PAIKA",
+"rain": 3.0,
+"lat": 12.5433,
+"lon": 75.1056
+},
+{
+"type": "sw",
 "district": "Thrissur",
 "station": "Ollukara",
 "key": "OLLUKARA",
@@ -1441,6 +1459,15 @@
 "rain": 0.0,
 "lat": 10.62,
 "lon": 76.8
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Manjeswaram",
+"key": "MANJESWARAM",
+"rain": 8.0,
+"lat": 12.7153,
+"lon": 74.8903
 },
 {
 "type": "sw",
@@ -1507,6 +1534,15 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Kalliyot",
+"key": "KALLIYOT",
+"rain": 16.8,
+"lat": 12.4144,
+"lon": 75.1483
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Painavu",
 "key": "PAINAVU",
@@ -1549,6 +1585,42 @@
 "rain": 0.0,
 "lat": 10.5583,
 "lon": 76.6528
+},
+{
+"type": "sw",
+"district": "Ernakulam",
+"station": "Bhoothathankettu",
+"key": "BHOOTHATHANKETTU",
+"rain": 2.3,
+"lat": 10.1592,
+"lon": 76.6164
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Madhur",
+"key": "MADHUR",
+"rain": 22.6,
+"lat": 12.5239,
+"lon": 75.0047
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Uppala",
+"key": "UPPALA",
+"rain": 28.4,
+"lat": 12.7236,
+"lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Padiyathadukka",
+"key": "PADIYATHADUKKA",
+"rain": 8.2,
+"lat": 12.5575,
+"lon": 75.2
 },
 {
 "type": "sw",
