@@ -320,43 +320,75 @@ def draw_geom(draw, geom, proj, fill=None, outline=None, width=1, scale=1.0, off
 
 
 # ----------------------------------------------------------------- data
+def _km(a_lat, a_lon, b_lat, b_lon):
+    if None in (a_lat, a_lon, b_lat, b_lon):
+        return 0.0
+    return math.hypot((a_lat - b_lat) * 110.6, (a_lon - b_lon) * 108.0)
+
+
+def match_stations(dates, days_dict, canon):
+    """Follow each rain gauge from day to day. Returns (meta, vals): one meta dict per gauge and
+    (day index, gauge index, mm) for every reading.
+
+    TN-SMART gives no station id, and what it does give changes: every few days the whole file
+    switches between rounded (11.33, 79.36) and precise (11.332, 79.3552) coordinates in a new
+    row order; a gauge can move (Manali W 17, Oct 12) or change district (Periyanayagipuram,
+    Pudukkottai -> Thanjavur); a few gauges are listed twice at one spot. So a reading belongs
+    to the gauge with the same name (spaces and case ignored) in the same district, or within
+    2 km if the district changed; when several gauges share a name, the nearest one; rows with
+    the same name within 0.5 km on one day are one gauge (the larger reading is kept)."""
+    norm = lambda n: " ".join((n or "").split()).casefold()
+    meta, by_name, vals = [], {}, []
+    for k, d in enumerate(dates):
+        # 1) same name, same spot, same day -> one reading
+        rows = []
+        for s in days_dict[d]:
+            nm, dn = norm(s["station"]), canon(s["district"])
+            for r in rows:
+                if r["nm"] == nm and _km(r["lat"], r["lon"], s["lat"], s["lon"]) <= 0.5:
+                    if s["rain"] is not None:
+                        r["rain"] = s["rain"] if r["rain"] is None else max(r["rain"], s["rain"])
+                    break
+            else:
+                rows.append({"nm": nm, "dn": dn, "station": s["station"], "lat": s["lat"], "lon": s["lon"],
+                             "rain": s["rain"], "type": s.get("type")})
+        # 2) pair each row with a known gauge of the same name, closest pairs first
+        pairs = []
+        for ri, r in enumerate(rows):
+            for j in by_name.get((r["nm"], r["type"]), []):
+                m = meta[j]
+                dkm = _km(r["lat"], r["lon"], m["lat"], m["lon"])
+                if m["district"] == r["dn"] or dkm <= 2.0:
+                    pairs.append((dkm, ri, j))
+        pairs.sort()
+        row_j, used = {}, set()
+        for dkm, ri, j in pairs:
+            if ri not in row_j and j not in used:
+                row_j[ri] = j
+                used.add(j)
+        # 3) unmatched rows are new gauges; a matched gauge takes this day's name, district, place
+        for ri, r in enumerate(rows):
+            j = row_j.get(ri)
+            if j is None:
+                j = len(meta)
+                meta.append({})
+                by_name.setdefault((r["nm"], r["type"]), []).append(j)
+            meta[j].update(district=r["dn"], station=r["station"], lat=r["lat"], lon=r["lon"])
+            if r["rain"] is not None:
+                vals.append((k, j, r["rain"]))
+    return meta, vals
+
+
 class Period:
     """Station values for the report period, as a (days x stations) matrix."""
 
     def __init__(self, days_dict, geo):
         canon = geo.canon
         dates = sorted(days_dict)
-        idx, meta = {}, []
-
-        # Match a station across days by district + name (+ type). TN-SMART sometimes changes a
-        # station's coordinates from one day to the next; keying on rounded lat/lon split one gauge
-        # into two rows, each holding only part of the total. Same name within 5 km = same gauge;
-        # farther apart = a different gauge that happens to share the name.
-        groups = {}                                   # (district, name, type) -> [(key, lat, lon)]
-        norm = lambda n: " ".join((n or "").split()).casefold()
-
-        def kf(s):
-            base = (canon(s["district"]), norm(s["station"]), s.get("type"))
-            lat, lon = s["lat"], s["lon"]
-            cands = groups.setdefault(base, [])
-            for key, la, lo in cands:
-                if lat is None or la is None or ((lat - la) * 110.6) ** 2 + ((lon - lo) * 108.0) ** 2 <= 25:
-                    return key
-            key = base + (len(cands),)
-            cands.append((key, lat, lon))
-            return key
-        for d in dates:
-            for s in days_dict[d]:
-                key = kf(s)
-                if key not in idx:
-                    idx[key] = len(meta)
-                    meta.append({"district": key[0], "station": s["station"], "lat": s["lat"], "lon": s["lon"]})
+        meta, vals = match_stations(dates, days_dict, canon)
         V = np.full((len(dates), len(meta)), np.nan)
-        for i, d in enumerate(dates):
-            for s in days_dict[d]:
-                key = kf(s)
-                if s["rain"] is not None:
-                    V[i, idx[key]] = s["rain"]
+        for k, j, r in vals:
+            V[k, j] = r if np.isnan(V[k, j]) else max(V[k, j], r)
         keep = ~np.all(np.isnan(V), axis=0)          # stations that reported at least once
         self.dates = dates
         self.meta = [m for m, k in zip(meta, keep) if k]
@@ -376,6 +408,66 @@ class Period:
                         break
         self.cum = np.nancumsum(self.V, axis=0)
         self.rainy_days = np.cumsum(np.nan_to_num(self.V) > 0, axis=0)
+        self.n_rep = np.sum(~np.isnan(self.V), axis=0)    # days each gauge reported
+        self.flag = self._quality() if len(dates) >= 5 else np.zeros(len(self.meta), int)
+
+    # A multi-day total is only as good as the gauge's record. Two kinds of gauges give totals
+    # that are far too low, and on an IDW map they paint dry holes and pull district averages
+    # down (Tambaram stopped reporting after Oct 19 and showed 4 mm for a 39-day monsoon spell):
+    #   1 = missing days: on the days it did not report, its neighbours got >= 10 mm
+    #   2 = doubtful: on the days it reported, it got < 20% of what its neighbours got,
+    #       and they got >= 100 mm (a stuck gauge sending zeros); also any gauge with < 5 mm
+    #       over 15+ reported days while the state's typical gauge got >= 100 mm. Dead gauges
+    #       come in clusters (Madurai, Sivagangai, north Tiruvallur) and would otherwise make
+    #       each other's neighbourhood look dry.
+    # Neighbours: the daily median of the nearest 8 unflagged gauges within 25 km (the nearest 5
+    # at any distance when fewer than 3).
+    # Flagged gauges stay in the station list, marked, but are left out of the map, the
+    # district averages and the top-station rankings.
+    MISS_MM, DOUBT_NB_MM, DOUBT_FRAC, NB_KM, NB_N = 10.0, 100.0, 0.2, 25.0, 8
+    STUCK_MM, STUCK_DAYS, STUCK_STATE_MM = 5.0, 15, 100.0
+
+    def _quality(self):
+        n = len(self.meta)
+        flag = np.zeros(n, int)
+        ok = self.has_xy
+        if ok.sum() < 6:
+            return flag
+        xy = np.column_stack([self.lat * 110.6, self.lon * 108.0])
+        idx = np.flatnonzero(ok)
+        tot = np.nansum(self.V, axis=0)
+        stuck = ((self.n_rep >= self.STUCK_DAYS) & (tot < self.STUCK_MM)
+                 & (np.median(tot[self.n_rep >= self.STUCK_DAYS]) >= self.STUCK_STATE_MM))
+        flag[stuck] = 2
+        tree = cKDTree(xy[idx])
+        k_all = min(len(idx), self.NB_N + 1 + 40)
+        near = {i: [(dk, idx[j]) for dk, j in zip(*tree.query(xy[i], k_all)) if idx[j] != i] for i in idx}
+        # broken gauges often sit together (Palur, Mamandur, Kattankulathur...) and would vouch for
+        # each other, so repeat with the flagged ones left out of every neighbourhood until stable
+        for _ in range(4):
+            new = np.where(stuck, 2, 0)
+            for i in idx:
+                if stuck[i]:
+                    continue
+                good = [(dk, j) for dk, j in near[i] if not flag[j]]
+                nb = [j for dk, j in good if dk <= self.NB_KM][:self.NB_N]
+                if len(nb) < 3:
+                    nb = [j for dk, j in good[:5]]
+                M = self.V[:, nb]
+                cnt = np.sum(~np.isnan(M), axis=1)
+                with np.errstate(all="ignore"):
+                    med = np.where(cnt >= 2, np.nanmedian(M, axis=1), np.nan)
+                miss = np.isnan(self.V[:, i])
+                if np.nansum(med[miss]) >= self.MISS_MM:
+                    new[i] = 1
+                    continue
+                nb_rep = np.nansum(med[~miss])
+                if nb_rep >= self.DOUBT_NB_MM and np.nansum(self.V[:, i]) < self.DOUBT_FRAC * nb_rep:
+                    new[i] = 2
+            if np.array_equal(new, flag):
+                break
+            flag = new
+        return flag
 
 
 # ----------------------------------------------------------------- IDW field
@@ -486,7 +578,9 @@ class Report:
         mx0, my0, mx1, my1 = self.MAP_BOX
         self.map_inner = (mx0 + 14, my0 + 14, mx1 - 14, my1 - 40)
         self.proj = Projector((geo.lon0, geo.lat0, geo.lon1, geo.lat1), geo.kx, self.map_inner, pad=6)
-        self.field = Field(geo, self.proj, self.map_inner, period.lon, period.lat)
+        # gauges flagged by Period._quality() do not shape the map or the area averages
+        map_lat = np.where(getattr(period, "flag", 0) > 0, np.nan, period.lat)
+        self.field = Field(geo, self.proj, self.map_inner, period.lon, map_lat)
         self.dpix = self.field.district_pixels(geo, self.proj) if REGION.get("area_avg") else None
         self.created = datetime.now(tf.IST)
         self.base = self._static_layer()
@@ -906,7 +1000,7 @@ def render_live(day, upto, P, geo, out_base):
 
 def render_accum(P, geo, out_base, live_note="", month=None):
     nd = len(P.dates)
-    reported = np.ones(len(P.meta), bool)
+    reported = P.flag == 0          # flagged gauges: listed, but not mapped or ranked
 
     def sub_for(k):
         if month:
@@ -957,22 +1051,25 @@ LIST_TXT = {
     "ta": {"title": "நிலைய வாரியான மழை அளவு", "days": "மழை நாட்கள்", "stations": "நிலையங்கள்", "avg": "சராசரி",
            "dry": "மழை இல்லாத {n} நிலையங்கள் பட்டியலில் இல்லை", "contd": "(தொடர்ச்சி)",
            "count": "{n} நிலையங்களில் மழை · {d} மாவட்டங்கள்",
-           "top": "அதிக மழை பெற்ற {n} இடங்கள்", "page": "பக்கம் {i} / {n}", "all": "மாவட்ட வாரியாக அனைத்து நிலையங்களும்"},
+           "top": "அதிக மழை பெற்ற {n} இடங்கள்", "page": "பக்கம் {i} / {n}", "all": "மாவட்ட வாரியாக அனைத்து நிலையங்களும்",
+           "flag": "* = சில நாட்கள் அளவு வரவில்லை / சந்தேகமான அளவு: சராசரி, வரைபடம், முதல் 20 பட்டியலில் சேர்க்கப்படவில்லை ({n} நிலையங்கள்)"},
     "en": {"title": "Station-wise rainfall", "days": "rainy days", "stations": "stations", "avg": "avg",
            "dry": "{n} stations with no rain are not listed", "contd": "(contd.)",
            "count": "Rain at {n} stations · {d} districts",
-           "top": "Top {n} stations", "page": "Page {i} / {n}", "all": "All stations, district-wise"},
+           "top": "Top {n} stations", "page": "Page {i} / {n}", "all": "All stations, district-wise",
+           "flag": "* = days not reported or doubtful gauge: left out of averages, map and top {k} ({n} stations)"},
     "ml": {"title": "സ്റ്റേഷൻ തിരിച്ചുള്ള മഴ", "days": "മഴ ദിവസങ്ങൾ", "stations": "സ്റ്റേഷനുകൾ", "avg": "ശരാശരി",
            "dry": "മഴ ലഭിക്കാത്ത {n} സ്റ്റേഷനുകൾ ഒഴിവാക്കി", "contd": "(തുടർച്ച)",
            "count": "{n} സ്റ്റേഷനുകളിൽ മഴ · {d} ജില്ലകൾ",
-           "top": "ഏറ്റവും കൂടുതൽ മഴ ലഭിച്ച {n} സ്റ്റേഷനുകൾ", "page": "പേജ് {i} / {n}", "all": "എല്ലാ സ്റ്റേഷനുകളും, ജില്ല തിരിച്ച്"},
+           "top": "ഏറ്റവും കൂടുതൽ മഴ ലഭിച്ച {n} സ്റ്റേഷനുകൾ", "page": "പേജ് {i} / {n}", "all": "എല്ലാ സ്റ്റേഷനുകളും, ജില്ല തിരിച്ച്",
+           "flag": "* = ചില ദിവസങ്ങളിലെ കണക്ക് ഇല്ല / സംശയകരമായ അളവ്: ശരാശരി, ഭൂപടം, ആദ്യ 20 എന്നിവയിൽ ഇല്ല ({n} സ്റ്റേഷനുകൾ)"},
 }
 LIST_DPI = 200                       # A4 portrait at 200 dpi = 1654 x 2339 px: sharp on phones, prints exactly
 LIST_W, LIST_H = 1654, 2339
 N_TOP_LIST = 20
 
 
-def station_list(path, P, v, reported, scale, sub, days=None):
+def station_list(path, P, v, reported, scale, sub, days=None, flag=None):
     """Station-wise rainfall as A4 pages instead of one very tall picture (which phones and
     Facebook shrink until it is unreadable). Page 1 opens with the top 20 stations; then every
     station with rain, by district (A–Z), wettest first. Writes <base>_list.png (page 1),
@@ -982,6 +1079,8 @@ def station_list(path, P, v, reported, scale, sub, days=None):
     vv = np.where(reported, np.nan_to_num(v), np.nan)
     wet = np.nan_to_num(vv) > 0
     n_dry = int(np.sum(reported & ~wet))
+    bad = np.zeros(len(vv), bool) if flag is None else np.asarray(flag) > 0   # see Period._quality
+    n_bad = int(np.sum(bad & wet))
     groups = {}
     for i in np.flatnonzero(wet):
         groups.setdefault(str(P.dist[i]), []).append(i)
@@ -1007,8 +1106,6 @@ def station_list(path, P, v, reported, scale, sub, days=None):
             d.text((PAD, 24), f"{state} · {T['title']}", font=font(54, "Bold"), fill=(255, 255, 255))
             d.text((PAD, 106), sub, font=font(31), fill=(190, 205, 228))
             info = T["count"].format(n=int(wet.sum()), d=len(groups)) + (" · " + T["dry"].format(n=n_dry) if n_dry else "")
-            if days is not None:
-                info += f" · ( ) = {T['days']}"
             d.text((PAD, 158), ellipsize(d, info, font(26), WD - 2 * PAD - 230), font=font(26), fill=(150, 170, 200))
             put_logo(im, WD - PAD, 16, 188)
             y = 244
@@ -1038,13 +1135,13 @@ def station_list(path, P, v, reported, scale, sub, days=None):
         rrect(d, (x, y, x + 18, y + 18), 4, fill=hex2rgb(scale[classify(val, scale)][2]))
 
     def value_text(i):
-        val = fmt(vv[i])
+        val = fmt(vv[i]) + ("*" if bad[i] else "")
         return val, (f"({int(days[i])})" if days is not None else "")
 
     pages = []
     im, d, y = new_page(True)
     # ---- top stations box (two columns, ranked)
-    order = sorted(np.flatnonzero(wet), key=lambda i: (-vv[i], P.names[i]))[:N_TOP_LIST]
+    order = sorted(np.flatnonzero(wet & ~bad), key=lambda i: (-vv[i], P.names[i]))[:N_TOP_LIST]
     n_top = len(order)
     per = (n_top + 1) // 2
     TR, TH = 58, 66
@@ -1072,7 +1169,15 @@ def station_list(path, P, v, reported, scale, sub, days=None):
         nw = tcw - 96 - rw
         d.text((cx + 94, ry + 1), ellipsize(d, P.names[i], font(27, "Bold"), nw), font=font(27, "Bold"), fill=TXT)
         d.text((cx + 94, ry + 31), ellipsize(d, dname(P.dist[i]), font(19), nw), font=font(19), fill=MUT)
-    y += box_h + 26
+    y += box_h + 16
+    notes = ([f"( ) = {T['days']}"] if days is not None else []) + \
+            ([T["flag"].format(n=n_bad, k=N_TOP_LIST)] if n_bad else [])
+    if notes:
+        line = " · ".join(notes)
+        for part in ([line] if tw(d, line, font(23)) <= WD - 2 * PAD else notes):
+            d.text((PAD, y), ellipsize(d, part, font(23), WD - 2 * PAD), font=font(23), fill=MUT)
+            y += 34
+        y += 10
     d.text((PAD, y), T["all"], font=font(30, "Bold"), fill=ACC)
     y += 50
 
@@ -1080,7 +1185,8 @@ def station_list(path, P, v, reported, scale, sub, days=None):
     items = []
     for dn in sorted(groups):
         ix = sorted(groups[dn], key=lambda i: (-vv[i], P.names[i]))
-        avg = float(np.mean(vv[ix]))
+        good = [i for i in ix if not bad[i]]
+        avg = float(np.mean(vv[good or ix]))
         items.append(("h", dn, avg))
         items += [("r", i, None) for i in ix]
     bottom = PH - FOOT
@@ -1124,12 +1230,12 @@ def station_list(path, P, v, reported, scale, sub, days=None):
             dot(d, x0 + 8, cy + 11, vv[i])
             val, dt = value_text(i)
             right = x0 + colw - 10
-            text_right(d, (right, cy + 3), val, fv, TXT)
+            text_right(d, (right, cy + 3), val, fv, MUT if bad[i] else TXT)
             rw = tw(d, val, fv) + 14
             if dt:
                 text_right(d, (right - rw, cy + 8), dt, fd, MUT)
                 rw += tw(d, dt, fd) + 12
-            d.text((x0 + 36, cy + 3), ellipsize(d, P.names[i], fn, colw - 46 - rw), font=fn, fill=TXT)
+            d.text((x0 + 36, cy + 3), ellipsize(d, P.names[i], fn, colw - 46 - rw), font=fn, fill=MUT if bad[i] else TXT)
             cy += RH
         k += 1
     pages.append(im)
@@ -1268,7 +1374,7 @@ def main():
             finish(*render_accum(P, geo, base, note), base, not a.no_gif, a.gif_width)
             station_list(base + "_list.png", P, P.cum[-1], np.ones(len(P.meta), bool), SCALE_ACCUM,
                          L["accum_sub"].format(d0=dstr(P.dates[0]), d1=dstr(P.dates[-1]), n=len(P.dates)) + note,
-                         days=P.rainy_days[-1])
+                         days=P.rainy_days[-1], flag=P.flag)
 
 
 if __name__ == "__main__":
