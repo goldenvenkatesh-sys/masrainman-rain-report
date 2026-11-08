@@ -328,9 +328,23 @@ class Period:
         dates = sorted(days_dict)
         idx, meta = {}, []
 
+        # Match a station across days by district + name (+ type). TN-SMART sometimes changes a
+        # station's coordinates from one day to the next; keying on rounded lat/lon split one gauge
+        # into two rows, each holding only part of the total. Same name within 5 km = same gauge;
+        # farther apart = a different gauge that happens to share the name.
+        groups = {}                                   # (district, name, type) -> [(key, lat, lon)]
+        norm = lambda n: " ".join((n or "").split()).casefold()
+
         def kf(s):
-            r3 = lambda x: None if x is None else round(x, 3)
-            return (canon(s["district"]), s["station"], r3(s["lat"]), r3(s["lon"]), s.get("type"))
+            base = (canon(s["district"]), norm(s["station"]), s.get("type"))
+            lat, lon = s["lat"], s["lon"]
+            cands = groups.setdefault(base, [])
+            for key, la, lo in cands:
+                if lat is None or la is None or ((lat - la) * 110.6) ** 2 + ((lon - lo) * 108.0) ** 2 <= 25:
+                    return key
+            key = base + (len(cands),)
+            cands.append((key, lat, lon))
+            return key
         for d in dates:
             for s in days_dict[d]:
                 key = kf(s)
