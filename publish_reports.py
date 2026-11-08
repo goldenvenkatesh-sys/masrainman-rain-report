@@ -107,6 +107,21 @@ def main(out_dir, rep):
             shutil.copy(lst, os.path.join(files, base + "_list.png"))
             info["files"]["list"] = "files/" + base + "_list.png"
             info["files"]["list_mb"] = round(os.path.getsize(lst) / 1e6, 1)
+            pages, p = [], 2                                   # further A4 pages: _list_p2.png, …
+            while os.path.exists(os.path.join(out_dir, f"{base}_list_p{p}.png")):
+                fn_p = f"{base}_list_p{p}.png"
+                shutil.copy(os.path.join(out_dir, fn_p), os.path.join(files, fn_p))
+                pages.append("files/" + fn_p)
+                p += 1
+            for k, pg in enumerate(pages, 2):
+                info["files"][f"list_p{k}"] = pg
+            if pages:
+                info["files"]["list_pages"] = len(pages) + 1
+            pdf = os.path.join(out_dir, base + "_list.pdf")    # all pages, for printing
+            if os.path.exists(pdf):
+                shutil.copy(pdf, os.path.join(files, base + "_list.pdf"))
+                info["files"]["list_pdf"] = "files/" + base + "_list.pdf"
+                info["files"]["list_pdf_mb"] = round(os.path.getsize(pdf) / 1e6, 1)
         if info["files"].get("txt"):
             info["caption"] = open(os.path.join(files, base + ".txt"), encoding="utf-8").read().strip()
         info["made"] = now.isoformat(timespec="minutes")
@@ -137,7 +152,8 @@ def main(out_dir, rep):
         keep[it["id"]] = it
 
     # remove files no longer listed
-    wanted = {os.path.basename(p) for it in keep.values() for e, p in it["files"].items() if not e.endswith("_mb")}
+    wanted = {os.path.basename(p) for it in keep.values() for e, p in it["files"].items()
+              if isinstance(p, str) and p.startswith("files/")}
     for fn in os.listdir(files):
         if fn not in wanted:
             os.remove(os.path.join(files, fn))
@@ -168,6 +184,10 @@ def write_readme(rep, reports, now):
         links = " · ".join(f"[{e.upper()}]({f[e]})" for e in ("mp4", "gif", "png") if f.get(e))
         if f.get("list"):
             links += f" · [Station list]({f['list']})"
+            n = f.get("list_pages", 1)
+            links += "".join(f" [p{k}]({f[f'list_p{k}']})" for k in range(2, n + 1) if f.get(f"list_p{k}"))
+            if f.get("list_pdf"):
+                links += f" · [Print PDF]({f['list_pdf']})"
         lines += [f"## {title}", f"{it['label']} — {links}", ""]
         if f.get("png"):
             lines += [f"![{title}]({f['png']})", ""]
@@ -177,6 +197,8 @@ def write_readme(rep, reports, now):
         links = " ".join(f"[{e.upper()}]({f[e]})" for e in ("mp4", "gif", "png") if f.get(e))
         if f.get("list"):
             links += f" [LIST]({f['list']})"
+        if f.get("list_pdf"):
+            links += f" [PDF]({f['list_pdf']})"
         lines.append(f"| {it['region_name']} · {it['kind_name']} | {it['label']} | {links} |")
     with open(os.path.join(rep, "README.md"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")

@@ -33,6 +33,7 @@ Examples
 Outputs go to ./out : MP4 video, GIF, and a PNG of the final frame.
 """
 import argparse
+import glob
 import json
 import math
 import os
@@ -937,23 +938,31 @@ def finish(wr, last, cap, base, gif=True, gif_width=720):
         print(f"  gif   : {base}.gif  ({os.path.getsize(base + '.gif') / 1e6:.1f} MB)")
 
 
-# ----------------------------------------------------------------- station list picture
+# ----------------------------------------------------------------- station list pages
 LIST_TXT = {
     "ta": {"title": "நிலைய வாரியான மழை அளவு", "days": "மழை நாட்கள்", "stations": "நிலையங்கள்", "avg": "சராசரி",
            "dry": "மழை இல்லாத {n} நிலையங்கள் பட்டியலில் இல்லை", "contd": "(தொடர்ச்சி)",
-           "count": "{n} நிலையங்களில் மழை · {d} மாவட்டங்கள்"},
+           "count": "{n} நிலையங்களில் மழை · {d} மாவட்டங்கள்",
+           "top": "அதிக மழை பெற்ற {n} இடங்கள்", "page": "பக்கம் {i} / {n}", "all": "மாவட்ட வாரியாக அனைத்து நிலையங்களும்"},
     "en": {"title": "Station-wise rainfall", "days": "rainy days", "stations": "stations", "avg": "avg",
            "dry": "{n} stations with no rain are not listed", "contd": "(contd.)",
-           "count": "Rain at {n} stations · {d} districts"},
+           "count": "Rain at {n} stations · {d} districts",
+           "top": "Top {n} stations", "page": "Page {i} / {n}", "all": "All stations, district-wise"},
     "ml": {"title": "സ്റ്റേഷൻ തിരിച്ചുള്ള മഴ", "days": "മഴ ദിവസങ്ങൾ", "stations": "സ്റ്റേഷനുകൾ", "avg": "ശരാശരി",
            "dry": "മഴ ലഭിക്കാത്ത {n} സ്റ്റേഷനുകൾ ഒഴിവാക്കി", "contd": "(തുടർച്ച)",
-           "count": "{n} സ്റ്റേഷനുകളിൽ മഴ · {d} ജില്ലകൾ"},
+           "count": "{n} സ്റ്റേഷനുകളിൽ മഴ · {d} ജില്ലകൾ",
+           "top": "ഏറ്റവും കൂടുതൽ മഴ ലഭിച്ച {n} സ്റ്റേഷനുകൾ", "page": "പേജ് {i} / {n}", "all": "എല്ലാ സ്റ്റേഷനുകളും, ജില്ല തിരിച്ച്"},
 }
+LIST_DPI = 200                       # A4 portrait at 200 dpi = 1654 x 2339 px: sharp on phones, prints exactly
+LIST_W, LIST_H = 1654, 2339
+N_TOP_LIST = 20
 
 
 def station_list(path, P, v, reported, scale, sub, days=None):
-    """Tall PNG: every station with rain, by district (A–Z), wettest first, with its mm
-    (and rainy days for the season total). Light background so it reads and prints well."""
+    """Station-wise rainfall as A4 pages instead of one very tall picture (which phones and
+    Facebook shrink until it is unreadable). Page 1 opens with the top 20 stations; then every
+    station with rain, by district (A–Z), wettest first. Writes <base>_list.png (page 1),
+    <base>_list_p2.png, … and <base>_list.pdf with all pages for printing."""
     lc = [k for k, x in LANGS.items() if x is L][0]
     T = LIST_TXT.get(lc, LIST_TXT["en"])
     vv = np.where(reported, np.nan_to_num(v), np.nan)
@@ -962,103 +971,172 @@ def station_list(path, P, v, reported, scale, sub, days=None):
     groups = {}
     for i in np.flatnonzero(wet):
         groups.setdefault(str(P.dist[i]), []).append(i)
+    stem = path[:-4] if path.endswith(".png") else path
+    for old in glob.glob(stem + "_p*.png"):          # pages left from an earlier, longer run
+        os.remove(old)
     if not groups:
         print("  list  : no station with rain, no station list")
         return
     BG, CARD, TXT, MUT, LINE = (255, 255, 255), (241, 245, 251), (17, 24, 39), (96, 108, 128), (226, 232, 240)
-    HEAD, ACC = (14, 21, 36), (29, 99, 186)
-    WD, PAD, GAP, NCOL = 1620, 40, 28, 3
-    RH, DH = 34, 50
+    HEAD, ACC, GOLD = (14, 21, 36), (29, 99, 186), (214, 158, 46)
+    WD, PH, PAD, GAP, NCOL = LIST_W, LIST_H, 48, 30, 3
+    RH, DH, FOOT = 40, 54, 90
     colw = (WD - 2 * PAD - GAP * (NCOL - 1)) // NCOL
-    items = []                        # (kind, payload)
+    state = {"ta": "தமிழ்நாடு", "ml": "കേരളം"}.get(lc, REGION["name"]) if lc != "en" else REGION["name"]
+    fn, fv, fd, fh = font(27), font(27, "Bold"), font(22), font(28, "Bold")
+
+    def new_page(first):
+        im = Image.new("RGB", (WD, PH), BG)
+        d = ImageDraw.Draw(im)
+        if first:
+            d.rectangle((0, 0, WD, 220), fill=HEAD)
+            d.text((PAD, 24), f"{state} · {T['title']}", font=font(54, "Bold"), fill=(255, 255, 255))
+            d.text((PAD, 106), sub, font=font(31), fill=(190, 205, 228))
+            info = T["count"].format(n=int(wet.sum()), d=len(groups)) + (" · " + T["dry"].format(n=n_dry) if n_dry else "")
+            if days is not None:
+                info += f" · ( ) = {T['days']}"
+            d.text((PAD, 158), ellipsize(d, info, font(26), WD - 2 * PAD - 230), font=font(26), fill=(150, 170, 200))
+            put_logo(im, WD - PAD, 16, 188)
+            y = 244
+        else:
+            d.rectangle((0, 0, WD, 104), fill=HEAD)
+            d.text((PAD, 14), f"{state} · {T['title']} {T['contd']}", font=font(36, "Bold"), fill=(255, 255, 255))
+            d.text((PAD, 62), ellipsize(d, sub, font(24), WD - 2 * PAD - 120), font=font(24), fill=(190, 205, 228))
+            put_logo(im, WD - PAD, 10, 84)
+            y = 124
+        # legend (unit once at the start; wraps if needed)
+        fl = font(24)
+        x = PAD
+        d.text((x, y), L["mm"] + ":", font=font(24, "Bold"), fill=TXT)
+        x += int(tw(d, L["mm"] + ":", font(24, "Bold"))) + 18
+        for b_, lab, c in scale:
+            if lab == "ZERO":
+                continue
+            wdt = 32 + int(tw(d, lab, fl)) + 26
+            if x + wdt > WD - PAD:
+                x, y = PAD, y + 36
+            rrect(d, (x, y + 6, x + 24, y + 30), 5, fill=hex2rgb(c))
+            d.text((x + 32, y), lab, font=fl, fill=TXT)
+            x += wdt
+        return im, d, y + 52
+
+    def dot(d, x, y, val):
+        rrect(d, (x, y, x + 18, y + 18), 4, fill=hex2rgb(scale[classify(val, scale)][2]))
+
+    def value_text(i):
+        val = fmt(vv[i])
+        return val, (f"({int(days[i])})" if days is not None else "")
+
+    pages = []
+    im, d, y = new_page(True)
+    # ---- top stations box (two columns, ranked)
+    order = sorted(np.flatnonzero(wet), key=lambda i: (-vv[i], P.names[i]))[:N_TOP_LIST]
+    n_top = len(order)
+    per = (n_top + 1) // 2
+    TR, TH = 58, 66
+    box_h = TH + per * TR + 18
+    rrect(d, (PAD, y, WD - PAD, y + box_h), 14, fill=(250, 246, 234), outline=GOLD, width=3)
+    d.text((PAD + 22, y + 12), T["top"].format(n=n_top), font=font(34, "Bold"), fill=HEAD)
+    tcw = (WD - 2 * PAD - 60) // 2
+    for k, i in enumerate(order):
+        cx = PAD + 20 + (k // per) * (tcw + 20)
+        ry = y + TH + (k % per) * TR
+        if (k % per) % 2 == 0:
+            d.rectangle((cx, ry, cx + tcw, ry + TR - 4), fill=(255, 252, 243))
+        badge = GOLD if k < 3 else ACC
+        rrect(d, (cx + 6, ry + 9, cx + 54, ry + 45), 8, fill=badge)
+        rk = str(k + 1)
+        d.text((cx + 30 - tw(d, rk, font(26, "Bold")) / 2, ry + 7), rk, font=font(26, "Bold"), fill=(255, 255, 255))
+        val, dt = value_text(i)
+        right = cx + tcw - 10
+        text_right(d, (right, ry + 6), val, font(30, "Bold"), TXT)
+        rw = tw(d, val, font(30, "Bold")) + 12
+        if dt:
+            text_right(d, (right - rw, ry + 12), dt, fd, MUT)
+            rw += tw(d, dt, fd) + 10
+        dot(d, cx + 66, ry + 9, vv[i])
+        nw = tcw - 96 - rw
+        d.text((cx + 94, ry + 1), ellipsize(d, P.names[i], font(27, "Bold"), nw), font=font(27, "Bold"), fill=TXT)
+        d.text((cx + 94, ry + 31), ellipsize(d, dname(P.dist[i]), font(19), nw), font=font(19), fill=MUT)
+    y += box_h + 26
+    d.text((PAD, y), T["all"], font=font(30, "Bold"), fill=ACC)
+    y += 50
+
+    # ---- all stations by district, flowed down 3 columns, page after page
+    items = []
     for dn in sorted(groups):
         ix = sorted(groups[dn], key=lambda i: (-vv[i], P.names[i]))
-        items.append(("h", dn, len(ix), float(np.mean(vv[ix]))))
-        items += [("r", i, None, None) for i in ix]
-    total = sum(DH if k == "h" else RH for k, *_ in items)
-    target = total / NCOL
-    cols, cur, h, last_h = [], [], 0, None
-    for it in items:
-        ih = DH if it[0] == "h" else RH
-        if cur and h + ih > target * 1.02 and len(cols) < NCOL - 1:
-            if it[0] == "h" or (cur and cur[-1][0] == "h"):
-                carry = [cur.pop()] if cur[-1][0] == "h" else []
-                cols.append(cur); cur, h = carry, sum(DH for _ in carry)
-            else:
-                cols.append(cur)
-                cur, h = [("c",) + last_h[1:]], DH
-        cur.append(it); h += ih
+        avg = float(np.mean(vv[ix]))
+        items.append(("h", dn, avg))
+        items += [("r", i, None) for i in ix]
+    bottom = PH - FOOT
+    col, top, cy, zebra, cur_h = 0, y, y, 0, None
+
+    def draw_head(d, x0, yy, dn, avg, contd):
+        rrect(d, (x0, yy + 6, x0 + colw, yy + DH - 4), 8, fill=ACC)
+        at = f"{T['avg']} {fmt(avg)}"
+        name = dname(dn) + (" " + T["contd"] if contd else "")
+        d.text((x0 + 14, yy + 10), ellipsize(d, name, fh, colw - 44 - int(tw(d, at, fd))), font=fh, fill=(255, 255, 255))
+        text_right(d, (x0 + colw - 14, yy + 15), at, fd, (220, 232, 250))
+
+    def next_col():
+        nonlocal col, cy, im, d, top
+        col += 1
+        if col >= NCOL:
+            pages.append(im)
+            im, d, top = new_page(False)
+            col = 0
+        cy = top
+
+    k = 0
+    while k < len(items):
+        it = items[k]
+        x0 = PAD + col * (colw + GAP)
         if it[0] == "h":
-            last_h = it
-    cols.append(cur)
-    body_h = max(sum(DH if c[0] in "hc" else RH for c in col) for col in cols)
-    TOP, FOOT = 330, 80
-    im = Image.new("RGB", (WD, TOP + body_h + FOOT + 20), BG)
-    d = ImageDraw.Draw(im)
-    # header band
-    d.rectangle((0, 0, WD, 210), fill=HEAD)
-    state = {"ta": "தமிழ்நாடு", "ml": "കേരളം"}.get(lc, REGION["name"]) if lc != "en" else REGION["name"]
-    title = f"{state} · {T['title']}"
-    d.text((PAD, 26), title, font=font(52, "Bold"), fill=(255, 255, 255))
-    d.text((PAD, 104), sub, font=font(30), fill=(190, 205, 228))
-    info = T["count"].format(n=int(wet.sum()), d=len(groups)) + (" · " + T["dry"].format(n=n_dry) if n_dry else "")
-    if days is not None:
-        info += f" · ( ) = {T['days']}"
-    d.text((PAD, 152), info, font=font(26), fill=(150, 170, 200))
-    lw = put_logo(im, WD - PAD, 14, 182)
-    d = ImageDraw.Draw(im)
-    text_right(d, (WD - PAD - lw - 24, 32), BRAND, font(34, "Bold"), (120, 175, 230))
-    # legend (unit once at the start; wraps to a second row if needed)
-    fl = font(24)
-    x, y = PAD, 232
-    d.text((x, y), L["mm"] + ":", font=font(24, "Bold"), fill=TXT)
-    x += int(tw(d, L["mm"] + ":", font(24, "Bold"))) + 18
-    for b, lab, c in scale:
-        if lab == "ZERO":
-            continue
-        wdt = 32 + int(tw(d, lab, fl)) + 26
-        if x + wdt > WD - PAD:
-            x, y = PAD, y + 36
-        rrect(d, (x, y + 6, x + 24, y + 30), 5, fill=hex2rgb(c))
-        d.text((x + 32, y), lab, font=fl, fill=TXT)
-        x += wdt
-    # columns
-    fn, fv, fd, fh = font(25), font(25, "Bold"), font(21), font(27, "Bold")
-    for ci, col in enumerate(cols):
-        x0, y = PAD + ci * (colw + GAP), TOP
-        for k, it in enumerate(col):
-            if it[0] in "hc":
-                _, dn, n, avg = it
-                rrect(d, (x0, y + 6, x0 + colw, y + DH - 4), 8, fill=ACC)
-                name = dname(dn) + (" " + T["contd"] if it[0] == "c" else "")
-                d.text((x0 + 14, y + 10), ellipsize(d, name, fh, colw - 28 - int(tw(d, f"{T['avg']} {fmt(avg)}", fd)) - 16), font=fh, fill=(255, 255, 255))
-                text_right(d, (x0 + colw - 14, y + 14), f"{T['avg']} {fmt(avg)}", fd, (220, 232, 250))
-                y += DH
-                zebra = 0
-            else:
-                i = it[1]
-                zebra ^= 1
-                if zebra:
-                    d.rectangle((x0, y, x0 + colw, y + RH), fill=CARD)
-                rrect(d, (x0 + 8, y + 9, x0 + 24, y + 25), 4, fill=hex2rgb(scale[classify(vv[i], scale)][2]))
-                val = fmt(vv[i])
-                right = x0 + colw - 10
-                text_right(d, (right, y + 2), val, fv, TXT)
-                rw = tw(d, val, fv) + 14
-                if days is not None:
-                    dt = f"({int(days[i])})"
-                    text_right(d, (right - rw, y + 6), dt, fd, MUT)
-                    rw += tw(d, dt, fd) + 12
-                d.text((x0 + 34, y + 2), ellipsize(d, P.names[i], fn, colw - 44 - rw), font=fn, fill=TXT)
-                y += RH
-        if ci:
-            d.line((x0 - GAP // 2, TOP, x0 - GAP // 2, TOP + body_h), fill=LINE, width=2)
-    fy = TOP + body_h + 24
-    d.line((PAD, fy, WD - PAD, fy), fill=LINE, width=2)
-    d.text((PAD, fy + 16), L["cap_src"].format(src=REGION["source"]), font=font(24), fill=MUT)
-    text_right(d, (WD - PAD, fy + 16), f"{BRAND} · {SITE}", font(24, "Bold"), ACC)
-    im.save(path, optimize=True)
-    print(f"  list  : {path}  ({int(wet.sum())} stations, {im.height}px tall)")
+            if cy + DH + RH > bottom:           # never leave a district heading alone at the bottom
+                next_col(); continue
+            draw_head(d, x0, cy, it[1], it[2], False)
+            cur_h, cy, zebra = it, cy + DH, 0
+        else:
+            if cy + RH > bottom:
+                next_col()
+                x0 = PAD + col * (colw + GAP)
+                draw_head(d, x0, cy, cur_h[1], cur_h[2], True)
+                cy, zebra = cy + DH, 0
+            i = it[1]
+            zebra ^= 1
+            if zebra:
+                d.rectangle((x0, cy, x0 + colw, cy + RH), fill=CARD)
+            dot(d, x0 + 8, cy + 11, vv[i])
+            val, dt = value_text(i)
+            right = x0 + colw - 10
+            text_right(d, (right, cy + 3), val, fv, TXT)
+            rw = tw(d, val, fv) + 14
+            if dt:
+                text_right(d, (right - rw, cy + 8), dt, fd, MUT)
+                rw += tw(d, dt, fd) + 12
+            d.text((x0 + 36, cy + 3), ellipsize(d, P.names[i], fn, colw - 46 - rw), font=fn, fill=TXT)
+            cy += RH
+        k += 1
+    pages.append(im)
+
+    # ---- footers, column rules, save
+    n = len(pages)
+    for pi, pg in enumerate(pages):
+        d = ImageDraw.Draw(pg)
+        fy = PH - FOOT + 18
+        d.line((PAD, fy, WD - PAD, fy), fill=LINE, width=2)
+        d.text((PAD, fy + 18), L["cap_src"].format(src=REGION["source"]), font=font(23), fill=MUT)
+        pt = T["page"].format(i=pi + 1, n=n)
+        d.text((WD / 2 - tw(d, pt, font(24, "Bold")) / 2, fy + 18), pt, font=font(24, "Bold"), fill=TXT)
+        text_right(d, (WD - PAD, fy + 18), f"{BRAND} · {SITE}", font(23, "Bold"), ACC)
+    files = []
+    for pi, pg in enumerate(pages):
+        fp = path if pi == 0 else f"{stem}_p{pi + 1}.png"
+        pg.save(fp, optimize=True, dpi=(LIST_DPI, LIST_DPI))
+        files.append(fp)
+    pages[0].save(stem + ".pdf", save_all=True, append_images=pages[1:], resolution=LIST_DPI)
+    print(f"  list  : {path} + {n - 1} more page(s), {stem}.pdf  ({int(wet.sum())} stations, top {n_top} on page 1)")
 
 
 def main():
