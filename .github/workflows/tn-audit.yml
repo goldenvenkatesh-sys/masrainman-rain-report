@@ -4,6 +4,8 @@ on:
     inputs:
       start: {default: "2026-10-01"}
       end: {default: "2026-11-08"}
+permissions:
+  contents: write
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -29,8 +31,9 @@ jobs:
             d=$(date -I -d "$d + 1 day")
           done
           ls -la audit/fresh audit/cached | head -100
-      - uses: actions/upload-artifact@v4
-        with:
-          name: tn-audit
-          path: audit/
-          retention-days: 3
+      - name: Push to temporary branch
+        run: |
+          cd audit
+          git init -q -b audit-tmp && git add -A
+          git -c user.name=audit -c user.email=audit@users.noreply.github.com commit -qm audit
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" audit-tmp
