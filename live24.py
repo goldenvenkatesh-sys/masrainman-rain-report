@@ -938,7 +938,15 @@ def run(region_key, day, out_dir):
     base = os.path.join(out_dir, f"rain_{tag}live24_{day.isoformat()}")
     print("  model forecasts …")
     fc = models.forecasts(day, geo)
-    V = Live24(region_key, D, geo, fc)
+    daily = None
+    if region_key == "tn":
+        import tnsmart_daily
+        daily = tnsmart_daily.daily_gauges(day)
+        print("  daily rain gauges: " + (f"{len(daily['heavy'])} with heavy rain or more" if daily
+                                         else "TNSDMA report not out yet"))
+        if daily is None and os.environ.get("NEED_DAILY_GAUGES") == "1":
+            raise SystemExit("Daily rain-gauge report not out yet; video not remade")
+    V = Live24(region_key, D, geo, fc, daily)
     print("Rendering …")
     wr = V.render(base)
     wr.close()
