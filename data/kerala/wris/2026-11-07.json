@@ -1,7 +1,7 @@
 {
 "date": "2026-11-07",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-07T23:15+0530",
+"fetched": "2026-11-09T12:48+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -37,6 +37,12 @@
 "station": "meenkara",
 "uuid": "4237777a-25c0-4468-a601-dfadd077fd78",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
 "rain": 0.0
 },
 {
@@ -88,6 +94,18 @@
 "rain": 1.0
 },
 {
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 1.4
+},
+{
 "station": "Kunnamangalam",
 "uuid": "497f3fbd-a6a1-4d34-9bc2-d4ac24813a77",
 "district": "Kozhikode",
@@ -130,6 +148,12 @@
 "rain": 7.8
 },
 {
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 7.0
+},
+{
 "station": "Mangalam Dam",
 "uuid": "52b09196-9537-42ab-be32-bbc49dd928e4",
 "district": "Palakkad",
@@ -166,6 +190,18 @@
 "rain": 22.6
 },
 {
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 6.3
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
+"rain": 2.2
+},
+{
 "station": "Uppala",
 "uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
 "district": "Kasaragod",
@@ -190,10 +226,22 @@
 "rain": 21.0
 },
 {
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 22.0
+},
+{
 "station": "Vannapuram",
 "uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
 "district": "Idukki",
 "rain": 0.4
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 0.0
 },
 {
 "station": "Vaniampara",
@@ -260,6 +308,12 @@
 "uuid": "cd320d66-fe8a-4aa9-bc35-d829ba39446b",
 "district": "Kozhikode",
 "rain": 4.0
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 0.0
 },
 {
 "station": "Enamakkal",

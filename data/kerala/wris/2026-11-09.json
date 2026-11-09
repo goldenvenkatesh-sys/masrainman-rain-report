@@ -1,0 +1,115 @@
+{
+"date": "2026-11-09",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-11-09T12:48+0530",
+"stations": [
+{
+"station": "Piravom",
+"uuid": "b2ca80bb-a631-4cb8-9503-87a6fb93cb8f",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Keerampara",
+"uuid": "efec9ceb-ccfb-4420-adec-bcee35bfa775",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 5.4
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 9.4
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Painavu",
+"uuid": "592d9655-4170-477d-81c3-debd437adad8",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 7.4
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 16.0
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 5.0
+},
+{
+"station": "Vannapuram",
+"uuid": "76062e8c-d9d0-46aa-ba60-1ff3276b56f0",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Marayoor",
+"uuid": "7b658de8-ecd9-43c0-88ef-4335fb4036d9",
+"district": "Idukki",
+"rain": 5.3
+},
+{
+"station": "Kulamavu",
+"uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
+"rain": 0.0
+}
+]
+}

@@ -36,6 +36,7 @@ aws,Pathanamthitta,Ulanadu
 aws,Thiruvananthapuram,Mairport (Chakka)
 aws,Thiruvananthapuram,Mpeppara
 aws,Thiruvananthapuram,Mponmudi
+aws,Thiruvananthapuram,Mrars Vellayani
 aws,Thiruvananthapuram,Mthattathumala
 aws,Thiruvananthapuram,Mthiruvananthapuram
 aws,Thiruvananthapuram,Mvarkala
