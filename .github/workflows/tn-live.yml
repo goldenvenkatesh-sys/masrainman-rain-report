@@ -142,6 +142,22 @@ jobs:
               gh workflow run ktcc-live24.yml -R "$GITHUB_REPOSITORY" --ref main && echo "started KTCC 24-hour video"
             fi
           fi
+          # 10:45-13:45 TN past-24-hours video again, once TNSDMA's daily rain-gauge PDF is out (~10-11:45 am),
+          # so its toppers include the daily gauges (e.g. Kayalpattinam 107.4 mm on 9 Nov 2026)
+          if [ "$h" -ge 10 ] && [ "$h" -le 13 ]; then
+            need=$(echo "$idx" | python3 -c "
+          import json,sys
+          try: d=json.load(sys.stdin)
+          except Exception: d={'reports':[]}
+          day='$(TZ=Asia/Kolkata date +%F)'
+          v=[r for r in d['reports'] if r['region']=='tn' and r['kind']=='live24' and r.get('day')==day]
+          print('yes' if v and not any('Daily rain gauges' in (r.get('caption') or '') for r in v) else 'no')")
+            pdf="https://beta-tnsmart.rimes.int/DATA/Rainfall/daily_reports/rainfall_analysis_$(TZ=Asia/Kolkata date +%F).pdf"
+            if [ "$need" = yes ] && [ "$(curl -s -o /dev/null -w '%{http_code}' -I "$pdf")" = 200 ]; then
+              gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region=tn -f mode=live24 -f need_daily=yes \
+                && echo "started TN 24-hour video with daily rain gauges"
+            fi
+          fi
           # 12:45 Kerala, after IMD's file at ~11 am (tried again up to 15:45 if missed)
           if [ "$h" -ge 12 ] && [ "$h" -le 15 ] && ! made_today kl; then
             gh workflow run rain-report.yml -R "$GITHUB_REPOSITORY" --ref main -f region=kl -f mode=both \

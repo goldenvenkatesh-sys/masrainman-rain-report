@@ -213,8 +213,9 @@ class Day:
 
 # ----------------------------------------------------------------- the video
 class Live24:
-    def __init__(self, region_key, D, geo, forecasts=None):
+    def __init__(self, region_key, D, geo, forecasts=None, daily=None):
         self.R = REGIONS24[region_key]
+        self.daily = daily                    # TN daily rain-gauge report (tnsmart_daily) or None
         self.region = rr.REGIONS[region_key]
         self.D, self.geo = D, geo
         self.fc = forecasts or {}
@@ -584,19 +585,20 @@ class Live24:
         d = ImageDraw.Draw(im, "RGBA")
         if a0 < 1:
             return im
-        order = [int(i) for i in np.argsort(-D.total)[:10] if D.total[i] > 0]
+        order = self.top_entries()
+        nets = f"{self.R['network'].lower()}s" + (" + daily rain gauges" if self.daily else "")
         text(d, (540, 262), spaced("RAINFALL TOPPERS"), font(40, "Bold"), TEXT, "ms")
-        text(d, (540, 291), f"Top {len(order)} of {D.n:,} stations  ·  past 24 hours  ·  {self.R['source']} "
-                            f"{self.R['network'].lower()}s", font(15), MUTED, "ms")
+        text(d, (540, 291), f"Top {len(order)} of {self.n_stations():,} stations  ·  past 24 hours  ·  "
+                            f"{self.R['source']} {nets}", font(15), MUTED, "ms")
         text(d, (540, 314), self.highlight(order), font(15, "Bold"), GOLD, "ms")
-        top = D.total[order[0]] if order else 1
-        for r, i in enumerate(order):
+        top = order[0]["v"] if order else 1
+        for r, e in enumerate(order):
             ra = min(1.0, max(0.0, (t - 12 - 4 * r) / 8))
             if ra <= 0:
                 continue
             al = int(255 * ra)
             y0 = 330 + 79 * r
-            v = D.total[i]
+            v = e["v"]
             col = colour(v)
             if r == 0:
                 d.rectangle((43, y0, 1037, y0 + 75), fill=(30, 27, 19, al))
@@ -604,8 +606,8 @@ class Live24:
             else:
                 d.line((43, y0 - 2, 1037, y0 - 2), fill=(32, 37, 46, al))
             text(d, (65, y0 + 42), f"{r + 1:02d}", font(20, "Bold"), (GOLD if r == 0 else MUTED) + (al,))
-            text(d, (125, y0 + 32), fit(d, D.names[i], font(23, "Bold"), 600), font(23, "Bold"), TEXT + (al,))
-            text(d, (125, y0 + 54), f"{D.dist[i]}  ·  {self.R['network']}", font(14), MUTED + (al,))
+            text(d, (125, y0 + 32), fit(d, e["name"], font(23, "Bold"), 600), font(23, "Bold"), TEXT + (al,))
+            text(d, (125, y0 + 54), f"{e['dist']}  ·  {e['net']}", font(14), MUTED + (al,))
             vs = mm1(v)
             text(d, (985, y0 + 44), vs, font(32, "Bold"), TEXT + (al,), "rs")
             text(d, (1030, y0 + 44), "mm", font(13), MUTED + (al,), "rs")
@@ -616,7 +618,7 @@ class Live24:
         if sa > 0:
             al = int(255 * sa)
             stats = [(f"{D.total.mean():.1f} mm" if D.n else "–", "STATION AVERAGE"),
-                     (f"{int(np.sum(D.total >= 64.5))}", "STATIONS WITH HEAVY RAIN OR MORE"),
+                     (f"{self.n_heavy()}", "STATIONS WITH HEAVY RAIN OR MORE"),
                      (f"{int(np.sum(D.total > 0))}", "STATIONS WITH RAIN")]
             for j, (val, lab) in enumerate(stats):
                 x = 210 + 330 * j
@@ -624,32 +626,57 @@ class Live24:
                 text(d, (x, 1190), spaced(lab), font(11, "Bold"), MUTED + (al,), "ms")
         return im
 
-    def highlight(self, order):
+    def top_entries(self, n=10):
+        """The day's n wettest stations: hourly gauges plus (Tamil Nadu) the daily rain gauges with heavy
+        rain or more from TNSDMA's daily report. Each: {name, dist, v, net, daily}."""
         D = self.D
+        out = [{"name": D.names[i], "dist": D.dist[i], "v": float(D.total[i]), "net": self.R["network"],
+                "daily": False} for i in np.argsort(-D.total)[:n] if D.total[i] > 0]
+        for s in (self.daily or {}).get("heavy", []):
+            dist = self.geo.canon(s["district"]) or s["district"]
+            if any(e["name"].lower() == s["station"].lower() and e["dist"] == dist and abs(e["v"] - s["rain"]) < 0.05
+                   for e in out):
+                continue                      # the same reading in both lists
+            out.append({"name": s["station"], "dist": dist, "v": s["rain"], "net": "Daily rain gauge", "daily": True})
+        out.sort(key=lambda e: -e["v"])
+        return out[:n]
+
+    def n_heavy(self):
+        """Stations with heavy rain or more: hourly gauges + daily rain gauges."""
+        return int(np.sum(self.D.total >= 64.5)) + len((self.daily or {}).get("heavy", []))
+
+    def n_stations(self):
+        return self.D.n + sum(n for n, _ in (self.daily or {}).get("districts", {}).values())
+
+    def highlight(self, order):
         if not order:
             return "NO RAIN RECORDED"
-        ds = [D.dist[i] for i in order]
+        ds = [e["dist"] for e in order]
         best = max(ds, key=lambda x: (ds.count(x), -ds.index(x)))
         n = ds.count(best)
         if n >= 2:
             return spaced(f"{n} OF THE TOP {len(order)} STATIONS ARE IN {best.upper()}")
-        i = order[0]
-        return spaced(f"WETTEST: {D.names[i].upper()}, {D.dist[i].upper()}")
+        return spaced(f"WETTEST: {order[0]['name'].upper()}, {order[0]['dist'].upper()}")
 
     def caption(self):
         D = self.D
         d0, d1 = D.t0.date(), D.day
-        order = [int(i) for i in np.argsort(-D.total)[:10] if D.total[i] > 0]
+        order = self.top_entries()
         lines = [f"🌧 {self.region['name']} · Past 24 hours observed rainfall",
                  f"8:30 am {d0.day} {d0:%b} to 8:30 am {d1.day} {d1:%b %Y} · hour by hour", "", "Rainfall toppers:"]
-        for r, i in enumerate(order, 1):
-            lines.append(f"{r}. {D.names[i]} ({D.dist[i]}) – {mm1(D.total[i])} mm")
+        for r, e in enumerate(order, 1):
+            lines.append(f"{r}. {e['name']} ({e['dist']}) – {mm1(e['v'])} mm" + (" (daily gauge)" if e["daily"] else ""))
         if D.n and D.H.max() > 0:
             h, i = np.unravel_index(np.argmax(D.H), D.H.shape)
             lines += ["", f"Heaviest in one hour: {mm1(D.H[h, i])} mm at {D.names[i]} ({D.dist[i]}), "
                           f"hour ending {clock(D.t0 + timedelta(hours=int(h) + 1))}"]
-        lines += [f"Rain at {int(np.sum(D.total > 0))} of {D.n} stations · "
-                  f"{int(np.sum(D.total >= 64.5))} with heavy rain or more", self.window_text()]
+        lines += [f"Rain at {int(np.sum(D.total > 0))} of {D.n} hourly stations · "
+                  f"{self.n_heavy()} with heavy rain or more", self.window_text()]
+        if self.daily:
+            dv = self.daily
+            lines.append(f"Daily rain gauges (TNSDMA, {sum(n for n, _ in dv['districts'].values())} stations): "
+                         f"{len(dv['heavy'])} with heavy rain or more"
+                         + (f" · state average {dv['state_avg']:.1f} mm" if dv.get("state_avg") is not None else ""))
         S = self.scores()
         if S["obs"]:
             lines += ["", f"Did the models get it right? ({S['label']}) at a gauge in {len(S['obs'])} districts)"]

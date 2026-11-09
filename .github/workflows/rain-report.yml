@@ -24,6 +24,9 @@ on:
       auto:
         description: "yes = started by the cron-job.org timer (acts like the GitHub schedule, e.g. month report on the 1st)"
         default: "no"
+      need_daily:
+        description: "live24: yes = only remake the TN video if TNSDMA's daily rain-gauge PDF is out"
+        default: "no"
 
 permissions:
   contents: write
@@ -98,6 +101,7 @@ jobs:
           WN3_READ_TOKEN: ${{ secrets.WN3_READ_TOKEN }}
           # ...or, without a token, the public copy the model-maps workflow publishes on Cloudflare
           WN3_RAIN_URL: https://wn3data.masrainman-wn3.pages.dev/wn3_{D}.json
+          NEED_DAILY_GAUGES: ${{ github.event.inputs.need_daily == 'yes' && '1' || '' }}
         run: |
           for R in tn kl ap; do
             case " $REGION " in *" $R "*) ;; *) continue ;; esac
