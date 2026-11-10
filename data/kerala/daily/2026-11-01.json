@@ -944,8 +944,8 @@
 "station": "Kunnamangalam",
 "key": "KUNNAMANGALAM",
 "rain": 0.0,
-"lat": 11.3,
-"lon": 75.88
+"lat": 11.30611,
+"lon": 75.89222
 },
 {
 "type": "sw",
@@ -1097,8 +1097,8 @@
 "station": "Thamarassery",
 "key": "THAMARASSERY",
 "rain": 0.0,
-"lat": 11.42,
-"lon": 75.94
+"lat": 11.41444,
+"lon": 75.93361
 },
 {
 "type": "sw",
@@ -1223,8 +1223,8 @@
 "station": "Perambra",
 "key": "PERAMBRA",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 11.5725,
+"lon": 75.82417
 },
 {
 "type": "sw",
@@ -1259,8 +1259,8 @@
 "station": "Thikkodi",
 "key": "THIKKODI",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 11.48707,
+"lon": 75.62898
 },
 {
 "type": "sw",

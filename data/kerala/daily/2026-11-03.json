@@ -1052,8 +1052,8 @@
 "station": "Kumili",
 "key": "KUMILI",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 9.60444,
+"lon": 77.17417
 },
 {
 "type": "sw",
@@ -1178,8 +1178,8 @@
 "station": "Boyce Estate",
 "key": "BOYCE ESTATE",
 "rain": 4.4,
-"lat": null,
-"lon": null
+"lat": 9.551,
+"lon": 76.90057
 },
 {
 "type": "sw",
@@ -1241,8 +1241,8 @@
 "station": "Teekoy Estate",
 "key": "TEEKOY ESTATE",
 "rain": 7.0,
-"lat": null,
-"lon": null
+"lat": 9.71,
+"lon": 76.827
 },
 {
 "type": "sw",
@@ -1295,8 +1295,8 @@
 "station": "Nedumkandam",
 "key": "NEDUMKANDAM",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 9.83352,
+"lon": 77.15935
 },
 {
 "type": "sw",
@@ -1313,8 +1313,8 @@
 "station": "Vandanmedu",
 "key": "VANDANMEDU",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 9.72217,
+"lon": 77.15222
 },
 {
 "type": "sw",
@@ -1340,8 +1340,8 @@
 "station": "Thamarassery",
 "key": "THAMARASSERY",
 "rain": 20.0,
-"lat": 11.42,
-"lon": 75.94
+"lat": 11.41444,
+"lon": 75.93361
 },
 {
 "type": "sw",
@@ -1358,8 +1358,8 @@
 "station": "Erattupetta",
 "key": "ERATTUPETTA",
 "rain": 2.0,
-"lat": null,
-"lon": null
+"lat": 9.68657,
+"lon": 76.77637
 },
 {
 "type": "sw",
@@ -1376,8 +1376,8 @@
 "station": "Mundakayam",
 "key": "MUNDAKAYAM",
 "rain": 2.6,
-"lat": null,
-"lon": null
+"lat": 9.5374,
+"lon": 76.88642
 },
 {
 "type": "sw",
@@ -1484,8 +1484,8 @@
 "station": "Perambra",
 "key": "PERAMBRA",
 "rain": 34.2,
-"lat": null,
-"lon": null
+"lat": 11.5725,
+"lon": 75.82417
 },
 {
 "type": "sw",
@@ -1520,8 +1520,8 @@
 "station": "Thikkodi",
 "key": "THIKKODI",
 "rain": 17.6,
-"lat": null,
-"lon": null
+"lat": 11.48707,
+"lon": 75.62898
 },
 {
 "type": "sw",
@@ -1529,8 +1529,8 @@
 "station": "Chinnar",
 "key": "CHINNAR",
 "rain": 0.0,
-"lat": null,
-"lon": null
+"lat": 9.68889,
+"lon": 77.03111
 },
 {
 "type": "sw",
