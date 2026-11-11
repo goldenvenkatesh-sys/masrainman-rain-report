@@ -1318,6 +1318,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Kumili",
+"key": "KUMILI",
+"rain": 4.6,
+"lat": 9.60444,
+"lon": 77.17417
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Manjeswaram",
 "key": "MANJESWARAM",
@@ -1399,6 +1408,15 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Boyce Estate",
+"key": "BOYCE ESTATE",
+"rain": 0.6,
+"lat": 9.551,
+"lon": 76.90057
+},
+{
+"type": "sw",
 "district": "Pathanamthitta",
 "station": "Perumthenaruvi",
 "key": "PERUMTHENARUVI",
@@ -1450,6 +1468,15 @@
 "rain": 2.2,
 "lat": 9.85,
 "lon": 76.95
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Teekoy Estate",
+"key": "TEEKOY ESTATE",
+"rain": 0.0,
+"lat": 9.71,
+"lon": 76.827
 },
 {
 "type": "sw",
@@ -1534,6 +1561,24 @@
 },
 {
 "type": "sw",
+"district": "Idukki",
+"station": "Nedumkandam",
+"key": "NEDUMKANDAM",
+"rain": 17.0,
+"lat": 9.83352,
+"lon": 77.15935
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Vandanmedu",
+"key": "VANDANMEDU",
+"rain": 1.2,
+"lat": 9.72217,
+"lon": 77.15222
+},
+{
+"type": "sw",
 "district": "Kasaragod",
 "station": "Uppala",
 "key": "UPPALA",
@@ -1570,12 +1615,30 @@
 },
 {
 "type": "sw",
+"district": "Kottayam",
+"station": "Erattupetta",
+"key": "ERATTUPETTA",
+"rain": 0.0,
+"lat": 9.68657,
+"lon": 76.77637
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Vannapuram",
 "key": "VANNAPURAM",
 "rain": 1.2,
 "lat": 9.97,
 "lon": 76.83
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Mundakayam",
+"key": "MUNDAKAYAM",
+"rain": 1.0,
+"lat": 9.5374,
+"lon": 76.88642
 },
 {
 "type": "sw",
@@ -1693,6 +1756,15 @@
 "rain": 1.8,
 "lat": 11.3856,
 "lon": 76.315
+},
+{
+"type": "sw",
+"district": "Idukki",
+"station": "Chinnar",
+"key": "CHINNAR",
+"rain": 0.0,
+"lat": 9.68889,
+"lon": 77.03111
 },
 {
 "type": "sw",
