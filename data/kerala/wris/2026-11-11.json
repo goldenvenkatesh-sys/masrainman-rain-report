@@ -1,8 +1,20 @@
 {
 "date": "2026-11-11",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-11T18:14+0530",
+"fetched": "2026-11-11T21:38+0530",
 "stations": [
+{
+"station": "Vidyanagar",
+"uuid": "b3fc4e91-b37a-4e8a-9b24-0771cdcc4145",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Paika",
+"uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
+"district": "Kasaragod",
+"rain": 0.0
+},
 {
 "station": "Kurudamannil",
 "uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
@@ -19,6 +31,12 @@
 "station": "Thiruvalla",
 "uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Manjeswaram",
+"uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
+"district": "Kasaragod",
 "rain": 0.0
 },
 {
@@ -64,6 +82,12 @@
 "rain": 0.0
 },
 {
+"station": "Kalliyot",
+"uuid": "09c1a565-530f-4deb-a793-f9d69bf6bd69",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
 "station": "Teekoy Estate",
 "uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
 "district": "Kottayam",
@@ -88,6 +112,12 @@
 "rain": 0.0
 },
 {
+"station": "Madhur",
+"uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
 "station": "Nedumkandam",
 "uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
 "district": "Idukki",
@@ -100,9 +130,21 @@
 "rain": 0.0
 },
 {
+"station": "Uppala",
+"uuid": "d6fbee66-7825-4ee3-970d-641f7ffc98f1",
+"district": "Kasaragod",
+"rain": 0.0
+},
+{
 "station": "Parappanangadi",
 "uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
 "district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Padiyathadukka",
+"uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
+"district": "Kasaragod",
 "rain": 0.0
 },
 {

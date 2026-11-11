@@ -823,12 +823,39 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Vidyanagar",
+"key": "VIDYANAGAR",
+"rain": 0.0,
+"lat": 12.5144,
+"lon": 75.0188
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Paika",
+"key": "PAIKA",
+"rain": 0.0,
+"lat": 12.5433,
+"lon": 75.1056
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
 "rain": 0.0,
 "lat": 9.60444,
 "lon": 77.17417
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Manjeswaram",
+"key": "MANJESWARAM",
+"rain": 0.0,
+"lat": 12.7153,
+"lon": 74.8903
 },
 {
 "type": "sw",
@@ -868,6 +895,15 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Kalliyot",
+"key": "KALLIYOT",
+"rain": 0.0,
+"lat": 12.4144,
+"lon": 75.1483
+},
+{
+"type": "sw",
 "district": "Kottayam",
 "station": "Teekoy Estate",
 "key": "TEEKOY ESTATE",
@@ -904,6 +940,15 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Madhur",
+"key": "MADHUR",
+"rain": 0.0,
+"lat": 12.5239,
+"lon": 75.0047
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Nedumkandam",
 "key": "NEDUMKANDAM",
@@ -922,12 +967,30 @@
 },
 {
 "type": "sw",
+"district": "Kasaragod",
+"station": "Uppala",
+"key": "UPPALA",
+"rain": 0.0,
+"lat": 12.7236,
+"lon": 74.9219
+},
+{
+"type": "sw",
 "district": "Malappuram",
 "station": "Parappanangadi",
 "key": "PARAPPANANGADI",
 "rain": 0.0,
 "lat": 11.1086,
 "lon": 75.8156
+},
+{
+"type": "sw",
+"district": "Kasaragod",
+"station": "Padiyathadukka",
+"key": "PADIYATHADUKKA",
+"rain": 0.0,
+"lat": 12.5575,
+"lon": 75.2
 },
 {
 "type": "sw",
