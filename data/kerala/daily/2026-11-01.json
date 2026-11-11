@@ -913,6 +913,15 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 0.0,
+"lat": 9.3794,
+"lon": 76.3567
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Palappuzha",
 "key": "PALAPPUZHA",
@@ -1021,6 +1030,24 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Ambittanpotty",
+"key": "AMBITTANPOTTY",
+"rain": 0.0,
+"lat": 11.4197,
+"lon": 76.2411
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Nilambur Manavedan HS",
+"key": "NILAMBUR MANAVEDAN HS",
+"rain": 0.0,
+"lat": 11.2853,
+"lon": 76.2317
+},
+{
+"type": "sw",
 "district": "Kollam",
 "station": "Paravoor",
 "key": "PARAVOOR",
@@ -1036,6 +1063,15 @@
 "rain": 0.0,
 "lat": 10.55,
 "lon": 76.6306
+},
+{
+"type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 0.0,
+"lat": 9.2386,
+"lon": 76.5889
 },
 {
 "type": "sw",
@@ -1252,6 +1288,24 @@
 "rain": 0.0,
 "lat": 10.7056,
 "lon": 76.5889
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Pandikkad",
+"key": "PANDIKKAD",
+"rain": 0.0,
+"lat": 11.1075,
+"lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Edakkara",
+"key": "EDAKKARA",
+"rain": 0.0,
+"lat": 11.3856,
+"lon": 76.315
 },
 {
 "type": "sw",

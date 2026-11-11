@@ -1,5 +1,27 @@
 {
- "files": [],
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "cf36d0a18139077a73ee51ff93f6482a87261cb0",
+   "saved_at": "2026-11-11T12:00+05:30",
+   "last_modified": "Wed, 11 Nov 2026 05:12:56 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "3dd191a0e8e6efb9c4a58f1257700bbb1825cc7a",
+   "saved_at": "2026-11-11T12:00+05:30",
+   "last_modified": "Wed, 11 Nov 2026 05:07:26 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "73f9116f17908544ba77dc9509cf4d9e51056ede",
+   "saved_at": "2026-11-11T12:00+05:30",
+   "last_modified": "Wed, 11 Nov 2026 05:18:13 GMT"
+  }
+ ],
  "checks": {
   "imd_station_daily.pdf": 200,
   "imd_rainfall_map.jpg": 200,

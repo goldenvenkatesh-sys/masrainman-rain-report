@@ -1516,6 +1516,15 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Nilackal",
+"key": "NILACKAL",
+"rain": 42.0,
+"lat": 9.3897,
+"lon": 77.0108
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Chittadi",
 "key": "CHITTADI",
@@ -1552,6 +1561,15 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 25.2,
+"lat": 9.3794,
+"lon": 76.3567
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Palappuzha",
 "key": "PALAPPUZHA",
@@ -1567,6 +1585,15 @@
 "rain": 0.0,
 "lat": 9.551,
 "lon": 76.90057
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Perumthenaruvi",
+"key": "PERUMTHENARUVI",
+"rain": 9.2,
+"lat": 9.4114,
+"lon": 76.8744
 },
 {
 "type": "sw",
@@ -1642,6 +1669,24 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Ambittanpotty",
+"key": "AMBITTANPOTTY",
+"rain": 12.0,
+"lat": 11.4197,
+"lon": 76.2411
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Nilambur Manavedan HS",
+"key": "NILAMBUR MANAVEDAN HS",
+"rain": 0.0,
+"lat": 11.2853,
+"lon": 76.2317
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Pothundy Dam",
 "key": "POTHUNDY DAM",
@@ -1651,12 +1696,30 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 1.8,
+"lat": 9.2386,
+"lon": 76.5889
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Moolathara",
 "key": "MOOLATHARA",
 "rain": 0.0,
 "lat": 10.5583,
 "lon": 76.6528
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Pampady",
+"key": "PAMPADY",
+"rain": 23.2,
+"lat": 9.5867,
+"lon": 76.6044
 },
 {
 "type": "sw",
@@ -1702,6 +1765,15 @@
 "rain": 28.4,
 "lat": 12.7236,
 "lon": 74.9219
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Parappanangadi",
+"key": "PARAPPANANGADI",
+"rain": 0.0,
+"lat": 11.1086,
+"lon": 75.8156
 },
 {
 "type": "sw",
@@ -1765,6 +1837,15 @@
 "rain": 0.0,
 "lat": 10.5722,
 "lon": 76.425
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Moozhiyar",
+"key": "MOOZHIYAR",
+"rain": 8.6,
+"lat": 9.3106,
+"lon": 77.0708
 },
 {
 "type": "sw",
@@ -1876,6 +1957,24 @@
 },
 {
 "type": "sw",
+"district": "Malappuram",
+"station": "Pandikkad",
+"key": "PANDIKKAD",
+"rain": 13.4,
+"lat": 11.1075,
+"lon": 76.2156
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "Edakkara",
+"key": "EDAKKARA",
+"rain": 0.0,
+"lat": 11.3856,
+"lon": 76.315
+},
+{
+"type": "sw",
 "district": "Kozhikode",
 "station": "Thikkodi",
 "key": "THIKKODI",
@@ -1891,6 +1990,24 @@
 "rain": 0.0,
 "lat": 9.68889,
 "lon": 77.03111
+},
+{
+"type": "sw",
+"district": "Malappuram",
+"station": "FCS Malappuram",
+"key": "FCS MALAPPURAM",
+"rain": 0.2,
+"lat": 11.0408,
+"lon": 76.0781
+},
+{
+"type": "sw",
+"district": "Pathanamthitta",
+"station": "Vadasserikkara",
+"key": "VADASSERIKKARA",
+"rain": 17.8,
+"lat": 9.3333,
+"lon": 76.8308
 },
 {
 "type": "sw",

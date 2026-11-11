@@ -1,7 +1,7 @@
 {
 "date": "2026-11-03",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-07T17:14+0530",
+"fetched": "2026-11-11T12:01+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -130,6 +130,12 @@
 "rain": 0.0
 },
 {
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
+"rain": 0.0
+},
+{
 "station": "Palappuzha",
 "uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
 "district": "Kannur",
@@ -146,6 +152,12 @@
 "uuid": "31bdc490-7594-4f52-8677-18ac9966006d",
 "district": "Thiruvananthapuram",
 "rain": 0.0
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 60.0
 },
 {
 "station": "Boyce Estate",
@@ -226,6 +238,18 @@
 "rain": 0.0
 },
 {
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
 "station": "Paravoor",
 "uuid": "62e6c654-748c-45b9-beeb-9fc282c7699c",
 "district": "Kollam",
@@ -236,6 +260,12 @@
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
 "rain": 63.2
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
+"rain": 0.0
 },
 {
 "station": "Moolathara",
@@ -284,6 +314,12 @@
 "uuid": "e317c825-eada-492d-a839-d23ea7149cd8",
 "district": "Palakkad",
 "rain": 8.0
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 0.0
 },
 {
 "station": "Padiyathadukka",
@@ -424,6 +460,18 @@
 "rain": 0.0
 },
 {
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
 "station": "Thikkodi",
 "uuid": "cd320d66-fe8a-4aa9-bc35-d829ba39446b",
 "district": "Kozhikode",
@@ -434,6 +482,12 @@
 "uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
 "district": "Idukki",
 "rain": 0.0
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 1.8
 },
 {
 "station": "Enamakkal",

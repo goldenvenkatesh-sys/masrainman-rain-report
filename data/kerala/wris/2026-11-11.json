@@ -1,0 +1,103 @@
+{
+"date": "2026-11-11",
+"source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
+"fetched": "2026-11-11T12:01+0530",
+"stations": [
+{
+"station": "Kurudamannil",
+"uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Thiruvalla",
+"uuid": "39eb186e-8fbe-462e-93ab-ba91dfadf5e8",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Nilackal",
+"uuid": "f3c75d8f-fddb-4e05-95da-f20b60c92a91",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Perinthalmanna",
+"uuid": "c525ec87-5219-4938-a347-60a6c9f2bf99",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Perumthenaruvi",
+"uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Ambittanpotty",
+"uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Nilambur Manavedan HS",
+"uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Parappanangadi",
+"uuid": "3382b95c-91b6-4c85-b5d0-c7e89160b949",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Moozhiyar",
+"uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
+"district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Pandikkad",
+"uuid": "e4e33f7a-c07b-4b7e-81d9-010776f39a54",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Edakkara",
+"uuid": "841528aa-b0ac-4720-8683-4733d0624ea9",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "FCS Malappuram",
+"uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
+"district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Vadasserikkara",
+"uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
+"district": "Pathanamthitta",
+"rain": 0.0
+}
+]
+}

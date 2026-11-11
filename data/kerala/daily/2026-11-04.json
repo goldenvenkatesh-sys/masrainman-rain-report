@@ -1264,6 +1264,15 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 1.4,
+"lat": 9.3794,
+"lon": 76.3567
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Palappuzha",
 "key": "PALAPPUZHA",
@@ -1381,12 +1390,30 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 2.0,
+"lat": 9.2386,
+"lon": 76.5889
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Moolathara",
 "key": "MOOLATHARA",
 "rain": 0.0,
 "lat": 10.5583,
 "lon": 76.6528
+},
+{
+"type": "sw",
+"district": "Kottayam",
+"station": "Pampady",
+"key": "PAMPADY",
+"rain": 14.2,
+"lat": 9.5867,
+"lon": 76.6044
 },
 {
 "type": "sw",

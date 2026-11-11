@@ -886,6 +886,15 @@
 },
 {
 "type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 0.0,
+"lat": 9.3794,
+"lon": 76.3567
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Palappuzha",
 "key": "PALAPPUZHA",
@@ -1063,6 +1072,15 @@
 "rain": 0.0,
 "lat": 10.55,
 "lon": 76.6306
+},
+{
+"type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 0.0,
+"lat": 9.2386,
+"lon": 76.5889
 },
 {
 "type": "sw",

@@ -1,7 +1,7 @@
 {
 "date": "2026-10-31",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-07T17:14+0530",
+"fetched": "2026-11-11T12:01+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -139,6 +139,12 @@
 "station": "neryamangalam",
 "uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
 "district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
@@ -289,6 +295,12 @@
 "station": "Aryankavu",
 "uuid": "1c10d529-2d2a-47c3-b7fa-9ebd1e45a331",
 "district": "Kollam",
+"rain": 0.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
