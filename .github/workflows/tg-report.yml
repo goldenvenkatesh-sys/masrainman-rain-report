@@ -39,8 +39,11 @@ jobs:
           cache: pip
 
       - name: Install
+        timeout-minutes: 10
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq libraqm0 ffmpeg
+          # no apt-get: GitHub's Ubuntu mirrors sometimes stop resolving and apt then hangs
+          # until the job times out. Pillow wheels bundle raqm (Tamil shaping) and
+          # imageio-ffmpeg ships ffmpeg, so pip alone is enough.
           pip install -r requirements.txt
 
       # holds data/raw/live/tg_<day>.json (station totals so far)
