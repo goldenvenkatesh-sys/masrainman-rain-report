@@ -1,7 +1,7 @@
 {
 "date": "2026-11-08",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-12T12:49+0530",
+"fetched": "2026-11-12T19:16+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -416,6 +416,12 @@
 "uuid": "85a7cdf4-2251-43f3-ab2e-5017ced4810e",
 "district": "Idukki",
 "rain": 4.3
+},
+{
+"station": "Pudukkad",
+"uuid": "90422e93-9e49-4e25-93a0-5e0909035ec8",
+"district": "Thrissur",
+"rain": 4.0
 },
 {
 "station": "Walayar Dam",

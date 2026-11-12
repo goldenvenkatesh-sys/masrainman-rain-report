@@ -1,7 +1,7 @@
 {
 "date": "2026-11-07",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-11T12:01+0530",
+"fetched": "2026-11-12T19:16+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -148,10 +148,22 @@
 "rain": 25.2
 },
 {
+"station": "Mathilakam",
+"uuid": "f50b28b4-863c-4bb9-8b19-c9f35c6eb203",
+"district": "Thrissur",
+"rain": 7.9
+},
+{
 "station": "Palappuzha",
 "uuid": "1f027fc6-be88-4ac6-be98-58d5dffcdf43",
 "district": "Kannur",
 "rain": 6.2
+},
+{
+"station": "Vettilappara",
+"uuid": "d4467488-e65e-4dc7-b54d-284adcb2f77f",
+"district": "Thrissur",
+"rain": 0.0
 },
 {
 "station": "Perinthalmanna",
@@ -388,6 +400,12 @@
 "rain": 15.4
 },
 {
+"station": "Chimmony",
+"uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
+"district": "Thrissur",
+"rain": 4.2
+},
+{
 "station": "Thunakadavu",
 "uuid": "57bad3f2-8941-418c-9ad8-35ff72539899",
 "district": "Palakkad",
@@ -436,10 +454,28 @@
 "rain": 2.1
 },
 {
+"station": "Varandarapilly",
+"uuid": "181b3f21-87a2-4478-8924-e30a0112b44f",
+"district": "Thrissur",
+"rain": 4.8
+},
+{
+"station": "Pudukkad",
+"uuid": "90422e93-9e49-4e25-93a0-5e0909035ec8",
+"district": "Thrissur",
+"rain": 3.8
+},
+{
 "station": "Walayar Dam",
 "uuid": "56c67aca-7683-4fd7-a99d-c75e6682f3f9",
 "district": "Palakkad",
 "rain": 4.0
+},
+{
+"station": "Karikkadavu",
+"uuid": "a2c0234a-b9c5-4602-9bba-1ec845da0e95",
+"district": "Thrissur",
+"rain": 0.0
 },
 {
 "station": "erimayur",
@@ -470,6 +506,12 @@
 "uuid": "cd320d66-fe8a-4aa9-bc35-d829ba39446b",
 "district": "Kozhikode",
 "rain": 4.0
+},
+{
+"station": "Vynthala",
+"uuid": "2ef9c7e7-0ad1-4f56-bb0f-2aa38277f0c0",
+"district": "Thrissur",
+"rain": 12.8
 },
 {
 "station": "Chinnar",

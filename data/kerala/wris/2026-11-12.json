@@ -1,7 +1,7 @@
 {
 "date": "2026-11-12",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-12T12:49+0530",
+"fetched": "2026-11-12T19:16+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -19,6 +19,18 @@
 "station": "Kurudamannil",
 "uuid": "cd578b26-199d-4166-a977-e1a4208a7ece",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "meenkara",
+"uuid": "4237777a-25c0-4468-a601-dfadd077fd78",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kumili",
+"uuid": "459aa759-669d-4380-8151-1bfebfa7736f",
+"district": "Idukki",
 "rain": 0.0
 },
 {
@@ -40,9 +52,81 @@
 "rain": 0.0
 },
 {
+"station": "Chittadi",
+"uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Ottapalam",
+"uuid": "12e20631-688f-46d0-abbc-d77e9f837be4",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Pudur",
+"uuid": "5a96ea27-bb4b-4f05-a344-195d59bffb8f",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Kanjirapuzha",
+"uuid": "cdbea4a6-64d0-4f99-afbc-5a5a5a194104",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Chittoor(Bharathapuzha)",
+"uuid": "4bb55912-dc96-42f0-bc96-1cc4f8f13e32",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "neryamangalam",
+"uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
+"district": "Ernakulam",
+"rain": 39.8
+},
+{
+"station": "Boyce Estate",
+"uuid": "53728cef-53c0-4371-930f-f84496435648",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Kanjirappally",
+"uuid": "cca775ee-7910-4d85-94d9-7ff33aebb188",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
 "station": "Perumthenaruvi",
 "uuid": "c28ae31c-5f27-41b4-a20c-9ef02d4672fb",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Pokkunni",
+"uuid": "92fe39fa-0d86-4799-8535-c6380fbbcf9b",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Aluva",
+"uuid": "673ed418-3a9e-4685-9dd2-ade034f82af9",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Malampuzha",
+"uuid": "f2d21ac4-958d-4d3b-8bfe-dfa15d69eedd",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Chulliar Dam",
+"uuid": "bb1793ef-f171-4760-85e3-9e597615551d",
+"district": "Palakkad",
 "rain": 0.0
 },
 {
@@ -52,9 +136,51 @@
 "rain": 0.0
 },
 {
+"station": "Teekoy Estate",
+"uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Mangalam Dam",
+"uuid": "52b09196-9537-42ab-be32-bbc49dd928e4",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Pothundy Dam",
+"uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Moolathara",
+"uuid": "d9b8c2c9-f868-4e74-85b8-34fcbe478e32",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Bhoothathankettu",
+"uuid": "bf21c1fa-f25e-4b72-a554-32a24a27a91e",
+"district": "Ernakulam",
+"rain": 0.0
+},
+{
 "station": "Madhur",
 "uuid": "2237ef04-7376-4978-8534-bb3d7c8fcace",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Nedumkandam",
+"uuid": "8d6d822d-eb22-4bc3-be39-66bb6fa92fd8",
+"district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Vandanmedu",
+"uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
+"district": "Idukki",
 "rain": 0.0
 },
 {
@@ -64,15 +190,63 @@
 "rain": 0.0
 },
 {
+"station": "Parambikulam",
+"uuid": "e317c825-eada-492d-a839-d23ea7149cd8",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
 "station": "Padiyathadukka",
 "uuid": "7e850689-acc6-42a2-a5ff-116478555a99",
 "district": "Kasaragod",
 "rain": 0.0
 },
 {
+"station": "Erattupetta",
+"uuid": "db45d1ba-1554-40a6-bf6c-498729e445e6",
+"district": "Kottayam",
+"rain": 10.0
+},
+{
+"station": "Mundakayam",
+"uuid": "5ff8ba2a-a92b-4c95-afa2-9d6a169bef56",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
 "station": "Moozhiyar",
 "uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Thunakadavu",
+"uuid": "57bad3f2-8941-418c-9ad8-35ff72539899",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Walayar Dam",
+"uuid": "56c67aca-7683-4fd7-a99d-c75e6682f3f9",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "erimayur",
+"uuid": "7055ee4c-221f-45ac-b552-6d2eae469c6c",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Koduvayur",
+"uuid": "b3737057-8c0e-433e-bb60-523b680c0172",
+"district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Chinnar",
+"uuid": "39651f9b-3cbf-4159-b727-6148544531a6",
+"district": "Idukki",
 "rain": 0.0
 },
 {

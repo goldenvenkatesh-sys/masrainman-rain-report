@@ -1768,6 +1768,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Pudukkad",
+"key": "PUDUKKAD",
+"rain": 4.0,
+"lat": 10.4375,
+"lon": 76.3803
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Walayar Dam",
 "key": "WALAYAR DAM",
