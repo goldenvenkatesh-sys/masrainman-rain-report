@@ -841,6 +841,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Ollukara",
+"key": "OLLUKARA",
+"rain": 0.0,
+"lat": 10.5333,
+"lon": 76.2667
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Kumili",
 "key": "KUMILI",
@@ -859,6 +868,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Triprayar",
+"key": "TRIPRAYAR",
+"rain": 0.0,
+"lat": 10.4011,
+"lon": 76.1192
+},
+{
+"type": "sw",
 "district": "Pathanamthitta",
 "station": "Nilackal",
 "key": "NILACKAL",
@@ -874,6 +892,15 @@
 "rain": 0.0,
 "lat": 10.0914,
 "lon": 76.6883
+},
+{
+"type": "sw",
+"district": "Alappuzha",
+"station": "Ambalapuzha",
+"key": "AMBALAPUZHA",
+"rain": 0.0,
+"lat": 9.3794,
+"lon": 76.3567
 },
 {
 "type": "sw",
@@ -913,6 +940,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Peechi",
+"key": "PEECHI",
+"rain": 0.0,
+"lat": 10.525,
+"lon": 76.3664
+},
+{
+"type": "sw",
 "district": "Malappuram",
 "station": "Ambittanpotty",
 "key": "AMBITTANPOTTY",
@@ -928,6 +964,15 @@
 "rain": 0.0,
 "lat": 11.2853,
 "lon": 76.2317
+},
+{
+"type": "sw",
+"district": "Alappuzha",
+"station": "Kollakadavu",
+"key": "KOLLAKADAVU",
+"rain": 0.0,
+"lat": 9.2386,
+"lon": 76.5889
 },
 {
 "type": "sw",
@@ -1012,12 +1057,39 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Vaniampara",
+"key": "VANIAMPARA",
+"rain": 0.0,
+"lat": 10.5722,
+"lon": 76.425
+},
+{
+"type": "sw",
 "district": "Pathanamthitta",
 "station": "Moozhiyar",
 "key": "MOOZHIYAR",
 "rain": 0.0,
 "lat": 9.3106,
 "lon": 77.0708
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Panachery",
+"key": "PANACHERY",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.3
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Amalanagar",
+"key": "AMALANAGAR",
+"rain": 0.0,
+"lat": 10.5664,
+"lon": 76.1664
 },
 {
 "type": "sw",
@@ -1063,6 +1135,15 @@
 "rain": 0.0,
 "lat": 9.3333,
 "lon": 76.8308
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Enamakkal",
+"key": "ENAMAKKAL",
+"rain": 0.0,
+"lat": 10.5083,
+"lon": 76.1083
 }
 ]
 }

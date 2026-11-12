@@ -1,7 +1,7 @@
 {
 "date": "2026-11-10",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-11T18:14+0530",
+"fetched": "2026-11-12T12:49+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -13,6 +13,12 @@
 "station": "Paika",
 "uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Ollukara",
+"uuid": "2f6fd414-2d3d-4d99-9c9a-44754efc6e8b",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -37,6 +43,12 @@
 "station": "Manjeswaram",
 "uuid": "0167ee78-2291-4293-abe9-44ef103f6232",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Triprayar",
+"uuid": "c4e878f6-5d94-454f-baf6-9018f9584e50",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -97,6 +109,12 @@
 "station": "Teekoy Estate",
 "uuid": "f55c0842-5640-41a1-ac02-1fc44d6f5968",
 "district": "Kottayam",
+"rain": 0.0
+},
+{
+"station": "Peechi",
+"uuid": "b9524dfb-2a01-4111-a174-9c1745609ed4",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -172,9 +190,27 @@
 "rain": 0.0
 },
 {
+"station": "Vaniampara",
+"uuid": "7983f9e2-9f57-4720-88df-dc42bf0ccc27",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
 "station": "Moozhiyar",
 "uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Panachery",
+"uuid": "01d6db19-0e39-490a-a5b3-74cbc52f2a6e",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
+"station": "Amalanagar",
+"uuid": "56d634b1-dc03-4b08-9e40-4f41eedfed8d",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -199,6 +235,12 @@
 "station": "FCS Malappuram",
 "uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
 "district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Enamakkal",
+"uuid": "71c049f8-f0da-4d31-9dcb-df2d8078e130",
+"district": "Thrissur",
 "rain": 0.0
 }
 ]

@@ -1,7 +1,7 @@
 {
 "date": "2026-11-11",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-11T21:38+0530",
+"fetched": "2026-11-12T12:49+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -13,6 +13,12 @@
 "station": "Paika",
 "uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Ollukara",
+"uuid": "2f6fd414-2d3d-4d99-9c9a-44754efc6e8b",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -40,6 +46,12 @@
 "rain": 0.0
 },
 {
+"station": "Triprayar",
+"uuid": "c4e878f6-5d94-454f-baf6-9018f9584e50",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
 "station": "Nilackal",
 "uuid": "f3c75d8f-fddb-4e05-95da-f20b60c92a91",
 "district": "Pathanamthitta",
@@ -49,6 +61,12 @@
 "station": "neryamangalam",
 "uuid": "94ee0275-025a-47dd-a6c2-f578c3c22e58",
 "district": "Ernakulam",
+"rain": 0.0
+},
+{
+"station": "Ambalapuzha",
+"uuid": "d3f9f896-c706-44e6-bf01-5807a4a51b6f",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
@@ -94,6 +112,12 @@
 "rain": 0.0
 },
 {
+"station": "Peechi",
+"uuid": "b9524dfb-2a01-4111-a174-9c1745609ed4",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
 "station": "Ambittanpotty",
 "uuid": "af6c4544-24c3-499a-aca1-1c941fe31f08",
 "district": "Malappuram",
@@ -103,6 +127,12 @@
 "station": "Nilambur Manavedan HS",
 "uuid": "46c3197f-2670-40dd-b044-9ed63ba5e1c4",
 "district": "Malappuram",
+"rain": 0.0
+},
+{
+"station": "Kollakadavu",
+"uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
+"district": "Alappuzha",
 "rain": 0.0
 },
 {
@@ -160,9 +190,27 @@
 "rain": 0.0
 },
 {
+"station": "Vaniampara",
+"uuid": "7983f9e2-9f57-4720-88df-dc42bf0ccc27",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
 "station": "Moozhiyar",
 "uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Panachery",
+"uuid": "01d6db19-0e39-490a-a5b3-74cbc52f2a6e",
+"district": "Thrissur",
+"rain": 0.0
+},
+{
+"station": "Amalanagar",
+"uuid": "56d634b1-dc03-4b08-9e40-4f41eedfed8d",
+"district": "Thrissur",
 "rain": 0.0
 },
 {
@@ -193,6 +241,12 @@
 "station": "Vadasserikkara",
 "uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Enamakkal",
+"uuid": "71c049f8-f0da-4d31-9dcb-df2d8078e130",
+"district": "Thrissur",
 "rain": 0.0
 }
 ]

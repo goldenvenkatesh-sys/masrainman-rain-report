@@ -1291,6 +1291,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Ollukara",
+"key": "OLLUKARA",
+"rain": 0.0,
+"lat": 10.5333,
+"lon": 76.2667
+},
+{
+"type": "sw",
 "district": "Kannur",
 "station": "Kottiyoor",
 "key": "KOTTIYOOR",
@@ -1342,6 +1351,15 @@
 "rain": 0.0,
 "lat": 11.9,
 "lon": 75.6331
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Triprayar",
+"key": "TRIPRAYAR",
+"rain": 3.0,
+"lat": 10.4011,
+"lon": 76.1192
 },
 {
 "type": "sw",
@@ -1642,6 +1660,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Vaniampara",
+"key": "VANIAMPARA",
+"rain": 0.0,
+"lat": 10.5722,
+"lon": 76.425
+},
+{
+"type": "sw",
 "district": "Pathanamthitta",
 "station": "Moozhiyar",
 "key": "MOOZHIYAR",
@@ -1687,6 +1714,15 @@
 },
 {
 "type": "sw",
+"district": "Thrissur",
+"station": "Panachery",
+"key": "PANACHERY",
+"rain": 0.0,
+"lat": 10.55,
+"lon": 76.3
+},
+{
+"type": "sw",
 "district": "Idukki",
 "station": "Marayoor",
 "key": "MARAYOOR",
@@ -1702,6 +1738,15 @@
 "rain": 0.0,
 "lat": 12.0581,
 "lon": 75.5728
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Amalanagar",
+"key": "AMALANAGAR",
+"rain": 0.0,
+"lat": 10.5664,
+"lon": 76.1664
 },
 {
 "type": "sw",
@@ -1783,6 +1828,15 @@
 "rain": 33.6,
 "lat": 9.3333,
 "lon": 76.8308
+},
+{
+"type": "sw",
+"district": "Thrissur",
+"station": "Enamakkal",
+"key": "ENAMAKKAL",
+"rain": 0.0,
+"lat": 10.5083,
+"lon": 76.1083
 }
 ]
 }
