@@ -53,6 +53,28 @@
    "made": "2026-11-14T00:51+05:30"
   },
   {
+   "id": "rain_ktcc_live_2026-11-14_0230",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 2:30 AM",
+   "sort": "2026-11-14T02:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-14_0230.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ktcc_live_2026-11-14_0230.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ktcc_live_2026-11-14_0230.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-14_0230.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 14 இரவு 2:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kadapakkam (சென்னை) – 7.2 மி.மீ.\n2. Z 02 Manali (W 18) (சென்னை) – 2.8 மி.மீ.\n3. Z 02 Manali (W 18) (சென்னை) – 2.8 மி.மீ.\n4. Nellikupam (செங்கல்பட்டு) – 2.0 மி.மீ.\n5. Z 02 Manali New town (W 18) (சென்னை) – 1.6 மி.மீ.\n6. Z 14 Madipakkam (W 169) (சென்னை) – 1.5 மி.மீ.\n7. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n8. Balaji Nagar (Puzhal) (சென்னை) – 1.2 மி.மீ.\n9. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n10. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T02:50+05:30"
+  },
+  {
    "id": "rain_ka_live_2026-11-14_0230",
    "region": "ka",
    "region_name": "Karnataka",
@@ -4028,28 +4050,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\n24-hour rainfall · 8:30 am 9 Nov to 8:30 am 10 Nov\n\n8 stations recorded over 10 mm; Tirupati leads the districts with a station average of 2.9 mm.\n\nTop 10 stations:\n1. Ragigunta (Tirupati) – 16.8 mm\n2. Alivelumangapuram 33/11 kV (Tirupati) – 15.9 mm\n3. Penepally 132/33 KV (Tirupati) – 15.7 mm\n4. Sullurpet 33/11 KV (Tirupati) – 15.2 mm\n5. Manga Nellore (Tirupati) – 13.5 mm\n6. ChengalammaTemple Substation ARG (Tirupati) – 12.8 mm\n7. Yerpedu (Tirupati) – 11.2 mm\n8. Doravarisatram 33/11 KV (Tirupati) – 10.1 mm\n9. Pallam (Tirupati) – 9.8 mm\n10. Mungalapalem (Tirupati) – 8.2 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-10T18:28+05:30"
-  },
-  {
-   "id": "rain_ktcc_live_2026-11-10_0630",
-   "region": "ktcc",
-   "region_name": "KTCC",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-10",
-   "label": "up to 10 Nov, 6:30 AM",
-   "sort": "2026-11-10T06:30",
-   "files": {
-    "mp4": "files/rain_ktcc_live_2026-11-10_0630.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ktcc_live_2026-11-10_0630.gif",
-    "gif_mb": 1.1,
-    "png": "files/rain_ktcc_live_2026-11-10_0630.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ktcc_live_2026-11-10_0630.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 9 காலை 8:30 முதல் நவ. 10 காலை 6:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Sirukaveripakkam (காஞ்சிபுரம்) – 6.8 மி.மீ.\n2. Perumbakkam (செங்கல்பட்டு) – 4.4 மி.மீ.\n3. Kelambakkam (செங்கல்பட்டு) – 0.8 மி.மீ.\n4. Z 01 Ennore (W 03) (சென்னை) – 0.8 மி.மீ.\n5. Nellikupam (செங்கல்பட்டு) – 0.8 மி.மீ.\n6. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n7. Thiruvellavoyal (திருவள்ளூர்) – 0.4 மி.மீ.\n8. Elavur (திருவள்ளூர்) – 0.4 மி.மீ.\n9. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n10. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-10T06:50+05:30"
   },
   {
    "id": "rain_gpm3d_2026-11-09_2042_en",
