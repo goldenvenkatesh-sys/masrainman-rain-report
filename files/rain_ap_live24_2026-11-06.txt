@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 5 Nov to 8:30 am 6 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Nellore (Nellore) – 53.5 mm
+2. Nellore(A) (Nellore) – 52.8 mm
+3. Chilamannuru (Tirupati) – 49.0 mm
+4. Mummidivaram 33/11 KV (Konaseema) – 45.6 mm
+5. Allur (Nellore) – 42.8 mm
+6. Isakapalli (Nellore) – 42.5 mm
+7. Injaram (Kakinada) – 41.5 mm
+8. Vidavalur (Nellore) – 41.5 mm
+9. Bogole (Nellore) – 37.2 mm
+10. Chinthavaram (Nellore) – 29.2 mm
+
+Heaviest in one hour: 27.7 mm at Injaram (Kakinada), hour ending 9:30 AM
+Rain at 261 of 2135 stations · 0 with heavy rain or more
+Most of it fell 8:30 AM – 12:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 7 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

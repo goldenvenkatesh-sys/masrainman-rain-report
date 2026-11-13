@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 11 Nov to 8:30 am 12 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Ankanahalli (Mysuru) – 278.5 mm
+2. Bikkodu (Hassan) – 26.5 mm
+3. Mallur (Haveri) – 19.5 mm
+4. Masanagi (Haveri) – 13.0 mm
+5. Krishnarajapet (Mandya) – 5.5 mm
+6. Andanuru (Chitradurga) – 2.5 mm
+7. Nagaralu (Chikkamagaluru) – 1.5 mm
+8. Belavanur (Davanagere) – 1.5 mm
+9. Kaliaya (Dakshina Kannada) – 1.5 mm
+10. Kadabinabail (Chikkamagaluru) – 1.0 mm
+
+Heaviest in one hour: 278.5 mm at Ankanahalli (Mysuru), hour ending 3:30 PM
+Rain at 36 of 3961 hourly stations · 1 with heavy rain or more
+Most of it fell 2:30 PM – 3:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

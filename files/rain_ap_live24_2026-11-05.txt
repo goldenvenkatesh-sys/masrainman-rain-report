@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 4 Nov to 8:30 am 5 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Chityala (East Godavari) – 236.5 mm
+2. Gopalapuram ARG (East Godavari) – 234.8 mm
+3. Karicharlagudem (East Godavari) – 230.2 mm
+4. Saggonda (East Godavari) – 224.2 mm
+5. JeeluguMilli (Eluru) – 221.1 mm
+6. P.Narayanapuram (Eluru) – 220.8 mm
+7. Bayyanagudem (Eluru) – 213.5 mm
+8. Kothapatnam ARG (Prakasam) – 195.7 mm
+9. Pedapudi ARG (Kakinada) – 148.7 mm
+10. Velangi - Water Well (Kakinada) – 148.0 mm
+
+Heaviest in one hour: 91.2 mm at Bayyanagudem (Eluru), hour ending 4:30 PM
+Rain at 633 of 2136 stations · 60 with heavy rain or more
+Most of it fell 2:30 PM – 7:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 8 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 1 caught, 1 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

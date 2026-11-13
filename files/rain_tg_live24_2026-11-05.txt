@@ -1,0 +1,26 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 4 Nov to 8:30 am 5 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Aswaraopeta (Bhadradri Kothagudem) – 278.8 mm
+2. Malkaram (Bhadradri Kothagudem) – 188.3 mm
+3. Ankampalem (Bhadradri Kothagudem) – 175.0 mm
+4. Mulakalapally (Bhadradri Kothagudem) – 149.8 mm
+5. Sitarampatnam (Bhadradri Kothagudem) – 120.0 mm
+6. Mandalapally (Bhadradri Kothagudem) – 82.0 mm
+7. Naidupeta (Bhadradri Kothagudem) – 80.0 mm
+8. Nagupalle (Khammam) – 72.0 mm
+9. Maddukuru (Bhadradri Kothagudem) – 55.0 mm
+10. Pentlam (Bhadradri Kothagudem) – 45.0 mm
+
+Heaviest in one hour: 85.1 mm at Aswaraopeta (Bhadradri Kothagudem), hour ending 1:30 PM
+Rain at 70 of 1097 stations · 8 with heavy rain or more
+Most of it fell 10:30 AM – 1:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 2 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 2 caught, 1 false alarms
+  ECMWF AIFS: 1 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

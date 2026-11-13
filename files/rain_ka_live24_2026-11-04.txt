@@ -1,0 +1,21 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 3 Nov to 8:30 am 4 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Doora (Mysuru) – 125.5 mm
+2. Ramakunja (Dakshina Kannada) – 103.5 mm
+3. Nooralakuppe (Mysuru) – 103.0 mm
+4. Gandhanahalli (Mysuru) – 101.5 mm
+5. Kanakamajalu (Dakshina Kannada) – 96.0 mm
+
+Heaviest in one hour: 92.5 mm at Ramakunja (Dakshina Kannada), hour ending 5:30 PM
+Rain at 920 of 3834 stations · 35 with heavy rain or more
+Most of it fell 4:30 PM – 9:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 4 districts)
+  WeatherNext 3: no forecast
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

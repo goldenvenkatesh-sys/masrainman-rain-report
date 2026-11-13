@@ -1,0 +1,26 @@
+🌧 Chennai Region · Past 24 hours observed rainfall
+8:30 am 8 Nov to 8:30 am 9 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Manavur (Tiruvallur) – 62.4 mm
+2. Z 14 Pallikaranai (W 190) (Chennai) – 43.2 mm
+3. Z 04 Mullai Nagar (Div 37) (Chennai) – 42.8 mm
+4. Z 01 Wimco nagar (W 05) (Chennai) – 41.6 mm
+5. Z 04 Tondiarpet (W 42) (Chennai) – 36.6 mm
+6. Redhills TNDRRA ARG (Tiruvallur) – 34.4 mm
+7. Z 01 Ennore (W 03) (Chennai) – 34.0 mm
+8. Z 07 Ayapakkam (W 85) (Chennai) – 33.0 mm
+9. Z 01 Thiruvottiyur (W 11) (Chennai) – 32.4 mm
+10. Z 14 Medavakkam (W 191) (Chennai) – 32.2 mm
+
+Heaviest in one hour: 34.8 mm at Manavur (Tiruvallur), hour ending 4:30 PM
+Rain at 113 of 144 hourly stations · 0 with heavy rain or more
+Most of it fell 8:30 AM – 2:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 4 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

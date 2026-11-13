@@ -1,0 +1,27 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 9 Nov to 8:30 am 10 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Oothu (Tirunelveli) – 133.0 mm (daily gauge)
+2. Nalumukku (Tirunelveli) – 105.0 mm (daily gauge)
+3. Kakkachi (Tirunelveli) – 93.0 mm (daily gauge)
+4. Kalakadu (Tirunelveli) – 86.8 mm (daily gauge)
+5. Kayalpattinam (Thoothukudi) – 83.0 mm (daily gauge)
+6. Manjolai (Tirunelveli) – 75.0 mm (daily gauge)
+7. Panankulam (Tirunelveli) – 73.6 mm
+8. Kuzhithurai (Kanniyakumari) – 71.2 mm (daily gauge)
+9. Kuttam (Tirunelveli) – 69.2 mm
+10. Pathanpillai Kudiyrippu (Tenkasi) – 66.0 mm
+
+Heaviest in one hour: 37.6 mm at Kuttam (Tirunelveli), hour ending 11:30 PM
+Rain at 383 of 1288 hourly stations · 11 with heavy rain or more
+Most of it fell 8:30 PM – 3:30 AM
+Daily rain gauges (TNSDMA, 574 stations): 8 with heavy rain or more · state average 4.6 mm
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 2 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

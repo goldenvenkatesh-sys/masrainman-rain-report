@@ -1,0 +1,26 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 7 Nov to 8:30 am 8 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Jaklair (Narayanpet) – 24.8 mm
+2. Dhanwada (Narayanpet) – 15.0 mm
+3. Arvapalli H/o Jajireddigudem (Suryapet) – 13.3 mm
+4. Narayanapur (Yadadri Bhuvanagiri) – 10.8 mm
+5. Chinna Thandrapadu (Jogulamba Gadwal) – 9.8 mm
+6. Pillidarga Ward Office: Borabanda (Medchal Malkajgiri) – 7.5 mm
+7. Yellandu (Bhadradri Kothagudem) – 7.0 mm
+8. Venkatapur (Jogulamba Gadwal) – 6.3 mm
+9. Williamkonda H/o Miraspally (Wanaparthy) – 5.8 mm
+10. Kesamudram (Mahabubabad) – 5.3 mm
+
+Heaviest in one hour: 12.4 mm at Jaklair (Narayanpet), hour ending 12:30 AM
+Rain at 23 of 1097 stations · 0 with heavy rain or more
+Most of it fell 7:30 PM – 12:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

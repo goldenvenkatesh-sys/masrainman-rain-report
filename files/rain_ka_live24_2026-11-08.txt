@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 7 Nov to 8:30 am 8 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Bijaganahalli (Mysuru) – 91.5 mm
+2. Pandeshwara (Udupi) – 47.0 mm
+3. H.Gollahalli (Kolar) – 45.0 mm
+4. Doddagubbi (Bengaluru Urban) – 40.5 mm
+5. Nelavagilu (Bengaluru Rural) – 36.5 mm
+6. Thorekadanahalli (Mandya) – 33.5 mm
+7. Uchangi (Hassan) – 26.5 mm
+8. Mudiyanur (Kolar) – 26.0 mm
+9. Halaguru (Mandya) – 26.0 mm
+10. Abbana (Hassan) – 24.5 mm
+
+Heaviest in one hour: 49.0 mm at Bijaganahalli (Mysuru), hour ending 4:30 AM
+Rain at 531 of 3948 stations · 1 with heavy rain or more
+Most of it fell 5:30 PM – 10:30 PM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

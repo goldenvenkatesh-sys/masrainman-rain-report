@@ -1,0 +1,26 @@
+🌧 Chennai Region · Past 24 hours observed rainfall
+8:30 am 7 Nov to 8:30 am 8 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Z 05 Basin bridge (W 53) (Chennai) – 99.6 mm
+2. Z 05 Parrys (W 60) (Chennai) – 93.2 mm
+3. Z 11 Maduravoyal (W 146) (Chennai) – 92.4 mm
+4. Vepery (Chennai) – 87.6 mm
+5. Pulianthope (Chennai) – 80.0 mm
+6. Z 04 Tondiarpet (W 42) (Chennai) – 77.1 mm
+7. Egmore (Chennai) – 73.6 mm
+8. Z 11 Nerkundram (W 144) (Chennai) – 68.8 mm
+9. Z 05 Chennai Central (W 58) (Chennai) – 68.7 mm
+10. Z 05 Cemetery Road (Div 51) (Chennai) – 66.8 mm
+
+Heaviest in one hour: 45.0 mm at Z 11 Maduravoyal (W 146) (Chennai), hour ending 4:30 AM
+Rain at 114 of 148 stations · 12 with heavy rain or more
+Most of it fell 2:30 AM – 4:30 AM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

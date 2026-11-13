@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 8 Nov to 8:30 am 9 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Sanapa (Anantapuramu) – 46.5 mm
+2. Alivelumangapuram 33/11 kV (Tirupati) – 37.4 mm
+3. Pabbuletipalle (Nellore) – 29.5 mm
+4. Kalipatnam (West Godavari) – 19.0 mm
+5. Banaganapalli 33/11 (Nandyal) – 17.6 mm
+6. Vennapusapalle (Anantapuramu) – 16.0 mm
+7. Simhadripuram ARG (YSR Kadapa) – 16.0 mm
+8. Simhadripuram (YSR Kadapa) – 15.0 mm
+9. Yerpedu (Tirupati) – 14.5 mm
+10. Burujupalli (YSR Kadapa) – 14.2 mm
+
+Heaviest in one hour: 22.9 mm at Sanapa (Anantapuramu), hour ending 7:30 AM
+Rain at 176 of 2134 stations · 0 with heavy rain or more
+Most of it fell 12:30 PM – 8:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 6 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 2 caught, 1 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

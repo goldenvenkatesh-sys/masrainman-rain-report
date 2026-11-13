@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 12 Nov to 8:30 am 13 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Dharmapuram (Kanniyakumari) – 31.6 mm
+2. Chithirankodu (Kanniyakumari) – 24.0 mm
+3. Suchindram (Kanniyakumari) – 20.8 mm
+4. Chunkankadai (Kanniyakumari) – 20.8 mm
+5. Mahendragiri (Kanniyakumari) – 14.4 mm
+6. Ponmanai (Kanniyakumari) – 14.0 mm
+7. Thumbacode (Kanniyakumari) – 13.6 mm
+8. Kurunthancode (Kanniyakumari) – 9.6 mm
+9. Chittar Dam 2 (Sivalogam) ARG (Kanniyakumari) – 8.4 mm
+10. Z 03 Madhavaram (W 30) (Chennai) – 7.2 mm
+
+Heaviest in one hour: 25.6 mm at Dharmapuram (Kanniyakumari), hour ending 3:30 PM
+Rain at 97 of 1280 hourly stations · 0 with heavy rain or more
+Most of it fell 12:30 PM – 5:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 1 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 7 Nov to 8:30 am 8 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Akkampet (Nellore) – 53.5 mm
+2. Butchayyapeta ARG (Anakapalli) – 35.8 mm
+3. Sankara Puram (Prakasam) – 32.0 mm
+4. Srungavarapukota ARG (Vizianagaram) – 28.7 mm
+5. Molakalapundla ARG (Nellore) – 27.9 mm
+6. Nellore (Nellore) – 25.8 mm
+7. Yemmiganur PUMP HOUSE (Kurnool) – 25.1 mm
+8. Dornala ARG (Markapuram) – 24.4 mm
+9. Srirangarajapuram ARG (Chittoor) – 23.1 mm
+10. Govt.Jr.College ARG (YSR Kadapa) – 20.0 mm
+
+Heaviest in one hour: 16.0 mm at Sankara Puram (Prakasam), hour ending 6:30 AM
+Rain at 200 of 2135 stations · 0 with heavy rain or more
+Most of it fell 11:30 AM – 7:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 11 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 1 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

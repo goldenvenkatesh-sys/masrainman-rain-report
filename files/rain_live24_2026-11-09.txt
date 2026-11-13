@@ -1,0 +1,27 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 8 Nov to 8:30 am 9 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Kayalpattinam (Thoothukudi) – 107.4 mm (daily gauge)
+2. Manavur (Tiruvallur) – 62.4 mm
+3. Mela Tiruchendur (Thoothukudi) – 56.4 mm
+4. Thopputhurai (Nagapattinam) – 50.8 mm
+5. Kokkirakulam (Tirunelveli) – 46.8 mm
+6. Z 14 Pallikaranai (W 190) (Chennai) – 43.2 mm
+7. Kayalpattinam (Thoothukudi) – 42.8 mm
+8. Z 04 Mullai Nagar (Div 37) (Chennai) – 42.8 mm
+9. Z 01 Wimco nagar (W 05) (Chennai) – 41.6 mm
+10. Thirumailadi (Mayiladuthurai) – 41.2 mm
+
+Heaviest in one hour: 34.8 mm at Manavur (Tiruvallur), hour ending 4:30 PM
+Rain at 710 of 1303 hourly stations · 1 with heavy rain or more
+Most of it fell 8:30 AM – 3:30 PM
+Daily rain gauges (TNSDMA, 574 stations): 1 with heavy rain or more · state average 6.4 mm
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 28 districts)
+  WeatherNext 3: 7 caught, 2 false alarms
+  ECMWF IFS: 11 caught, 5 false alarms
+  ECMWF AIFS: 8 caught, 3 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 6 Nov to 8:30 am 7 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Cherakulam (Thoothukudi) – 60.8 mm
+2. Kodiyakkarai ARG (Nagapattinam) – 57.6 mm
+3. Z 11 Valasaravakkam (W 148) (Chennai) – 53.4 mm
+4. Pathanpillai Kudiyrippu (Tenkasi) – 52.0 mm
+5. Kengarai (Nilgiris) – 51.6 mm
+6. Vikramasingapuram (Tirunelveli) – 50.4 mm
+7. Kolakombai (Nilgiris) – 50.0 mm
+8. Alwarkurichi (Tenkasi) – 48.0 mm
+9. Perunkulam (Ramanathapuram) – 46.4 mm
+10. Manur (Tirunelveli) – 46.0 mm
+
+Heaviest in one hour: 44.1 mm at Z 11 Valasaravakkam (W 148) (Chennai), hour ending 1:30 PM
+Rain at 835 of 1316 stations · 0 with heavy rain or more
+Most of it fell 12:30 PM – 9:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 26 districts)
+  WeatherNext 3: 5 caught, 1 false alarms
+  ECMWF IFS: 7 caught, 1 false alarms
+  ECMWF AIFS: 5 caught, 1 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

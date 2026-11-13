@@ -1,0 +1,26 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 6 Nov to 8:30 am 7 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Ayyagaripalle (Mahabubabad) – 58.5 mm
+2. Hanmapur (Yadadri Bhuvanagiri) – 54.8 mm
+3. Nuthankal (Suryapet) – 40.8 mm
+4. Mahabubabad (Mahabubabad) – 40.0 mm
+5. Bayyaram (Mahabubabad) – 37.3 mm
+6. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 34.0 mm
+7. Karepalle (Gate) (Khammam) – 27.0 mm
+8. Reddiguda (Suryapet) – 27.0 mm
+9. Atmakur (Suryapet) – 26.8 mm
+10. Dudyal (Vikarabad) – 26.5 mm
+
+Heaviest in one hour: 27.0 mm at Hanmapur (Yadadri Bhuvanagiri), hour ending 3:30 PM
+Rain at 56 of 1097 stations · 0 with heavy rain or more
+Most of it fell 7:30 PM – 3:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 7 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

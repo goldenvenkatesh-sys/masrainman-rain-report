@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 6 Nov to 8:30 am 7 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. MarketYard 33/11 kv (Prakasam) – 96.9 mm
+2. SolidWasteManagementPark Balighattam ARG (Anakapalli) – 50.0 mm
+3. Vechalam (Anakapalli) – 49.2 mm
+4. Khavirivalasa (Parvathipuram Manyam) – 48.2 mm
+5. Hukumpeta (Alluri Sitharama Raju) – 46.8 mm
+6. masada (Alluri Sitharama Raju) – 44.2 mm
+7. Devarapalle (Anakapalli) – 43.0 mm
+8. Peddamandyam 33/11KV (Annamayya) – 40.8 mm
+9. Makkuva (Parvathipuram Manyam) – 36.8 mm
+10. Bobbili (Vizianagaram) – 36.2 mm
+
+Heaviest in one hour: 49.0 mm at Vechalam (Anakapalli), hour ending 8:30 AM
+Rain at 595 of 2135 stations · 1 with heavy rain or more
+Most of it fell 7:30 AM – 8:30 AM
+
+Did the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

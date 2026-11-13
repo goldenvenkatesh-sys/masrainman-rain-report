@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 10 Nov to 8:30 am 11 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Thopputhurai (Nagapattinam) – 23.2 mm
+2. Kodiyakkarai ARG (Nagapattinam) – 21.6 mm
+3. Nagapattinam TNDRRA ARG (Nagapattinam) – 19.6 mm
+4. Mannarpuram (Tirunelveli) – 13.6 mm
+5. Kottaippattinam (Pudukkottai) – 10.8 mm
+6. Pirantani (Pudukkottai) – 9.6 mm
+7. Ponbethi (Pudukkottai) – 9.6 mm
+8. Pamban ARG (Ramanathapuram) – 8.8 mm
+9. Nedunkulam (Thoothukudi) – 8.4 mm
+10. Cherukole (Kanniyakumari) – 8.4 mm
+
+Heaviest in one hour: 22.0 mm at Thopputhurai (Nagapattinam), hour ending 8:30 AM
+Rain at 78 of 1286 hourly stations · 0 with heavy rain or more
+Most of it fell 1:30 PM – 4:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 1 false alarms
+  ECMWF IFS: 0 caught, 2 false alarms
+  ECMWF AIFS: 0 caught, 1 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

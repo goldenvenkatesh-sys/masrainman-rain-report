@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 10 Nov to 8:30 am 11 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Bikkodu (Hassan) – 60.2 mm
+2. Krishnarajapet (Mandya) – 7.2 mm
+3. GEDDIGERI (Koppala) – 6.5 mm
+4. Puduvettu (Dakshina Kannada) – 4.0 mm
+5. Navilooru (Chamarajanagara) – 4.0 mm
+6. Kaliaya (Dakshina Kannada) – 2.0 mm
+7. Katur (Uttara Kannada) – 2.0 mm
+8. Metri (Ballari) – 1.8 mm
+9. Malleswara (Chikkamagaluru) – 1.5 mm
+10. Ballekere (Mandya) – 1.5 mm
+
+Heaviest in one hour: 9.2 mm at Bikkodu (Hassan), hour ending 7:30 AM
+Rain at 38 of 3958 hourly stations · 0 with heavy rain or more
+Most of it fell 7:30 PM – 7:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

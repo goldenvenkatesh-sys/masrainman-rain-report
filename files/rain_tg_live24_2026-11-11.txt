@@ -1,0 +1,25 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 10 Nov to 8:30 am 11 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Williamkonda H/o Miraspally (Wanaparthy) – 40.0 mm
+2. Kondareddipalle (Nagarkurnool) – 10.2 mm
+3. Namapur (Rajanna Sircilla) – 4.5 mm
+4. Pillidarga Ward Office: Borabanda (Medchal Malkajgiri) – 4.0 mm
+5. Chandur (Nizamabad) – 3.3 mm
+6. Malkaram (Bhadradri Kothagudem) – 2.8 mm
+7. Kandukur (Ranga Reddy) – 2.5 mm
+8. Chippalturthi (Medak) – 2.0 mm
+9. Velganoor (Mancherial) – 2.0 mm
+
+Heaviest in one hour: 10.8 mm at Williamkonda H/o Miraspally (Wanaparthy), hour ending 4:30 AM
+Rain at 9 of 1097 hourly stations · 0 with heavy rain or more
+Most of it fell 11:30 PM – 5:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

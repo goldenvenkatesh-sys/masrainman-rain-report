@@ -1,0 +1,21 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 11 Nov to 8:30 am 12 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Namapur (Rajanna Sircilla) – 26.3 mm
+2. Kommulavancha (Mahabubabad) – 22.8 mm
+3. Damera (Warangal) – 6.3 mm
+4. Kondareddipalle (Nagarkurnool) – 5.1 mm
+5. Addagutta Community Hall (Medchal Malkajgiri) – 2.0 mm
+
+Heaviest in one hour: 5.9 mm at Kommulavancha (Mahabubabad), hour ending 10:30 AM
+Rain at 5 of 1097 hourly stations · 0 with heavy rain or more
+Most of it fell 10:30 AM – 1:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 2 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

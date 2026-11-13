@@ -1,0 +1,26 @@
+🌧 Andhra Pradesh · Past 24 hours observed rainfall
+8:30 am 12 Nov to 8:30 am 13 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Sollapuram (Anantapuramu) – 39.0 mm
+2. Utukuru (Nellore) – 5.5 mm
+3. Megadri Gedda Reservoir ARG (Visakhapatnam) – 5.2 mm
+4. Taduvai (Eluru) – 4.5 mm
+5. Chintapalle (Alluri Sitharama Raju) – 3.8 mm
+6. Chavulamadhum BurialGround ARG (Visakhapatnam) – 3.1 mm
+7. Kapuluppada (Visakhapatnam) – 3.0 mm
+8. Annavaram (Alluri Sitharama Raju) – 3.0 mm
+9. Bapulapad ARG (Krishna) – 2.8 mm
+10. New Railaway Colony ARG (Visakhapatnam) – 2.8 mm
+
+Heaviest in one hour: 19.5 mm at Sollapuram (Anantapuramu), hour ending 5:30 AM
+Rain at 83 of 2129 hourly stations · 0 with heavy rain or more
+Most of it fell 12:30 AM – 6:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com

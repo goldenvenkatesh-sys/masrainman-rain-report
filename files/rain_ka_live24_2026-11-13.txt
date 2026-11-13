@@ -1,0 +1,26 @@
+🌧 Karnataka · Past 24 hours observed rainfall
+8:30 am 12 Nov to 8:30 am 13 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Betadur (Dharwad) – 41.5 mm
+2. Arani (Mandya) – 6.0 mm
+3. Santemarahalli (Chamarajanagara) – 4.5 mm
+4. Krishnarajapet (Mandya) – 2.5 mm
+5. Kanthapura (Mandya) – 2.0 mm
+6. Kaliaya (Dakshina Kannada) – 2.0 mm
+7. Muchuru (Dakshina Kannada) – 1.5 mm
+8. Churchugundi (Shivamogga) – 1.0 mm
+9. Anajigere (Vijayanagara) – 1.0 mm
+10. Malangi (Mysuru) – 1.0 mm
+
+Heaviest in one hour: 15.5 mm at Betadur (Dharwad), hour ending 5:30 PM
+Rain at 35 of 3962 hourly stations · 0 with heavy rain or more
+Most of it fell 9:30 AM – 5:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com
