@@ -48,8 +48,11 @@ jobs:
 
       # backup for the 09:55 daily report: if GitHub skipped that run, save the finished rain-day here
       # (DES shows only the latest day, so a day not saved before the next 08:30 is lost)
+      # ap_fetch.py daily waits up to ~45 min for DES to move on to the new rain-day, longer than this job's
+      # 40-min limit, so cap the step: the live picture must never wait for it, and the next hourly run tries again
       - name: Save finished rain-day if missing
         continue-on-error: true
+        timeout-minutes: 6
         run: |
           python ap_fetch.py daily --if-missing
           bash save_ap.sh
