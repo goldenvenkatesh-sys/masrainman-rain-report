@@ -75,6 +75,28 @@
    "made": "2026-11-14T03:50+05:30"
   },
   {
+   "id": "rain_ap_live_2026-11-14_0300",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 3:00 AM",
+   "sort": "2026-11-14T03:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_0300.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_0300.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_0300.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_0300.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 3:00 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 6.8 mm\n2. P.Narayanapuram (Eluru) – 5.0 mm\n3. Kannuripalem (Anakapalli) – 4.8 mm\n4. Megadri Gedda Reservoir ARG (Visakhapatnam) – 3.8 mm\n5. KVBPuram 33/11 KV (Tirupati) – 3.5 mm\n6. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n7. Taduvai (Eluru) – 3.0 mm\n8. Kommipadu (Nellore) – 2.8 mm\n9. Kondalaveru (Vizianagaram) – 2.5 mm\n10. Molakalapundla ARG (Nellore) – 2.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T03:50+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_0230",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -2837,28 +2859,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 12:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.0 mm\n2. Utukuru (Nellore) – 4.0 mm\n3. Taduvai (Eluru) – 3.5 mm\n4. Muthukur (Chittoor) – 2.2 mm\n5. Annavaram (Alluri Sitharama Raju) – 2.0 mm\n6. Attalasiddavaram (Tirupati) – 2.0 mm\n7. P. Kotakonda (Kurnool) – 2.0 mm\n8. K.Uppalapadu (Prakasam) – 2.0 mm\n9. Penuganchiprolu (NTR) – 1.8 mm\n10. Chintapalle (Alluri Sitharama Raju) – 1.8 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T00:50+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-12_2300",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 11:00 PM",
-   "sort": "2026-11-12T23:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-12_2300.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ap_live_2026-11-12_2300.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_ap_live_2026-11-12_2300.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-12_2300.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 11:00 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Utukuru (Nellore) – 4.0 mm\n2. Megadri Gedda Reservoir ARG (Visakhapatnam) – 3.8 mm\n3. Taduvai (Eluru) – 3.0 mm\n4. P. Kotakonda (Kurnool) – 2.0 mm\n5. K.Uppalapadu (Prakasam) – 2.0 mm\n6. Annavaram (Alluri Sitharama Raju) – 2.0 mm\n7. Penuganchiprolu (NTR) – 1.8 mm\n8. Sullurpet 33/11 KV (Tirupati) – 1.7 mm\n9. Attalasiddavaram (Tirupati) – 1.5 mm\n10. Chintapalle (Alluri Sitharama Raju) – 1.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T23:51+05:30"
   },
   {
    "id": "rain_tg_live_2026-11-12_2100",
