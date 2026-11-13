@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T00:51+05:30",
+ "updated": "2026-11-14T01:50+05:30",
  "reports": [
   {
    "id": "rain_tg_daily_2026-11-14",
@@ -51,6 +51,28 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nTotal rainfall · 3 Nov to 14 Nov (12 days)\n\n2 stations recorded over 200 mm; Bhadradri Kothagudem leads the districts with a station average of 98.2 mm.\n\nTop 5 stations:\n1. Mulakalapalle (Bhadradri Kothagudem) – 238.9 mm\n2. Vemsoor (Khammam) – 208.6 mm\n3. Kalluru (Khammam) – 199.7 mm\n4. Dammapeta (Bhadradri Kothagudem) – 196.1 mm\n5. Penuballi (Khammam) – 195.1 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T00:51+05:30"
+  },
+  {
+   "id": "rain_ka_live_2026-11-14_0130",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 1:30 AM",
+   "sort": "2026-11-14T01:30",
+   "files": {
+    "mp4": "files/rain_ka_live_2026-11-14_0130.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ka_live_2026-11-14_0130.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ka_live_2026-11-14_0130.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ka_live_2026-11-14_0130.txt"
+   },
+   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 13 Nov to 1:30 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Baguru (Chitradurga) – 28.0 mm\n2. Arani (Mandya) – 26.0 mm\n3. Kappalamadagu (Kolar) – 8.5 mm\n4. Thimmaravutanahalli (Kolar) – 8.0 mm\n5. Chebbi (Gadag) – 3.5 mm\n6. Ponnampet 1 (Kodagu) – 3.4 mm\n7. Kaggalahalli (Bengaluru South) – 2.0 mm\n8. Attimage (Chitradurga) – 1.5 mm\n9. Kaliaya (Dakshina Kannada) – 1.5 mm\n10. Kalkeri (Dharwad) – 1.5 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T01:50+05:30"
   },
   {
    "id": "rain_live_2026-11-14_0030",
@@ -2771,28 +2793,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 10:00 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Megadri Gedda Reservoir ARG (Visakhapatnam) – 3.8 mm\n2. Utukuru (Nellore) – 3.5 mm\n3. Taduvai (Eluru) – 3.0 mm\n4. K.Uppalapadu (Prakasam) – 2.0 mm\n5. Annavaram (Alluri Sitharama Raju) – 2.0 mm\n6. P. Kotakonda (Kurnool) – 2.0 mm\n7. Penuganchiprolu (NTR) – 1.8 mm\n8. Sullurpet 33/11 KV (Tirupati) – 1.7 mm\n9. Attalasiddavaram (Tirupati) – 1.5 mm\n10. Palamaner (Chittoor) – 1.2 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-12T22:49+05:30"
-  },
-  {
-   "id": "rain_ka_live_2026-11-12_2130",
-   "region": "ka",
-   "region_name": "Karnataka",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 9:30 PM",
-   "sort": "2026-11-12T21:30",
-   "files": {
-    "mp4": "files/rain_ka_live_2026-11-12_2130.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ka_live_2026-11-12_2130.gif",
-    "gif_mb": 0.9,
-    "png": "files/rain_ka_live_2026-11-12_2130.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ka_live_2026-11-12_2130.txt"
-   },
-   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 12 Nov to 9:30 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Betadur (Dharwad) – 41.5 mm\n2. Santemarahalli (Chamarajanagara) – 4.5 mm\n3. Krishnarajapet (Mandya) – 2.5 mm\n4. Kanthapura (Mandya) – 2.0 mm\n5. Muchuru (Dakshina Kannada) – 1.0 mm\n6. Anajigere (Vijayanagara) – 1.0 mm\n7. Churchugundi (Shivamogga) – 1.0 mm\n8. Kaliaya (Dakshina Kannada) – 1.0 mm\n9. Malangi (Mysuru) – 1.0 mm\n10. Katur (Uttara Kannada) – 0.5 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T21:51+05:30"
   },
   {
    "id": "rain_tg_live_2026-11-12_2100",
