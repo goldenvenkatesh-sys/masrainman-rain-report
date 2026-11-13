@@ -1,5 +1,41 @@
 {
- "files": [],
+ "files": [
+  {
+   "name": "imd_station_daily.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/iadp%20rainfall.pdf",
+   "sha1": "b13eba1ca735a03bb574aba89131daa93d813c55",
+   "saved_at": "2026-11-13T12:49+05:30",
+   "last_modified": "Fri, 13 Nov 2026 05:28:38 GMT"
+  },
+  {
+   "name": "imd_rainfall_map.jpg",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/realized%2024%20hour%20rainfall%20over%20kerala.jpg",
+   "sha1": "ab9ce517556d09768a2627401265a97799a3514c",
+   "saved_at": "2026-11-13T12:49+05:30",
+   "last_modified": "Fri, 13 Nov 2026 05:17:46 GMT"
+  },
+  {
+   "name": "imd_season.pdf",
+   "url": "https://mausam.imd.gov.in/thiruvananthapuram/mcdata/SEASONSRAINFALL.pdf",
+   "sha1": "24f80cf9b680836c8fbfb89d0d7ca060ccd04c7c",
+   "saved_at": "2026-11-13T12:49+05:30",
+   "last_modified": "Fri, 13 Nov 2026 05:39:00 GMT"
+  },
+  {
+   "name": "ksdma_24-hr-rainfall-map-13.11.2026.jpeg",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/24-hr-rainfall-map-13.11.2026.jpeg",
+   "sha1": "8cc61636241148a8cf9467c2b9438ccce8698772",
+   "saved_at": "2026-11-13T12:49+05:30",
+   "last_modified": "Fri, 13 Nov 2026 06:37:09 GMT"
+  },
+  {
+   "name": "ksdma_Actual-Vs-Prediction-4.pdf",
+   "url": "https://sdma.kerala.gov.in/wp-content/uploads/2026/11/Actual-Vs-Prediction-4.pdf",
+   "sha1": "97a0dc2cab0294e19778ee510c752a1966b0f549",
+   "saved_at": "2026-11-13T12:49+05:30",
+   "last_modified": "Fri, 13 Nov 2026 06:37:12 GMT"
+  }
+ ],
  "checks": {
   "imd_station_daily.pdf": 200,
   "imd_rainfall_map.jpg": 200,
@@ -11,6 +47,8 @@
   "ksdma_24-Hr-Rainfall-map-2.jpeg": 200,
   "ksdma_Actual-Vs-Prediction-3.pdf": 200,
   "ksdma_page": "5 files linked",
-  "imd_aws_portal": 200
+  "imd_aws_portal": 200,
+  "ksdma_24-hr-rainfall-map-13.11.2026.jpeg": 200,
+  "ksdma_Actual-Vs-Prediction-4.pdf": 200
  }
 }

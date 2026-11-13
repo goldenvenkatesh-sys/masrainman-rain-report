@@ -1,7 +1,7 @@
 {
 "date": "2026-11-09",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-12T12:49+0530",
+"fetched": "2026-11-13T12:49+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -103,6 +103,12 @@
 "station": "Chittadi",
 "uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Konni Estate",
+"uuid": "f611ee6c-c7bf-42d5-8644-6864be2e9316",
+"district": "Pathanamthitta",
 "rain": 0.0
 },
 {
@@ -256,6 +262,12 @@
 "rain": 0.0
 },
 {
+"station": "Aryankavu",
+"uuid": "1c10d529-2d2a-47c3-b7fa-9ebd1e45a331",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Kollakadavu",
 "uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
 "district": "Alappuzha",
@@ -296,6 +308,12 @@
 "uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
 "district": "Idukki",
 "rain": 0.0
+},
+{
+"station": "Pathanamthitta",
+"uuid": "8037d699-fb43-4a94-ac90-1f0688aff388",
+"district": "Pathanamthitta",
+"rain": 3.2
 },
 {
 "station": "Uppala",
@@ -374,6 +392,12 @@
 "uuid": "2e439884-bef8-4247-aa19-50d8f25dfb99",
 "district": "Kannur",
 "rain": 0.0
+},
+{
+"station": "Soornad",
+"uuid": "8383ae02-28f5-4670-82bb-5ae626c08a0a",
+"district": "Kollam",
+"rain": 15.0
 },
 {
 "station": "Thunakadavu",
@@ -463,6 +487,12 @@
 "station": "Vadasserikkara",
 "uuid": "c24fdbf1-0053-4df3-a2d1-8228780d11a1",
 "district": "Pathanamthitta",
+"rain": 0.0
+},
+{
+"station": "Achencoil",
+"uuid": "eacd5a44-2a43-4f9d-b1fd-8d5cea1cac99",
+"district": "Kollam",
 "rain": 0.0
 },
 {

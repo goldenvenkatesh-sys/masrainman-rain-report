@@ -1,7 +1,7 @@
 {
 "date": "2026-11-10",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-12T19:16+0530",
+"fetched": "2026-11-13T12:49+0530",
 "stations": [
 {
 "station": "Vidyanagar",
@@ -13,6 +13,12 @@
 "station": "Paika",
 "uuid": "01a60638-0a6c-4f1c-999a-59e1f05f7839",
 "district": "Kasaragod",
+"rain": 0.0
+},
+{
+"station": "Kozha",
+"uuid": "a28651a6-77d8-4615-9ef5-7376406ac8d8",
+"district": "Kottayam",
 "rain": 0.0
 },
 {
@@ -68,6 +74,12 @@
 "uuid": "81fed753-4386-4dec-94b3-69d4e165b094",
 "district": "Palakkad",
 "rain": 0.0
+},
+{
+"station": "Konni Estate",
+"uuid": "f611ee6c-c7bf-42d5-8644-6864be2e9316",
+"district": "Pathanamthitta",
+"rain": 11.0
 },
 {
 "station": "Ottapalam",
@@ -190,10 +202,22 @@
 "rain": 0.0
 },
 {
+"station": "Kottayam",
+"uuid": "fd7fad82-3cb8-4eff-b686-662f053cc148",
+"district": "Kottayam",
+"rain": 0.0
+},
+{
 "station": "Pothundy Dam",
 "uuid": "72ccb85b-dfef-440a-b16c-60d1bd97cbd2",
 "district": "Palakkad",
 "rain": 0.0
+},
+{
+"station": "Aryankavu",
+"uuid": "1c10d529-2d2a-47c3-b7fa-9ebd1e45a331",
+"district": "Kollam",
+"rain": 4.6
 },
 {
 "station": "Kollakadavu",
@@ -205,6 +229,12 @@
 "station": "Moolathara",
 "uuid": "d9b8c2c9-f868-4e74-85b8-34fcbe478e32",
 "district": "Palakkad",
+"rain": 0.0
+},
+{
+"station": "Pampady",
+"uuid": "14ad23ee-e2a1-4070-800c-1550b016083d",
+"district": "Kottayam",
 "rain": 0.0
 },
 {
@@ -230,6 +260,12 @@
 "uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
 "district": "Idukki",
 "rain": 0.0
+},
+{
+"station": "Pathanamthitta",
+"uuid": "8037d699-fb43-4a94-ac90-1f0688aff388",
+"district": "Pathanamthitta",
+"rain": 7.2
 },
 {
 "station": "Uppala",
@@ -278,6 +314,12 @@
 "uuid": "ee330884-47fb-4591-aebd-5c971dae5419",
 "district": "Pathanamthitta",
 "rain": 0.0
+},
+{
+"station": "Soornad",
+"uuid": "8383ae02-28f5-4670-82bb-5ae626c08a0a",
+"district": "Kollam",
+"rain": 12.0
 },
 {
 "station": "Thunakadavu",
@@ -338,6 +380,12 @@
 "uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
 "district": "Malappuram",
 "rain": 0.0
+},
+{
+"station": "Achencoil",
+"uuid": "eacd5a44-2a43-4f9d-b1fd-8d5cea1cac99",
+"district": "Kollam",
+"rain": 9.6
 },
 {
 "station": "Enamakkal",

@@ -1021,6 +1021,15 @@
 },
 {
 "type": "sw",
+"district": "Pathanamthitta",
+"station": "Konni Estate",
+"key": "KONNI ESTATE",
+"rain": 11.0,
+"lat": 9.1819,
+"lon": 76.9089
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Ottapalam",
 "key": "OTTAPALAM",
@@ -1201,6 +1210,15 @@
 },
 {
 "type": "sw",
+"district": "Kottayam",
+"station": "Pampady",
+"key": "PAMPADY",
+"rain": 0.0,
+"lat": 9.5867,
+"lon": 76.6044
+},
+{
+"type": "sw",
 "district": "Ernakulam",
 "station": "Bhoothathankettu",
 "key": "BHOOTHATHANKETTU",
@@ -1300,6 +1318,15 @@
 },
 {
 "type": "sw",
+"district": "Kollam",
+"station": "Soornad",
+"key": "SOORNAD",
+"rain": 12.0,
+"lat": 9.1036,
+"lon": 76.6206
+},
+{
+"type": "sw",
 "district": "Palakkad",
 "station": "Thunakadavu",
 "key": "THUNAKADAVU",
@@ -1378,6 +1405,15 @@
 "rain": 0.0,
 "lat": 11.0408,
 "lon": 76.0781
+},
+{
+"type": "sw",
+"district": "Kollam",
+"station": "Achencoil",
+"key": "ACHENCOIL",
+"rain": 9.6,
+"lat": 9.0924,
+"lon": 77.122
 },
 {
 "type": "sw",

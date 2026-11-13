@@ -1,7 +1,7 @@
 {
 "date": "2026-11-03",
 "source": "https://wris.kerala.gov.in rf/rfTable src=Kerala SW",
-"fetched": "2026-11-12T19:16+0530",
+"fetched": "2026-11-13T12:49+0530",
 "stations": [
 {
 "station": "Piravom",
@@ -97,6 +97,12 @@
 "station": "Thumburmuzhy",
 "uuid": "1822a970-9bc6-4229-9575-c516fdbf6eae",
 "district": "Thrissur",
+"rain": 0.0
+},
+{
+"station": "Konni Estate",
+"uuid": "f611ee6c-c7bf-42d5-8644-6864be2e9316",
+"district": "Pathanamthitta",
 "rain": 0.0
 },
 {
@@ -280,6 +286,12 @@
 "rain": 63.2
 },
 {
+"station": "Aryankavu",
+"uuid": "1c10d529-2d2a-47c3-b7fa-9ebd1e45a331",
+"district": "Kollam",
+"rain": 0.0
+},
+{
 "station": "Kollakadavu",
 "uuid": "807919ed-0ee2-4f3b-a68f-9bdcd04c3464",
 "district": "Alappuzha",
@@ -319,6 +331,12 @@
 "station": "Vandanmedu",
 "uuid": "2ec2c277-b686-4e5c-9248-fedf641c47fc",
 "district": "Idukki",
+"rain": 0.0
+},
+{
+"station": "Pathanamthitta",
+"uuid": "8037d699-fb43-4a94-ac90-1f0688aff388",
+"district": "Pathanamthitta",
 "rain": 0.0
 },
 {
@@ -415,6 +433,12 @@
 "station": "Chimmony",
 "uuid": "1062590f-3f92-4e60-ae80-b50813ffccc3",
 "district": "Thrissur",
+"rain": 0.0
+},
+{
+"station": "Soornad",
+"uuid": "8383ae02-28f5-4670-82bb-5ae626c08a0a",
+"district": "Kollam",
 "rain": 0.0
 },
 {
@@ -542,6 +566,12 @@
 "uuid": "a3983fa8-3efb-4afb-9a33-66ffb2ff5e6e",
 "district": "Malappuram",
 "rain": 1.8
+},
+{
+"station": "Achencoil",
+"uuid": "eacd5a44-2a43-4f9d-b1fd-8d5cea1cac99",
+"district": "Kollam",
+"rain": 0.0
 },
 {
 "station": "Enamakkal",
