@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T17:49+05:30",
+ "updated": "2026-11-14T17:50+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1730",
@@ -44,6 +44,28 @@
    },
    "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 5:30 pm 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.5 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 370.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kakola (Haveri) – 1.5 mm\n4. Kaliaya (Dakshina Kannada) – 1.0 mm\n5. Muchuru (Dakshina Kannada) – 1.0 mm\n6. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n7. Kadur(Rural) (Chikkamagaluru) – 0.5 mm\n8. Hochihalli (Chikkamagaluru) – 0.5 mm\n9. Nerlige (Hassan) – 0.5 mm\n10. Kasaba Jambagi (Bagalkote) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T17:49+05:30"
+  },
+  {
+   "id": "rain_ap_live_2026-11-14_1700",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 5:00 PM",
+   "sort": "2026-11-14T17:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_1700.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_1700.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_1700.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_1700.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 14 Nov to 5:00 pm 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Budanampalle (Sri Sathya Sai) – 13.0 mm\n2. Madugula (Anakapalli) – 11.8 mm\n3. Chinnathippa Samudram (Annamayya) – 4.2 mm\n4. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 3.0 mm\n5. Peda Boddepalle (Anakapalli) – 3.0 mm\n6. Megadri Gedda Reservoir ARG (Visakhapatnam) – 2.0 mm\n7. Varikasuvupalli (Annamayya) – 1.8 mm\n8. S.Narsapuram (Anakapalli) – 1.5 mm\n9. Attalasiddavaram (Tirupati) – 1.5 mm\n10. Penuganchiprolu (NTR) – 1.2 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T17:50+05:30"
   },
   {
    "id": "rain_live_2026-11-14_1630",
@@ -2778,28 +2800,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 13 Nov to 11:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Goutham Nagar Function Hall: Filmnagar (Hyderabad) – 6.5 mm\n2. Velganoor (Mancherial) – 3.0 mm\n3. Nagapur (Medak) – 2.8 mm\n4. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n5. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n6. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n7. Gymkhana ESS (Hyderabad) – 0.0 mm\n8. JVR OCP I&II (Khammam) – 0.0 mm\n9. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n10. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T11:50+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_1100",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 11:00 AM",
-   "sort": "2026-11-13T11:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_1100.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ap_live_2026-11-13_1100.gif",
-    "gif_mb": 0.9,
-    "png": "files/rain_ap_live_2026-11-13_1100.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_1100.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 11:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. KVBPuram 33/11 KV (Tirupati) – 2.6 mm\n2. Kondalaveru (Vizianagaram) – 2.5 mm\n3. Malapuram (Anantapuramu) – 1.5 mm\n4. MunicipalOffice ARG (Nellore) – 1.5 mm\n5. Vidyanagar (Nellore) – 1.2 mm\n6. Molakalapundla ARG (Nellore) – 1.1 mm\n7. Kovvur (East Godavari) – 0.8 mm\n8. Gudur (Nellore) – 0.8 mm\n9. Narayanavanam ARG (Tirupati) – 0.6 mm\n10. Taduvai (Eluru) – 0.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T11:21+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_1030",
