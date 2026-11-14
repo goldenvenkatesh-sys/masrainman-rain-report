@@ -2,6 +2,28 @@
  "updated": "2026-11-14T18:49+05:30",
  "reports": [
   {
+   "id": "rain_live_2026-11-14_1830",
+   "region": "tn",
+   "region_name": "Tamil Nadu",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "ta",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 6:30 PM",
+   "sort": "2026-11-14T18:30",
+   "files": {
+    "mp4": "files/rain_live_2026-11-14_1830.mp4",
+    "mp4_mb": 0.6,
+    "gif": "files/rain_live_2026-11-14_1830.gif",
+    "gif_mb": 1.1,
+    "png": "files/rain_live_2026-11-14_1830.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_live_2026-11-14_1830.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 மாலை 6:30 வரை\n\n3 நிலையங்களில் 10 மி.மீ.க்கு மேல் மழை பதிவு; மாவட்டங்களில் கன்னியாகுமரி 1.8 மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.\n\nமுதல் 10 நிலையங்கள்:\n1. Nagercoil ARG (கன்னியாகுமரி) – 17.6 மி.மீ.\n2. Suchindram (கன்னியாகுமரி) – 12.4 மி.மீ.\n3. Chunkankadai (கன்னியாகுமரி) – 12.0 மி.மீ.\n4. Kanniyakumari Arg (கன்னியாகுமரி) – 2.4 மி.மீ.\n5. Veppadai (சேலம்) – 1.6 மி.மீ.\n6. Z 04 Tondiarpet (W 42) (சென்னை) – 1.5 மி.மீ.\n7. Kunnam (பெரம்பலூர்) – 1.2 மி.மீ.\n8. Kunnathur (திருவண்ணாமலை) – 1.2 மி.மீ.\n9. Z 01 Thiruvottiyur (W 11) (சென்னை) – 1.2 மி.மீ.\n10. Z 12 Alandhur (PAL) (சென்னை) – 1.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T18:49+05:30"
+  },
+  {
    "id": "rain_ktcc_live_2026-11-14_1830",
    "region": "ktcc",
    "region_name": "KTCC",
@@ -2564,28 +2586,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 3:00 pm 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. P.Narayanapuram (Eluru) – 5.0 mm\n2. KVBPuram 33/11 KV (Tirupati) – 3.5 mm\n3. Taduvai (Eluru) – 3.0 mm\n4. Kommipadu (Nellore) – 2.8 mm\n5. Kondalaveru (Vizianagaram) – 2.5 mm\n6. Molakalapundla ARG (Nellore) – 2.0 mm\n7. Megadri Gedda Reservoir ARG (Visakhapatnam) – 1.8 mm\n8. Thottambedu ARG (Tirupati) – 1.5 mm\n9. Kovvur (East Godavari) – 1.5 mm\n10. MunicipalOffice ARG (Nellore) – 1.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T15:58+05:30"
-  },
-  {
-   "id": "rain_live_2026-11-13_1430",
-   "region": "tn",
-   "region_name": "Tamil Nadu",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "ta",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 2:30 PM",
-   "sort": "2026-11-13T14:30",
-   "files": {
-    "mp4": "files/rain_live_2026-11-13_1430.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_live_2026-11-13_1430.gif",
-    "gif_mb": 0.9,
-    "png": "files/rain_live_2026-11-13_1430.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_live_2026-11-13_1430.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 மதியம் 2:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Nellikupam (செங்கல்பட்டு) – 2.0 மி.மீ.\n2. Z 14 Madipakkam (W 169) (சென்னை) – 1.5 மி.மீ.\n3. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n4. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n5. Z 14 Madipakkam (W 188) (சென்னை) – 0.8 மி.மீ.\n6. Z 14 Medavakkam Jn (W 188) (சென்னை) – 0.6 மி.மீ.\n7. Z 06 Perambur (W 67) (சென்னை) – 0.6 மி.மீ.\n8. Elavanthi (திருப்பூர்) – 0.4 மி.மீ.\n9. Amur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n10. Ariyanayaki Puram (தூத்துக்குடி) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T14:49+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_1430",
