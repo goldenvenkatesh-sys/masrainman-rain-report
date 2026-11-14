@@ -7,6 +7,11 @@ up to 14 Nov, 1:30 PM — [MP4](files/rain_live_2026-11-14_1330.mp4) · [GIF](fi
 
 ![Tamil Nadu · Rain so far (live)](files/rain_live_2026-11-14_1330.png)
 
+## KTCC · Rain so far (live)
+up to 14 Nov, 1:30 PM — [MP4](files/rain_ktcc_live_2026-11-14_1330.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_1330.gif) · [PNG](files/rain_ktcc_live_2026-11-14_1330.png)
+
+![KTCC · Rain so far (live)](files/rain_ktcc_live_2026-11-14_1330.png)
+
 ## Karnataka · Rain so far (live)
 up to 14 Nov, 1:30 PM — [MP4](files/rain_ka_live_2026-11-14_1330.mp4) · [GIF](files/rain_ka_live_2026-11-14_1330.gif) · [PNG](files/rain_ka_live_2026-11-14_1330.png)
 
@@ -16,11 +21,6 @@ up to 14 Nov, 1:30 PM — [MP4](files/rain_ka_live_2026-11-14_1330.mp4) · [GIF]
 up to 14 Nov, 1:00 PM — [MP4](files/rain_ap_live_2026-11-14_1300.mp4) · [GIF](files/rain_ap_live_2026-11-14_1300.gif) · [PNG](files/rain_ap_live_2026-11-14_1300.png)
 
 ![Andhra Pradesh · Rain so far (live)](files/rain_ap_live_2026-11-14_1300.png)
-
-## KTCC · Rain so far (live)
-up to 14 Nov, 12:30 PM — [MP4](files/rain_ktcc_live_2026-11-14_1230.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_1230.gif) · [PNG](files/rain_ktcc_live_2026-11-14_1230.png)
-
-![KTCC · Rain so far (live)](files/rain_ktcc_live_2026-11-14_1230.png)
 
 ## Telangana · Rain so far (live)
 up to 14 Nov, 12:00 PM — [MP4](files/rain_tg_live_2026-11-14_1200.mp4) · [GIF](files/rain_tg_live_2026-11-14_1200.gif) · [PNG](files/rain_tg_live_2026-11-14_1200.png)
@@ -142,6 +142,7 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Report | Period | Files |
 |---|---|---|
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 1:30 PM | [MP4](files/rain_live_2026-11-14_1330.mp4) [GIF](files/rain_live_2026-11-14_1330.gif) [PNG](files/rain_live_2026-11-14_1330.png) |
+| KTCC · Rain so far (live) | up to 14 Nov, 1:30 PM | [MP4](files/rain_ktcc_live_2026-11-14_1330.mp4) [GIF](files/rain_ktcc_live_2026-11-14_1330.gif) [PNG](files/rain_ktcc_live_2026-11-14_1330.png) |
 | Karnataka · Rain so far (live) | up to 14 Nov, 1:30 PM | [MP4](files/rain_ka_live_2026-11-14_1330.mp4) [GIF](files/rain_ka_live_2026-11-14_1330.gif) [PNG](files/rain_ka_live_2026-11-14_1330.png) |
 | Andhra Pradesh · Rain so far (live) | up to 14 Nov, 1:00 PM | [MP4](files/rain_ap_live_2026-11-14_1300.mp4) [GIF](files/rain_ap_live_2026-11-14_1300.gif) [PNG](files/rain_ap_live_2026-11-14_1300.png) |
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 12:30 PM | [MP4](files/rain_live_2026-11-14_1230.mp4) [GIF](files/rain_live_2026-11-14_1230.gif) [PNG](files/rain_live_2026-11-14_1230.png) |
@@ -312,7 +313,6 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Tamil Nadu · Total rain (multi-day) | 01 Oct → 11 Nov 2026 | [MP4](files/rain_accum_2026-10-01_to_2026-11-11.mp4) [GIF](files/rain_accum_2026-10-01_to_2026-11-11.gif) [PNG](files/rain_accum_2026-10-01_to_2026-11-11.png) [LIST](files/rain_accum_2026-10-01_to_2026-11-11_list.png) [PDF](files/rain_accum_2026-10-01_to_2026-11-11_list.pdf) |
 | KTCC · Rain so far (live) | up to 10 Nov, 8:30 PM | [MP4](files/rain_ktcc_live_2026-11-10_2030.mp4) [GIF](files/rain_ktcc_live_2026-11-10_2030.gif) [PNG](files/rain_ktcc_live_2026-11-10_2030.png) |
 | Andhra Pradesh · Satellite radar 3D pass | pass at 10 Nov, 7:59 PM | [MP4](files/rain_ap_gpm3d_2026-11-10_1959_en.mp4) [PNG](files/rain_ap_gpm3d_2026-11-10_1959_en.png) |
-| KTCC · Rain so far (live) | up to 10 Nov, 4:30 PM | [MP4](files/rain_ktcc_live_2026-11-10_1630.mp4) [GIF](files/rain_ktcc_live_2026-11-10_1630.gif) [PNG](files/rain_ktcc_live_2026-11-10_1630.png) |
 | Tamil Nadu · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_sat24_2026-11-10_1229_en.png) |
 | Karnataka · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_ka_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_ka_sat24_2026-11-10_1229_en.png) |
 | Andhra Pradesh · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_ap_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_ap_sat24_2026-11-10_1229_en.png) |
