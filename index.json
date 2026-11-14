@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T11:49+05:30",
+ "updated": "2026-11-14T11:50+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1130",
@@ -22,6 +22,28 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 காலை 11:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Veppadai (சேலம்) – 1.6 மி.மீ.\n2. Kunnathur (திருவண்ணாமலை) – 1.2 மி.மீ.\n3. Kunnam (பெரம்பலூர்) – 1.2 மி.மீ.\n4. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n5. Vadugakudi (திருவாரூர்) – 0.4 மி.மீ.\n6. Mazhaiyur (திருவண்ணாமலை) – 0.4 மி.மீ.\n7. Mudukankulam (விருதுநகர்) – 0.0 மி.மீ.\n8. Cholapuram (விருதுநகர்) – 0.0 மி.மீ.\n9. Rajapalayam ARG (விருதுநகர்) – 0.0 மி.மீ.\n10. Karisalpatti (விருதுநகர்) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T11:49+05:30"
+  },
+  {
+   "id": "rain_ka_live_2026-11-14_1130",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 11:30 AM",
+   "sort": "2026-11-14T11:30",
+   "files": {
+    "mp4": "files/rain_ka_live_2026-11-14_1130.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ka_live_2026-11-14_1130.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ka_live_2026-11-14_1130.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ka_live_2026-11-14_1130.txt"
+   },
+   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 11:30 am 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.2 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 298.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kaliaya (Dakshina Kannada) – 0.5 mm\n4. Muchuru (Dakshina Kannada) – 0.5 mm\n5. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n6. Kakola (Haveri) – 0.5 mm\n7. Nerlige (Hassan) – 0.5 mm\n8. Kappalamadagu (Kolar) – 0.0 mm\n9. Kosam (Bidar) – 0.0 mm\n10. Thimmaravutanahalli (Kolar) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T11:50+05:30"
   },
   {
    "id": "rain_live_2026-11-14_1030",
@@ -2215,28 +2237,6 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 காலை 9:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n2. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n3. Ayanavaram TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n4. Morai TNDRRA ARG (திருவள்ளூர்) – 0.4 மி.மீ.\n5. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Cheyyur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. L.Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T09:50+05:30"
-  },
-  {
-   "id": "rain_ka_live_2026-11-13_0930",
-   "region": "ka",
-   "region_name": "Karnataka",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 9:30 AM",
-   "sort": "2026-11-13T09:30",
-   "files": {
-    "mp4": "files/rain_ka_live_2026-11-13_0930.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ka_live_2026-11-13_0930.gif",
-    "gif_mb": 0.6,
-    "png": "files/rain_ka_live_2026-11-13_0930.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ka_live_2026-11-13_0930.txt"
-   },
-   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 13 Nov to 9:30 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Keladi (Shivamogga) – 0.5 mm\n2. Maragowdanahally (Mandya) – 0.0 mm\n3. Autaguru (Kesturu) (Mandya) – 0.0 mm\n4. Agoli (Koppala) – 0.0 mm\n5. Nelahal (Tumakuru) – 0.0 mm\n6. Arehalli (Shivamogga) – 0.0 mm\n7. Shedgaru (Shivamogga) – 0.0 mm\n8. Singanamane (Shivamogga) – 0.0 mm\n9. Devigere (Chitradurga) – 0.0 mm\n10. BASAVAPATNA (Koppala) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T09:49+05:30"
   },
   {
    "id": "rain_ap_live_2026-11-13_0900",
