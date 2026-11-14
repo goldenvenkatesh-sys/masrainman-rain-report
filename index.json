@@ -139,6 +139,48 @@
    "made": "2026-11-14T08:50+05:30"
   },
   {
+   "id": "rain_ap_live24_2026-11-14",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live24",
+   "kind_name": "Past 24 hours, hour by hour",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "rain-day 14 Nov 2026",
+   "sort": "2026-11-14T08:30",
+   "files": {
+    "mp4": "files/rain_ap_live24_2026-11-14.mp4",
+    "mp4_mb": 3.3,
+    "png": "files/rain_ap_live24_2026-11-14.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live24_2026-11-14.txt"
+   },
+   "caption": "🌧 Andhra Pradesh · Past 24 hours observed rainfall\n8:30 am 13 Nov to 8:30 am 14 Nov 2026 · hour by hour\n\nRainfall toppers:\n1. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 6.8 mm\n2. P.Narayanapuram (Eluru) – 5.0 mm\n3. Kannuripalem (Anakapalli) – 4.8 mm\n4. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.2 mm\n5. KVBPuram 33/11 KV (Tirupati) – 3.5 mm\n6. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n7. Taduvai (Eluru) – 3.0 mm\n8. Kommipadu (Nellore) – 3.0 mm\n9. Kondalaveru (Vizianagaram) – 2.5 mm\n10. Kovvur (East Godavari) – 2.5 mm\n\nHeaviest in one hour: 2.5 mm at P.Narayanapuram (Eluru), hour ending 12:30 PM\nRain at 78 of 2130 hourly stations · 0 with heavy rain or more\nMost of it fell 8:30 AM – 1:30 PM\n\nSource: DES / APSDPS · forecasts: ECMWF open data (CC BY 4.0)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T08:50+05:30"
+  },
+  {
+   "id": "rain_ap_live_2026-11-14_0800",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 8:00 AM",
+   "sort": "2026-11-14T08:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_0800.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_0800.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_0800.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_0800.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 8:00 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 6.8 mm\n2. P.Narayanapuram (Eluru) – 5.0 mm\n3. Kannuripalem (Anakapalli) – 4.8 mm\n4. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.2 mm\n5. KVBPuram 33/11 KV (Tirupati) – 3.5 mm\n6. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n7. Taduvai (Eluru) – 3.0 mm\n8. Kommipadu (Nellore) – 3.0 mm\n9. Kondalaveru (Vizianagaram) – 2.5 mm\n10. Kovvur (East Godavari) – 2.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T08:50+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_0730",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -2901,28 +2943,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 3:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Damera (Warangal) – 7.8 mm\n2. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n3. Namapur (Rajanna Sircilla) – 2.5 mm\n4. Nagapur (Medak) – 2.5 mm\n5. Venkepalli (Karimnagar) – 2.0 mm\n6. Kommulavancha (Mahabubabad) – 2.0 mm\n7. Devarakadra (Mahabubnagar) – 2.0 mm\n8. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n9. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n10. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T03:51+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_0300",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 3:00 AM",
-   "sort": "2026-11-13T03:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_0300.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ap_live_2026-11-13_0300.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_ap_live_2026-11-13_0300.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_0300.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 3:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Utukuru (Nellore) – 5.0 mm\n2. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.2 mm\n3. Taduvai (Eluru) – 4.0 mm\n4. Chavulamadhum BurialGround ARG (Visakhapatnam) – 3.1 mm\n5. New Railaway Colony ARG (Visakhapatnam) – 2.8 mm\n6. Chintapalle (Alluri Sitharama Raju) – 2.5 mm\n7. M.R.O Office Seethamma Dhara ARG (Visakhapatnam) – 2.5 mm\n8. Annavaram (Alluri Sitharama Raju) – 2.5 mm\n9. Bapulapad ARG (Krishna) – 2.4 mm\n10. Muthukur (Chittoor) – 2.2 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T03:50+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_0230",
