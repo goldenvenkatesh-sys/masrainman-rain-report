@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-14T12:55+05:30",
+ "updated": "2026-11-14T13:50+05:30",
  "reports": [
+  {
+   "id": "rain_live_2026-11-14_1330",
+   "region": "tn",
+   "region_name": "Tamil Nadu",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "ta",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 1:30 PM",
+   "sort": "2026-11-14T13:30",
+   "files": {
+    "mp4": "files/rain_live_2026-11-14_1330.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_live_2026-11-14_1330.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_live_2026-11-14_1330.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_live_2026-11-14_1330.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 மதியம் 1:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Veppadai (சேலம்) – 1.6 மி.மீ.\n2. Kunnathur (திருவண்ணாமலை) – 1.2 மி.மீ.\n3. Kunnam (பெரம்பலூர்) – 1.2 மி.மீ.\n4. Sithalingamadam (விழுப்புரம்) – 0.4 மி.மீ.\n5. Vadugakudi (திருவாரூர்) – 0.4 மி.மீ.\n6. Mazhaiyur (திருவண்ணாமலை) – 0.4 மி.மீ.\n7. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n8. Tiruchuli ARG (விருதுநகர்) – 0.0 மி.மீ.\n9. Andiyenthal (விருதுநகர்) – 0.0 மி.மீ.\n10. Theli (விருதுநகர்) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T13:50+05:30"
+  },
   {
    "id": "rain_live_2026-11-14_1230",
    "region": "tn",
@@ -2413,28 +2435,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 13 Nov to 10:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Goutham Nagar Function Hall: Filmnagar (Hyderabad) – 3.3 mm\n2. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n3. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n4. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n5. Gymkhana ESS (Hyderabad) – 0.0 mm\n6. JVR OCP I&II (Khammam) – 0.0 mm\n7. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n8. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n9. Koyagudem (Bhadradri Kothagudem) – 0.0 mm\n10. TSRTC Employee Building Vidya Nagar (Hyderabad) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T10:51+05:30"
-  },
-  {
-   "id": "rain_live_2026-11-13_0930",
-   "region": "tn",
-   "region_name": "Tamil Nadu",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "ta",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 9:30 AM",
-   "sort": "2026-11-13T09:30",
-   "files": {
-    "mp4": "files/rain_live_2026-11-13_0930.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_live_2026-11-13_0930.gif",
-    "gif_mb": 0.8,
-    "png": "files/rain_live_2026-11-13_0930.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_live_2026-11-13_0930.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 காலை 9:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n2. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n3. Woraiyur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n4. Morai TNDRRA ARG (திருவள்ளூர்) – 0.4 மி.மீ.\n5. Siruvalur (ஈரோடு) – 0.4 மி.மீ.\n6. Ayanavaram TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n7. Alangulam (Virudhunagar) (விருதுநகர்) – 0.0 மி.மீ.\n8. Sethupuram (விருதுநகர்) – 0.0 மி.மீ.\n9. Tiruchuli ARG (விருதுநகர்) – 0.0 மி.மீ.\n10. Andiyenthal (விருதுநகர்) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T09:50+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_0930",
