@@ -2,6 +2,28 @@
  "updated": "2026-11-14T14:50+05:30",
  "reports": [
   {
+   "id": "rain_live_2026-11-14_1430",
+   "region": "tn",
+   "region_name": "Tamil Nadu",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "ta",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 2:30 PM",
+   "sort": "2026-11-14T14:30",
+   "files": {
+    "mp4": "files/rain_live_2026-11-14_1430.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_live_2026-11-14_1430.gif",
+    "gif_mb": 0.9,
+    "png": "files/rain_live_2026-11-14_1430.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_live_2026-11-14_1430.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 மதியம் 2:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Suchindram (கன்னியாகுமரி) – 2.4 மி.மீ.\n2. Veppadai (சேலம்) – 1.6 மி.மீ.\n3. Kunnam (பெரம்பலூர்) – 1.2 மி.மீ.\n4. Kunnathur (திருவண்ணாமலை) – 1.2 மி.மீ.\n5. Chunkankadai (கன்னியாகுமரி) – 1.2 மி.மீ.\n6. Mazhaiyur (திருவண்ணாமலை) – 0.4 மி.மீ.\n7. Koratti (திருப்பத்தூர்) – 0.4 மி.மீ.\n8. Sithalingamadam (விழுப்புரம்) – 0.4 மி.மீ.\n9. Vadugakudi (திருவாரூர்) – 0.4 மி.மீ.\n10. Pachamalai Hills (சேலம்) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T14:50+05:30"
+  },
+  {
    "id": "rain_ktcc_live_2026-11-14_1430",
    "region": "ktcc",
    "region_name": "KTCC",
@@ -2479,28 +2501,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 11:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. KVBPuram 33/11 KV (Tirupati) – 2.6 mm\n2. Kondalaveru (Vizianagaram) – 2.5 mm\n3. Malapuram (Anantapuramu) – 1.5 mm\n4. MunicipalOffice ARG (Nellore) – 1.5 mm\n5. Vidyanagar (Nellore) – 1.2 mm\n6. Molakalapundla ARG (Nellore) – 1.1 mm\n7. Kovvur (East Godavari) – 0.8 mm\n8. Gudur (Nellore) – 0.8 mm\n9. Narayanavanam ARG (Tirupati) – 0.6 mm\n10. Taduvai (Eluru) – 0.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T11:21+05:30"
-  },
-  {
-   "id": "rain_live_2026-11-13_1030",
-   "region": "tn",
-   "region_name": "Tamil Nadu",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "ta",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 10:30 AM",
-   "sort": "2026-11-13T10:30",
-   "files": {
-    "mp4": "files/rain_live_2026-11-13_1030.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_live_2026-11-13_1030.gif",
-    "gif_mb": 0.8,
-    "png": "files/rain_live_2026-11-13_1030.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_live_2026-11-13_1030.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 காலை 10:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n2. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n3. Morai TNDRRA ARG (திருவள்ளூர்) – 0.4 மி.மீ.\n4. Elavanthi (திருப்பூர்) – 0.4 மி.மீ.\n5. Woraiyur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n6. Amur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n7. Sirukaveripakkam (காஞ்சிபுரம்) – 0.4 மி.மீ.\n8. Kandiyur (தஞ்சாவூர்) – 0.4 மி.மீ.\n9. Thalamalai (ஈரோடு) – 0.4 மி.மீ.\n10. Siruvalur (ஈரோடு) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T10:50+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_1030",
