@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-14T10:50+05:30",
+ "updated": "2026-11-14T11:49+05:30",
  "reports": [
+  {
+   "id": "rain_live_2026-11-14_1130",
+   "region": "tn",
+   "region_name": "Tamil Nadu",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "ta",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 11:30 AM",
+   "sort": "2026-11-14T11:30",
+   "files": {
+    "mp4": "files/rain_live_2026-11-14_1130.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_live_2026-11-14_1130.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_live_2026-11-14_1130.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_live_2026-11-14_1130.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 காலை 11:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Veppadai (சேலம்) – 1.6 மி.மீ.\n2. Kunnathur (திருவண்ணாமலை) – 1.2 மி.மீ.\n3. Kunnam (பெரம்பலூர்) – 1.2 மி.மீ.\n4. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n5. Vadugakudi (திருவாரூர்) – 0.4 மி.மீ.\n6. Mazhaiyur (திருவண்ணாமலை) – 0.4 மி.மீ.\n7. Mudukankulam (விருதுநகர்) – 0.0 மி.மீ.\n8. Cholapuram (விருதுநகர்) – 0.0 மி.மீ.\n9. Rajapalayam ARG (விருதுநகர்) – 0.0 மி.மீ.\n10. Karisalpatti (விருதுநகர்) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T11:49+05:30"
+  },
   {
    "id": "rain_live_2026-11-14_1030",
    "region": "tn",
@@ -2697,28 +2719,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 8:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Sollapuram (Anantapuramu) – 39.0 mm\n2. Utukuru (Nellore) – 5.5 mm\n3. Megadri Gedda Reservoir ARG (Visakhapatnam) – 5.2 mm\n4. Taduvai (Eluru) – 4.5 mm\n5. Chintapalle (Alluri Sitharama Raju) – 3.8 mm\n6. Chavulamadhum BurialGround ARG (Visakhapatnam) – 3.1 mm\n7. Kapuluppada (Visakhapatnam) – 3.0 mm\n8. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n9. Bapulapad ARG (Krishna) – 2.8 mm\n10. New Railaway Colony ARG (Visakhapatnam) – 2.8 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T08:51+05:30"
-  },
-  {
-   "id": "rain_live_2026-11-13_0730",
-   "region": "tn",
-   "region_name": "Tamil Nadu",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "ta",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 7:30 AM",
-   "sort": "2026-11-13T07:30",
-   "files": {
-    "mp4": "files/rain_live_2026-11-13_0730.mp4",
-    "mp4_mb": 0.7,
-    "gif": "files/rain_live_2026-11-13_0730.gif",
-    "gif_mb": 1.4,
-    "png": "files/rain_live_2026-11-13_0730.png",
-    "png_mb": 0.5,
-    "txt": "files/rain_live_2026-11-13_0730.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 12 காலை 8:30 முதல் நவ. 13 காலை 7:30 வரை\n\n4 நிலையங்களில் 20 மி.மீ.க்கு மேல் மழை பதிவு; மாவட்டங்களில் கன்னியாகுமரி 6.0 மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.\n\nமுதல் 10 நிலையங்கள்:\n1. Dharmapuram (கன்னியாகுமரி) – 31.6 மி.மீ.\n2. Chithirankodu (கன்னியாகுமரி) – 24.0 மி.மீ.\n3. Suchindram (கன்னியாகுமரி) – 20.8 மி.மீ.\n4. Chunkankadai (கன்னியாகுமரி) – 20.8 மி.மீ.\n5. Mahendragiri (கன்னியாகுமரி) – 14.4 மி.மீ.\n6. Ponmanai (கன்னியாகுமரி) – 14.0 மி.மீ.\n7. Thumbacode (கன்னியாகுமரி) – 13.6 மி.மீ.\n8. Kurunthancode (கன்னியாகுமரி) – 9.6 மி.மீ.\n9. Chittar Dam 2 (Sivalogam) ARG (கன்னியாகுமரி) – 8.4 மி.மீ.\n10. Arumanai (கன்னியாகுமரி) – 6.8 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T07:50+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_0730",
