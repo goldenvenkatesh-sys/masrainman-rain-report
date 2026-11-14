@@ -46,6 +46,28 @@
    "made": "2026-11-14T11:50+05:30"
   },
   {
+   "id": "rain_tg_live_2026-11-14_1100",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 11:00 AM",
+   "sort": "2026-11-14T11:00",
+   "files": {
+    "mp4": "files/rain_tg_live_2026-11-14_1100.mp4",
+    "mp4_mb": 0.4,
+    "gif": "files/rain_tg_live_2026-11-14_1100.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_tg_live_2026-11-14_1100.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_tg_live_2026-11-14_1100.txt"
+   },
+   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 14 Nov to 11:00 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Velganoor (Mancherial) – 2.5 mm\n2. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n3. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n4. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n5. Gymkhana ESS (Hyderabad) – 0.0 mm\n6. JVR OCP I&II (Khammam) – 0.0 mm\n7. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n8. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n9. Koyagudem (Bhadradri Kothagudem) – 0.0 mm\n10. TSRTC Employee Building Vidya Nagar (Hyderabad) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T11:50+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_1030",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -3093,28 +3115,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 9:00 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n2. Damera (Warangal) – 6.0 mm\n3. Nagapur (Medak) – 2.5 mm\n4. Kommulavancha (Mahabubabad) – 2.0 mm\n5. Venkepalli (Karimnagar) – 2.0 mm\n6. Devarakadra (Mahabubnagar) – 2.0 mm\n7. Koyagudem (Bhadradri Kothagudem) – 0.0 mm\n8. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n9. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n10. JVR OCP I&II (Khammam) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-12T21:51+05:30"
-  },
-  {
-   "id": "rain_tg_live_2026-11-12_1800",
-   "region": "tg",
-   "region_name": "Telangana",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 6:00 PM",
-   "sort": "2026-11-12T18:00",
-   "files": {
-    "mp4": "files/rain_tg_live_2026-11-12_1800.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_tg_live_2026-11-12_1800.gif",
-    "gif_mb": 0.9,
-    "png": "files/rain_tg_live_2026-11-12_1800.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_tg_live_2026-11-12_1800.txt"
-   },
-   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 6:00 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n2. Nagapur (Medak) – 2.5 mm\n3. Kommulavancha (Mahabubabad) – 2.0 mm\n4. Devarakadra (Mahabubnagar) – 2.0 mm\n5. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n6. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n7. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n8. Gymkhana ESS (Hyderabad) – 0.0 mm\n9. JVR OCP I&II (Khammam) – 0.0 mm\n10. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T18:50+05:30"
   },
   {
    "id": "rain_sat24_2026-11-12_1229_en",
