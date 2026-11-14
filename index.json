@@ -75,6 +75,28 @@
    "made": "2026-11-14T08:49+05:30"
   },
   {
+   "id": "rain_ktcc_live_2026-11-14_0830",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 8:30 AM",
+   "sort": "2026-11-14T08:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-14_0830.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ktcc_live_2026-11-14_0830.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ktcc_live_2026-11-14_0830.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-14_0830.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 14 காலை 8:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kadapakkam (சென்னை) – 7.2 மி.மீ.\n2. Z 02 Manali (W 18) (சென்னை) – 2.8 மி.மீ.\n3. Z 02 Manali (W 18) (சென்னை) – 2.8 மி.மீ.\n4. Nellikupam (செங்கல்பட்டு) – 2.0 மி.மீ.\n5. Z 02 Manali New town (W 18) (சென்னை) – 1.6 மி.மீ.\n6. Z 14 Madipakkam (W 169) (சென்னை) – 1.5 மி.மீ.\n7. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n8. Balaji Nagar (Puzhal) (சென்னை) – 1.2 மி.மீ.\n9. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n10. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T08:49+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_0730",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -3858,28 +3880,6 @@
    },
    "caption": "🌧 Tamil Nadu · Past 24 hours observed rainfall\n8:30 am 9 Nov to 8:30 am 10 Nov 2026 · hour by hour\n\nRainfall toppers:\n1. Oothu (Tirunelveli) – 133.0 mm (daily gauge)\n2. Nalumukku (Tirunelveli) – 105.0 mm (daily gauge)\n3. Kakkachi (Tirunelveli) – 93.0 mm (daily gauge)\n4. Kalakadu (Tirunelveli) – 86.8 mm (daily gauge)\n5. Kayalpattinam (Thoothukudi) – 83.0 mm (daily gauge)\n6. Manjolai (Tirunelveli) – 75.0 mm (daily gauge)\n7. Panankulam (Tirunelveli) – 73.6 mm\n8. Kuzhithurai (Kanniyakumari) – 71.2 mm (daily gauge)\n9. Kuttam (Tirunelveli) – 69.2 mm\n10. Pathanpillai Kudiyrippu (Tenkasi) – 66.0 mm\n\nHeaviest in one hour: 37.6 mm at Kuttam (Tirunelveli), hour ending 11:30 PM\nRain at 383 of 1288 hourly stations · 11 with heavy rain or more\nMost of it fell 8:30 PM – 3:30 AM\nDaily rain gauges (TNSDMA, 574 stations): 8 with heavy rain or more · state average 4.6 mm\n\nDid the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 2 districts)\n  WeatherNext 3: 0 caught, 0 false alarms\n  ECMWF IFS: 0 caught, 0 false alarms\n  ECMWF AIFS: 0 caught, 0 false alarms\n\nSource: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-10T18:28+05:30"
-  },
-  {
-   "id": "rain_ktcc_live_2026-11-10_0830",
-   "region": "ktcc",
-   "region_name": "KTCC",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-10",
-   "label": "up to 10 Nov, 8:30 AM",
-   "sort": "2026-11-10T08:30",
-   "files": {
-    "mp4": "files/rain_ktcc_live_2026-11-10_0830.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ktcc_live_2026-11-10_0830.gif",
-    "gif_mb": 1.1,
-    "png": "files/rain_ktcc_live_2026-11-10_0830.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ktcc_live_2026-11-10_0830.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 9 காலை 8:30 முதல் நவ. 10 காலை 8:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Sirukaveripakkam (காஞ்சிபுரம்) – 6.8 மி.மீ.\n2. Perumbakkam (செங்கல்பட்டு) – 4.4 மி.மீ.\n3. Kelambakkam (செங்கல்பட்டு) – 0.8 மி.மீ.\n4. Z 01 Ennore (W 03) (சென்னை) – 0.8 மி.மீ.\n5. Nellikupam (செங்கல்பட்டு) – 0.8 மி.மீ.\n6. Kelambakkam (செங்கல்பட்டு) – 0.8 மி.மீ.\n7. Z 01 Ennore (W 03) (சென்னை) – 0.8 மி.மீ.\n8. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n9. Erumbi (திருவள்ளூர்) – 0.4 மி.மீ.\n10. Thiruvellavoyal (திருவள்ளூர்) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-10T08:55+05:30"
   },
   {
    "id": "rain_ktcc_live24_2026-11-10",
