@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T05:51+05:30",
+ "updated": "2026-11-14T06:49+05:30",
  "reports": [
   {
    "id": "rain_tg_daily_2026-11-14",
@@ -51,6 +51,28 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nTotal rainfall · 3 Nov to 14 Nov (12 days)\n\n2 stations recorded over 200 mm; Bhadradri Kothagudem leads the districts with a station average of 98.2 mm.\n\nTop 5 stations:\n1. Mulakalapalle (Bhadradri Kothagudem) – 238.9 mm\n2. Vemsoor (Khammam) – 208.6 mm\n3. Kalluru (Khammam) – 199.7 mm\n4. Dammapeta (Bhadradri Kothagudem) – 196.1 mm\n5. Penuballi (Khammam) – 195.1 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T00:51+05:30"
+  },
+  {
+   "id": "rain_ap_live_2026-11-14_0600",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 6:00 AM",
+   "sort": "2026-11-14T06:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_0600.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_0600.gif",
+    "gif_mb": 1.1,
+    "png": "files/rain_ap_live_2026-11-14_0600.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_0600.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 6:00 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 6.8 mm\n2. P.Narayanapuram (Eluru) – 5.0 mm\n3. Kannuripalem (Anakapalli) – 4.8 mm\n4. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.2 mm\n5. KVBPuram 33/11 KV (Tirupati) – 3.5 mm\n6. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n7. Taduvai (Eluru) – 3.0 mm\n8. Kommipadu (Nellore) – 2.8 mm\n9. Kondalaveru (Vizianagaram) – 2.5 mm\n10. Attalasiddavaram (Tirupati) – 2.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T06:49+05:30"
   },
   {
    "id": "rain_ka_live_2026-11-14_0530",
@@ -2881,28 +2903,6 @@
    },
    "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 2:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Utukuru (Nellore) – 5.0 mm\n2. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.2 mm\n3. Taduvai (Eluru) – 3.5 mm\n4. Chavulamadhum BurialGround ARG (Visakhapatnam) – 3.1 mm\n5. New Railaway Colony ARG (Visakhapatnam) – 2.8 mm\n6. M.R.O Office Seethamma Dhara ARG (Visakhapatnam) – 2.5 mm\n7. Bapulapad ARG (Krishna) – 2.4 mm\n8. Muthukur (Chittoor) – 2.2 mm\n9. Chintapalle (Alluri Sitharama Raju) – 2.2 mm\n10. Dairyfarm(Arelova) (Visakhapatnam) – 2.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T02:50+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_0100",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 1:00 AM",
-   "sort": "2026-11-13T01:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_0100.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ap_live_2026-11-13_0100.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_ap_live_2026-11-13_0100.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_0100.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 1:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Utukuru (Nellore) – 4.5 mm\n2. Megadri Gedda Reservoir ARG (Visakhapatnam) – 4.0 mm\n3. Taduvai (Eluru) – 3.5 mm\n4. Muthukur (Chittoor) – 2.2 mm\n5. Annavaram (Alluri Sitharama Raju) – 2.0 mm\n6. Attalasiddavaram (Tirupati) – 2.0 mm\n7. Atchutapuram (Anakapalli) – 2.0 mm\n8. K.Uppalapadu (Prakasam) – 2.0 mm\n9. P. Kotakonda (Kurnool) – 2.0 mm\n10. Chintapalle (Alluri Sitharama Raju) – 2.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T01:50+05:30"
   },
   {
    "id": "rain_tg_live_2026-11-13_0000",
