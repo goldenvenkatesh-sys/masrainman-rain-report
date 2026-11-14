@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T19:43+05:30",
+ "updated": "2026-11-14T19:44+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1930",
@@ -44,6 +44,28 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 இரவு 7:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 04 Tondiarpet (W 42) (சென்னை) – 1.5 மி.மீ.\n2. Z 01 Thiruvottiyur (W 11) (சென்னை) – 1.2 மி.மீ.\n3. Z 12 Alandhur (PAL) (சென்னை) – 1.0 மி.மீ.\n4. Z 14 Madipakkam (W 169) (சென்னை) – 0.9 மி.மீ.\n5. Z 10 Saidapet (W 139) (சென்னை) – 0.8 மி.மீ.\n6. Z 09 Nungambakkam (W 110) (சென்னை) – 0.6 மி.மீ.\n7. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n8. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n9. Egmore (சென்னை) – 0.4 மி.மீ.\n10. Z 05 Basin bridge (W 53) (சென்னை) – 0.3 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T19:43+05:30"
+  },
+  {
+   "id": "rain_ap_live_2026-11-14_1900",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 7:00 PM",
+   "sort": "2026-11-14T19:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_1900.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_1900.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_1900.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_1900.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 14 Nov to 7:00 pm 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Budanampalle (Sri Sathya Sai) – 13.0 mm\n2. Madugula (Anakapalli) – 11.8 mm\n3. Chinnathippa Samudram (Annamayya) – 4.2 mm\n4. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 3.0 mm\n5. Peda Boddepalle (Anakapalli) – 3.0 mm\n6. Megadri Gedda Reservoir ARG (Visakhapatnam) – 2.5 mm\n7. Attalasiddavaram (Tirupati) – 2.0 mm\n8. Varikasuvupalli (Annamayya) – 1.8 mm\n9. Penuganchiprolu (NTR) – 1.8 mm\n10. S.Narsapuram (Anakapalli) – 1.5 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T19:44+05:30"
   },
   {
    "id": "rain_live_2026-11-14_1830",
@@ -2717,28 +2739,6 @@
     "txt": "files/rain_ktcc_live_2026-11-13_1230.txt"
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 மதியம் 12:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Nellikupam (செங்கல்பட்டு) – 2.0 மி.மீ.\n2. Z 14 Madipakkam (W 169) (சென்னை) – 1.5 மி.மீ.\n3. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n4. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n5. Z 14 Madipakkam (W 188) (சென்னை) – 0.8 மி.மீ.\n6. Z 14 Medavakkam Jn (W 188) (சென்னை) – 0.6 மி.மீ.\n7. Mamallapuram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n8. Ayanavaram TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n9. Z 14 Pallikaranai (W 190) (சென்னை) – 0.4 மி.மீ.\n10. Z 14 Pallikaranai (W 189) (சென்னை) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T12:50+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_1200",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 12:00 PM",
-   "sort": "2026-11-13T12:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_1200.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ap_live_2026-11-13_1200.gif",
-    "gif_mb": 0.8,
-    "png": "files/rain_ap_live_2026-11-13_1200.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_1200.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 12:00 pm 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Taduvai (Eluru) – 3.0 mm\n2. KVBPuram 33/11 KV (Tirupati) – 2.6 mm\n3. Kondalaveru (Vizianagaram) – 2.5 mm\n4. Molakalapundla ARG (Nellore) – 2.0 mm\n5. MunicipalOffice ARG (Nellore) – 1.5 mm\n6. Malapuram (Anantapuramu) – 1.5 mm\n7. Vidyanagar (Nellore) – 1.2 mm\n8. Annavaram (Alluri Sitharama Raju) – 1.0 mm\n9. Kovvur (East Godavari) – 1.0 mm\n10. Gudur (Nellore) – 0.8 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T12:50+05:30"
   },
   {
