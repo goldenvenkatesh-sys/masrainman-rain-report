@@ -1,0 +1,26 @@
+🌧 Tamil Nadu · Past 24 hours observed rainfall
+8:30 am 13 Nov to 8:30 am 14 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Edaicode (Kanniyakumari) – 16.4 mm
+2. Kadapakkam (Chennai) – 7.2 mm
+3. Arumanai (Kanniyakumari) – 4.8 mm
+4. Z 02 Manali (W 18) (Chennai) – 2.8 mm
+5. Nellikupam (Chengalpattu) – 2.0 mm
+6. Z 02 Manali New town (W 18) (Chennai) – 1.6 mm
+7. Z 14 Madipakkam (W 169) (Chennai) – 1.5 mm
+8. Chinna Salem (Kallakurichi) – 1.2 mm
+9. Theneri (Kancheepuram) – 1.2 mm
+10. Sriperumbuthur ARG (Kancheepuram) – 1.2 mm
+
+Heaviest in one hour: 14.0 mm at Edaicode (Kanniyakumari), hour ending 5:30 PM
+Rain at 54 of 1288 hourly stations · 0 with heavy rain or more
+Most of it fell 2:30 PM – 5:30 PM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com
