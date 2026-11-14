@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-14T16:27+05:30",
+ "updated": "2026-11-14T16:49+05:30",
  "reports": [
+  {
+   "id": "rain_ktcc_live_2026-11-14_1630",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 4:30 PM",
+   "sort": "2026-11-14T16:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-14_1630.mp4",
+    "mp4_mb": 0.4,
+    "gif": "files/rain_ktcc_live_2026-11-14_1630.gif",
+    "gif_mb": 0.7,
+    "png": "files/rain_ktcc_live_2026-11-14_1630.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-14_1630.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 மாலை 4:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n2. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n3. Egmore (சென்னை) – 0.4 மி.மீ.\n4. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n5. Kovathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Pavunjur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Athur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T16:49+05:30"
+  },
   {
    "id": "rain_live_2026-11-14_1530",
    "region": "tn",
@@ -3567,28 +3589,6 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 11 காலை 8:30 முதல் நவ. 12 காலை 7:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n2. Saligramam TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n3. Thiruvellavoyal (திருவள்ளூர்) – 0.4 மி.மீ.\n4. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n5. Pavunjur (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Chithamur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. L.Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-12T07:50+05:30"
-  },
-  {
-   "id": "rain_ktcc_live_2026-11-12_0230",
-   "region": "ktcc",
-   "region_name": "KTCC",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 2:30 AM",
-   "sort": "2026-11-12T02:30",
-   "files": {
-    "mp4": "files/rain_ktcc_live_2026-11-12_0230.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ktcc_live_2026-11-12_0230.gif",
-    "gif_mb": 0.7,
-    "png": "files/rain_ktcc_live_2026-11-12_0230.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ktcc_live_2026-11-12_0230.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 11 காலை 8:30 முதல் நவ. 12 இரவு 2:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Thiruvellavoyal (திருவள்ளூர்) – 0.4 மி.மீ.\n2. Saligramam TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n3. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n4. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n5. Pavunjur (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Chithamur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Cheyyur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. L.Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T02:50+05:30"
   },
   {
    "id": "rain_sat24_2026-11-11_1129_en",
