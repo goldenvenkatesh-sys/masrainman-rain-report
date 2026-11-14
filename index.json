@@ -24,6 +24,28 @@
    "made": "2026-11-14T19:43+05:30"
   },
   {
+   "id": "rain_ktcc_live_2026-11-14_1930",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 7:30 PM",
+   "sort": "2026-11-14T19:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-14_1930.mp4",
+    "mp4_mb": 0.4,
+    "gif": "files/rain_ktcc_live_2026-11-14_1930.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_ktcc_live_2026-11-14_1930.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-14_1930.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 இரவு 7:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 04 Tondiarpet (W 42) (சென்னை) – 1.5 மி.மீ.\n2. Z 01 Thiruvottiyur (W 11) (சென்னை) – 1.2 மி.மீ.\n3. Z 12 Alandhur (PAL) (சென்னை) – 1.0 மி.மீ.\n4. Z 14 Madipakkam (W 169) (சென்னை) – 0.9 மி.மீ.\n5. Z 10 Saidapet (W 139) (சென்னை) – 0.8 மி.மீ.\n6. Z 09 Nungambakkam (W 110) (சென்னை) – 0.6 மி.மீ.\n7. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n8. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n9. Egmore (சென்னை) – 0.4 மி.மீ.\n10. Z 05 Basin bridge (W 53) (சென்னை) – 0.3 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T19:43+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_1830",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -3524,28 +3546,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 3:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Damera (Warangal) – 7.8 mm\n2. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n3. Namapur (Rajanna Sircilla) – 2.5 mm\n4. Nagapur (Medak) – 2.5 mm\n5. Venkepalli (Karimnagar) – 2.0 mm\n6. Kommulavancha (Mahabubabad) – 2.0 mm\n7. Devarakadra (Mahabubnagar) – 2.0 mm\n8. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n9. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n10. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T03:51+05:30"
-  },
-  {
-   "id": "rain_ktcc_live_2026-11-13_0230",
-   "region": "ktcc",
-   "region_name": "KTCC",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 2:30 AM",
-   "sort": "2026-11-13T02:30",
-   "files": {
-    "mp4": "files/rain_ktcc_live_2026-11-13_0230.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ktcc_live_2026-11-13_0230.gif",
-    "gif_mb": 0.8,
-    "png": "files/rain_ktcc_live_2026-11-13_0230.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ktcc_live_2026-11-13_0230.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 12 காலை 8:30 முதல் நவ. 13 இரவு 2:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 02 Manali (W 17) (சென்னை) – 2.1 மி.மீ.\n2. Z 03 Madhavaram (W 30) (சென்னை) – 2.1 மி.மீ.\n3. Z 04 Mullai Nagar (Div 37) (சென்னை) – 1.6 மி.மீ.\n4. Z 04 Tondiarpet (W 42) (சென்னை) – 1.2 மி.மீ.\n5. Z 01 Thiruvottiyur (W 11) (சென்னை) – 1.2 மி.மீ.\n6. Z 04 BB Road [LS] (Div 45) (சென்னை) – 1.0 மி.மீ.\n7. Z 02 Manali New town (W 18) (சென்னை) – 0.8 மி.மீ.\n8. Z 06 Perambur (W 67) (சென்னை) – 0.6 மி.மீ.\n9. Z 04 Erukanchery (Div 35) (சென்னை) – 0.6 மி.மீ.\n10. Balaji Nagar (Puzhal) (சென்னை) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T02:49+05:30"
   },
   {
    "id": "rain_sat24_2026-11-12_1229_en",
