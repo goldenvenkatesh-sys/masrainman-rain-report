@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T12:50+05:30",
+ "updated": "2026-11-14T12:51+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1230",
@@ -66,6 +66,28 @@
    },
    "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 12:30 pm 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.5 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 370.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kaliaya (Dakshina Kannada) – 0.5 mm\n4. Muchuru (Dakshina Kannada) – 0.5 mm\n5. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n6. Kakola (Haveri) – 0.5 mm\n7. Nerlige (Hassan) – 0.5 mm\n8. Kasaba Jambagi (Bagalkote) – 0.0 mm\n9. Bhatambra (Bidar) – 0.0 mm\n10. Sanapur (Koppala) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T12:50+05:30"
+  },
+  {
+   "id": "rain_tg_live_2026-11-14_1200",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 12:00 PM",
+   "sort": "2026-11-14T12:00",
+   "files": {
+    "mp4": "files/rain_tg_live_2026-11-14_1200.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_tg_live_2026-11-14_1200.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_tg_live_2026-11-14_1200.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_tg_live_2026-11-14_1200.txt"
+   },
+   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 14 Nov to 12:00 pm 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Velganoor (Mancherial) – 2.5 mm\n2. Nagapur (Medak) – 2.0 mm\n3. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n4. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n5. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n6. Gymkhana ESS (Hyderabad) – 0.0 mm\n7. JVR OCP I&II (Khammam) – 0.0 mm\n8. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n9. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n10. Koyagudem (Bhadradri Kothagudem) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T12:51+05:30"
   },
   {
    "id": "rain_ap_live_2026-11-14_1200",
@@ -3115,28 +3137,6 @@
    },
    "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 12:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n2. Damera (Warangal) – 6.3 mm\n3. Namapur (Rajanna Sircilla) – 2.5 mm\n4. Nagapur (Medak) – 2.5 mm\n5. Venkepalli (Karimnagar) – 2.0 mm\n6. Kommulavancha (Mahabubabad) – 2.0 mm\n7. Devarakadra (Mahabubnagar) – 2.0 mm\n8. Old Ward Office ,Rahmathnagar (Hyderabad) – 0.0 mm\n9. Old sultan nagar Community hall (Medchal Malkajgiri) – 0.0 mm\n10. Yadadri Bhuvanagiri Collectorate (Yadadri Bhuvanagiri) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T00:51+05:30"
-  },
-  {
-   "id": "rain_tg_live_2026-11-12_2100",
-   "region": "tg",
-   "region_name": "Telangana",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 9:00 PM",
-   "sort": "2026-11-12T21:00",
-   "files": {
-    "mp4": "files/rain_tg_live_2026-11-12_2100.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_tg_live_2026-11-12_2100.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_tg_live_2026-11-12_2100.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_tg_live_2026-11-12_2100.txt"
-   },
-   "caption": "🌧 Rainfall Report · Telangana\nRainfall so far · 8:30 am 12 Nov to 9:00 pm 12 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. ESS Malkajgiri (Medchal Malkajgiri) – 6.8 mm\n2. Damera (Warangal) – 6.0 mm\n3. Nagapur (Medak) – 2.5 mm\n4. Kommulavancha (Mahabubabad) – 2.0 mm\n5. Venkepalli (Karimnagar) – 2.0 mm\n6. Devarakadra (Mahabubnagar) – 2.0 mm\n7. Koyagudem (Bhadradri Kothagudem) – 0.0 mm\n8. 24 Area, Yellandu (Bhadradri Kothagudem) – 0.0 mm\n9. GM Office-Manuguru (Bhadradri Kothagudem) – 0.0 mm\n10. JVR OCP I&II (Khammam) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T21:51+05:30"
   },
   {
    "id": "rain_sat24_2026-11-12_1229_en",
