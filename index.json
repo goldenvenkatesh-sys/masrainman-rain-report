@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T17:08+05:30",
+ "updated": "2026-11-14T17:12+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1630",
@@ -852,7 +852,7 @@
     "txt": "files/rain_ktcc_live24_2026-11-14.txt"
    },
    "caption": "🌧 Chennai Region · Past 24 hours observed rainfall\n8:30 am 13 Nov to 8:30 am 14 Nov 2026 · hour by hour\n\nRainfall toppers:\n1. Kadapakkam (Chennai) – 7.2 mm\n2. Z 02 Manali (W 18) (Chennai) – 2.8 mm\n3. Nellikupam (Chengalpattu) – 2.0 mm\n4. Z 02 Manali New town (W 18) (Chennai) – 1.6 mm\n5. Z 14 Madipakkam (W 169) (Chennai) – 1.5 mm\n6. Balaji Nagar (Puzhal) (Chennai) – 1.2 mm\n7. Sriperumbuthur ARG (Kancheepuram) – 1.2 mm\n8. Theneri (Kancheepuram) – 1.2 mm\n9. Z 08 Anna Nagar West (W 95) (Chennai) – 0.9 mm\n10. Z 14 Madipakkam (W 188) (Chennai) – 0.8 mm\n\nHeaviest in one hour: 6.0 mm at Kadapakkam (Chennai), hour ending 2:30 PM\nRain at 34 of 144 hourly stations · 0 with heavy rain or more\nMost of it fell 1:30 PM – 3:30 PM\n\nSource: TN-SMART (TNSDMA) · forecasts: ECMWF open data (CC BY 4.0)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-14T10:50+05:30"
+   "made": "2026-11-14T17:12+05:30"
   },
   {
    "id": "rain_kl_daily_2026-11-14_ml",

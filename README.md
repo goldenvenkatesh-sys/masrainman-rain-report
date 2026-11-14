@@ -1,6 +1,6 @@
 # MasRainman rainfall reports
 
-Updated 14 Nov 2026, 05:08 PM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
+Updated 14 Nov 2026, 05:12 PM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
 
 ## Tamil Nadu · Rain so far (live)
 up to 14 Nov, 4:30 PM — [MP4](files/rain_live_2026-11-14_1630.mp4) · [GIF](files/rain_live_2026-11-14_1630.gif) · [PNG](files/rain_live_2026-11-14_1630.png)
