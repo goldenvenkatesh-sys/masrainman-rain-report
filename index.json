@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T10:49+05:30",
+ "updated": "2026-11-14T10:50+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1030",
@@ -44,6 +44,28 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 காலை 10:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n2. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n3. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n4. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n5. Kovathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Pavunjur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Chithamur (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Cheyyur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Athur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T10:49+05:30"
+  },
+  {
+   "id": "rain_ka_live_2026-11-14_1030",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 10:30 AM",
+   "sort": "2026-11-14T10:30",
+   "files": {
+    "mp4": "files/rain_ka_live_2026-11-14_1030.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ka_live_2026-11-14_1030.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ka_live_2026-11-14_1030.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ka_live_2026-11-14_1030.txt"
+   },
+   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 10:30 am 14 Nov\n\n1 station recorded over 100 mm; Mandya leads the districts with an area average of 0.8 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 196.5 mm\n2. Kaliaya (Dakshina Kannada) – 0.5 mm\n3. Muchuru (Dakshina Kannada) – 0.5 mm\n4. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n5. Kakola (Haveri) – 0.5 mm\n6. Nerlige (Hassan) – 0.5 mm\n7. Kappalamadagu (Kolar) – 0.0 mm\n8. Kosam (Bidar) – 0.0 mm\n9. Thimmaravutanahalli (Kolar) – 0.0 mm\n10. Kyarikoppa (Dharwad) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T10:50+05:30"
   },
   {
    "id": "rain_live_2026-11-14_0930",
@@ -2460,28 +2482,6 @@
    },
    "caption": "🌧 Rainfall Report · Kerala\nTotal rainfall · 19 Oct to 13 Nov (26 days)\n\n1 station recorded over 400 mm; Alappuzha leads the districts with a station average of 302.2 mm.\n\nTop 5 stations:\n1. Cherthala (Alappuzha) – 457.1 mm\n2. Mannarkad (Palakkad) – 395.6 mm\n3. Soornad (Kollam) – 390.0 mm\n4. Ponmudi (Thiruvananthapuram) – 389.0 mm\n5. Vellathooval (Idukki) – 373.0 mm\n\nSource: IMD Thiruvananthapuram, Kerala WRD, KSEB\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T20:28+05:30"
-  },
-  {
-   "id": "rain_ka_live_2026-11-13_0830",
-   "region": "ka",
-   "region_name": "Karnataka",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 8:30 AM",
-   "sort": "2026-11-13T08:30",
-   "files": {
-    "mp4": "files/rain_ka_live_2026-11-13_0830.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ka_live_2026-11-13_0830.gif",
-    "gif_mb": 1.0,
-    "png": "files/rain_ka_live_2026-11-13_0830.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ka_live_2026-11-13_0830.txt"
-   },
-   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 12 Nov to 8:30 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Betadur (Dharwad) – 41.5 mm\n2. Arani (Mandya) – 6.0 mm\n3. Santemarahalli (Chamarajanagara) – 4.5 mm\n4. Krishnarajapet (Mandya) – 2.5 mm\n5. Kanthapura (Mandya) – 2.0 mm\n6. Kaliaya (Dakshina Kannada) – 2.0 mm\n7. Muchuru (Dakshina Kannada) – 1.5 mm\n8. Churchugundi (Shivamogga) – 1.0 mm\n9. Anajigere (Vijayanagara) – 1.0 mm\n10. Malangi (Mysuru) – 1.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T08:51+05:30"
   },
   {
    "id": "rain_ka_live24_2026-11-13",
