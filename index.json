@@ -24,6 +24,28 @@
    "made": "2026-11-14T15:49+05:30"
   },
   {
+   "id": "rain_ka_live_2026-11-14_1530",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 3:30 PM",
+   "sort": "2026-11-14T15:30",
+   "files": {
+    "mp4": "files/rain_ka_live_2026-11-14_1530.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ka_live_2026-11-14_1530.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ka_live_2026-11-14_1530.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ka_live_2026-11-14_1530.txt"
+   },
+   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 3:30 pm 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.5 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 370.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kaliaya (Dakshina Kannada) – 1.0 mm\n4. Muchuru (Dakshina Kannada) – 1.0 mm\n5. Kakola (Haveri) – 1.0 mm\n6. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n7. Kadur(Rural) (Chikkamagaluru) – 0.5 mm\n8. Hochihalli (Chikkamagaluru) – 0.5 mm\n9. Nerlige (Hassan) – 0.5 mm\n10. Kappalamadagu (Kolar) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T15:49+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_1430",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -2286,28 +2308,6 @@
     "txt": "files/rain_live_2026-11-13_1330.txt"
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 மதியம் 1:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Nellikupam (செங்கல்பட்டு) – 2.0 மி.மீ.\n2. Z 14 Madipakkam (W 169) (சென்னை) – 1.5 மி.மீ.\n3. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n4. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n5. Z 14 Madipakkam (W 188) (சென்னை) – 0.8 மி.மீ.\n6. Z 14 Medavakkam Jn (W 188) (சென்னை) – 0.6 மி.மீ.\n7. Seydunganallur (தூத்துக்குடி) – 0.4 மி.மீ.\n8. Mamallapuram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n9. Woraiyur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n10. Amur (திருச்சிராப்பள்ளி) – 0.4 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T13:49+05:30"
-  },
-  {
-   "id": "rain_ka_live_2026-11-13_1330",
-   "region": "ka",
-   "region_name": "Karnataka",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 1:30 PM",
-   "sort": "2026-11-13T13:30",
-   "files": {
-    "mp4": "files/rain_ka_live_2026-11-13_1330.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ka_live_2026-11-13_1330.gif",
-    "gif_mb": 0.8,
-    "png": "files/rain_ka_live_2026-11-13_1330.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ka_live_2026-11-13_1330.txt"
-   },
-   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 13 Nov to 1:30 pm 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Chebbi (Gadag) – 3.5 mm\n2. Ponnampet 1 (Kodagu) – 3.4 mm\n3. Arani (Mandya) – 2.5 mm\n4. Yelavatti (Davanagere) – 1.0 mm\n5. Chakkodnahalli (Mysuru) – 1.0 mm\n6. Sanapur (Koppala) – 0.8 mm\n7. Kaliaya (Dakshina Kannada) – 0.5 mm\n8. H.Hosahalli (Ballari) – 0.5 mm\n9. Keladi (Shivamogga) – 0.5 mm\n10. Kakola (Haveri) – 0.5 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T13:49+05:30"
   },
   {
