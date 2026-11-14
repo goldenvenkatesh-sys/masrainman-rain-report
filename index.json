@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T15:50+05:30",
+ "updated": "2026-11-14T16:27+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1530",
@@ -440,6 +440,66 @@
    },
    "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 11:30 am 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.2 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 298.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kaliaya (Dakshina Kannada) – 0.5 mm\n4. Muchuru (Dakshina Kannada) – 0.5 mm\n5. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n6. Kakola (Haveri) – 0.5 mm\n7. Nerlige (Hassan) – 0.5 mm\n8. Kappalamadagu (Kolar) – 0.0 mm\n9. Kosam (Bidar) – 0.0 mm\n10. Thimmaravutanahalli (Kolar) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T11:50+05:30"
+  },
+  {
+   "id": "rain_sat24_2026-11-14_1129_en",
+   "region": "tn",
+   "region_name": "Tamil Nadu",
+   "kind": "sat24",
+   "kind_name": "Satellite rain, past 24 hours",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "24 h up to 14 Nov, 11:29 AM",
+   "sort": "2026-11-14T11:29",
+   "files": {
+    "mp4": "files/rain_sat24_2026-11-14_1129_en.mp4",
+    "mp4_mb": 0.1,
+    "png": "files/rain_sat24_2026-11-14_1129_en.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_sat24_2026-11-14_1129_en.txt"
+   },
+   "caption": "🛰 Satellite Rainfall · Tamil Nadu\nPast 24 hours · 11:30 AM 13 Nov to 11:29 AM 14 Nov IST\n\nNo district had moderate rain on average.\n\nWettest districts (average, max):\n1. Chengalpattu – 0.2 mm (max 1 mm)\n2. Tirunelveli – 0.2 mm (max 1 mm)\n3. Thiruvallur – 0.1 mm (max 1 mm)\n4. Mayiladuthurai – 0.0 mm (max 0 mm)\n5. Kallakurichi – 0.0 mm (max 0 mm)\n\nSatellite estimate, not gauge readings. Source: NASA/JAXA GPM IMERG Early\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T16:27+05:30"
+  },
+  {
+   "id": "rain_ka_sat24_2026-11-14_1129_en",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "sat24",
+   "kind_name": "Satellite rain, past 24 hours",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "24 h up to 14 Nov, 11:29 AM",
+   "sort": "2026-11-14T11:29",
+   "files": {
+    "mp4": "files/rain_ka_sat24_2026-11-14_1129_en.mp4",
+    "mp4_mb": 0.1,
+    "png": "files/rain_ka_sat24_2026-11-14_1129_en.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ka_sat24_2026-11-14_1129_en.txt"
+   },
+   "caption": "🛰 Satellite Rainfall · Karnataka\nPast 24 hours · 11:30 AM 13 Nov to 11:29 AM 14 Nov IST\n\nNo district had moderate rain on average.\n\nWettest districts (average, max):\n1. Belagavi – 0.0 mm (max 0 mm)\n2. Bagalkote – 0.0 mm (max 0 mm)\n3. Vijayapura – 0.0 mm (max 0 mm)\n4. Bidar – 0.0 mm (max 0 mm)\n5. Kalaburagi – 0.0 mm (max 0 mm)\n\nSatellite estimate, not gauge readings. Source: NASA/JAXA GPM IMERG Early\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T16:27+05:30"
+  },
+  {
+   "id": "rain_ap_sat24_2026-11-14_1129_en",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "sat24",
+   "kind_name": "Satellite rain, past 24 hours",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "24 h up to 14 Nov, 11:29 AM",
+   "sort": "2026-11-14T11:29",
+   "files": {
+    "mp4": "files/rain_ap_sat24_2026-11-14_1129_en.mp4",
+    "mp4_mb": 0.1,
+    "png": "files/rain_ap_sat24_2026-11-14_1129_en.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_sat24_2026-11-14_1129_en.txt"
+   },
+   "caption": "🛰 Satellite Rainfall · Andhra Pradesh\nPast 24 hours · 11:30 AM 13 Nov to 11:29 AM 14 Nov IST\n\nNo district had moderate rain on average.\n\nWettest districts (average, max):\n1. Tirupati – 0.3 mm (max 2 mm)\n2. Nellore – 0.1 mm (max 1 mm)\n3. Annamayya – 0.0 mm (max 1 mm)\n4. Prakasam – 0.0 mm (max 0 mm)\n5. Alluri Sitharama Raju – 0.0 mm (max 0 mm)\n\nSatellite estimate, not gauge readings. Source: NASA/JAXA GPM IMERG Early\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T16:27+05:30"
   },
   {
    "id": "rain_tg_live_2026-11-14_1100",

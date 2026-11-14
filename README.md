@@ -1,6 +1,6 @@
 # MasRainman rainfall reports
 
-Updated 14 Nov 2026, 03:50 PM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
+Updated 14 Nov 2026, 04:27 PM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
 
 ## Tamil Nadu · Rain so far (live)
 up to 14 Nov, 3:30 PM — [MP4](files/rain_live_2026-11-14_1530.mp4) · [GIF](files/rain_live_2026-11-14_1530.gif) · [PNG](files/rain_live_2026-11-14_1530.png)
@@ -26,6 +26,21 @@ up to 14 Nov, 2:30 PM — [MP4](files/rain_ktcc_live_2026-11-14_1430.mp4) · [GI
 up to 14 Nov, 2:00 PM — [MP4](files/rain_tg_live_2026-11-14_1400.mp4) · [GIF](files/rain_tg_live_2026-11-14_1400.gif) · [PNG](files/rain_tg_live_2026-11-14_1400.png)
 
 ![Telangana · Rain so far (live)](files/rain_tg_live_2026-11-14_1400.png)
+
+## Tamil Nadu · Satellite rain, past 24 hours
+24 h up to 14 Nov, 11:29 AM — [MP4](files/rain_sat24_2026-11-14_1129_en.mp4) · [PNG](files/rain_sat24_2026-11-14_1129_en.png)
+
+![Tamil Nadu · Satellite rain, past 24 hours](files/rain_sat24_2026-11-14_1129_en.png)
+
+## Karnataka · Satellite rain, past 24 hours
+24 h up to 14 Nov, 11:29 AM — [MP4](files/rain_ka_sat24_2026-11-14_1129_en.mp4) · [PNG](files/rain_ka_sat24_2026-11-14_1129_en.png)
+
+![Karnataka · Satellite rain, past 24 hours](files/rain_ka_sat24_2026-11-14_1129_en.png)
+
+## Andhra Pradesh · Satellite rain, past 24 hours
+24 h up to 14 Nov, 11:29 AM — [MP4](files/rain_ap_sat24_2026-11-14_1129_en.mp4) · [PNG](files/rain_ap_sat24_2026-11-14_1129_en.png)
+
+![Andhra Pradesh · Satellite rain, past 24 hours](files/rain_ap_sat24_2026-11-14_1129_en.png)
 
 ## Telangana · Past 24 hours, hour by hour
 rain-day 14 Nov 2026 — [MP4](files/rain_tg_live24_2026-11-14.mp4) · [PNG](files/rain_tg_live24_2026-11-14.png)
@@ -76,21 +91,6 @@ rain-day 14 Nov 2026 — [MP4](files/rain_ka_live24_2026-11-14.mp4) · [PNG](fil
 rain-day 14 Nov 2026 — [MP4](files/rain_ap_live24_2026-11-14.mp4) · [PNG](files/rain_ap_live24_2026-11-14.png)
 
 ![Andhra Pradesh · Past 24 hours, hour by hour](files/rain_ap_live24_2026-11-14.png)
-
-## Tamil Nadu · Satellite rain, past 24 hours
-24 h up to 13 Nov, 11:29 AM — [MP4](files/rain_sat24_2026-11-13_1129_en.mp4) · [PNG](files/rain_sat24_2026-11-13_1129_en.png)
-
-![Tamil Nadu · Satellite rain, past 24 hours](files/rain_sat24_2026-11-13_1129_en.png)
-
-## Karnataka · Satellite rain, past 24 hours
-24 h up to 13 Nov, 11:29 AM — [MP4](files/rain_ka_sat24_2026-11-13_1129_en.mp4) · [PNG](files/rain_ka_sat24_2026-11-13_1129_en.png)
-
-![Karnataka · Satellite rain, past 24 hours](files/rain_ka_sat24_2026-11-13_1129_en.png)
-
-## Andhra Pradesh · Satellite rain, past 24 hours
-24 h up to 13 Nov, 11:29 AM — [MP4](files/rain_ap_sat24_2026-11-13_1129_en.mp4) · [PNG](files/rain_ap_sat24_2026-11-13_1129_en.png)
-
-![Andhra Pradesh · Satellite rain, past 24 hours](files/rain_ap_sat24_2026-11-13_1129_en.png)
 
 ## Tamil Nadu · Past 24 hours, hour by hour
 rain-day 13 Nov 2026 — [MP4](files/rain_live24_2026-11-13.mp4) · [PNG](files/rain_live24_2026-11-13.png)
@@ -161,6 +161,9 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Andhra Pradesh · Rain so far (live) | up to 14 Nov, 12:00 PM | [MP4](files/rain_ap_live_2026-11-14_1200.mp4) [GIF](files/rain_ap_live_2026-11-14_1200.gif) [PNG](files/rain_ap_live_2026-11-14_1200.png) |
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 11:30 AM | [MP4](files/rain_live_2026-11-14_1130.mp4) [GIF](files/rain_live_2026-11-14_1130.gif) [PNG](files/rain_live_2026-11-14_1130.png) |
 | Karnataka · Rain so far (live) | up to 14 Nov, 11:30 AM | [MP4](files/rain_ka_live_2026-11-14_1130.mp4) [GIF](files/rain_ka_live_2026-11-14_1130.gif) [PNG](files/rain_ka_live_2026-11-14_1130.png) |
+| Tamil Nadu · Satellite rain, past 24 hours | 24 h up to 14 Nov, 11:29 AM | [MP4](files/rain_sat24_2026-11-14_1129_en.mp4) [PNG](files/rain_sat24_2026-11-14_1129_en.png) |
+| Karnataka · Satellite rain, past 24 hours | 24 h up to 14 Nov, 11:29 AM | [MP4](files/rain_ka_sat24_2026-11-14_1129_en.mp4) [PNG](files/rain_ka_sat24_2026-11-14_1129_en.png) |
+| Andhra Pradesh · Satellite rain, past 24 hours | 24 h up to 14 Nov, 11:29 AM | [MP4](files/rain_ap_sat24_2026-11-14_1129_en.mp4) [PNG](files/rain_ap_sat24_2026-11-14_1129_en.png) |
 | Telangana · Rain so far (live) | up to 14 Nov, 11:00 AM | [MP4](files/rain_tg_live_2026-11-14_1100.mp4) [GIF](files/rain_tg_live_2026-11-14_1100.gif) [PNG](files/rain_tg_live_2026-11-14_1100.png) |
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 10:30 AM | [MP4](files/rain_live_2026-11-14_1030.mp4) [GIF](files/rain_live_2026-11-14_1030.gif) [PNG](files/rain_live_2026-11-14_1030.png) |
 | KTCC · Rain so far (live) | up to 14 Nov, 10:30 AM | [MP4](files/rain_ktcc_live_2026-11-14_1030.mp4) [GIF](files/rain_ktcc_live_2026-11-14_1030.gif) [PNG](files/rain_ktcc_live_2026-11-14_1030.png) |
