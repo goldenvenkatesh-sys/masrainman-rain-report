@@ -7,6 +7,11 @@ up to 14 Nov, 10:30 AM — [MP4](files/rain_live_2026-11-14_1030.mp4) · [GIF](f
 
 ![Tamil Nadu · Rain so far (live)](files/rain_live_2026-11-14_1030.png)
 
+## KTCC · Rain so far (live)
+up to 14 Nov, 10:30 AM — [MP4](files/rain_ktcc_live_2026-11-14_1030.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_1030.gif) · [PNG](files/rain_ktcc_live_2026-11-14_1030.png)
+
+![KTCC · Rain so far (live)](files/rain_ktcc_live_2026-11-14_1030.png)
+
 ## Karnataka · Rain so far (live)
 up to 14 Nov, 9:30 AM — [MP4](files/rain_ka_live_2026-11-14_0930.mp4) · [GIF](files/rain_ka_live_2026-11-14_0930.gif) · [PNG](files/rain_ka_live_2026-11-14_0930.png)
 
@@ -26,11 +31,6 @@ rain-day 14 Nov 2026 — [MP4](files/rain_tg_daily_2026-11-14.mp4) · [GIF](file
 03 Nov → 14 Nov 2026 — [MP4](files/rain_tg_accum_2026-11-03_to_2026-11-14.mp4) · [GIF](files/rain_tg_accum_2026-11-03_to_2026-11-14.gif) · [PNG](files/rain_tg_accum_2026-11-03_to_2026-11-14.png) · [Station list](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.png) [p2](files/rain_tg_accum_2026-11-03_to_2026-11-14_list_p2.png) [p3](files/rain_tg_accum_2026-11-03_to_2026-11-14_list_p3.png) · [Print PDF](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.pdf)
 
 ![Telangana · Total rain (multi-day)](files/rain_tg_accum_2026-11-03_to_2026-11-14.png)
-
-## KTCC · Rain so far (live)
-up to 14 Nov, 8:30 AM — [MP4](files/rain_ktcc_live_2026-11-14_0830.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_0830.gif) · [PNG](files/rain_ktcc_live_2026-11-14_0830.png)
-
-![KTCC · Rain so far (live)](files/rain_ktcc_live_2026-11-14_0830.png)
 
 ## Karnataka · Past 24 hours, hour by hour
 rain-day 14 Nov 2026 — [MP4](files/rain_ka_live24_2026-11-14.mp4) · [PNG](files/rain_ka_live24_2026-11-14.png)
@@ -142,6 +142,7 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Report | Period | Files |
 |---|---|---|
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 10:30 AM | [MP4](files/rain_live_2026-11-14_1030.mp4) [GIF](files/rain_live_2026-11-14_1030.gif) [PNG](files/rain_live_2026-11-14_1030.png) |
+| KTCC · Rain so far (live) | up to 14 Nov, 10:30 AM | [MP4](files/rain_ktcc_live_2026-11-14_1030.mp4) [GIF](files/rain_ktcc_live_2026-11-14_1030.gif) [PNG](files/rain_ktcc_live_2026-11-14_1030.png) |
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 9:30 AM | [MP4](files/rain_live_2026-11-14_0930.mp4) [GIF](files/rain_live_2026-11-14_0930.gif) [PNG](files/rain_live_2026-11-14_0930.png) |
 | Karnataka · Rain so far (live) | up to 14 Nov, 9:30 AM | [MP4](files/rain_ka_live_2026-11-14_0930.mp4) [GIF](files/rain_ka_live_2026-11-14_0930.gif) [PNG](files/rain_ka_live_2026-11-14_0930.png) |
 | Telangana · Past 24 hours, hour by hour | rain-day 14 Nov 2026 | [MP4](files/rain_tg_live24_2026-11-14.mp4) [PNG](files/rain_tg_live24_2026-11-14.png) |
@@ -309,7 +310,6 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Andhra Pradesh · Satellite radar 3D pass | pass at 10 Nov, 7:59 PM | [MP4](files/rain_ap_gpm3d_2026-11-10_1959_en.mp4) [PNG](files/rain_ap_gpm3d_2026-11-10_1959_en.png) |
 | KTCC · Rain so far (live) | up to 10 Nov, 4:30 PM | [MP4](files/rain_ktcc_live_2026-11-10_1630.mp4) [GIF](files/rain_ktcc_live_2026-11-10_1630.gif) [PNG](files/rain_ktcc_live_2026-11-10_1630.png) |
 | KTCC · Rain so far (live) | up to 10 Nov, 3:30 PM | [MP4](files/rain_ktcc_live_2026-11-10_1530.mp4) [GIF](files/rain_ktcc_live_2026-11-10_1530.gif) [PNG](files/rain_ktcc_live_2026-11-10_1530.png) |
-| KTCC · Rain so far (live) | up to 10 Nov, 1:30 PM | [MP4](files/rain_ktcc_live_2026-11-10_1330.mp4) [GIF](files/rain_ktcc_live_2026-11-10_1330.gif) [PNG](files/rain_ktcc_live_2026-11-10_1330.png) |
 | Tamil Nadu · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_sat24_2026-11-10_1229_en.png) |
 | Karnataka · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_ka_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_ka_sat24_2026-11-10_1229_en.png) |
 | Andhra Pradesh · Satellite rain, past 24 hours | 24 h up to 10 Nov, 12:29 PM | [MP4](files/rain_ap_sat24_2026-11-10_1229_en.mp4) [PNG](files/rain_ap_sat24_2026-11-10_1229_en.png) |
