@@ -2,6 +2,28 @@
  "updated": "2026-11-14T18:49+05:30",
  "reports": [
   {
+   "id": "rain_ktcc_live_2026-11-14_1830",
+   "region": "ktcc",
+   "region_name": "KTCC",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 6:30 PM",
+   "sort": "2026-11-14T18:30",
+   "files": {
+    "mp4": "files/rain_ktcc_live_2026-11-14_1830.mp4",
+    "mp4_mb": 0.4,
+    "gif": "files/rain_ktcc_live_2026-11-14_1830.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_ktcc_live_2026-11-14_1830.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ktcc_live_2026-11-14_1830.txt"
+   },
+   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 14 காலை 8:30 முதல் நவ. 14 மாலை 6:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 04 Tondiarpet (W 42) (சென்னை) – 1.5 மி.மீ.\n2. Z 01 Thiruvottiyur (W 11) (சென்னை) – 1.2 மி.மீ.\n3. Z 12 Alandhur (PAL) (சென்னை) – 1.0 மி.மீ.\n4. Z 14 Madipakkam (W 169) (சென்னை) – 0.9 மி.மீ.\n5. Z 10 Saidapet (W 139) (சென்னை) – 0.8 மி.மீ.\n6. Thirukazhukundram TNDRRA ARG (செங்கல்பட்டு) – 0.4 மி.மீ.\n7. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n8. Egmore (சென்னை) – 0.4 மி.மீ.\n9. Z 05 Basin bridge (W 53) (சென்னை) – 0.3 மி.மீ.\n10. Z 09 Nungambakkam (W 110) (சென்னை) – 0.3 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T18:49+05:30"
+  },
+  {
    "id": "rain_ka_live_2026-11-14_1830",
    "region": "ka",
    "region_name": "Karnataka",
@@ -3718,28 +3740,6 @@
    },
    "caption": "🌧 Karnataka · Past 24 hours observed rainfall\n8:30 am 11 Nov to 8:30 am 12 Nov 2026 · hour by hour\n\nRainfall toppers:\n1. Ankanahalli (Mysuru) – 278.5 mm\n2. Bikkodu (Hassan) – 26.5 mm\n3. Mallur (Haveri) – 19.5 mm\n4. Masanagi (Haveri) – 13.0 mm\n5. Krishnarajapet (Mandya) – 5.5 mm\n6. Andanuru (Chitradurga) – 2.5 mm\n7. Nagaralu (Chikkamagaluru) – 1.5 mm\n8. Belavanur (Davanagere) – 1.5 mm\n9. Kaliaya (Dakshina Kannada) – 1.5 mm\n10. Kadabinabail (Chikkamagaluru) – 1.0 mm\n\nHeaviest in one hour: 278.5 mm at Ankanahalli (Mysuru), hour ending 3:30 PM\nRain at 36 of 3961 hourly stations · 1 with heavy rain or more\nMost of it fell 2:30 PM – 3:30 PM\n\nDid the models get it right? (heavy rain (≥ 64.5 mm) at a gauge in 1 districts)\n  WeatherNext 3: 0 caught, 0 false alarms\n  ECMWF IFS: 0 caught, 0 false alarms\n  ECMWF AIFS: 0 caught, 0 false alarms\n\nSource: KSNDMC · forecasts: ECMWF open data (CC BY 4.0)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-12T09:23+05:30"
-  },
-  {
-   "id": "rain_ktcc_live_2026-11-12_0730",
-   "region": "ktcc",
-   "region_name": "KTCC",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-12",
-   "label": "up to 12 Nov, 7:30 AM",
-   "sort": "2026-11-12T07:30",
-   "files": {
-    "mp4": "files/rain_ktcc_live_2026-11-12_0730.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ktcc_live_2026-11-12_0730.gif",
-    "gif_mb": 0.7,
-    "png": "files/rain_ktcc_live_2026-11-12_0730.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ktcc_live_2026-11-12_0730.txt"
-   },
-   "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 11 காலை 8:30 முதல் நவ. 12 காலை 7:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Kelambakkam (செங்கல்பட்டு) – 0.4 மி.மீ.\n2. Saligramam TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n3. Thiruvellavoyal (திருவள்ளூர்) – 0.4 மி.மீ.\n4. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n5. Pavunjur (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Chithamur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. L.Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-12T07:50+05:30"
   },
   {
    "id": "rain_sat24_2026-11-11_1129_en",
