@@ -46,6 +46,28 @@
    "made": "2026-11-14T16:49+05:30"
   },
   {
+   "id": "rain_ap_live_2026-11-14_1600",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 4:00 PM",
+   "sort": "2026-11-14T16:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_1600.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_1600.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_1600.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_1600.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 14 Nov to 4:00 pm 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Budanampalle (Sri Sathya Sai) – 13.0 mm\n2. Madugula (Anakapalli) – 11.8 mm\n3. Chinnathippa Samudram (Annamayya) – 4.2 mm\n4. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 3.0 mm\n5. Varikasuvupalli (Annamayya) – 1.8 mm\n6. Megadri Gedda Reservoir ARG (Visakhapatnam) – 1.8 mm\n7. S.Narsapuram (Anakapalli) – 1.5 mm\n8. Attalasiddavaram (Tirupati) – 1.5 mm\n9. Penuganchiprolu (NTR) – 1.2 mm\n10. Bapulapad ARG (Krishna) – 1.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T16:50+05:30"
+  },
+  {
    "id": "rain_live_2026-11-14_1530",
    "region": "tn",
    "region_name": "Tamil Nadu",
@@ -2692,28 +2714,6 @@
     "txt": "files/rain_ktcc_live_2026-11-13_0930.txt"
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 13 காலை 8:30 முதல் நவ. 13 காலை 9:30 வரை\n\nமாநிலம் முழுவதும் குறிப்பிடத்தக்க மழை பதிவாகவில்லை.\n\nமுதல் 10 நிலையங்கள்:\n1. Theneri (காஞ்சிபுரம்) – 1.2 மி.மீ.\n2. Sriperumbuthur ARG (காஞ்சிபுரம்) – 1.2 மி.மீ.\n3. Ayanavaram TNDRRA ARG (சென்னை) – 0.4 மி.மீ.\n4. Morai TNDRRA ARG (திருவள்ளூர்) – 0.4 மி.மீ.\n5. Chengalpattu TNDRRA ARG (செங்கல்பட்டு) – 0.0 மி.மீ.\n6. Palur (செங்கல்பட்டு) – 0.0 மி.மீ.\n7. Singaperumalkoil (செங்கல்பட்டு) – 0.0 மி.மீ.\n8. Cheyyur (செங்கல்பட்டு) – 0.0 மி.மீ.\n9. Zamin Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n10. L.Endathur (செங்கல்பட்டு) – 0.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T09:50+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_0900",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 9:00 AM",
-   "sort": "2026-11-13T09:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_0900.mp4",
-    "mp4_mb": 0.4,
-    "gif": "files/rain_ap_live_2026-11-13_0900.gif",
-    "gif_mb": 0.7,
-    "png": "files/rain_ap_live_2026-11-13_0900.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_0900.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 13 Nov to 9:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. KVBPuram 33/11 KV (Tirupati) – 1.7 mm\n2. MunicipalOffice ARG (Nellore) – 1.5 mm\n3. Vidyanagar (Nellore) – 0.5 mm\n4. Utukuru (Nellore) – 0.5 mm\n5. MPP School Arundathipalem ARG (Nellore) – 0.5 mm\n6. Kavali 33/11 KV (Nellore) – 0.4 mm\n7. Thotapalligudur (Nellore) – 0.2 mm\n8. Chinthavaram (Nellore) – 0.2 mm\n9. Kovvur (East Godavari) – 0.2 mm\n10. Maddipalli (Anantapuramu) – 0.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T09:50+05:30"
   },
   {
