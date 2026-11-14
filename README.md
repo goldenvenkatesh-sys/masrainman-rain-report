@@ -1,6 +1,11 @@
 # MasRainman rainfall reports
 
-Updated 14 Nov 2026, 08:52 AM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
+Updated 14 Nov 2026, 09:49 AM IST. Tap a file to open it; use ⋯ → *Download* (or *Open in browser*) to save it.
+
+## Tamil Nadu · Rain so far (live)
+up to 14 Nov, 9:30 AM — [MP4](files/rain_live_2026-11-14_0930.mp4) · [GIF](files/rain_live_2026-11-14_0930.gif) · [PNG](files/rain_live_2026-11-14_0930.png)
+
+![Tamil Nadu · Rain so far (live)](files/rain_live_2026-11-14_0930.png)
 
 ## Telangana · Past 24 hours, hour by hour
 rain-day 14 Nov 2026 — [MP4](files/rain_tg_live24_2026-11-14.mp4) · [PNG](files/rain_tg_live24_2026-11-14.png)
@@ -16,11 +21,6 @@ rain-day 14 Nov 2026 — [MP4](files/rain_tg_daily_2026-11-14.mp4) · [GIF](file
 03 Nov → 14 Nov 2026 — [MP4](files/rain_tg_accum_2026-11-03_to_2026-11-14.mp4) · [GIF](files/rain_tg_accum_2026-11-03_to_2026-11-14.gif) · [PNG](files/rain_tg_accum_2026-11-03_to_2026-11-14.png) · [Station list](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.png) [p2](files/rain_tg_accum_2026-11-03_to_2026-11-14_list_p2.png) [p3](files/rain_tg_accum_2026-11-03_to_2026-11-14_list_p3.png) · [Print PDF](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.pdf)
 
 ![Telangana · Total rain (multi-day)](files/rain_tg_accum_2026-11-03_to_2026-11-14.png)
-
-## Tamil Nadu · Rain so far (live)
-up to 14 Nov, 8:30 AM — [MP4](files/rain_live_2026-11-14_0830.mp4) · [GIF](files/rain_live_2026-11-14_0830.gif) · [PNG](files/rain_live_2026-11-14_0830.png)
-
-![Tamil Nadu · Rain so far (live)](files/rain_live_2026-11-14_0830.png)
 
 ## KTCC · Rain so far (live)
 up to 14 Nov, 8:30 AM — [MP4](files/rain_ktcc_live_2026-11-14_0830.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_0830.gif) · [PNG](files/rain_ktcc_live_2026-11-14_0830.png)
@@ -141,6 +141,7 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 
 | Report | Period | Files |
 |---|---|---|
+| Tamil Nadu · Rain so far (live) | up to 14 Nov, 9:30 AM | [MP4](files/rain_live_2026-11-14_0930.mp4) [GIF](files/rain_live_2026-11-14_0930.gif) [PNG](files/rain_live_2026-11-14_0930.png) |
 | Telangana · Past 24 hours, hour by hour | rain-day 14 Nov 2026 | [MP4](files/rain_tg_live24_2026-11-14.mp4) [PNG](files/rain_tg_live24_2026-11-14.png) |
 | Telangana · 24-hour rain | rain-day 14 Nov 2026 | [MP4](files/rain_tg_daily_2026-11-14.mp4) [GIF](files/rain_tg_daily_2026-11-14.gif) [PNG](files/rain_tg_daily_2026-11-14.png) |
 | Telangana · Total rain (multi-day) | 03 Nov → 14 Nov 2026 | [MP4](files/rain_tg_accum_2026-11-03_to_2026-11-14.mp4) [GIF](files/rain_tg_accum_2026-11-03_to_2026-11-14.gif) [PNG](files/rain_tg_accum_2026-11-03_to_2026-11-14.png) [LIST](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.png) [PDF](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.pdf) |
@@ -265,7 +266,6 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | KTCC · Rain so far (live) | up to 13 Nov, 6:30 AM | [MP4](files/rain_ktcc_live_2026-11-13_0630.mp4) [GIF](files/rain_ktcc_live_2026-11-13_0630.gif) [PNG](files/rain_ktcc_live_2026-11-13_0630.png) |
 | Telangana · Rain so far (live) | up to 13 Nov, 6:00 AM | [MP4](files/rain_tg_live_2026-11-13_0600.mp4) [GIF](files/rain_tg_live_2026-11-13_0600.gif) [PNG](files/rain_tg_live_2026-11-13_0600.png) |
 | Andhra Pradesh · Rain so far (live) | up to 13 Nov, 6:00 AM | [MP4](files/rain_ap_live_2026-11-13_0600.mp4) [GIF](files/rain_ap_live_2026-11-13_0600.gif) [PNG](files/rain_ap_live_2026-11-13_0600.png) |
-| Tamil Nadu · Rain so far (live) | up to 13 Nov, 5:30 AM | [MP4](files/rain_live_2026-11-13_0530.mp4) [GIF](files/rain_live_2026-11-13_0530.gif) [PNG](files/rain_live_2026-11-13_0530.png) |
 | KTCC · Rain so far (live) | up to 13 Nov, 5:30 AM | [MP4](files/rain_ktcc_live_2026-11-13_0530.mp4) [GIF](files/rain_ktcc_live_2026-11-13_0530.gif) [PNG](files/rain_ktcc_live_2026-11-13_0530.png) |
 | Telangana · Rain so far (live) | up to 13 Nov, 5:00 AM | [MP4](files/rain_tg_live_2026-11-13_0500.mp4) [GIF](files/rain_tg_live_2026-11-13_0500.gif) [PNG](files/rain_tg_live_2026-11-13_0500.png) |
 | Andhra Pradesh · Rain so far (live) | up to 13 Nov, 5:00 AM | [MP4](files/rain_ap_live_2026-11-13_0500.mp4) [GIF](files/rain_ap_live_2026-11-13_0500.gif) [PNG](files/rain_ap_live_2026-11-13_0500.png) |
