@@ -24,6 +24,28 @@
    "made": "2026-11-14T09:49+05:30"
   },
   {
+   "id": "rain_ka_live_2026-11-14_0930",
+   "region": "ka",
+   "region_name": "Karnataka",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 9:30 AM",
+   "sort": "2026-11-14T09:30",
+   "files": {
+    "mp4": "files/rain_ka_live_2026-11-14_0930.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ka_live_2026-11-14_0930.gif",
+    "gif_mb": 0.8,
+    "png": "files/rain_ka_live_2026-11-14_0930.png",
+    "png_mb": 0.4,
+    "txt": "files/rain_ka_live_2026-11-14_0930.txt"
+   },
+   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 9:30 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Arani (Mandya) – 66.5 mm\n2. Nerlige (Hassan) – 0.5 mm\n3. Kasaba Jambagi (Bagalkote) – 0.0 mm\n4. Bhatambra (Bidar) – 0.0 mm\n5. Sanapur (Koppala) – 0.0 mm\n6. Kalkeri (Dharwad) – 0.0 mm\n7. Kyarikoppa (Dharwad) – 0.0 mm\n8. Thimmaravutanahalli (Kolar) – 0.0 mm\n9. Kosam (Bidar) – 0.0 mm\n10. Kappalamadagu (Kolar) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T09:49+05:30"
+  },
+  {
    "id": "rain_tg_live24_2026-11-14",
    "region": "tg",
    "region_name": "Telangana",
@@ -2655,28 +2677,6 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nஇதுவரை பெய்த மழை · நவ. 12 காலை 8:30 முதல் நவ. 13 காலை 7:30 வரை\n\nமாவட்டங்களில் சென்னை 0.8 மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.\n\nமுதல் 10 நிலையங்கள்:\n1. Z 01 Ennore (W 03) (சென்னை) – 5.4 மி.மீ.\n2. Z 01 Ennore (W 03) (சென்னை) – 5.4 மி.மீ.\n3. Sathangadu (சென்னை) – 4.4 மி.மீ.\n4. Z 01 Kathivakkam (W 02) (சென்னை) – 4.2 மி.மீ.\n5. Z 03 Madhavaram (W 30) (சென்னை) – 3.9 மி.மீ.\n6. Z 05 Basin bridge (W 53) (சென்னை) – 3.9 மி.மீ.\n7. Z 05 Basin bridge (W 53) (சென்னை) – 3.9 மி.மீ.\n8. Z 04 Tondiarpet (W 42) (சென்னை) – 3.3 மி.மீ.\n9. Morai TNDRRA ARG (திருவள்ளூர்) – 3.2 மி.மீ.\n10. Z 02 Manali (W 17) (சென்னை) – 3.0 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T07:50+05:30"
-  },
-  {
-   "id": "rain_ka_live_2026-11-13_0730",
-   "region": "ka",
-   "region_name": "Karnataka",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 7:30 AM",
-   "sort": "2026-11-13T07:30",
-   "files": {
-    "mp4": "files/rain_ka_live_2026-11-13_0730.mp4",
-    "mp4_mb": 0.5,
-    "gif": "files/rain_ka_live_2026-11-13_0730.gif",
-    "gif_mb": 0.9,
-    "png": "files/rain_ka_live_2026-11-13_0730.png",
-    "png_mb": 0.4,
-    "txt": "files/rain_ka_live_2026-11-13_0730.txt"
-   },
-   "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 12 Nov to 7:30 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Betadur (Dharwad) – 41.5 mm\n2. Arani (Mandya) – 6.0 mm\n3. Santemarahalli (Chamarajanagara) – 4.5 mm\n4. Krishnarajapet (Mandya) – 2.5 mm\n5. Kanthapura (Mandya) – 2.0 mm\n6. Kaliaya (Dakshina Kannada) – 2.0 mm\n7. Muchuru (Dakshina Kannada) – 1.0 mm\n8. Anajigere (Vijayanagara) – 1.0 mm\n9. Malangi (Mysuru) – 1.0 mm\n10. Churchugundi (Shivamogga) – 1.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T07:49+05:30"
   },
   {
    "id": "rain_tg_live_2026-11-13_0700",

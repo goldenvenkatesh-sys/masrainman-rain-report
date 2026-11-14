@@ -7,6 +7,11 @@ up to 14 Nov, 9:30 AM — [MP4](files/rain_live_2026-11-14_0930.mp4) · [GIF](fi
 
 ![Tamil Nadu · Rain so far (live)](files/rain_live_2026-11-14_0930.png)
 
+## Karnataka · Rain so far (live)
+up to 14 Nov, 9:30 AM — [MP4](files/rain_ka_live_2026-11-14_0930.mp4) · [GIF](files/rain_ka_live_2026-11-14_0930.gif) · [PNG](files/rain_ka_live_2026-11-14_0930.png)
+
+![Karnataka · Rain so far (live)](files/rain_ka_live_2026-11-14_0930.png)
+
 ## Telangana · Past 24 hours, hour by hour
 rain-day 14 Nov 2026 — [MP4](files/rain_tg_live24_2026-11-14.mp4) · [PNG](files/rain_tg_live24_2026-11-14.png)
 
@@ -26,11 +31,6 @@ rain-day 14 Nov 2026 — [MP4](files/rain_tg_daily_2026-11-14.mp4) · [GIF](file
 up to 14 Nov, 8:30 AM — [MP4](files/rain_ktcc_live_2026-11-14_0830.mp4) · [GIF](files/rain_ktcc_live_2026-11-14_0830.gif) · [PNG](files/rain_ktcc_live_2026-11-14_0830.png)
 
 ![KTCC · Rain so far (live)](files/rain_ktcc_live_2026-11-14_0830.png)
-
-## Karnataka · Rain so far (live)
-up to 14 Nov, 8:30 AM — [MP4](files/rain_ka_live_2026-11-14_0830.mp4) · [GIF](files/rain_ka_live_2026-11-14_0830.gif) · [PNG](files/rain_ka_live_2026-11-14_0830.png)
-
-![Karnataka · Rain so far (live)](files/rain_ka_live_2026-11-14_0830.png)
 
 ## Karnataka · Past 24 hours, hour by hour
 rain-day 14 Nov 2026 — [MP4](files/rain_ka_live24_2026-11-14.mp4) · [PNG](files/rain_ka_live24_2026-11-14.png)
@@ -142,6 +142,7 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Report | Period | Files |
 |---|---|---|
 | Tamil Nadu · Rain so far (live) | up to 14 Nov, 9:30 AM | [MP4](files/rain_live_2026-11-14_0930.mp4) [GIF](files/rain_live_2026-11-14_0930.gif) [PNG](files/rain_live_2026-11-14_0930.png) |
+| Karnataka · Rain so far (live) | up to 14 Nov, 9:30 AM | [MP4](files/rain_ka_live_2026-11-14_0930.mp4) [GIF](files/rain_ka_live_2026-11-14_0930.gif) [PNG](files/rain_ka_live_2026-11-14_0930.png) |
 | Telangana · Past 24 hours, hour by hour | rain-day 14 Nov 2026 | [MP4](files/rain_tg_live24_2026-11-14.mp4) [PNG](files/rain_tg_live24_2026-11-14.png) |
 | Telangana · 24-hour rain | rain-day 14 Nov 2026 | [MP4](files/rain_tg_daily_2026-11-14.mp4) [GIF](files/rain_tg_daily_2026-11-14.gif) [PNG](files/rain_tg_daily_2026-11-14.png) |
 | Telangana · Total rain (multi-day) | 03 Nov → 14 Nov 2026 | [MP4](files/rain_tg_accum_2026-11-03_to_2026-11-14.mp4) [GIF](files/rain_tg_accum_2026-11-03_to_2026-11-14.gif) [PNG](files/rain_tg_accum_2026-11-03_to_2026-11-14.png) [LIST](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.png) [PDF](files/rain_tg_accum_2026-11-03_to_2026-11-14_list.pdf) |
@@ -259,7 +260,6 @@ October 2026 — [MP4](files/rain_month_2026-10.mp4) · [GIF](files/rain_month_2
 | Andhra Pradesh · Rain so far (live) | up to 13 Nov, 8:00 AM | [MP4](files/rain_ap_live_2026-11-13_0800.mp4) [GIF](files/rain_ap_live_2026-11-13_0800.gif) [PNG](files/rain_ap_live_2026-11-13_0800.png) |
 | Tamil Nadu · Rain so far (live) | up to 13 Nov, 7:30 AM | [MP4](files/rain_live_2026-11-13_0730.mp4) [GIF](files/rain_live_2026-11-13_0730.gif) [PNG](files/rain_live_2026-11-13_0730.png) |
 | KTCC · Rain so far (live) | up to 13 Nov, 7:30 AM | [MP4](files/rain_ktcc_live_2026-11-13_0730.mp4) [GIF](files/rain_ktcc_live_2026-11-13_0730.gif) [PNG](files/rain_ktcc_live_2026-11-13_0730.png) |
-| Karnataka · Rain so far (live) | up to 13 Nov, 7:30 AM | [MP4](files/rain_ka_live_2026-11-13_0730.mp4) [GIF](files/rain_ka_live_2026-11-13_0730.gif) [PNG](files/rain_ka_live_2026-11-13_0730.png) |
 | Telangana · Rain so far (live) | up to 13 Nov, 7:00 AM | [MP4](files/rain_tg_live_2026-11-13_0700.mp4) [GIF](files/rain_tg_live_2026-11-13_0700.gif) [PNG](files/rain_tg_live_2026-11-13_0700.png) |
 | Andhra Pradesh · Rain so far (live) | up to 13 Nov, 7:00 AM | [MP4](files/rain_ap_live_2026-11-13_0700.mp4) [GIF](files/rain_ap_live_2026-11-13_0700.gif) [PNG](files/rain_ap_live_2026-11-13_0700.png) |
 | Tamil Nadu · Rain so far (live) | up to 13 Nov, 6:30 AM | [MP4](files/rain_live_2026-11-13_0630.mp4) [GIF](files/rain_live_2026-11-13_0630.gif) [PNG](files/rain_live_2026-11-13_0630.png) |
