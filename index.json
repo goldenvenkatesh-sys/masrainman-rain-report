@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T15:49+05:30",
+ "updated": "2026-11-14T15:50+05:30",
  "reports": [
   {
    "id": "rain_live_2026-11-14_1530",
@@ -44,6 +44,28 @@
    },
    "caption": "🌧 Rainfall Report · Karnataka\nRainfall so far · 8:30 am 14 Nov to 3:30 pm 14 Nov\n\n1 station recorded over 200 mm; Mandya leads the districts with an area average of 1.5 mm.\n\nTop 10 stations:\n1. Arani (Mandya) – 370.0 mm\n2. Ponnampet 1 (Kodagu) – 2.2 mm\n3. Kaliaya (Dakshina Kannada) – 1.0 mm\n4. Muchuru (Dakshina Kannada) – 1.0 mm\n5. Kakola (Haveri) – 1.0 mm\n6. Kanagamakalapalli (Chikkaballapura) – 0.5 mm\n7. Kadur(Rural) (Chikkamagaluru) – 0.5 mm\n8. Hochihalli (Chikkamagaluru) – 0.5 mm\n9. Nerlige (Hassan) – 0.5 mm\n10. Kappalamadagu (Kolar) – 0.0 mm\n\nSource: KSNDMC telemetric rain gauges\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-14T15:49+05:30"
+  },
+  {
+   "id": "rain_ap_live_2026-11-14_1500",
+   "region": "ap",
+   "region_name": "Andhra Pradesh",
+   "kind": "live",
+   "kind_name": "Rain so far (live)",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "up to 14 Nov, 3:00 PM",
+   "sort": "2026-11-14T15:00",
+   "files": {
+    "mp4": "files/rain_ap_live_2026-11-14_1500.mp4",
+    "mp4_mb": 0.5,
+    "gif": "files/rain_ap_live_2026-11-14_1500.gif",
+    "gif_mb": 1.0,
+    "png": "files/rain_ap_live_2026-11-14_1500.png",
+    "png_mb": 0.3,
+    "txt": "files/rain_ap_live_2026-11-14_1500.txt"
+   },
+   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 14 Nov to 3:00 pm 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Budanampalle (Sri Sathya Sai) – 13.0 mm\n2. Madugula (Anakapalli) – 11.8 mm\n3. Chinnathippa Samudram (Annamayya) – 4.2 mm\n4. Gavarapalem-E Seva Center ARG (Visakhapatnam) – 2.8 mm\n5. Varikasuvupalli (Annamayya) – 1.8 mm\n6. Megadri Gedda Reservoir ARG (Visakhapatnam) – 1.5 mm\n7. Attalasiddavaram (Tirupati) – 1.5 mm\n8. S.Narsapuram (Anakapalli) – 1.5 mm\n9. Bapulapad ARG (Krishna) – 1.0 mm\n10. Penuganchiprolu (NTR) – 1.0 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T15:50+05:30"
   },
   {
    "id": "rain_live_2026-11-14_1430",
@@ -3027,28 +3049,6 @@
    },
    "caption": "🌧 மழைப்பொழிவு அறிக்கை\nபல நாள் மொத்த மழை · அக். 1 முதல் நவ. 13 வரை (44 நாட்கள்)\n\n45 நிலையங்களில் 500 மி.மீ.க்கு மேல் மழை பதிவு; மாவட்டங்களில் சென்னை 444.3 மி.மீ. நிலையச் சராசரியுடன் முதலிடம்.\n\nமுதல் 5 நிலையங்கள்:\n1. Kengarai (நீலகிரி) – 897.2 மி.மீ.\n2. Z 01 Kathivakkam (W 02) (சென்னை) – 867.6 மி.மீ.\n3. Z 05 Parrys (W 60) (சென்னை) – 774.1 மி.மீ.\n4. Denad (நீலகிரி) – 754.0 மி.மீ.\n5. Konavakorai (நீலகிரி) – 733.2 மி.மீ.\n\nஆதாரம்: TN-SMART (TNSDMA)\n#MasRainman · masrainman.blogspot.com",
    "made": "2026-11-13T17:51+05:30"
-  },
-  {
-   "id": "rain_ap_live_2026-11-13_0800",
-   "region": "ap",
-   "region_name": "Andhra Pradesh",
-   "kind": "live",
-   "kind_name": "Rain so far (live)",
-   "lang": "en",
-   "day": "2026-11-13",
-   "label": "up to 13 Nov, 8:00 AM",
-   "sort": "2026-11-13T08:00",
-   "files": {
-    "mp4": "files/rain_ap_live_2026-11-13_0800.mp4",
-    "mp4_mb": 0.6,
-    "gif": "files/rain_ap_live_2026-11-13_0800.gif",
-    "gif_mb": 1.1,
-    "png": "files/rain_ap_live_2026-11-13_0800.png",
-    "png_mb": 0.3,
-    "txt": "files/rain_ap_live_2026-11-13_0800.txt"
-   },
-   "caption": "🌧 Rainfall Report · Andhra Pradesh\nRainfall so far · 8:30 am 12 Nov to 8:00 am 13 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Sollapuram (Anantapuramu) – 39.0 mm\n2. Utukuru (Nellore) – 5.5 mm\n3. Megadri Gedda Reservoir ARG (Visakhapatnam) – 5.2 mm\n4. Taduvai (Eluru) – 4.5 mm\n5. Chintapalle (Alluri Sitharama Raju) – 3.8 mm\n6. Chavulamadhum BurialGround ARG (Visakhapatnam) – 3.1 mm\n7. Kapuluppada (Visakhapatnam) – 3.0 mm\n8. Annavaram (Alluri Sitharama Raju) – 3.0 mm\n9. Bapulapad ARG (Krishna) – 2.8 mm\n10. New Railaway Colony ARG (Visakhapatnam) – 2.8 mm\n\nSource: DES / APSDPS real-time weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-13T08:51+05:30"
   },
   {
    "id": "rain_ktcc_live_2026-11-13_0730",
