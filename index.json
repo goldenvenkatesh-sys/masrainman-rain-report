@@ -1,6 +1,26 @@
 {
- "updated": "2026-11-14T08:50+05:30",
+ "updated": "2026-11-14T08:52+05:30",
  "reports": [
+  {
+   "id": "rain_tg_live24_2026-11-14",
+   "region": "tg",
+   "region_name": "Telangana",
+   "kind": "live24",
+   "kind_name": "Past 24 hours, hour by hour",
+   "lang": "en",
+   "day": "2026-11-14",
+   "label": "rain-day 14 Nov 2026",
+   "sort": "2026-11-14T08:30",
+   "files": {
+    "mp4": "files/rain_tg_live24_2026-11-14.mp4",
+    "mp4_mb": 3.8,
+    "png": "files/rain_tg_live24_2026-11-14.png",
+    "png_mb": 0.6,
+    "txt": "files/rain_tg_live24_2026-11-14.txt"
+   },
+   "caption": "🌧 Telangana · Past 24 hours observed rainfall\n8:30 am 13 Nov to 8:30 am 14 Nov 2026 · hour by hour\n\nRainfall toppers:\n1. Damera (Warangal) – 22.3 mm\n2. Namapur (Rajanna Sircilla) – 8.8 mm\n3. Goutham Nagar Function Hall: Filmnagar (Hyderabad) – 6.5 mm\n4. Nagapur (Medak) – 5.0 mm\n5. Pillidarga Ward Office: Borabanda (Medchal Malkajgiri) – 4.3 mm\n6. Velganoor (Mancherial) – 3.0 mm\n7. Gondriyala (Suryapet) – 2.8 mm\n8. Mujigi (Nirmal) – 2.3 mm\n\nHeaviest in one hour: 4.2 mm at Damera (Warangal), hour ending 8:30 PM\nRain at 8 of 1097 hourly stations · 0 with heavy rain or more\nMost of it fell 6:30 PM – 2:30 AM\n\nDid the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)\n  WeatherNext 3: 0 caught, 0 false alarms\n  ECMWF IFS: 0 caught, 0 false alarms\n  ECMWF AIFS: 0 caught, 0 false alarms\n\nSource: TGDPS · forecasts: ECMWF open data (CC BY 4.0)\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T08:52+05:30"
+  },
   {
    "id": "rain_tg_daily_2026-11-14",
    "region": "tg",
@@ -13,15 +33,15 @@
    "sort": "2026-11-14T08:30",
    "files": {
     "mp4": "files/rain_tg_daily_2026-11-14.mp4",
-    "mp4_mb": 0.3,
+    "mp4_mb": 0.4,
     "gif": "files/rain_tg_daily_2026-11-14.gif",
-    "gif_mb": 0.7,
+    "gif_mb": 0.6,
     "png": "files/rain_tg_daily_2026-11-14.png",
-    "png_mb": 0.3,
+    "png_mb": 0.4,
     "txt": "files/rain_tg_daily_2026-11-14.txt"
    },
-   "caption": "🌧 Rainfall Report · Telangana\n24-hour rainfall · 8:30 am 13 Nov to 8:30 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Bheempoor (Adilabad) – 0.0 mm\n2. Jainad (Adilabad) – 0.0 mm\n3. Bela (Adilabad) – 0.0 mm\n4. Gadiguda (Adilabad) – 0.0 mm\n5. Narnoor (Adilabad) – 0.0 mm\n6. Inderavelly (Adilabad) – 0.0 mm\n7. Gudihathnur (Adilabad) – 0.0 mm\n8. Adilabad Rural (Adilabad) – 0.0 mm\n9. Adilabad Urban (Adilabad) – 0.0 mm\n10. Mavala (Adilabad) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-14T00:51+05:30"
+   "caption": "🌧 Rainfall Report · Telangana\n24-hour rainfall · 8:30 am 13 Nov to 8:30 am 14 Nov\n\nNo significant rainfall recorded across the state.\n\nTop 10 stations:\n1. Moulali (Medchal Malkajgiri) – 0.0 mm\n2. Sivaramapalle (Ranga Reddy) – 0.0 mm\n3. Medchal Industrial area sub-station (Medchal Malkajgiri) – 0.0 mm\n4. Turkayamjal (Ranga Reddy) – 0.0 mm\n5. Jubileehills (Hyderabad) – 0.0 mm\n6. RGI Airport (Ranga Reddy) – 0.0 mm\n7. Viratnagar DMRL (Ranga Reddy) – 0.0 mm\n8. Mamidipalle (Ranga Reddy) – 0.0 mm\n9. ESS Malkaram (Medchal Malkajgiri) – 0.0 mm\n10. Musheerabad (chilkalguda) (Hyderabad) – 0.0 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
+   "made": "2026-11-14T08:52+05:30"
   },
   {
    "id": "rain_tg_accum_2026-11-03_to_2026-11-14",
@@ -50,7 +70,7 @@
     "list_pdf_mb": 1.4
    },
    "caption": "🌧 Rainfall Report · Telangana\nTotal rainfall · 3 Nov to 14 Nov (12 days)\n\n2 stations recorded over 200 mm; Bhadradri Kothagudem leads the districts with a station average of 98.2 mm.\n\nTop 5 stations:\n1. Mulakalapalle (Bhadradri Kothagudem) – 238.9 mm\n2. Vemsoor (Khammam) – 208.6 mm\n3. Kalluru (Khammam) – 199.7 mm\n4. Dammapeta (Bhadradri Kothagudem) – 196.1 mm\n5. Penuballi (Khammam) – 195.1 mm\n\nSource: TGDPS automatic weather stations\n#MasRainman · masrainman.blogspot.com",
-   "made": "2026-11-14T00:51+05:30"
+   "made": "2026-11-14T08:52+05:30"
   },
   {
    "id": "rain_live_2026-11-14_0830",

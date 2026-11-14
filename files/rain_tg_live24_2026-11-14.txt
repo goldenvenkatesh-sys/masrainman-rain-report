@@ -1,0 +1,24 @@
+🌧 Telangana · Past 24 hours observed rainfall
+8:30 am 13 Nov to 8:30 am 14 Nov 2026 · hour by hour
+
+Rainfall toppers:
+1. Damera (Warangal) – 22.3 mm
+2. Namapur (Rajanna Sircilla) – 8.8 mm
+3. Goutham Nagar Function Hall: Filmnagar (Hyderabad) – 6.5 mm
+4. Nagapur (Medak) – 5.0 mm
+5. Pillidarga Ward Office: Borabanda (Medchal Malkajgiri) – 4.3 mm
+6. Velganoor (Mancherial) – 3.0 mm
+7. Gondriyala (Suryapet) – 2.8 mm
+8. Mujigi (Nirmal) – 2.3 mm
+
+Heaviest in one hour: 4.2 mm at Damera (Warangal), hour ending 8:30 PM
+Rain at 8 of 1097 hourly stations · 0 with heavy rain or more
+Most of it fell 6:30 PM – 2:30 AM
+
+Did the models get it right? (moderate rain (≥ 15.6 mm) at a gauge in 1 districts)
+  WeatherNext 3: 0 caught, 0 false alarms
+  ECMWF IFS: 0 caught, 0 false alarms
+  ECMWF AIFS: 0 caught, 0 false alarms
+
+Source: TGDPS · forecasts: ECMWF open data (CC BY 4.0)
+#MasRainman · masrainman.blogspot.com
